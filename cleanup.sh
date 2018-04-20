@@ -32,6 +32,7 @@ rm -f /bin/bash
 rm -f /authorize.sh
 rm -rf /Applications/jjjj.app/
 rm -rf /Applications/Extender.app/
+rm -rf /Applications/GameGemiOS.app/
 rm -rf /Applications/GBA4iOS.app/
 rm -rf /Applications/Filza.app/
 rm -rf /Applications/CocoaTop.app/
@@ -146,6 +147,7 @@ rm /private/var/mobile/Library/Application Support/Flex3
 rm /private/var/mobile/Library/Application Support/Containers/com.scroublepokemon.filzaelectrocuted
 rm -rf /Library/Application Support/DPUTweakResources
 rm -rf /Library/Application Support/Flame
+rm -rf /Library/Application Support/SpeedOptimize
 
 # Cleanup all the rest of the tweak data not already covered in this script.
 rm -rf /private/var/root
@@ -249,7 +251,6 @@ rm -r /usr/bin/wc
 rm -r /usr/bin/who
 rm -r /usr/bin/whoami
 rm -r /usr/bin/yes
-
 
 #big fat bootstrap motherfucker
 echo "Removing Cydia bootstrap.. (Please pray from here onwards)"
@@ -373,6 +374,7 @@ rm -f /usr/bin/df
 rm -f /usr/bin/diff
 rm -f /usr/bin/diff3
 rm -f /usr/bin/dirname
+rm -f /usr/bin/GameGemNative
 rm -f /usr/bin/icleaner
 rm -f /usr/bin/nano
 rm -f /usr/bin/rnano
