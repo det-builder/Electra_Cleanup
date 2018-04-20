@@ -173,6 +173,10 @@ rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8
 rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 rm -rf /private/var/mobile/Downloads/Cydia
 
+# Cleanup files from AppSync and Appinst
+rm -r /usr/bin/appinst
+rm -r /usr/bin/asu_inject
+
 # Cleanup files from the "Core Utilities" package.
 rm -r /usr/bin/[
 rm -r /usr/bin/b2sum
