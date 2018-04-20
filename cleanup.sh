@@ -252,6 +252,72 @@ rm -r /usr/bin/who
 rm -r /usr/bin/whoami
 rm -r /usr/bin/yes
 
+# Cleanup files from the "Adv-Cmds" package.
+rm -r /usr/bin/cap_mkdb
+rm -r /usr/bin/finger
+rm -r /usr/bin/last
+rm -r /usr/bin/locale
+rm -r /usr/bin/ps
+
+# Cleanup files from the "Basic-Cmds" package.
+rm -r /usr/bin/mesg
+rm -r /usr/bin/uudecode
+rm -r /usr/bin/uuencode
+rm -r /usr/bin/write
+
+# Cleanup files from the "Bootstrap-Cmds" package.
+rm -r /usr/bin/mig
+rm -r /usr/libexec/migcom
+
+# Cleanup files from the "Developer-Cmds" package.
+rm -r /usr/bin/ctags
+rm -r /usr/bin/hexdump
+rm -r /usr/bin/rpcgen
+rm -r /usr/bin/unifdef
+
+# Cleanup files from the "File-Cmds" package.
+rm -r /usr/bin/chflags
+rm -r /usr/bin/compress
+rm -r /usr/bin/ipcrm
+rm -r /usr/bin/ipcs
+rm -r /usr/bin/pax
+
+# Cleanup files from the "Inet-Utils" package.
+rm -r /usr/bin/dnsdomainname
+rm -r /usr/bin/ftp
+rm -r /usr/bin/hostname
+rm -r /usr/bin/ifconfig
+rm -r /usr/bin/logger
+rm -r /usr/bin/ping
+rm -r /usr/bin/ping6
+rm -r /usr/bin/rcp
+rm -r /usr/bin/rexec
+rm -r /usr/bin/rlogin
+rm -r /usr/bin/rsh
+rm -r /usr/bin/talk
+rm -r /usr/bin/telnet
+rm -r /usr/bin/tftp
+rm -r /usr/bin/traceroute
+rm -r /usr/bin/whois
+rm -r /usr/libexec/ftpd
+rm -r /usr/libexec/inetd
+rm -r /usr/libexec/rexecd
+rm -r /usr/libexec/rlogind
+rm -r /usr/libexec/rshd
+rm -r /usr/libexec/syslogd
+rm -r /usr/libexec/talkd
+rm -r /usr/libexec/telnetd
+rm -r /usr/libexec/tftpd
+rm -r /usr/libexec/uucpd
+
+# Cleanup files from the "Network-Cmds" package.
+rm -r /sbin/netstat
+rm -r /sbin/route
+rm -r /usr/libexec/kdumpd
+rm -r /usr/sbin/arp
+rm -r /usr/sbin/ndp
+rm -r /usr/sbin/traceroute6
+
 #big fat bootstrap motherfucker
 echo "Removing Cydia bootstrap.. (Please pray from here onwards)"
 rm -rf /Applications/Cydia.app/
