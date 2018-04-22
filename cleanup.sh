@@ -30,13 +30,6 @@ rm -f /var/tmp/cydia.log
 echo "Removing potential manual files.."
 rm -f /bin/bash
 rm -f /authorize.sh
-rm -rf /Applications/jjjj.app/
-rm -rf /Applications/Extender.app/
-rm -rf /Applications/GameGemiOS.app/
-rm -rf /Applications/GBA4iOS.app/
-rm -rf /Applications/Filza.app/
-rm -rf /Applications/CocoaTop.app/
-rm -rf /Applications/Flex.app/
 rm -rf /Library/dpkg/
 rm -rf /Library/Cylinder/
 rm -rf /Library/LaunchDaemons/*
@@ -51,6 +44,7 @@ rm -f /etc/wgetrc
 rm -rf /usr/include/
 rm -rf /usr/lib/apt/
 rm -rf /usr/lib/dpkg/
+rm -f /usr/lib/Liberty.dylib
 rm -f /usr/lib/libcolorpicker.dylib
 rm -rf /usr/lib/pam/
 rm -rf /usr/lib/pkgconfig/
@@ -104,6 +98,16 @@ rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
 rm -f /var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
 rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
 
+# Cleanup custom Apps
+rm -rf /Applications/CocoaTop.app/
+rm -rf /Applications/CrashReporter.app/
+rm -rf /Applications/Extender.app/
+rm -rf /Applications/Filza.app/
+rm -rf /Applications/Flex.app/
+rm -rf /Applications/GameGemiOS.app/
+rm -rf /Applications/GBA4iOS.app/
+rm -rf /Applications/jjjj.app/
+
 # Cleanup tweak preference files.
 rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
 rm -f /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
@@ -122,6 +126,8 @@ rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.synnyg.floatydockprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
+rm -f /private/var/mobile/Library/Preferences/crash-reporter.plist
+rm -f /private/var/mobile/Library/Preferences/jp.ashikase.crashreporter.scanner.plist
 rm -f /private/var/mobile/Library/Preferences/net.85819.ios.OTRLocation.plist
 rm -f /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
 rm -f /private/var/mobile/Library/Preferences/net.tateu.debkeeper.plist
@@ -170,12 +176,21 @@ rm -f /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patc
 rm -rf /private/var/mobile/Documents/lockplusfonts
 rm /private/var/mobile/Documents/extraction-com.apple.springboard.flex
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF/
+rm -rf /System/Library/PreferenceBundles/AppList.bundle
 rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 rm -rf /private/var/mobile/Downloads/Cydia
 
 # Cleanup files from AppSync and Appinst
 rm -r /usr/bin/appinst
 rm -r /usr/bin/asu_inject
+rm -rf /usr/include/AppList
+rm -rf /usr/include/libcrashreport
+rm -rf /usr/include/libpackageinfo
+rm -rf /usr/include/libsymbolicate
+rm -f /usr/lib/libapplist.dylib
+rm -f /usr/lib/libcrashreport.dylib
+rm -f /usr/lib/libpackageinfo.dylib
+rm -f /usr/lib/libsymbolicate.dylib
 
 # Cleanup files from the "Core Utilities" package.
 rm -r /usr/bin/[
