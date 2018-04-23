@@ -114,10 +114,12 @@ rm -f /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
 rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.*.plist
 rm -f /private/var/mobile/Library/Preferences/com.iosblocks.mobiletimer.block.plist
 rm -f /private/var/mobile/Library/Preferences/com.imkpatil.floatingdock.plist
+rm -f /private/var/mobile/Library/Preferences/com.irepo.boxy.plist
 rm -f /private/var/mobile/Library/Preferences/com.johncoates.Flex.plist
 rm -f /private/var/mobile/Library/Preferences/com.junesiphone.frontpage.plist
 rm -f /private/var/mobile/Library/Preferences/com.junesiphone.lockplus.plist
 rm -f /private/var/mobile/Library/Preferences/com.justinpetkovic.youtubetools.plist
+rm -f /private/var/mobile/Library/Preferences/com.matchstic.xenhtml.plist
 rm -f /private/var/mobile/Library/Preferences/com.pixelfiredev.libcolorpicker.plist
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
 rm -f /private/var/mobile/Library/Preferences/com.pixelfiredev.libcolorpicker.plist
@@ -137,9 +139,11 @@ rm -rf /private/var/mobile/Library/Preferences/Moveable
 rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.*.*
 
 # Cleanup caches and cookies.
+rm -rf /private/var/mobile/Library/Caches/com.anemonetheming.anemone
 rm -rf /private/var/mobile/Library/Caches/com.cydia.Ext3nder
 rm -rf /private/var/mobile/Library/Caches/com.exile90.icleanerpro
 rm -rf /private/var/mobile/Library/Caches/com.johncoates.Flex
+rm -rf /private/var/mobile/Library/Caches/com.saurik.Cydia
 rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Caches/io.fabric.sdk.ios.data
 rm -rf /private/var/mobile/Library/Caches/io.haneke
@@ -301,6 +305,10 @@ rm -r /usr/bin/ipcrm
 rm -r /usr/bin/ipcs
 rm -r /usr/bin/pax
 
+# Cleanup Iconoclasm
+rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
+rm -rf /Library/Iconoclasm
+
 # Cleanup files from the "Inet-Utils" package.
 rm -r /usr/bin/dnsdomainname
 rm -r /usr/bin/ftp
@@ -336,6 +344,17 @@ rm -r /usr/libexec/kdumpd
 rm -r /usr/sbin/arp
 rm -r /usr/sbin/ndp
 rm -r /usr/sbin/traceroute6
+
+# Cleanup files from the XenHTML package.
+rm -rf /usr/include/uaunbox
+rm -r /usr/lib/libuaunbox.dylib
+rm -r /usr/libexec/uaunbox
+rm -r /usr/libexec/uaunboxdlaunch
+rm -rf /private/var/mobile/Library/LockHTML
+rm -rf /private/var/mobile/Library/SBHTML
+rm -rf /Library/Application Support/libGitHubIssues
+rm -r /usr/include/libGitHubIssues.h
+rm -r /usr/lib/libGitHubIssues.dylib
 
 #big fat bootstrap motherfucker
 echo "Removing Cydia bootstrap.. (Please pray from here onwards)"
