@@ -109,6 +109,8 @@ rm -rf /Applications/GBA4iOS.app/
 rm -rf /Applications/jjjj.app/
 
 # Cleanup tweak preference files.
+rm -f /private/var/mobile/Library/Preferences/anondev.LocalIAPStore.plist
+rm -f /private/var/mobile/Library/Preferences/ch.rpetri.iconrenamer.plist
 rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
 rm -f /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
 rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.*.plist
@@ -123,6 +125,9 @@ rm -f /private/var/mobile/Library/Preferences/com.matchstic.xenhtml.plist
 rm -f /private/var/mobile/Library/Preferences/com.pixelfiredev.libcolorpicker.plist
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
 rm -f /private/var/mobile/Library/Preferences/com.pixelfiredev.libcolorpicker.plist
+rm -f /private/var/mobile/Library/Preferences/com.PS.SwipeForMore.plist
+rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
+rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.libertylite.plist
 rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
@@ -130,13 +135,16 @@ rm -f /private/var/mobile/Library/Preferences/com.synnyg.floatydockprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
 rm -f /private/var/mobile/Library/Preferences/crash-reporter.plist
 rm -f /private/var/mobile/Library/Preferences/jp.ashikase.crashreporter.scanner.plist
+rm -f /private/var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
 rm -f /private/var/mobile/Library/Preferences/net.85819.ios.OTRLocation.plist
-rm -f /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
+rm -f /private/var/mobile/Library/Preferences/net.r-ch.iconoclasm.plist
 rm -f /private/var/mobile/Library/Preferences/net.tateu.debkeeper.plist
 rm -f /private/var/mobile/Library/Preferences/net.tateu.moveable9.plist
+rm -f /private/var/mobile/Library/Preferences/net.tateu.moveable9.profileswitcher.plist
+rm -f /private/var/mobile/Library/Preferences/nfcd.plist
+rm -f /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
 rm -f /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
 rm -rf /private/var/mobile/Library/Preferences/Moveable
-rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.*.*
 
 # Cleanup caches and cookies.
 rm -rf /private/var/mobile/Library/Caches/com.anemonetheming.anemone
@@ -152,9 +160,10 @@ rm -rf /private/var/mobile/Library/Cookies/com.cydia.Ext3nder.binarycookies
 rm -rf /private/var/mobile/Library/Cookies/com.exile90.icleanerpro.binarycookies
 
 # Cleanup application support data
-rm /private/var/mobile/Library/Application Support/Flame
-rm /private/var/mobile/Library/Application Support/Flex3
-rm /private/var/mobile/Library/Application Support/Containers/com.scroublepokemon.filzaelectrocuted
+rm -rf /private/var/mobile/Library/Application Support/Flame
+rm -rf /private/var/mobile/Library/Application Support/Flex3
+rm -rf /private/var/mobile/Library/Application Support/IconSupport
+rm -f /private/var/mobile/Library/Application Support/Containers/com.scroublepokemon.filzaelectrocuted
 rm -rf /Library/Application Support/DPUTweakResources
 rm -rf /Library/Application Support/Flame
 rm -rf /Library/Application Support/SpeedOptimize
@@ -180,11 +189,12 @@ rm -f /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patc
 rm -rf /private/var/mobile/Documents/lockplusfonts
 rm /private/var/mobile/Documents/extraction-com.apple.springboard.flex
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF/
-rm -rf /System/Library/PreferenceBundles/AppList.bundle
 rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 rm -rf /private/var/mobile/Downloads/Cydia
 
-# Cleanup files from AppSync and Appinst
+
+# Cleanup files from Applist, AppSync and Appinst
+rm -rf /System/Library/PreferenceBundles/AppList.bundle
 rm -r /usr/bin/appinst
 rm -r /usr/bin/asu_inject
 rm -rf /usr/include/AppList
