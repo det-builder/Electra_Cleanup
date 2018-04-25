@@ -114,10 +114,12 @@ rm -f /private/var/mobile/Library/Preferences/ch.rpetri.iconrenamer.plist
 rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
 rm -f /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
 rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.*.plist
+rm -f /private/var/mobile/Library/Preferences/com.cydia.Ext3nder.plist
 rm -f /private/var/mobile/Library/Preferences/com.iosblocks.mobiletimer.block.plist
 rm -f /private/var/mobile/Library/Preferences/com.imkpatil.floatingdock.plist
 rm -f /private/var/mobile/Library/Preferences/com.irepo.boxy.plist
 rm -f /private/var/mobile/Library/Preferences/com.johncoates.Flex.plist
+rm -f /private/var/mobile/Library/Preferences/com.julioverne.ext3nder.autosign.plist
 rm -f /private/var/mobile/Library/Preferences/com.junesiphone.frontpage.plist
 rm -f /private/var/mobile/Library/Preferences/com.junesiphone.lockplus.plist
 rm -f /private/var/mobile/Library/Preferences/com.justinpetkovic.youtubetools.plist
@@ -191,7 +193,6 @@ rm /private/var/mobile/Documents/extraction-com.apple.springboard.flex
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF/
 rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 rm -rf /private/var/mobile/Downloads/Cydia
-
 
 # Cleanup files from Applist, AppSync and Appinst
 rm -rf /System/Library/PreferenceBundles/AppList.bundle
@@ -307,6 +308,30 @@ rm -r /usr/bin/ctags
 rm -r /usr/bin/hexdump
 rm -r /usr/bin/rpcgen
 rm -r /usr/bin/unifdef
+
+# Cleanup files from the Extender package.
+rm -r /usr/bin/curl
+rm -r /usr/bin/curl-config
+rm -rf /usr/include/curl
+rm -r /usr/lib/libcurl.4.dylib
+rm -r /usr/lib/libcurl.dylib
+rm -r /usr/lib/libcurl.la
+rm -r /usr/lib/pkgconfig/ligcurl.pc
+rm -rf /Library/Switches/Ext3nderSwitch.bundle
+rm -r /bin/jtoold
+rm -rf /private/var/Ext3nder-Installer
+rm -rf /usr/include/nghttp2
+rm -r /usr/lib/libnghttp2.14.dylib
+rm -r /usr/lib/libnghttp2.dylib
+rm -r /usr/lib/libnghttp2.la
+rm -r /usr/lib/pkgconfig/libnghttp2.pc
+rm -r /usr/bin/funzip
+rm -r /usr/bin/unzip
+rm -r /usr/bin/unzipsfx
+rm -r /usr/bin/zip
+rm -r /usr/bin/zipcloak
+rm -r /usr/bin/zipnote
+rm -r /usr/bin/zipsplit
 
 # Cleanup files from the "File-Cmds" package.
 rm -r /usr/bin/chflags
