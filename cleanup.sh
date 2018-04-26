@@ -175,7 +175,7 @@ rm -rf /private/var/root
 rm -rf /private/var/mobile/Library/LockPlus
 rm -rf /private/var/mobile/Library/FrontPageCache
 rm -rf /private/var/mobile/Library/Logs/Cydia
-rm /private/var/mobile/Library/Logs/CrashReporter/*.*
+rm -f  /private/var/mobile/Library/Logs/CrashReporter/*.*
 rm -rf /private/var/mobile/Library/Cydia
 rm -rf /private/var/mobile/Library/iCleaner
 rm -rf /private/var/mobile/Library/Filza
@@ -189,7 +189,7 @@ rm -rf /private/var/mobile/Documents/Flex
 rm -rf /private/var/mobile/Library/Flex3
 rm -f /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
 rm -rf /private/var/mobile/Documents/lockplusfonts
-rm /private/var/mobile/Documents/extraction-com.apple.springboard.flex
+rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF/
 rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 rm -rf /private/var/mobile/Downloads/Cydia
