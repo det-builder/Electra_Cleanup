@@ -165,7 +165,7 @@ rm -rf /private/var/mobile/Library/Cookies/com.exile90.icleanerpro.binarycookies
 rm -rf /private/var/mobile/Library/Application Support/Flame
 rm -rf /private/var/mobile/Library/Application Support/Flex3
 rm -rf /private/var/mobile/Library/Application Support/IconSupport
-rm -f /private/var/mobile/Library/Application Support/Containers/com.scroublepokemon.filzaelectrocuted
+rm -rf /private/var/mobile/Library/Application Support/Containers/com.scroublepokemon.filzaelectrocuted
 rm -rf /Library/Application Support/DPUTweakResources
 rm -rf /Library/Application Support/Flame
 rm -rf /Library/Application Support/SpeedOptimize
@@ -187,7 +187,7 @@ rm -rf /Library/Switches
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
 rm -rf /private/var/mobile/Documents/Flex
 rm -rf /private/var/mobile/Library/Flex3
-rm -f /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
+rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
 rm -rf /private/var/mobile/Documents/lockplusfonts
 rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF/
@@ -196,200 +196,200 @@ rm -rf /private/var/mobile/Downloads/Cydia
 
 # Cleanup files from Applist, AppSync and Appinst
 rm -rf /System/Library/PreferenceBundles/AppList.bundle
-rm -r /usr/bin/appinst
-rm -r /usr/bin/asu_inject
+rm -r  /usr/bin/appinst
+rm -r  /usr/bin/asu_inject
 rm -rf /usr/include/AppList
 rm -rf /usr/include/libcrashreport
 rm -rf /usr/include/libpackageinfo
 rm -rf /usr/include/libsymbolicate
-rm -f /usr/lib/libapplist.dylib
-rm -f /usr/lib/libcrashreport.dylib
-rm -f /usr/lib/libpackageinfo.dylib
-rm -f /usr/lib/libsymbolicate.dylib
+rm -f  /usr/lib/libapplist.dylib
+rm -f  /usr/lib/libcrashreport.dylib
+rm -f  /usr/lib/libpackageinfo.dylib
+rm -f  /usr/lib/libsymbolicate.dylib
 
 # Cleanup files from the "Core Utilities" package.
-rm -r /usr/bin/[
-rm -r /usr/bin/b2sum
-rm -r /usr/bin/base32
-rm -r /usr/bin/base64
-rm -r /usr/bin/basename
-rm -r /usr/bin/chcon
-rm -r /usr/bin/chown
-rm -r /usr/bin/cksum
-rm -r /usr/bin/comm
-rm -r /usr/bin/csplit
-rm -r /usr/bin/cut
-rm -r /usr/bin/dircolors
-rm -r /usr/bin/du
-rm -r /usr/bin/env
-rm -r /usr/bin/expand
-rm -r /usr/bin/expr
-rm -r /usr/bin/factor
-rm -r /usr/bin/fmt
-rm -r /usr/bin/folders
-rm -r /usr/bin/groups
-rm -r /usr/bin/head
-rm -r /usr/bin/hostid
-rm -r /usr/bin/id
-rm -r /usr/bin/install
-rm -r /usr/bin/join
-rm -r /usr/bin/link
-rm -r /usr/bin/logname
-rm -r /usr/bin/md5sum
-rm -r /usr/bin/mkfifo
-rm -r /usr/bin/mktemp
-rm -r /usr/bin/nice
-rm -r /usr/bin/nl
-rm -r /usr/bin/nohup
-rm -r /usr/bin/nproc
-rm -r /usr/bin/numfmt
-rm -r /usr/bin/od
-rm -r /usr/bin/paste
-rm -r /usr/bin/pathchk
-rm -r /usr/bin/pinky
-rm -r /usr/bin/pr
-rm -r /usr/bin/printenv
-rm -r /usr/bin/printf
-rm -r /usr/bin/ptf
-rm -r /usr/bin/realpath
-rm -r /usr/bin/runcon
-rm -r /usr/bin/seq
-rm -r /usr/bin/sha1sum
-rm -r /usr/bin/sha224sum
-rm -r /usr/bin/sha256sum
-rm -r /usr/bin/sha384sum
-rm -r /usr/bin/sha512sum
-rm -r /usr/bin/shred
-rm -r /usr/bin/shuf
-rm -r /usr/bin/sort
-rm -r /usr/bin/split
-rm -r /usr/bin/statoverride
-rm -r /usr/bin/stdbuf
-rm -r /usr/bin/sum
-rm -r /usr/bin/sync
-rm -r /usr/bin/tac
-rm -r /usr/bin/tail
-rm -r /usr/bin/tee
-rm -r /usr/bin/test
-rm -r /usr/bin/timeout
-rm -r /usr/bin/tr
-rm -r /usr/bin/truncate
-rm -r /usr/bin/tsort
-rm -r /usr/bin/tty
-rm -r /usr/bin/unexpand
-rm -r /usr/bin/uniq
-rm -r /usr/bin/unlink
-rm -r /usr/bin/uptime
-rm -r /usr/bin/users
-rm -r /usr/bin/wc
-rm -r /usr/bin/who
-rm -r /usr/bin/whoami
-rm -r /usr/bin/yes
+rm -f /usr/bin/[
+rm -f /usr/bin/b2sum
+rm -f /usr/bin/base32
+rm -f /usr/bin/base64
+rm -f /usr/bin/basename
+rm -f /usr/bin/chcon
+rm -f /usr/bin/chown
+rm -f /usr/bin/cksum
+rm -f /usr/bin/comm
+rm -f /usr/bin/csplit
+rm -f /usr/bin/cut
+rm -f /usr/bin/dircolors
+rm -f /usr/bin/du
+rm -f /usr/bin/env
+rm -f /usr/bin/expand
+rm -f /usr/bin/expr
+rm -f /usr/bin/factor
+rm -f /usr/bin/fmt
+rm -f /usr/bin/folders
+rm -f /usr/bin/groups
+rm -f /usr/bin/head
+rm -f /usr/bin/hostid
+rm -f /usr/bin/id
+rm -f /usr/bin/install
+rm -f /usr/bin/join
+rm -f /usr/bin/link
+rm -f /usr/bin/logname
+rm -f /usr/bin/md5sum
+rm -f /usr/bin/mkfifo
+rm -f /usr/bin/mktemp
+rm -f /usr/bin/nice
+rm -f /usr/bin/nl
+rm -f /usr/bin/nohup
+rm -f /usr/bin/nproc
+rm -f /usr/bin/numfmt
+rm -f /usr/bin/od
+rm -f /usr/bin/paste
+rm -f /usr/bin/pathchk
+rm -f /usr/bin/pinky
+rm -f /usr/bin/pr
+rm -f /usr/bin/printenv
+rm -f /usr/bin/printf
+rm -f /usr/bin/ptf
+rm -f /usr/bin/realpath
+rm -f /usr/bin/runcon
+rm -f /usr/bin/seq
+rm -f /usr/bin/sha1sum
+rm -f /usr/bin/sha224sum
+rm -f /usr/bin/sha256sum
+rm -f /usr/bin/sha384sum
+rm -f /usr/bin/sha512sum
+rm -f /usr/bin/shred
+rm -f /usr/bin/shuf
+rm -f /usr/bin/sort
+rm -f /usr/bin/split
+rm -f /usr/bin/statoverride
+rm -f /usr/bin/stdbuf
+rm -f /usr/bin/sum
+rm -f /usr/bin/sync
+rm -f /usr/bin/tac
+rm -f /usr/bin/tail
+rm -f /usr/bin/tee
+rm -f /usr/bin/test
+rm -f /usr/bin/timeout
+rm -f /usr/bin/tr
+rm -f /usr/bin/truncate
+rm -f /usr/bin/tsort
+rm -f /usr/bin/tty
+rm -f /usr/bin/unexpand
+rm -f /usr/bin/uniq
+rm -f /usr/bin/unlink
+rm -f /usr/bin/uptime
+rm -f /usr/bin/users
+rm -f /usr/bin/wc
+rm -f /usr/bin/who
+rm -f /usr/bin/whoami
+rm -f /usr/bin/yes
 
 # Cleanup files from the "Adv-Cmds" package.
-rm -r /usr/bin/cap_mkdb
-rm -r /usr/bin/finger
-rm -r /usr/bin/last
-rm -r /usr/bin/locale
-rm -r /usr/bin/ps
+rm -f /usr/bin/cap_mkdb
+rm -f /usr/bin/finger
+rm -f /usr/bin/last
+rm -f /usr/bin/locale
+rm -f /usr/bin/ps
 
 # Cleanup files from the "Basic-Cmds" package.
-rm -r /usr/bin/mesg
-rm -r /usr/bin/uudecode
-rm -r /usr/bin/uuencode
-rm -r /usr/bin/write
+rm -f /usr/bin/mesg
+rm -f /usr/bin/uudecode
+rm -f /usr/bin/uuencode
+rm -f /usr/bin/write
 
 # Cleanup files from the "Bootstrap-Cmds" package.
-rm -r /usr/bin/mig
-rm -r /usr/libexec/migcom
+rm -f /usr/bin/mig
+rm -f /usr/libexec/migcom
 
 # Cleanup files from the "Developer-Cmds" package.
-rm -r /usr/bin/ctags
-rm -r /usr/bin/hexdump
-rm -r /usr/bin/rpcgen
-rm -r /usr/bin/unifdef
+rm -f /usr/bin/ctags
+rm -f /usr/bin/hexdump
+rm -f /usr/bin/rpcgen
+rm -f /usr/bin/unifdef
 
 # Cleanup files from the Extender package.
-rm -r /usr/bin/curl
-rm -r /usr/bin/curl-config
+rm -f /usr/bin/curl
+rm -f /usr/bin/curl-config
 rm -rf /usr/include/curl
-rm -r /usr/lib/libcurl.4.dylib
-rm -r /usr/lib/libcurl.dylib
-rm -r /usr/lib/libcurl.la
-rm -r /usr/lib/pkgconfig/ligcurl.pc
+rm -f /usr/lib/libcurl.4.dylib
+rm -f /usr/lib/libcurl.dylib
+rm -f /usr/lib/libcurl.la
+rm -f /usr/lib/pkgconfig/ligcurl.pc
 rm -rf /Library/Switches/Ext3nderSwitch.bundle
-rm -r /bin/jtoold
+rm -f /bin/jtoold
 rm -rf /private/var/Ext3nder-Installer
 rm -rf /usr/include/nghttp2
-rm -r /usr/lib/libnghttp2.14.dylib
-rm -r /usr/lib/libnghttp2.dylib
-rm -r /usr/lib/libnghttp2.la
-rm -r /usr/lib/pkgconfig/libnghttp2.pc
-rm -r /usr/bin/funzip
-rm -r /usr/bin/unzip
-rm -r /usr/bin/unzipsfx
-rm -r /usr/bin/zip
-rm -r /usr/bin/zipcloak
-rm -r /usr/bin/zipnote
-rm -r /usr/bin/zipsplit
+rm -f /usr/lib/libnghttp2.14.dylib
+rm -f /usr/lib/libnghttp2.dylib
+rm -f /usr/lib/libnghttp2.la
+rm -f /usr/lib/pkgconfig/libnghttp2.pc
+rm -f /usr/bin/funzip
+rm -f /usr/bin/unzip
+rm -f /usr/bin/unzipsfx
+rm -f /usr/bin/zip
+rm -f /usr/bin/zipcloak
+rm -f /usr/bin/zipnote
+rm -f /usr/bin/zipsplit
 
 # Cleanup files from the "File-Cmds" package.
-rm -r /usr/bin/chflags
-rm -r /usr/bin/compress
-rm -r /usr/bin/ipcrm
-rm -r /usr/bin/ipcs
-rm -r /usr/bin/pax
+rm -f /usr/bin/chflags
+rm -f /usr/bin/compress
+rm -f /usr/bin/ipcrm
+rm -f /usr/bin/ipcs
+rm -f /usr/bin/pax
 
 # Cleanup Iconoclasm
 rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 rm -rf /Library/Iconoclasm
 
 # Cleanup files from the "Inet-Utils" package.
-rm -r /usr/bin/dnsdomainname
-rm -r /usr/bin/ftp
-rm -r /usr/bin/hostname
-rm -r /usr/bin/ifconfig
-rm -r /usr/bin/logger
-rm -r /usr/bin/ping
-rm -r /usr/bin/ping6
-rm -r /usr/bin/rcp
-rm -r /usr/bin/rexec
-rm -r /usr/bin/rlogin
-rm -r /usr/bin/rsh
-rm -r /usr/bin/talk
-rm -r /usr/bin/telnet
-rm -r /usr/bin/tftp
-rm -r /usr/bin/traceroute
-rm -r /usr/bin/whois
-rm -r /usr/libexec/ftpd
-rm -r /usr/libexec/inetd
-rm -r /usr/libexec/rexecd
-rm -r /usr/libexec/rlogind
-rm -r /usr/libexec/rshd
-rm -r /usr/libexec/syslogd
-rm -r /usr/libexec/talkd
-rm -r /usr/libexec/telnetd
-rm -r /usr/libexec/tftpd
-rm -r /usr/libexec/uucpd
+rm -f /usr/bin/dnsdomainname
+rm -f /usr/bin/ftp
+rm -f /usr/bin/hostname
+rm -f /usr/bin/ifconfig
+rm -f /usr/bin/logger
+rm -f /usr/bin/ping
+rm -f /usr/bin/ping6
+rm -f /usr/bin/rcp
+rm -f /usr/bin/rexec
+rm -f /usr/bin/rlogin
+rm -f /usr/bin/rsh
+rm -f /usr/bin/talk
+rm -f /usr/bin/telnet
+rm -f /usr/bin/tftp
+rm -f /usr/bin/traceroute
+rm -f /usr/bin/whois
+rm -f /usr/libexec/ftpd
+rm -f /usr/libexec/inetd
+rm -f /usr/libexec/rexecd
+rm -f /usr/libexec/rlogind
+rm -f /usr/libexec/rshd
+rm -f /usr/libexec/syslogd
+rm -f /usr/libexec/talkd
+rm -f /usr/libexec/telnetd
+rm -f /usr/libexec/tftpd
+rm -f /usr/libexec/uucpd
 
 # Cleanup files from the "Network-Cmds" package.
-rm -r /sbin/netstat
-rm -r /sbin/route
-rm -r /usr/libexec/kdumpd
-rm -r /usr/sbin/arp
-rm -r /usr/sbin/ndp
-rm -r /usr/sbin/traceroute6
+rm -f /sbin/netstat
+rm -f /sbin/route
+rm -f /usr/libexec/kdumpd
+rm -f /usr/sbin/arp
+rm -f /usr/sbin/ndp
+rm -f /usr/sbin/traceroute6
 
 # Cleanup files from the XenHTML package.
 rm -rf /usr/include/uaunbox
-rm -r /usr/lib/libuaunbox.dylib
-rm -r /usr/libexec/uaunbox
-rm -r /usr/libexec/uaunboxdlaunch
+rm -f /usr/lib/libuaunbox.dylib
+rm -f /usr/libexec/uaunbox
+rm -f /usr/libexec/uaunboxdlaunch
 rm -rf /private/var/mobile/Library/LockHTML
 rm -rf /private/var/mobile/Library/SBHTML
 rm -rf /Library/Application Support/libGitHubIssues
-rm -r /usr/include/libGitHubIssues.h
-rm -r /usr/lib/libGitHubIssues.dylib
+rm -f /usr/include/libGitHubIssues.h
+rm -f /usr/lib/libGitHubIssues.dylib
 
 #big fat bootstrap motherfucker
 echo "Removing Cydia bootstrap.. (Please pray from here onwards)"
