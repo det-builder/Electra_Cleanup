@@ -114,6 +114,7 @@ rm -f /private/var/mobile/Library/Preferences/ch.rpetri.iconrenamer.plist
 rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
 rm -f /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
 rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.*.plist
+rm -f /private/var/mobile/Library/Preferences/com.irepo.boxy.plist
 rm -f /private/var/mobile/Library/Preferences/com.cydia.Ext3nder.plist
 rm -f /private/var/mobile/Library/Preferences/com.iosblocks.mobiletimer.block.plist
 rm -f /private/var/mobile/Library/Preferences/com.imkpatil.floatingdock.plist
@@ -133,6 +134,7 @@ rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.libertylite.plist
 rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
+rm -f /private/var/mobile/Library/Preferences/com.smokin1337.smartlpm.plist
 rm -f /private/var/mobile/Library/Preferences/com.synnyg.floatydockprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
 rm -f /private/var/mobile/Library/Preferences/crash-reporter.plist
@@ -149,6 +151,7 @@ rm -f /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
 rm -rf /private/var/mobile/Library/Preferences/Moveable
 
 # Cleanup caches and cookies.
+rm -rf /private/var/mobile/Library/Caches/cn.tinyapps.XGPSPro
 rm -rf /private/var/mobile/Library/Caches/com.anemonetheming.anemone
 rm -rf /private/var/mobile/Library/Caches/com.cydia.Ext3nder
 rm -rf /private/var/mobile/Library/Caches/com.exile90.icleanerpro
@@ -158,8 +161,15 @@ rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Caches/io.fabric.sdk.ios.data
 rm -rf /private/var/mobile/Library/Caches/io.haneke
 rm -rf /private/var/mobile/Library/Caches/ru.domo.CocoaTop
-rm -rf /private/var/mobile/Library/Cookies/com.cydia.Ext3nder.binarycookies
-rm -rf /private/var/mobile/Library/Cookies/com.exile90.icleanerpro.binarycookies
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themegroups.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themeidentifiers.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themelist.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themenameoverrides.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themenames.plist
+rm -f  /private/var/mobile/Library/Cookies/cn.tinyapps.XGPSPro.binarycookies
+rm -f  /private/var/mobile/Library/Cookies/com.cydia.Ext3nder.binarycookies
+rm -f  /private/var/mobile/Library/Cookies/com.exile90.icleanerpro.binarycookies
+rm -f  /private/var/mobile/Library/Cookies/com.johncoates.Flex.binarycookies
 
 # Cleanup application support data
 rm -rf /private/var/mobile/Library/Application Support/Flame
