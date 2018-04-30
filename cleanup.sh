@@ -23,7 +23,6 @@ rm -f /.bit_of_fun
 # /var/containers/Bundle/Application
 
 # Cleanup temp type of files
-rm -rf /var/tmp/com.exile90.icleanerpro
 rm -f /var/tmp/cydia.log
 
 # cleanupPotentialManualFiles
@@ -54,7 +53,6 @@ rm -rf /usr/libexec/gnupg/
 rm -rf /usr/share/bigboss/
 rm -rf /usr/share/dpkg/
 rm -rf /usr/share/gnupg/
-rm -rf /usr/share/nano
 rm -rf /usr/share/tabset/
 rm -rf /var/cache/apt/
 rm -rf /var/db/stash/
@@ -65,7 +63,6 @@ rm -rf /var/tweak/
 
 # removeElectraBeta
 echo "Removing electra beta files.."
-rm -rf /Applications/Anemone.app/
 rm -rf /Applications/SafeMode.app/
 rm -f /usr/lib/SBInject.dylib
 rm -rf /usr/lib/SBInject/
@@ -79,7 +76,6 @@ rm -f /usr/lib/SBInject.dylib
 rm -rf /Library/Frameworks/* # This is VERY important to keep the BETAs working
 mkdir /Library/Frameworks/ # Just to be sure
 rm -rf /System/Library/Themes/
-#rm -rf /bootstrap/ # moved to bottom
 rm -rf /Library/Themes/
 rm -f /usr/lib/SBInject.dylib
 rm -rf /Library/MobileSubstrate/*
@@ -90,20 +86,7 @@ rm -f /usr/lib/TweakInject.dylib
 rm -rf /usr/lib/TweakInject/
 rm -rf /Library/TweakInject/
 
-# For who forgot CB. (ehm, me..)
-rm -rf /Applications/circuitbreaker.app/
-rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
-rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
-rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
-rm -f /var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
-rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
-
 # Cleanup custom Apps
-rm -rf /Applications/CocoaTop.app/
-rm -rf /Applications/CrashReporter.app/
-rm -rf /Applications/Extender.app/
-rm -rf /Applications/Filza.app/
-rm -rf /Applications/Flex.app/
 rm -rf /Applications/GameGemiOS.app/
 rm -rf /Applications/GBA4iOS.app/
 rm -rf /Applications/jjjj.app/
@@ -148,74 +131,84 @@ rm -f /private/var/mobile/Library/Preferences/net.tateu.moveable9.profileswitche
 rm -f /private/var/mobile/Library/Preferences/nfcd.plist
 rm -f /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
 rm -f /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
-rm -rf /private/var/mobile/Library/Preferences/Moveable
 
 # Cleanup caches and cookies.
 rm -rf /private/var/mobile/Library/Caches/cn.tinyapps.XGPSPro
-rm -rf /private/var/mobile/Library/Caches/com.anemonetheming.anemone
-rm -rf /private/var/mobile/Library/Caches/com.cydia.Ext3nder
-rm -rf /private/var/mobile/Library/Caches/com.exile90.icleanerpro
-rm -rf /private/var/mobile/Library/Caches/com.johncoates.Flex
 rm -rf /private/var/mobile/Library/Caches/com.saurik.Cydia
-rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Caches/io.fabric.sdk.ios.data
 rm -rf /private/var/mobile/Library/Caches/io.haneke
-rm -rf /private/var/mobile/Library/Caches/ru.domo.CocoaTop
-rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themegroups.plist
-rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themeidentifiers.plist
-rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themelist.plist
-rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themenameoverrides.plist
-rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themenames.plist
 rm -f  /private/var/mobile/Library/Cookies/cn.tinyapps.XGPSPro.binarycookies
-rm -f  /private/var/mobile/Library/Cookies/com.cydia.Ext3nder.binarycookies
-rm -f  /private/var/mobile/Library/Cookies/com.exile90.icleanerpro.binarycookies
-rm -f  /private/var/mobile/Library/Cookies/com.johncoates.Flex.binarycookies
 
 # Cleanup application support data
 rm -rf /private/var/mobile/Library/Application Support/Flame
-rm -rf /private/var/mobile/Library/Application Support/Flex3
 rm -rf /private/var/mobile/Library/Application Support/IconSupport
-rm -rf /private/var/mobile/Library/Application Support/Containers/com.scroublepokemon.filzaelectrocuted
-rm -rf /Library/Application Support/DPUTweakResources
 rm -rf /Library/Application Support/Flame
 rm -rf /Library/Application Support/SpeedOptimize
 
 # Cleanup all the rest of the tweak data not already covered in this script.
 rm -rf /private/var/root
-rm -rf /private/var/mobile/Library/LockPlus
-rm -rf /private/var/mobile/Library/FrontPageCache
 rm -rf /private/var/mobile/Library/Logs/Cydia
-rm -f  /private/var/mobile/Library/Logs/CrashReporter/*.*
 rm -rf /private/var/mobile/Library/Cydia
-rm -rf /private/var/mobile/Library/iCleaner
-rm -rf /private/var/mobile/Library/Filza
-rm -rf /Library/Activator
-rm -rf /Library/LockPlus
 rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
-rm -rf /Library/Switches
-rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
-rm -rf /private/var/mobile/Documents/Flex
-rm -rf /private/var/mobile/Library/Flex3
-rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
-rm -rf /private/var/mobile/Documents/lockplusfonts
-rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
-rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF/
-rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 rm -rf /private/var/mobile/Downloads/Cydia
+
+########################################################################
+#                                                                      #
+# Begin custom tweak uninstall area.                                   #
+#                                                                      #
+########################################################################
+
+# Cleanup files from the "Adv-Cmds" package.
+rm -f /usr/bin/cap_mkdb
+rm -f /usr/bin/finger
+rm -f /usr/bin/last
+rm -f /usr/bin/locale
+rm -f /usr/bin/ps
+
+# Cleanup files from the Anemone package.
+rm -rf /Applications/Anemone.app
+rm -rf /private/var/mobile/Library/Caches/com.anemonetheming.anemone
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themegroups.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themeidentifiers.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themelist.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themenameoverrides.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themenames.plist
+rm -f  /usr/bin/AnemoneOptimizer
+rm -f  /usr/bin/cardump
+rm -f  /usr/bin/recache
 
 # Cleanup files from Applist, AppSync and Appinst
 rm -rf /System/Library/PreferenceBundles/AppList.bundle
 rm -r  /usr/bin/appinst
 rm -r  /usr/bin/asu_inject
 rm -rf /usr/include/AppList
-rm -rf /usr/include/libcrashreport
-rm -rf /usr/include/libpackageinfo
 rm -rf /usr/include/libsymbolicate
 rm -f  /usr/lib/libapplist.dylib
-rm -f  /usr/lib/libcrashreport.dylib
 rm -f  /usr/lib/libpackageinfo.dylib
 rm -f  /usr/lib/libsymbolicate.dylib
+
+# Cleanup files from the "Basic-Cmds" package.
+rm -f /usr/bin/mesg
+rm -f /usr/bin/uudecode
+rm -f /usr/bin/uuencode
+rm -f /usr/bin/write
+
+# Cleanup files from the "Bootstrap-Cmds" package.
+rm -f /usr/bin/mig
+rm -f /usr/libexec/migcom
+
+# Cleanup files from the CircuitBreaker package.
+rm -rf /Applications/circuitbreaker.app/
+rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
+rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
+rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
+rm -f /var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
+rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
+
+# Cleanup files from the CocoaTop app.
+rm -rf /Applications/CocoaTop.app
+rm -rf /private/var/mobile/Library/Caches/ru.domo.CocoaTop
 
 # Cleanup files from the "Core Utilities" package.
 rm -f /usr/bin/[
@@ -296,22 +289,16 @@ rm -f /usr/bin/who
 rm -f /usr/bin/whoami
 rm -f /usr/bin/yes
 
-# Cleanup files from the "Adv-Cmds" package.
-rm -f /usr/bin/cap_mkdb
-rm -f /usr/bin/finger
-rm -f /usr/bin/last
-rm -f /usr/bin/locale
-rm -f /usr/bin/ps
+# Cleanup files from the CrashReporter package.
+rm -rf /Applications/CrashReporter.app
+rm -f  /private/var/mobile/Library/Logs/CrashReporter/*.*
+rm -rf /usr/include/libcrashreport
+rm -rf /usr/include/libpackageinfo
+rm -f  /usr/lib/libcrashreport.dylib
+rm -f  /usr/lib/libpackageinfo.dylib
 
-# Cleanup files from the "Basic-Cmds" package.
-rm -f /usr/bin/mesg
-rm -f /usr/bin/uudecode
-rm -f /usr/bin/uuencode
-rm -f /usr/bin/write
-
-# Cleanup files from the "Bootstrap-Cmds" package.
-rm -f /usr/bin/mig
-rm -f /usr/libexec/migcom
+# Cleanup files from the DetailedPowerUsage package.
+rm -rf /Library/Application Support/DPUTweakResources
 
 # Cleanup files from the "Developer-Cmds" package.
 rm -f /usr/bin/ctags
@@ -342,6 +329,13 @@ rm -f /usr/bin/zip
 rm -f /usr/bin/zipcloak
 rm -f /usr/bin/zipnote
 rm -f /usr/bin/zipsplit
+rm -rf /Applications/Extender.app
+rm -f  /private/var/mobile/Library/Cookies/com.cydia.Ext3nder.binarycookies
+rm -rf /private/var/mobile/Library/Caches/com.cydia.Ext3nder
+
+# Cleanup files from the EzCC, CCSupport packages.
+rm -rf /Library/ControlCenter
+rm -rf /Library/Application Support/CCSupport
 
 # Cleanup files from the "File-Cmds" package.
 rm -f /usr/bin/chflags
@@ -349,6 +343,36 @@ rm -f /usr/bin/compress
 rm -f /usr/bin/ipcrm
 rm -f /usr/bin/ipcs
 rm -f /usr/bin/pax
+
+# Cleanup Filza and its cousins.
+rm -rf /Applications/Filza.app
+rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
+rm -rf /private/var/mobile/Library/Application Support/Containers/com.scroublepokemon.filzaelectrocuted
+rm -rf /private/var/mobile/Library/Filza
+rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
+
+# Cleanup files from the Flex package.
+rm -rf /Applications/Flex.app
+rm -rf /private/var/mobile/Library/Caches/com.johncoates.Flex
+rm -f  /private/var/mobile/Library/Cookies/com.johncoates.Flex.binarycookies
+rm -rf /private/var/mobile/Library/Application Support/Flex3
+rm -rf /private/var/mobile/Documents/Flex
+rm -rf /private/var/mobile/Library/Flex3
+rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
+rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
+
+# Cleanup files from the FrontPage package.
+rm -rf /private/var/mobile/Library/FrontPageCache
+
+# Cleanup files from the iCleaner package.
+rm -rf /var/tmp/com.exile90.icleanerpro
+rm -f  /private/var/mobile/Library/Cookies/com.exile90.icleanerpro.binarycookies
+rm -rf /private/var/mobile/Library/iCleaner
+rm -rf /Library/Activator
+rm -rf /Library/Switches
+rm -rf /Applications/iCleaner.app/
+rm -f  /usr/bin/icleaner
+rm -rf /private/var/mobile/Library/Caches/com.exile90.icleanerpro
 
 # Cleanup Iconoclasm
 rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
@@ -382,6 +406,20 @@ rm -f /usr/libexec/telnetd
 rm -f /usr/libexec/tftpd
 rm -f /usr/libexec/uucpd
 
+# Cleanup files from the Lockplus package.
+rm -rf /private/var/mobile/Library/LockPlus
+rm -rf /Library/LockPlus
+rm -rf /private/var/mobile/Documents/lockplusfonts
+
+# Cleanup files from the Moveable9 package.
+rm -rf /private/var/mobile/Library/Preferences/Moveable
+
+# Cleanup files from the Nano package.
+rm -rf /usr/share/nano
+rm -f /private/etc/nanorc
+rm -f /usr/bin/nano
+rm -f /usr/bin/rnano
+
 # Cleanup files from the "Network-Cmds" package.
 rm -f /sbin/netstat
 rm -f /sbin/route
@@ -389,6 +427,16 @@ rm -f /usr/libexec/kdumpd
 rm -f /usr/sbin/arp
 rm -f /usr/sbin/ndp
 rm -f /usr/sbin/traceroute6
+
+# Cleanup files from the SemiRestore11-Lite package.
+rm -f /usr/bin/SemiRestore11-Lite
+
+# Cleanup files from the wifiFirmwareUpdater & SendTestPackage packages.
+rm -f  /usr/bin/autoflashwifi
+rm -f  /usr/bin/flashwifi
+rm -f  /usr/bin/revertwifi
+rm -f  /usr/bin/stb
+rm -rf /private/var/mobile/updatedWifiFirmware
 
 # Cleanup files from the XenHTML package.
 rm -rf /usr/include/uaunbox
@@ -401,10 +449,15 @@ rm -rf /Library/Application Support/libGitHubIssues
 rm -f /usr/include/libGitHubIssues.h
 rm -f /usr/lib/libGitHubIssues.dylib
 
+########################################################################
+#                                                                      #
+# End custom tweak uninstall area.                                     #
+#                                                                      #
+########################################################################
+
 #big fat bootstrap motherfucker
 echo "Removing Cydia bootstrap.. (Please pray from here onwards)"
 rm -rf /Applications/Cydia.app/
-rm -rf /Applications/iCleaner.app/
 rm -f /bin/bash
 rm -f /bin/bunzip2
 rm -f /bin/bzcat
@@ -436,11 +489,9 @@ rm -f /bin/mktemp
 rm -f /bin/mv
 rm -f /bin/pwd
 rm -f /bin/readlink
-#rm -f /bin/rm #move to bottom?
 rm -f /bin/rmdir
 rm -f /bin/run-parts
 rm -f /bin/sed
-#rm -f /bin/sh #move to bottom?
 rm -f /bin/sleep
 rm -f /bin/stty
 rm -f /bin/su
@@ -462,10 +513,7 @@ rm -f /bin/zless
 rm -f /bin/zmore
 rm -f /bin/znew
 rm -rf /Library/dpkg/
-rm -f /Library/LaunchDaemons/com.openssh.sshd.plist
-rm -f /Library/LaunchDaemons/com.saurik.Cydia.Startup.plist
 rm -rf /private/etc/alternatives/
-rm -f /private/etc/nanorc
 rm -rf /private/etc/apt/
 rm -rf /private/etc/default/
 rm -rf /private/etc/dpkg/
@@ -524,12 +572,7 @@ rm -f /usr/bin/diff
 rm -f /usr/bin/diff3
 rm -f /usr/bin/dirname
 rm -f /usr/bin/GameGemNative
-rm -f /usr/bin/icleaner
-rm -f /usr/bin/nano
-rm -f /usr/bin/rnano
-rm -f /usr/bin/recache
 rm -f /usr/bin/killall
-rm -f /usr/bin/SemiRestore11-Lite
 rm -f /usr/bin/dpkg
 rm -f /usr/bin/dpkg-architecture
 rm -f /usr/bin/dpkg-buildflags
@@ -607,7 +650,6 @@ rm -f /usr/bin/time
 rm -f /usr/bin/toe
 rm -f /usr/bin/tput
 rm -f /usr/bin/tset
-#rm -f /usr/bin/uicache # Remove to bottom?
 rm -f /usr/bin/uiduid
 rm -f /usr/bin/uiopen
 rm -f /usr/bin/unlzma
@@ -726,8 +768,6 @@ rm -f /var/run/jailbreakd.pid
 echo "Removing possible topanga junk (just to make sure you can rejailbreak in case of emergency)"
 rm -f /bin/bzip2_64
 rm -f /bin/hostname
-rm -f /Library/LaunchDaemons/0.reload.plist
-rm -f /Library/LaunchDaemons/dropbear.plist
 rm -f /Library/MobileSubstrate/DynamicLibraries/patcyh.plist
 rm -f /Library/test_inject_springboard.cy
 rm -f /private/etc/alternatives/README
