@@ -179,7 +179,6 @@ rm -f  /usr/bin/cardump
 rm -f  /usr/bin/recache
 
 # Cleanup files from Applist, AppSync and Appinst
-rm -rf /System/Library/PreferenceBundles/AppList.bundle
 rm -r  /usr/bin/appinst
 rm -r  /usr/bin/asu_inject
 rm -rf /usr/include/AppList
@@ -187,6 +186,7 @@ rm -rf /usr/include/libsymbolicate
 rm -f  /usr/lib/libapplist.dylib
 rm -f  /usr/lib/libpackageinfo.dylib
 rm -f  /usr/lib/libsymbolicate.dylib
+rm -rf /System/Library/PreferenceBundles/AppList.bundle
 
 # Cleanup files from the "Basic-Cmds" package.
 rm -f /usr/bin/mesg
@@ -198,13 +198,17 @@ rm -f /usr/bin/write
 rm -f /usr/bin/mig
 rm -f /usr/libexec/migcom
 
+# Cleanup files from the Boxy package.
+rm -rf /private/var/mobile/Documents/com.irepo.boxy3
+rm -r  /private/var/mobile/Documents/Boxy3.log
+
 # Cleanup files from the CircuitBreaker package.
 rm -rf /Applications/circuitbreaker.app/
-rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
-rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
-rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
-rm -f /var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
-rm -f /var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
+rm -f  /private/var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
 
 # Cleanup files from the CocoaTop app.
 rm -rf /Applications/CocoaTop.app
@@ -332,6 +336,7 @@ rm -f /usr/bin/zipsplit
 rm -rf /Applications/Extender.app
 rm -f  /private/var/mobile/Library/Cookies/com.cydia.Ext3nder.binarycookies
 rm -rf /private/var/mobile/Library/Caches/com.cydia.Ext3nder
+rm -rf /private/var/mobile/Documents/Ext3nder
 
 # Cleanup files from the EzCC, CCSupport packages.
 rm -rf /Library/ControlCenter
@@ -353,15 +358,16 @@ rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8
 
 # Cleanup files from the Flex package.
 rm -rf /Applications/Flex.app
+rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
+rm -rf /private/var/mobile/Documents/Flex
+rm -rf /private/var/mobile/Library/Application Support/Flex3
 rm -rf /private/var/mobile/Library/Caches/com.johncoates.Flex
 rm -f  /private/var/mobile/Library/Cookies/com.johncoates.Flex.binarycookies
-rm -rf /private/var/mobile/Library/Application Support/Flex3
-rm -rf /private/var/mobile/Documents/Flex
 rm -rf /private/var/mobile/Library/Flex3
 rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
-rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
 
 # Cleanup files from the FrontPage package.
+rm -r  /private/var/mobile/Documents/FrontPage.plist
 rm -rf /private/var/mobile/Library/FrontPageCache
 
 # Cleanup files from the iCleaner package.
