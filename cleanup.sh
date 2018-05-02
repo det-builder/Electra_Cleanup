@@ -37,7 +37,6 @@ rm -rf /etc/alternatives/
 rm -rf /etc/apt/
 rm -rf /etc/dpkg/
 rm -rf /etc/pam.d/
-rm -rf /etc/profile.d/
 rm -rf /etc/ssh/
 rm -f /etc/wgetrc
 rm -rf /usr/include/
@@ -178,6 +177,18 @@ rm -f  /usr/bin/AnemoneOptimizer
 rm -f  /usr/bin/cardump
 rm -f  /usr/bin/recache
 
+# Cleanup files from the "APT 0.7 Strict" package.
+rm -r  /usr/bin/apt
+rm -r  /usr/bin/apt-cache
+rm -r  /usr/bin/apt-cdrom
+rm -r  /usr/bin/apt-config
+rm -r  /usr/bin/apt-extracttemplates
+rm -r  /usr/bin/apt-ftparchive
+rm -r  /usr/bin/apt-get
+rm -r  /usr/bin/apt-mark
+rm -r  /usr/bin/apt-sortpkgs
+rm -rf /usr/include/apt-pkg
+
 # Cleanup files from Applist, AppSync and Appinst
 rm -r  /usr/bin/appinst
 rm -r  /usr/bin/asu_inject
@@ -194,6 +205,33 @@ rm -f /usr/bin/uudecode
 rm -f /usr/bin/uuencode
 rm -f /usr/bin/write
 
+# Cleanup files from the "Berkley DB" package.
+rm -f /usr/bin/dbsql
+rm -f /usr/bin/db_archive
+rm -f /usr/bin/db_checkpoint
+rm -f /usr/bin/db_deadlock
+rm -f /usr/bin/db_dump
+rm -f /usr/bin/db_hotbackup
+rm -f /usr/bin/db_load
+rm -f /usr/bin/db_log_verify
+rm -f /usr/bin/db_printlog
+rm -f /usr/bin/db_recover
+rm -f /usr/bin/db_replicate
+rm -f /usr/bin/db_sql_codegen
+rm -f /usr/bin/db_stat
+rm -f /usr/bin/db_tuner
+rm -f /usr/bin/db_upgrade
+rm -f /usr/bin/db_verify
+rm -f /usr/include/db.h
+rm -f /usr/include/db_cxx.h
+rm -f /usr/include/dbsql.h
+rm -f /usr/lib/libdb-6.2.dylib
+rm -f /usr/lib/libdb-6.dylib
+rm -f /usr/lib/libdb.dylib
+rm -f /usr/lib/libdb_sql-6.2.dylib
+rm -f /usr/lib/libdb_sql-6.dylib
+rm -f /usr/lib/libdb_sql.dylib
+
 # Cleanup files from the "Bootstrap-Cmds" package.
 rm -f /usr/bin/mig
 rm -f /usr/libexec/migcom
@@ -201,6 +239,12 @@ rm -f /usr/libexec/migcom
 # Cleanup files from the Boxy package.
 rm -rf /private/var/mobile/Documents/com.irepo.boxy3
 rm -r  /private/var/mobile/Documents/Boxy3.log
+
+# Cleanup files from the bzip2 package.
+rm -f /bin/bunzip2
+rm -f /bin/bzcat
+rm -f /bin/bzip2
+rm -f /bin/bzip2recover
 
 # Cleanup files from the CircuitBreaker package.
 rm -rf /Applications/circuitbreaker.app/
@@ -215,6 +259,7 @@ rm -rf /Applications/CocoaTop.app
 rm -rf /private/var/mobile/Library/Caches/ru.domo.CocoaTop
 
 # Cleanup files from the "Core Utilities" package.
+rm -rf /etc/profile.d/
 rm -f /usr/bin/[
 rm -f /usr/bin/b2sum
 rm -f /usr/bin/base32
@@ -339,8 +384,15 @@ rm -rf /private/var/mobile/Library/Caches/com.cydia.Ext3nder
 rm -rf /private/var/mobile/Documents/Ext3nder
 
 # Cleanup files from the EzCC, CCSupport packages.
-rm -rf /Library/ControlCenter
 rm -rf /Library/Application Support/CCSupport
+rm -rf /Library/ControlCenter
+
+# Cleanup files from the "File" package.
+rm -r /usr/bin/file
+rm -r /usr/inlude/magic.h
+rm -r /usr/lib/libmagic.1.dylib
+rm -r /usr/lib/ligmagic.dylib
+rm -r /usr/share/misc/magic.mgc
 
 # Cleanup files from the "File-Cmds" package.
 rm -f /usr/bin/chflags
@@ -412,6 +464,16 @@ rm -f /usr/libexec/telnetd
 rm -f /usr/libexec/tftpd
 rm -f /usr/libexec/uucpd
 
+# Cleanup files from the "iPhone Firmware (/sbin)" package.
+rm -f /sbin/fsck
+rm -f /sbin/fsck_hfs
+rm -f /sbin/fstyp
+rm -f /sbin/fstyp_hfs
+rm -f /sbin/mount
+rm -f /sbin/mount_hfs
+rm -f /sbin/newfs_hfs
+rm -f /usr/sbin/nvram
+
 # Cleanup files from the Lockplus package.
 rm -rf /private/var/mobile/Library/LockPlus
 rm -rf /Library/LockPlus
@@ -436,6 +498,18 @@ rm -f /usr/sbin/traceroute6
 
 # Cleanup files from the SemiRestore11-Lite package.
 rm -f /usr/bin/SemiRestore11-Lite
+
+# Cleanup files from the "Sudo" package.
+rm -r  /etc/sudoers
+rm -rf /etc/sudoers.d
+rm -r  /usr/bin/sudo
+rm -r  /usr/bin/sudoedit
+rm -r  /usr/bin/sudoreplay
+rm -r  /usr/include/sudo_plugin.h
+rm -rf /usr/libexec/sudo
+rm -r  /usr/sbin/visudo
+rm -rf /private/var/db/sudo
+rm -rf /private/var/run/sudo
 
 # Cleanup files from the wifiFirmwareUpdater & SendTestPackage packages.
 rm -f  /usr/bin/autoflashwifi
@@ -465,10 +539,6 @@ rm -f /usr/lib/libGitHubIssues.dylib
 echo "Removing Cydia bootstrap.. (Please pray from here onwards)"
 rm -rf /Applications/Cydia.app/
 rm -f /bin/bash
-rm -f /bin/bunzip2
-rm -f /bin/bzcat
-rm -f /bin/bzip2
-rm -f /bin/bzip2recover
 rm -f /bin/cat
 rm -f /bin/chgrp
 rm -f /bin/chmod
@@ -557,22 +627,6 @@ rm -f /usr/bin/cfversion
 rm -f /usr/bin/clear
 rm -f /usr/bin/cmp
 rm -f /usr/bin/c_rehash
-rm -f /usr/bin/dbsql
-rm -f /usr/bin/db_archive
-rm -f /usr/bin/db_checkpoint
-rm -f /usr/bin/db_deadlock
-rm -f /usr/bin/db_dump
-rm -f /usr/bin/db_hotbackup
-rm -f /usr/bin/db_load
-rm -f /usr/bin/db_log_verify
-rm -f /usr/bin/db_printlog
-rm -f /usr/bin/db_recover
-rm -f /usr/bin/db_replicate
-rm -f /usr/bin/db_sql_codegen
-rm -f /usr/bin/db_stat
-rm -f /usr/bin/db_tuner
-rm -f /usr/bin/db_upgrade
-rm -f /usr/bin/db_verify
 rm -f /usr/bin/df
 rm -f /usr/bin/diff
 rm -f /usr/bin/diff3
@@ -635,6 +689,7 @@ rm -f /usr/bin/ncurses5-config
 rm -f /usr/bin/openssl
 rm -f /usr/bin/pagesize
 rm -f /usr/bin/passwd
+rm -f /usr/bin/pincrush
 rm -f /usr/bin/renice
 rm -f /usr/bin/reset
 rm -f /usr/bin/sbdidlaunch
@@ -690,12 +745,6 @@ rm -f /usr/lib/libcrypto.1.0.0.dylib
 rm -f /usr/lib/libcrypto.a
 rm -f /usr/lib/libcrypto.dylib
 rm -f /usr/lib/libcurses.a
-rm -f /usr/lib/libdb-6.2.dylib
-rm -f /usr/lib/libdb-6.dylib
-rm -f /usr/lib/libdb.dylib
-rm -f /usr/lib/libdb_sql-6.2.dylib
-rm -f /usr/lib/libdb_sql-6.dylib
-rm -f /usr/lib/libdb_sql.dylib
 rm -f /usr/lib/libdpkg.a
 rm -f /usr/lib/libdpkg.la
 rm -f /usr/lib/libform.a
@@ -708,9 +757,11 @@ rm -f /usr/lib/libncurses.a
 rm -f /usr/lib/libncurses_g.a
 rm -f /usr/lib/libpanel.a
 rm -f /usr/lib/libpanel_g.a
+rm -f /usr/lib/librocketbootstrap.dylib
 rm -f /usr/lib/libssl.1.0.0.dylib
 rm -f /usr/lib/libssl.a
 rm -f /usr/lib/libssl.dylib
+rm -f /usr/lib/libprefs.dylib
 rm -f /usr/lib/terminfo
 rm -rf /usr/lib/bash/
 rm -rf /usr/lib/engines/*
@@ -727,6 +778,8 @@ rm -rf /usr/libexec/apt/
 rm -rf /usr/libexec/cydia/
 rm -rf /usr/libexec/dpkg/
 rm -rf /usr/libexec/gnupg/
+rm -r /usr/libexec/_rocketd_reenable
+rm -r /usr/libexec/rocketd
 rm -rf /usr/local/lib/*
 rm -f /usr/sbin/ac
 rm -f /usr/sbin/accton
