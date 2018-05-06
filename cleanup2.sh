@@ -58,8 +58,9 @@ rm -rf /electra
 rm -rf /etc/apt
 rm -rf /etc/default
 rm -rf /Library/dpkg
-rm -rf /Library/LaunchDaemons/*
-rm -rf /Library/MobileSubstrate/*
+rm -rf /Library/Frameworks/*
+rm -rf /Library/LaunchDaemons
+rm -rf /Library/MobileSubstrate
 rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
 rm -rf /Library/Themes
@@ -69,6 +70,7 @@ rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
 rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
+rm -rf /var/root/Application Support/*
 rm -rf /var/root/Library/Caches/*
 rm -rf /var/tmp/*
 
@@ -139,6 +141,9 @@ rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.pli
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.smartlpm.plist
 rm -f /private/var/mobile/Library/Preferences/com.synnyg.floatydockprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
+rm -f /private/var/mobile/Library/Preferences/com.zestlabs.reformx.current.plist
+rm -f /private/var/mobile/Library/Preferences/com.zestlabs.reformx.plist
+rm -f /private/var/mobile/Library/Preferences/com.zx.GPSCheatData.plist
 rm -f /private/var/mobile/Library/Preferences/crash-reporter.plist
 rm -f /private/var/mobile/Library/Preferences/jp.ashikase.crashreporter.scanner.plist
 rm -f /private/var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
@@ -272,6 +277,7 @@ rm -rf /usr/lib/bash
 # Cleanup files from the Boxy package.
 rm -rf /private/var/mobile/Documents/com.irepo.boxy3
 rm -r  /private/var/mobile/Documents/Boxy3.log
+rm -rm /usr/lib/TweakInject/Boxy_Main.bundle
 
 # Cleanup files from the bzip2 package.
 rm -f /bin/bunzip2
@@ -489,8 +495,8 @@ rm -f /usr/bin/sdiff
 
 # Cleanup files from the Extender package.
 rm -rf /Applications/Extender.app
-rm -rf /Library/Switches/Ext3nderSwitch.bundle
 rm -f  /bin/jtoold
+rm -rf /Library/Switches/Ext3nderSwitch.bundle
 rm -rf /private/var/Ext3nder-Installer
 rm -rf /private/var/mobile/Documents/Ext3nder
 
@@ -552,6 +558,9 @@ rm -f  /usr/bin/gpgv
 rm -rf /usr/libexec/gnupg
 rm -rf /usr/share/gnupg
 
+# Cleanup files from the "GPSCheat" package.
+rm -rf /Library/Switches/GPSCheatSwitch.bundle
+
 # Cleanup files from the "Grep" package.
 rm -f /bin/egrep
 rm -f /bin/fgrep
@@ -576,7 +585,8 @@ rm -f /bin/znew
 # Cleanup files from the iCleaner package.
 rm -rf /Applications/iCleaner.app
 rm -rf /Library/Activator
-rm -rf /Library/Switches
+rm -rf /Library/Switches/ICClean.bundle
+rm -rf /Library/Switches/ICCleanNP.bundle
 rm -rf /private/var/mobile/Library/iCleaner
 rm -f  /usr/bin/icleaner
 rm -rf /var/tmp/com.exile90.icleanerpro
@@ -584,6 +594,9 @@ rm -rf /var/tmp/com.exile90.icleanerpro
 # Cleanup files from the "Iconoclasm" package.
 rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 rm -rf /Library/Iconoclasm
+
+# Cleanup files from the "Iconsupport" package.
+rm -rf /Library/Application Support/IconSupport
 
 # Cleanup files from the "Inet-Utils" package.
 rm -f /usr/bin/dnsdomainname
@@ -751,6 +764,10 @@ rm -f /usr/lib/libprefs.dylib
 # Cleanup files from the "Profile Directory" package.
 rm -f  /etc/profile
 rm -rf /etc/profile.d
+
+# Cleanup files from the "ReformX" package.
+rm -rf /Applications/ReformX.app
+rm -rf /Library/Application Support/ReformX
 
 # Cleanup files from the "Rocketbootstrap" package.
 rm -f /usr/include/rocketbootstrap.h
