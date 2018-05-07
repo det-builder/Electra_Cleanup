@@ -64,7 +64,7 @@ rm -rf /Library/MobileSubstrate
 rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
 rm -rf /Library/Themes
-rm -rf /usr/include/*
+rm -rf /usr/include  # TODO - Confirm this directory is supposed to be here!!
 rm -rf /usr/lib/apt
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
@@ -129,6 +129,7 @@ rm -f /private/var/mobile/Library/Preferences/com.junesiphone.frontpage.plist
 rm -f /private/var/mobile/Library/Preferences/com.junesiphone.lockplus.plist
 rm -f /private/var/mobile/Library/Preferences/com.justinpetkovic.youtubetools.plist
 rm -f /private/var/mobile/Library/Preferences/com.matchstic.xenhtml.plist
+rm -f /private/var/mobile/Library/Preferences/com.oly.xb-ccmodules.plist
 rm -f /private/var/mobile/Library/Preferences/com.pixelfiredev.libcolorpicker.plist
 rm -f /private/var/mobile/Library/Preferences/com.rishanan.springpref.plist
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
@@ -144,10 +145,12 @@ rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedP
 rm -f /private/var/mobile/Library/Preferences/com.zestlabs.reformx.current.plist
 rm -f /private/var/mobile/Library/Preferences/com.zestlabs.reformx.plist
 rm -f /private/var/mobile/Library/Preferences/com.zx.GPSCheatData.plist
+rm -f /private/var/mobile/Library/Preferences/com.zx.GPSCheatSettings.plist
 rm -f /private/var/mobile/Library/Preferences/crash-reporter.plist
 rm -f /private/var/mobile/Library/Preferences/jp.ashikase.crashreporter.scanner.plist
-rm -f /private/var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
 rm -f /private/var/mobile/Library/Preferences/net.85819.ios.OTRLocation.plist
+rm -f /private/var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
+rm -f /private/var/mobile/Library/Preferences/net.limneos.nfcwriter.license
 rm -f /private/var/mobile/Library/Preferences/net.r-ch.iconoclasm.plist
 rm -f /private/var/mobile/Library/Preferences/net.tateu.debkeeper.plist
 rm -f /private/var/mobile/Library/Preferences/net.tateu.moveable9.plist
@@ -170,6 +173,17 @@ rm -f /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.pli
 # Begin custom tweak uninstall area.                                   #
 #                                                                      #
 ########################################################################
+
+# Cleanup files from the "7-zip (POSIX)" package.
+rm -f  /usr/bin/7z
+rm -f  /usr/bin/7za
+rm -f  /usr/lib/p7zip/7z
+rm -f  /usr/lib/p7zip/7z.so
+rm -f  /usr/lib/p7zip/7zCon.sfx
+rm -f  /usr/lib/p7zip/7za
+rm -f  /usr/lib/p7zip/Codecs/Rar.so
+rm -rf /usr/lib/p7zip/Codecs
+rm -rf /usr/lib/p7zip
 
 # Cleanup files from the "Adv-Cmds" package.
 rm -f /usr/bin/cap_mkdb
@@ -227,6 +241,15 @@ rm -rf /usr/share/doc
 rm -rf /var/cache/apt
 rm -rf /var/lib/apt
 rm -rf /var/log/apt
+
+# Cleanup files from the "Assuan" package.
+rm -f  /usr/bin/libassuan-config
+rm -f  /usr/include/assuan.h
+rm -f  /usr/lib/libassuan.0.dylib
+rm -f  /usr/lib/libassuan.dylib
+rm -f  /usr/lib/libassuan.la
+rm -rf /usr/share/aclocal
+rm -f  /usr/share/aclocal/libassuan.m4
 
 # Cleanup files from the "Basic-Cmds" package.
 rm -f /usr/bin/mesg
@@ -550,6 +573,76 @@ rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Pat
 rm -r  /private/var/mobile/Documents/FrontPage.plist
 rm -rf /private/var/mobile/Library/FrontPageCache
 
+# Cleanup files from the "Gawk" package.
+rm -f  /etc/profile.d/gawk.csh
+rm -f  /etc/profile.d/gawk.sh
+rm -f  /usr/bin/awk
+rm -f  /usr/bin/gawk
+rm -f  /usr/include/gawkapi.h
+rm -rf /usr/lib/gawk
+rm -rf /usr/libexec/awk
+rm -rf /usr/share/awk
+
+# Cleanup files from the "GIT" package.
+rm -f  /usr/bin/git
+rm -f  /usr/bin/git-cvsserver
+rm -f  /usr/bin/git-receive-pack
+rm -f  /usr/bin/git-shell
+rm -f  /usr/bin/git-upload-archive
+rm -f  /usr/bin/gitk
+rm -rf /usr/libexec/git-core
+rm -rf /usr/share/git-core
+rm -rf /usr/share/gitk
+
+# Cleanup files from the "GNU Cryptography" package.
+rm -f  /usr/bin/dumpsexp
+rm -f  /usr/bin/hmac256
+rm -f  /usr/bin/libgcryptconfig
+rm -f  /usr/bin/mpicalc
+rm -f  /usr/include/gcrypt.h
+rm -f  /usr/lib/libgcrypt.20.dylib
+rm -f  /usr/lib/libgcrypt.dylib
+rm -f  /usr/lib/libgcrypt.la
+rm -rf /usr/share/aclocal
+rm -f  /usr/share/aclocal/libgcrypt.m4
+
+# Cleanup files from the "GNUPG Errors" package.
+rm -f  /usr/bin/gpg-error
+rm -f  /usr/bin/gpg-error-config
+rm -f  /usr/include/gpg-error.h
+rm -f  /usr/include/gpgrt.h
+rm -f  /usr/lib/libgpg-error.0.dylib
+rm -f  /usr/lib/libgpg-error.dylib
+rm -f  /usr/lib/libgpg-error.la
+rm -rf /usr/share/aclocal
+rm -f  /usr/share/aclocal/gpg-error.m4
+rm -rf /usr/share/common-lisp
+rm -rf /usr/share/libgpg-error
+rm -f  /usr/share/libgpg-error/errorref.txt
+
+# Cleanup files from the "GnuPG 2" package.
+rm -f  /usr/bin/dirmngr
+rm -f  /usr/bin/dirmngr-client
+rm -f  /usr/bin/gpg-agent
+rm -f  /usr/bin/gpg-connect-agent
+rm -f  /usr/bin/gpg2
+rm -f  /usr/bin/gpgconf
+rm -f  /usr/bin/gpgparsemail
+rm -f  /usr/bin/gpgscm
+rm -f  /usr/bin/gpgsm
+rm -f  /usr/bin/gpgtar
+rm -f  /usr/bin/gpgv2
+rm -f  /usr/bin/kbxutil
+rm -f  /usr/bin/watchgnupg
+rm -f  /usr/libexec/gpg-check-pattern
+rm -f  /usr/libexec/gpg-preset-passphrase
+rm -f  /usr/libexec/gpg-protect-tool
+rm -f  /usr/libexec/gpg-wks-client
+rm -f  /usr/libexec/scdaemon
+rm -f  /usr/sbin/addgnupghome
+rm -f  /usr/sbin/applygnupgdefaults
+rm -rf /usr/share/gnupg
+
 # Cleanup files from the "GNU Privacy Guard" package.
 rm -f  /usr/bin/gpg
 rm -f  /usr/bin/gpg-zip
@@ -636,6 +729,22 @@ rm -f /sbin/mount_hfs
 rm -f /sbin/newfs_hfs
 rm -f /usr/sbin/nvram
 
+# Cleanup files from the "KSBA" package.
+rm -f  /usr/bin/ksba-config
+rm -f  /usr/include/ksba.halt
+rm -f  /usr/lib/libksba.8.dylib
+rm -f  /usr/lib/libksba.dylib
+rm -f  /usr/lib/libksba.la
+rm -rf /usr/share/aclocal
+rm -f  /usr/share/aclocal/ksba.m4
+
+
+# Cleanup files from the "less" package.
+rm -f /usr/bin/less
+rm -f /usr/bin/lessecho
+rm -f /usr/bin/lesskey
+rm -f /usr/bin/more
+
 # Cleanup files from the "libColorPicker" package.
 rm -f  /usr/lib/libcolorpicker.dylib
 
@@ -654,10 +763,20 @@ rm -f  /usr/lib/libpackageinfo.dylib
 rm -rf /usr/include/libsymbolicate
 rm -f  /usr/lib/libsymbolicate.dylib
 
+# Cleanup files from the "Link Identity Editor" package.
+rm -f /usr/bin/ldid
+
 # Cleanup files from the "Lockplus" package.
 rm -rf /private/var/mobile/Library/LockPlus
 rm -rf /Library/LockPlus
 rm -rf /private/var/mobile/Documents/lockplusfonts
+
+# Cleanup files from the "lsof" package.
+rm -f /usr/sbin/lsof
+
+# Cleanup files from the "make" package.
+rm -f /usr/bin/make
+rm -f /usr/include/gnumake.h
 
 # Cleanup files from the "Moveable9" package.
 rm -rf /private/var/mobile/Library/Preferences/Moveable
@@ -714,6 +833,19 @@ rm -f  /usr/lib/terminfo
 rm -rf /usr/share/tabset
 rm -rf /usr/share/terminfo
 
+# Cleanup files from the "New GNU Portable Threads" package.
+rm -f  /usr/bin/npth-config
+rm -f  /usr/include/npth.h
+rm -f  /usr/lib/libnpth.0.dylib
+rm -f  /usr/lib/libnpth.dylib
+rm -f  /usr/lib/libnpth.la
+rm -rf /usr/share/aclocal
+rm -f  /usr/share/aclocal/npth.m4
+
+# Cleanup files from the "NFCWriter" package.
+rm -rf /Applications/NFCWriter.app
+rm -f  /usr/lib/NFCWritPass.dylib
+
 # Cleanup files from the "Nghttp2" package.
 rm -rf /usr/include/nghttp2
 rm -f  /usr/lib/libnghttp2.14.dylib
@@ -754,6 +886,9 @@ rm -r  /usr/lib/pkgconfig/libssl.pc
 rm -r  /usr/lib/pkgconfig/openssl.pc
 rm -rf /usr/lib/ssl
 
+# Cleanup files from the "Patch" package.
+rm -f /usr/bin/patch
+
 # Cleanup files from the "Pincrush" package.
 rm -f /usr/bin/pincrush
 
@@ -776,6 +911,13 @@ rm -f /usr/lib/librocketbootstrap.dylib
 rm -r /usr/libexec/_rocketd_reenable
 rm -r /usr/libexec/rocketd
 
+# Cleanup files from the "Rsync" package.
+rm -f /usr/bin/rsync
+
+# Cleanup files from the "Screen" package.
+rm -f /usr/bin/screen
+rm -rf /usr/share/screen
+
 # Cleanup files from the "Sed" package.
 rm -f /bin/sed
 
@@ -791,6 +933,11 @@ rm -f /usr/bin/renice
 rm -f /usr/bin/script
 rm -f /usr/bin/time
 rm -f /usr/bin/which
+
+# Cleanup files from the "Socket Cat" package.
+rm -f /usr/bin/filan
+rm -f /usr/bin/procan
+rm -f /usr/bin/socat
 
 # Cleanup files from the "Substitute" package.
 rm -f /usr/lib/libsubstitute.0.dylib
@@ -849,6 +996,11 @@ rm -f /usr/libexec/rmt
 # Cleanup files from the "Tech Support Framework" package.
 rm -rf /Library/Frameworks/TechSupport.framework
 
+# Cleanup files from the "Top" package.
+rm -f /usr/bin/top
+rm -f /usr/include/libtop.h
+rm -f /usr/lib/libtop.a
+
 # Cleanup files from the "Tweak Injector" package.
 rm -rf /Applications/SafeMode.app
 rm -rf /Library/TweakInject
@@ -865,10 +1017,33 @@ rm -f /usr/bin/sbreload
 rm -f /usr/bin/uiduid
 rm -f /usr/bin/uiopen
 
+# Cleanup files from the "Unrar" package.
+rm -f /usr/bin/unrar
+
 # Cleanup files from the "Unzip" package.
 rm -f /usr/bin/funzip
 rm -f /usr/bin/unzip
 rm -f /usr/bin/unzipsfx
+
+# Cleanup files from the "UUID Generator" package.
+rm -f /usr/bin/uuid
+rm -f /usr/bin/uuid-config
+rm -f /usr/include/uuid.h
+rm -f /usr/lib/libuuid.16.dylib
+rm -f /usr/lib/libuuid.dylib
+rm -f /usr/lib/pkgconfig/uuid.pc
+
+# Cleanup files from the "Vi IMproved" package.
+rm -f  /usr/bin/ex
+rm -f  /usr/bin/rview
+rm -f  /usr/bin/rvim
+rm -f  /usr/bin/vi
+rm -f  /usr/bin/view
+rm -f  /usr/bin/vim
+rm -f  /usr/bin/vimdiff
+rm -f  /usr/bin/vimtutor
+rm -f  /usr/bin/xxd
+rm -rf /usr/share/vim
 
 # Cleanup files from the "WGet" package.
 rm -f /etc/wgetrc
