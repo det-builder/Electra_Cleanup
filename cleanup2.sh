@@ -213,7 +213,7 @@ rm -r /usr/bin/asu_inject
 # Cleanup files from the "APT 0.7 (apt-key)" package.
 rm -f /usr/bin/apt-key
 
-# Cleanup files from the "APT 0.7 Strict" package.
+# Cleanup files from the "APT 1.4 Strict" package.
 rm -r  /usr/bin/apt
 rm -r  /usr/bin/apt-cache
 rm -r  /usr/bin/apt-cdrom
@@ -223,9 +223,13 @@ rm -r  /usr/bin/apt-ftparchive
 rm -r  /usr/bin/apt-get
 rm -r  /usr/bin/apt-mark
 rm -r  /usr/bin/apt-sortpkgs
-rm -rf /usr/include/apt-pkg
 
-# Cleanup files from the "APT 0.7 Strict (lib)" package.
+# Cleanup files from the "APT 1.4 Strict (lib)" package.
+rm -f  /etc/apt/apt.conf.d
+rm -f  /etc/apt/preferences.d
+rm -f  /etc/apt/sources.list.d
+rm -f  /etc/apt/trusted/gpg.d
+rm -rf /usr/lib/apt
 rm -f  /usr/lib/libapt-inst.2.0.0.dylib
 rm -f  /usr/lib/libapt-inst.2.0.dylib
 rm -f  /usr/lib/libapt-inst.dylib
