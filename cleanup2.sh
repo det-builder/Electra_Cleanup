@@ -58,13 +58,14 @@ rm -rf /electra
 rm -rf /etc/apt
 rm -rf /etc/default
 rm -rf /Library/dpkg
+rm -rf /Library/ControlCenter
 rm -rf /Library/Frameworks/*
 rm -rf /Library/LaunchDaemons
 rm -rf /Library/MobileSubstrate
 rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
 rm -rf /Library/Themes
-rm -rf /usr/include  # TODO - Confirm this directory is supposed to be here!!
+rm -rf /usr/include
 rm -rf /usr/lib/apt
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
@@ -942,6 +943,10 @@ rm -f /usr/bin/which
 rm -f /usr/bin/filan
 rm -f /usr/bin/procan
 rm -f /usr/bin/socat
+
+# Cleanup files from the "SSH Toggle and Port" package.
+rm -rf /Library/ControlCenter/Bundles/SSHonCC.bundle
+rm -f  /usr/bin/SSHswitch
 
 # Cleanup files from the "Substitute" package.
 rm -f /usr/lib/libsubstitute.0.dylib
