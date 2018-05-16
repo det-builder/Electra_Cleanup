@@ -142,7 +142,12 @@ rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.smartlpm.plist
 rm -f /private/var/mobile/Library/Preferences/com.synnyg.floatydockprefs.plist
+rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
+rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
+rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
+rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
+rm -f /private/var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
 rm -f /private/var/mobile/Library/Preferences/com.zestlabs.reformx.current.plist
 rm -f /private/var/mobile/Library/Preferences/com.zestlabs.reformx.plist
 rm -f /private/var/mobile/Library/Preferences/com.zx.GPSCheatData.plist
@@ -316,11 +321,6 @@ rm -f /bin/bzip2recover
 
 # Cleanup files from the CircuitBreaker package.
 rm -rf /Applications/circuitbreaker.app/
-rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
-rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
-rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
-rm -f  /private/var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
-rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
 
 # Cleanup files from the CCSupport package.
 rm -rf /Library/Application Support/CCSupport
