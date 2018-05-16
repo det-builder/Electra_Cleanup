@@ -159,6 +159,7 @@ rm -f /private/var/mobile/Library/Preferences/net.tateu.moveable9.profileswitche
 rm -f /private/var/mobile/Library/Preferences/nfcd.plist
 rm -f /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
 rm -f /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
+rm -f /private/var/root/Library/Preferences/com.applovin.sdk.*.plist
 rm -f /private/var/root/Library/Preferences/com.exile90.icleanerpro.plist
 rm -f /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
 rm -f /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
@@ -195,7 +196,7 @@ rm -f /usr/bin/ps
 
 # Cleanup files from the Anemone package.
 rm -rf /Applications/Anemone.app
-rm -rf /private/var/stash
+rm -rf /private/var/stash/anemonecache
 rm -f  /usr/bin/AnemoneOptimizer
 rm -f  /usr/bin/cardump
 rm -f  /usr/bin/recache
