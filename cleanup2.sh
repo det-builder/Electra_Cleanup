@@ -53,8 +53,13 @@ read -p "Press enter to continue, or, press Control + C to exit"
 killall Cydia
 
 # Delete the common directories where the entire directory tree is deleted.
+rm -rf /.fseventsd/*
 rm -rf /bootstrap
+rm -rf /cores/*
+rm -rf /Developer/*
 rm -rf /electra
+rm -rf /lib/*
+rm -rf /mnt/*
 rm -rf /etc/apt
 rm -rf /etc/default
 rm -rf /Library/dpkg
@@ -90,7 +95,6 @@ rm -f /var/tmp/cydia.log
 
 # Delete misc folders that don't belong to any tweak.
 rm -rf /Library/Application Support/SpeedOptimize
-rm -rf /private/var/mobile/Library/Application Support/IconSupport
 rm -rf /usr/share/bash-completion/
 rm -rf /usr/share/bigboss/
 rm -rf /usr/share/dict/
@@ -218,19 +222,19 @@ rm -f  /usr/lib/libapplist.dylib
 # Cleanup files from the "Appsync" package.
 rm -r /usr/bin/asu_inject
 
-# Cleanup files from the "APT 0.7 (apt-key)" package.
+# Cleanup files from the "APT 1.4 (apt-key)" package.
 rm -f /usr/bin/apt-key
 
 # Cleanup files from the "APT 1.4 Strict" package.
-rm -r  /usr/bin/apt
-rm -r  /usr/bin/apt-cache
-rm -r  /usr/bin/apt-cdrom
-rm -r  /usr/bin/apt-config
-rm -r  /usr/bin/apt-extracttemplates
-rm -r  /usr/bin/apt-ftparchive
-rm -r  /usr/bin/apt-get
-rm -r  /usr/bin/apt-mark
-rm -r  /usr/bin/apt-sortpkgs
+rm -r /usr/bin/apt
+rm -r /usr/bin/apt-cache
+rm -r /usr/bin/apt-cdrom
+rm -r /usr/bin/apt-config
+rm -r /usr/bin/apt-extracttemplates
+rm -r /usr/bin/apt-ftparchive
+rm -r /usr/bin/apt-get
+rm -r /usr/bin/apt-mark
+rm -r /usr/bin/apt-sortpkgs
 
 # Cleanup files from the "APT 1.4 Strict (lib)" package.
 rm -f  /etc/apt/apt.conf.d
@@ -312,7 +316,7 @@ rm -rf /usr/lib/bash
 # Cleanup files from the Boxy package.
 rm -rf /private/var/mobile/Documents/com.irepo.boxy3
 rm -r  /private/var/mobile/Documents/Boxy3.log
-rm -rm /usr/lib/TweakInject/Boxy_Main.bundle
+rm -rf /usr/lib/TweakInject/Boxy_Main.bundle
 
 # Cleanup files from the bzip2 package.
 rm -f /bin/bunzip2
@@ -414,7 +418,9 @@ rm -f  /usr/sbin/chown
 rm -f  /usr/sbin/chroot
 
 # Cleanup files from the "Core Utilities (/bin)" package.
-rm -f /bin/cat
+# IMPORTANT! Some are commented out.  Dont' delete these!  These are part of
+# the model .ipsw file.
+# rm -f /bin/cat
 rm -f /bin/chgrp
 rm -f /bin/chmod
 rm -f /bin/chown
@@ -425,12 +431,12 @@ rm -f /bin/dir
 rm -f /bin/echo
 rm -f /bin/false
 rm -f /bin/kill
-rm -f /bin/ln
+# rm -f /bin/ln
 rm -f /bin/ls
 # rm -f /bin/mkdir # This is deleted below.
 rm -f /bin/mknod
 rm -f /bin/mktemp
-rm -f /bin/mv
+# rm -f /bin/mv
 rm -f /bin/pwd
 rm -f /bin/readlink
 # rm -f /bin/rm # This is deleted below.
@@ -697,6 +703,7 @@ rm -rf /Library/Iconoclasm
 
 # Cleanup files from the "Iconsupport" package.
 rm -rf /Library/Application Support/IconSupport
+rm -rf /private/var/mobile/Library/Application Support/IconSupport
 
 # Cleanup files from the "Inet-Utils" package.
 rm -f /usr/bin/dnsdomainname
@@ -727,14 +734,20 @@ rm -f /usr/libexec/tftpd
 rm -f /usr/libexec/uucpd
 
 # Cleanup files from the "iPhone Firmware (/sbin)" package.
-rm -f /sbin/fsck
-rm -f /sbin/fsck_hfs
-rm -f /sbin/fstyp
-rm -f /sbin/fstyp_hfs
-rm -f /sbin/mount
-rm -f /sbin/mount_hfs
-rm -f /sbin/newfs_hfs
-rm -f /usr/sbin/nvram
+# IMPORTANT - Don't actually run these!  These are in a stock .ipsw.
+# rm -f /sbin/fsck
+# rm -f /sbin/fsck_apfs  
+# rm -f /sbin/fsck_hfs
+# rm -f /sbin/fstyp
+# rm -f /sbin/fstyp_hfs
+# rm -f /sbin/mount
+# rm -f /sbin/mount_apfs
+# rm -f /sbin/mount_hfs
+# rm -f /sbin/newfs_apfs
+# rm -f /sbin/newfs_hfs
+# rm -f /sbin/pfctl
+# rm -f /sbin/umount
+# rm -f /usr/sbin/nvram
 
 # Cleanup files from the "KSBA" package.
 rm -f  /usr/bin/ksba-config
@@ -745,7 +758,6 @@ rm -f  /usr/lib/libksba.la
 rm -rf /usr/share/aclocal
 rm -f  /usr/share/aclocal/ksba.m4
 
-
 # Cleanup files from the "less" package.
 rm -f /usr/bin/less
 rm -f /usr/bin/lessecho
@@ -753,14 +765,14 @@ rm -f /usr/bin/lesskey
 rm -f /usr/bin/more
 
 # Cleanup files from the "libColorPicker" package.
-rm -f  /usr/lib/libcolorpicker.dylib
+rm -f /usr/lib/libcolorpicker.dylib
 
 # Cleanup files from the "libCrashReport" package.
 rm -rf /usr/include/libcrashreport
 rm -f  /usr/lib/libcrashreport.dylib
 
 # Cleanup files from the "Liberty" package.
-rm -f  /usr/lib/Liberty.dylib
+rm -f /usr/lib/Liberty.dylib
 
 # Cleanup files from the "libPackageInfo" package.
 rm -rf /usr/include/libpackageinfo
@@ -774,8 +786,8 @@ rm -f  /usr/lib/libsymbolicate.dylib
 rm -f /usr/bin/ldid
 
 # Cleanup files from the "Lockplus" package.
-rm -rf /private/var/mobile/Library/LockPlus
 rm -rf /Library/LockPlus
+rm -rf /private/var/mobile/Library/LockPlus
 rm -rf /private/var/mobile/Documents/lockplusfonts
 
 # Cleanup files from the "lsof" package.
@@ -808,6 +820,8 @@ rm -f  /usr/bin/clear
 rm -f  /usr/bin/infocmp
 rm -f  /usr/bin/infotocap
 rm -f  /usr/bin/ncurses5-config
+rm -f  /usr/bin/ncurses6-config
+rm -f  /usr/bin/ncursesw6-config
 rm -f  /usr/bin/reset
 rm -f  /usr/bin/tabs
 rm -f  /usr/bin/tic
@@ -922,7 +936,7 @@ rm -r /usr/libexec/rocketd
 rm -f /usr/bin/rsync
 
 # Cleanup files from the "Screen" package.
-rm -f /usr/bin/screen
+rm -f  /usr/bin/screen
 rm -rf /usr/share/screen
 
 # Cleanup files from the "Sed" package.
@@ -971,12 +985,13 @@ rm -rf /var/db/sudo
 rm -rf /var/run/sudo
 
 # Cleanup files from the "System-Cmds" package.
+# IMPORTANT! - Don't actually run this!  It has file in a stock .ipsw.
 rm -f /bin/sync
 rm -f /sbin/dmesg
 rm -f /sbin/dynamic_pager
-rm -f /sbin/halt
+# rm -f /sbin/halt
 rm -f /sbin/nologin
-rm -f /sbin/reboot
+# rm -f /sbin/reboot
 rm -f /usr/bin/arch
 rm -f /usr/bin/getconf
 rm -f /usr/bin/getty
