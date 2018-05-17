@@ -52,7 +52,13 @@ read -p "Press enter to continue, or, press Control + C to exit"
 # Ensure Cydia is not running.
 killall Cydia
 
-# Delete the common directories where the entire directory tree is deleted.
+########################################################################
+#                                                                      #
+# Delete the directories that aren't part of a model .ipsw file.       #
+#                                                                      #
+########################################################################
+
+# Delete directories off of the / folder.
 rm -rf /.fseventsd/*
 rm -rf /bootstrap
 rm -rf /cores/*
@@ -60,8 +66,13 @@ rm -rf /Developer/*
 rm -rf /electra
 rm -rf /lib/*
 rm -rf /mnt/*
+
+# Delete directories off of the /etc folder.
 rm -rf /etc/apt
 rm -rf /etc/default
+rm -rf /etc/profile.d
+
+# Delete directories off of the /Library folder.
 rm -rf /Library/dpkg
 rm -rf /Library/ControlCenter
 rm -rf /Library/Frameworks/*
@@ -70,11 +81,20 @@ rm -rf /Library/MobileSubstrate
 rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
 rm -rf /Library/Themes
+
+# Delete directories off of the /sbin folder.
+
+# Delete directories off of the /System folder.
+
+
+# Delete directories off of the /usr folder.
 rm -rf /usr/games
 rm -rf /usr/include
 rm -rf /usr/lib/apt
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
+
+# Delete directories off of the /var folder.
 rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
 rm -rf /var/root/Application Support/*
@@ -95,6 +115,7 @@ rm -f /var/tmp/cydia.log
 
 # Delete misc folders that don't belong to any tweak.
 rm -rf /Library/Application Support/SpeedOptimize
+rm -rf /Library/CustomFonts
 rm -rf /usr/share/bash-completion/
 rm -rf /usr/share/bigboss/
 rm -rf /usr/share/dict/
@@ -110,6 +131,7 @@ rm -rf /var/lock/*
 rm -rf /var/log/*
 rm -rf /var/mobile/Downloads/Cydia
 rm -rf /var/mobile/Library/Cydia
+rm -rf /var/mobile/Library/Logs/BioProtect
 rm -rf /var/mobile/Library/Logs/Cydia
 rm -rf /var/spool/*
 
@@ -125,6 +147,7 @@ rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
 rm -f /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
 rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.*.plist
 rm -f /private/var/mobile/Library/Preferences/com.irepo.boxy.plist
+rm -f /private/var/mobile/Library/Preferences/com.chloeeisoaky.YTUICustomizer.plist
 rm -f /private/var/mobile/Library/Preferences/com.cydia.Ext3nder.plist
 rm -f /private/var/mobile/Library/Preferences/com.iosblocks.mobiletimer.block.plist
 rm -f /private/var/mobile/Library/Preferences/com.imkpatil.floatingdock.plist
@@ -335,7 +358,7 @@ rm -f  /private/var/mobile/Library/ControlCenter
 rm -rf /Applications/CocoaTop.app
 
 # Cleanup files from the "Core Utilities" package.
-rm -rf /etc/profile.d/*
+rm -r  /etc/profile.d/coreutils.h
 rm -f  /usr/bin/[
 rm -f  /usr/bin/b2sum
 rm -f  /usr/bin/base32
