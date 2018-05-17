@@ -65,6 +65,7 @@ rm -rf /Library/MobileSubstrate
 rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
 rm -rf /Library/Themes
+rm -rf /usr/games
 rm -rf /usr/include
 rm -rf /usr/lib/apt
 rm -rf /usr/lib/pkgconfig
@@ -879,7 +880,7 @@ rm -rf /etc/ssl
 rm -f  /usr/bin/c_rehash
 rm -f  /usr/bin/openssl
 rm -rf /usr/include/openssl
-rm -rf /usr/lib/engines/*
+rm -rf /usr/lib/engines
 rm -f  /usr/lib/libcrypto.1.0.0.dylib
 rm -f  /usr/lib/libcrypto.a
 rm -f  /usr/lib/libcrypto.dylib
