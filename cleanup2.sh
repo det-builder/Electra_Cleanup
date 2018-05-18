@@ -350,6 +350,9 @@ rm -f /bin/bzip2recover
 # Cleanup files from the CircuitBreaker package.
 rm -rf /Applications/circuitbreaker.app/
 
+# Cleanup files from the CCModules package.
+rm -rf /Library/ControlCenter/Bundles
+
 # Cleanup files from the CCSupport package.
 rm -rf /Library/Application Support/CCSupport
 rm -f  /private/var/mobile/Library/ControlCenter
