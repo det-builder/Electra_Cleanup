@@ -82,10 +82,8 @@ rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
 rm -rf /Library/Themes
 
-# Delete directories off of the /sbin folder.
-
-# Delete directories off of the /System folder.
-
+# Delete directories off of the /sbin folder. (NONE)
+# Delete directories off of the /System folder. (NONE)
 
 # Delete directories off of the /usr folder.
 rm -rf /usr/games
@@ -116,12 +114,12 @@ rm -f /var/tmp/cydia.log
 # Delete misc folders that don't belong to any tweak.
 rm -rf /Library/Application Support/SpeedOptimize
 rm -rf /Library/CustomFonts
-rm -rf /usr/share/bash-completion/
-rm -rf /usr/share/bigboss/
-rm -rf /usr/share/dict/
-rm -rf /usr/share/doc/
-rm -rf /usr/share/dpkg/
-rm -rf /usr/share/tabset/
+rm -rf /usr/share/bash-completion
+rm -rf /usr/share/bigboss
+rm -rf /usr/share/dict
+rm -rf /usr/share/doc
+rm -rf /usr/share/dpkg
+rm -rf /usr/share/tabset
 rm -rf /usr/share/terminfo/*
 rm -rf /var/backups
 rm -rf /var/cache
@@ -338,7 +336,7 @@ rm -rf /usr/lib/bash
 
 # Cleanup files from the Boxy package.
 rm -rf /private/var/mobile/Documents/com.irepo.boxy3
-rm -r  /private/var/mobile/Documents/Boxy3.log
+rm -f  /private/var/mobile/Documents/Boxy3.log
 rm -rf /usr/lib/TweakInject/Boxy_Main.bundle
 
 # Cleanup files from the bzip2 package.
@@ -355,7 +353,7 @@ rm -rf /Library/ControlCenter/Bundles
 
 # Cleanup files from the CCSupport package.
 rm -rf /Library/Application Support/CCSupport
-rm -f  /private/var/mobile/Library/ControlCenter
+rm -f  /private/var/mobile/Library/ControlCenter/ModuleConfiguration_CCSupport.plist
 
 # Cleanup files from the CocoaTop app.
 rm -rf /Applications/CocoaTop.app
@@ -609,7 +607,7 @@ rm -rf /private/var/mobile/Library/Flex3
 rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
 
 # Cleanup files from the "FrontPage" package.
-rm -r  /private/var/mobile/Documents/FrontPage.plist
+rm -f  /private/var/mobile/Documents/FrontPage.plist
 rm -rf /private/var/mobile/Library/FrontPageCache
 
 # Cleanup files from the "Gawk" package.
@@ -828,6 +826,7 @@ rm -rf /private/var/mobile/Library/Preferences/Moveable
 
 # Cleanup files from the Nano package.
 rm -f  /etc/nanorc
+rm -f  /etc/profile.d/nano.sh
 rm -f  /usr/bin/nano
 rm -f  /usr/bin/rnano
 rm -rf /usr/share/nano
