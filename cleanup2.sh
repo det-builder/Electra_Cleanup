@@ -95,6 +95,7 @@ rm -rf /usr/local/lib/*
 # Delete directories off of the /var folder.
 rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
+rm -rf /var/mobile/Library/WebKit/*
 rm -rf /var/root/Application Support/*
 rm -rf /var/root/Library/Caches/*
 rm -rf /var/tmp/*
@@ -102,7 +103,7 @@ rm -rf /var/tmp/*
 # Delete misc files that don't belong to any tweak.
 rm -f /.bit_of_fun
 rm -f /.bootstrapped_electra
-rm -f /cydia_no_stash
+rm -f /.cydia_no_stash
 rm -f /bin/launchctl
 rm -f /usr/lib/libjailbreak.dylib
 rm -f /var/mobile/test.txt
@@ -233,7 +234,7 @@ rm -f  /usr/bin/cardump
 rm -f  /usr/bin/recache
 
 # Cleanup files from the "AppInst" package.
-rm -r /usr/bin/appinst
+rm -f /usr/bin/appinst
 
 # Cleanup files from the "Applist" package.
 rm -rf /System/Library/PreferenceBundles/AppList.bundle
@@ -241,21 +242,21 @@ rm -rf /usr/include/AppList
 rm -f  /usr/lib/libapplist.dylib
 
 # Cleanup files from the "Appsync" package.
-rm -r /usr/bin/asu_inject
+rm -f /usr/bin/asu_inject
 
 # Cleanup files from the "APT 1.4 (apt-key)" package.
 rm -f /usr/bin/apt-key
 
 # Cleanup files from the "APT 1.4 Strict" package.
-rm -r /usr/bin/apt
-rm -r /usr/bin/apt-cache
-rm -r /usr/bin/apt-cdrom
-rm -r /usr/bin/apt-config
-rm -r /usr/bin/apt-extracttemplates
-rm -r /usr/bin/apt-ftparchive
-rm -r /usr/bin/apt-get
-rm -r /usr/bin/apt-mark
-rm -r /usr/bin/apt-sortpkgs
+rm -f /usr/bin/apt
+rm -f /usr/bin/apt-cache
+rm -f /usr/bin/apt-cdrom
+rm -f /usr/bin/apt-config
+rm -f /usr/bin/apt-extracttemplates
+rm -f /usr/bin/apt-ftparchive
+rm -f /usr/bin/apt-get
+rm -f /usr/bin/apt-mark
+rm -f /usr/bin/apt-sortpkgs
 
 # Cleanup files from the "APT 1.4 Strict (lib)" package.
 rm -f  /etc/apt/apt.conf.d
@@ -457,7 +458,7 @@ rm -f /bin/false
 rm -f /bin/kill
 # rm -f /bin/ln
 rm -f /bin/ls
-# rm -f /bin/mkdir # This is deleted below.
+# rm -f /bin/mkdir
 rm -f /bin/mknod
 rm -f /bin/mktemp
 # rm -f /bin/mv
@@ -1175,7 +1176,7 @@ echo "::1             localhost" >> /etc/hosts
 
 # Removing the last tools, clear the UI cache.
 uicache
-rm -f /bin/mkdir
+# rm -f /bin/mkdir
 rm -f /bin/rm
 rm -f /bin/sh
 rm -f /usr/bin/uicache
