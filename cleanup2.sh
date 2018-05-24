@@ -87,18 +87,19 @@ rm -rf /Library/Themes
 
 # Delete directories off of the /usr folder.
 rm -rf /usr/games
-rm -rf /usr/include
+rm -rf /usr/include/*
 rm -rf /usr/lib/apt
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
 
 # Delete directories off of the /var folder.
+rm -rf /var/mobile/Library/.Trash
+rm -rf /var/mobile/Library/.Trash.metadata
 rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
 rm -rf /var/mobile/Library/WebKit/*
 rm -rf /var/root/Application Support/*
 rm -rf /var/root/Library/Caches/*
-rm -rf /var/tmp/*
 
 # Delete misc files that don't belong to any tweak.
 rm -f /.bit_of_fun
@@ -106,8 +107,14 @@ rm -f /.bootstrapped_electra
 rm -f /.cydia_no_stash
 rm -f /bin/launchctl
 rm -f /usr/lib/libjailbreak.dylib
+rm -f /var/installd/Library/MobileInstallation/UninstalledApplications.plist
 rm -f /var/mobile/test.txt
+rm -f /var/mobile/Library/Preferences/.GlobalPreferences.plist.*
+rm -f /var/mobile/Library/Preferences/com.apple.*.plist.*
+rm -f /var/mobile/Library/SpringBoard/.HomeBackground.cpbitmap.*
 rm -f /var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
+rm -f /var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
+rm -f /var/root/Library/Preferences/com.apple.*.plist.*
 rm -f /var/run/jailbreakd.pid
 rm -f /var/tmp/jailbreakd.pid
 rm -f /var/tmp/cydia.log
@@ -120,19 +127,20 @@ rm -rf /usr/share/bigboss
 rm -rf /usr/share/dict
 rm -rf /usr/share/doc
 rm -rf /usr/share/dpkg
-rm -rf /usr/share/tabset
-rm -rf /usr/share/terminfo/*
+rm -rf /usr/share/gnupg
 rm -rf /var/backups
 rm -rf /var/cache
+rm -rf /var/db/stash
+rm -rf /var/db/analyticsd/*.ips
 rm -rf /var/lib/misc
 rm -rf /var/local/*
 rm -rf /var/lock/*
 rm -rf /var/log/*
 rm -rf /var/mobile/Downloads/Cydia
 rm -rf /var/mobile/Library/Cydia
-rm -rf /var/mobile/Library/Logs/BioProtect
 rm -rf /var/mobile/Library/Logs/Cydia
 rm -rf /var/spool/*
+rm -rf /var/stash
 
 ########################################################################
 #                                                                      #
@@ -456,12 +464,12 @@ rm -f /bin/dir
 rm -f /bin/echo
 rm -f /bin/false
 rm -f /bin/kill
-# rm -f /bin/ln
+rm -f /bin/ln
 rm -f /bin/ls
-# rm -f /bin/mkdir
+rm -f /bin/mkdir
 rm -f /bin/mknod
 rm -f /bin/mktemp
-# rm -f /bin/mv
+rm -f /bin/mv
 rm -f /bin/pwd
 rm -f /bin/readlink
 # rm -f /bin/rm # This is deleted below.
@@ -679,7 +687,6 @@ rm -f  /usr/libexec/gpg-wks-client
 rm -f  /usr/libexec/scdaemon
 rm -f  /usr/sbin/addgnupghome
 rm -f  /usr/sbin/applygnupgdefaults
-rm -rf /usr/share/gnupg
 
 # Cleanup files from the "GNU Privacy Guard" package.
 rm -f  /usr/bin/gpg
@@ -687,7 +694,6 @@ rm -f  /usr/bin/gpg-zip
 rm -f  /usr/bin/gpgsplit
 rm -f  /usr/bin/gpgv
 rm -rf /usr/libexec/gnupg
-rm -rf /usr/share/gnupg
 
 # Cleanup files from the "GPSCheat" package.
 rm -rf /Library/Switches/GPSCheatSwitch.bundle
@@ -760,6 +766,7 @@ rm -f /usr/libexec/uucpd
 
 # Cleanup files from the "iPhone Firmware (/sbin)" package.
 # IMPORTANT - Don't actually run these!  These are in a stock .ipsw.
+# ALL of these files must actually remain on the file system.
 # rm -f /sbin/fsck
 # rm -f /sbin/fsck_apfs  
 # rm -f /sbin/fsck_hfs
@@ -847,6 +854,7 @@ rm -f  /usr/bin/infocmp
 rm -f  /usr/bin/infotocap
 rm -f  /usr/bin/ncurses5-config
 rm -f  /usr/bin/ncurses6-config
+rm -f  /usr/bin/ncursesw5-config
 rm -f  /usr/bin/ncursesw6-config
 rm -f  /usr/bin/reset
 rm -f  /usr/bin/tabs
@@ -920,7 +928,7 @@ rm -rf /etc/ssl
 rm -f  /usr/bin/c_rehash
 rm -f  /usr/bin/openssl
 rm -rf /usr/include/openssl
-rm -rf /usr/lib/engines
+rm -rf /usr/lib/engines/*
 rm -f  /usr/lib/libcrypto.1.0.0.dylib
 rm -f  /usr/lib/libcrypto.a
 rm -f  /usr/lib/libcrypto.dylib
@@ -1011,13 +1019,12 @@ rm -rf /var/db/sudo
 rm -rf /var/run/sudo
 
 # Cleanup files from the "System-Cmds" package.
-# IMPORTANT! - Don't actually run this!  It has file in a stock .ipsw.
 rm -f /bin/sync
 rm -f /sbin/dmesg
 rm -f /sbin/dynamic_pager
-# rm -f /sbin/halt
+rm -f /sbin/halt
 rm -f /sbin/nologin
-# rm -f /sbin/reboot
+rm -f /sbin/reboot
 rm -f /usr/bin/arch
 rm -f /usr/bin/getconf
 rm -f /usr/bin/getty
@@ -1176,7 +1183,6 @@ echo "::1             localhost" >> /etc/hosts
 
 # Removing the last tools, clear the UI cache.
 uicache
-# rm -f /bin/mkdir
 rm -f /bin/rm
 rm -f /bin/sh
 rm -f /usr/bin/uicache
