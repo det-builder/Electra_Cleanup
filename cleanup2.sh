@@ -28,6 +28,7 @@
 # You will need to look through some directories on your own to   #
 # find some more files and directories to delete.  These are:     #
 #                                                                 #
+# /private/var/containers                                         #
 # /private/var/mobile/Containers/Data                             #
 # /private/var/mobile/Containers/Shared                           #
 # /private/var/root/Library/Caches                                #
@@ -75,11 +76,14 @@ rm -rf /etc/profile.d
 # Delete directories off of the /Library folder.
 rm -rf /Library/dpkg
 rm -rf /Library/ControlCenter
-rm -rf /Library/Frameworks/*
+rm -rf /Library/Flipswitch
+rm -rf /Library/Frameworks
+mkdir /Library/Frameworks
 rm -rf /Library/LaunchDaemons
 rm -rf /Library/MobileSubstrate
 rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
+rm -rf /Library/Switches
 rm -rf /Library/Themes
 
 # Delete directories off of the /sbin folder. (NONE)
@@ -111,10 +115,17 @@ rm -f /var/installd/Library/MobileInstallation/UninstalledApplications.plist
 rm -f /var/mobile/test.txt
 rm -f /var/mobile/Library/Preferences/.GlobalPreferences.plist.*
 rm -f /var/mobile/Library/Preferences/com.apple.*.plist.*
+rm -f /var/mobile/Library/Preferences/com.saurik.Cydia.plist
+rm -f /var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
+rm -f /var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
+rm -f /var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
+rm -f /var/mobile/Library/Preferences/pairedsyncd.plist
+rm -f /var/mobile/Library/Preferences/splashboardd.plist
 rm -f /var/mobile/Library/SpringBoard/.HomeBackground.cpbitmap.*
 rm -f /var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
 rm -f /var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
 rm -f /var/root/Library/Preferences/com.apple.*.plist.*
+rm -f /var/root/Library/Preferences/UserEventAgent.plist
 rm -f /var/run/jailbreakd.pid
 rm -f /var/tmp/jailbreakd.pid
 rm -f /var/tmp/cydia.log
@@ -144,74 +155,6 @@ rm -rf /var/stash
 
 ########################################################################
 #                                                                      #
-# Begin custom tweak preference file uninstall area.                   #
-#                                                                      #
-########################################################################
-
-rm -f /private/var/mobile/Library/Preferences/anondev.LocalIAPStore.plist
-rm -f /private/var/mobile/Library/Preferences/ch.rpetri.iconrenamer.plist
-rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
-rm -f /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
-rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.*.plist
-rm -f /private/var/mobile/Library/Preferences/com.irepo.boxy.plist
-rm -f /private/var/mobile/Library/Preferences/com.chloeeisoaky.YTUICustomizer.plist
-rm -f /private/var/mobile/Library/Preferences/com.cydia.Ext3nder.plist
-rm -f /private/var/mobile/Library/Preferences/com.iosblocks.mobiletimer.block.plist
-rm -f /private/var/mobile/Library/Preferences/com.imkpatil.floatingdock.plist
-rm -f /private/var/mobile/Library/Preferences/com.irepo.boxy.plist
-rm -f /private/var/mobile/Library/Preferences/com.johncoates.Flex.plist
-rm -f /private/var/mobile/Library/Preferences/com.julioverne.ext3nder.autosign.plist
-rm -f /private/var/mobile/Library/Preferences/com.junesiphone.frontpage.plist
-rm -f /private/var/mobile/Library/Preferences/com.junesiphone.lockplus.plist
-rm -f /private/var/mobile/Library/Preferences/com.justinpetkovic.youtubetools.plist
-rm -f /private/var/mobile/Library/Preferences/com.matchstic.xenhtml.plist
-rm -f /private/var/mobile/Library/Preferences/com.oly.xb-ccmodules.plist
-rm -f /private/var/mobile/Library/Preferences/com.pixelfiredev.libcolorpicker.plist
-rm -f /private/var/mobile/Library/Preferences/com.rishanan.springpref.plist
-rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
-rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.libertylite.plist
-rm -f /private/var/mobile/Library/Preferences/com.pixelfiredev.libcolorpicker.plist
-rm -f /private/var/mobile/Library/Preferences/com.PS.SwipeForMore.plist
-rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
-rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
-rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
-rm -f /private/var/mobile/Library/Preferences/com.smokin1337.smartlpm.plist
-rm -f /private/var/mobile/Library/Preferences/com.synnyg.floatydockprefs.plist
-rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
-rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
-rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
-rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
-rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
-rm -f /private/var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
-rm -f /private/var/mobile/Library/Preferences/com.zestlabs.reformx.current.plist
-rm -f /private/var/mobile/Library/Preferences/com.zestlabs.reformx.plist
-rm -f /private/var/mobile/Library/Preferences/com.zx.GPSCheatData.plist
-rm -f /private/var/mobile/Library/Preferences/com.zx.GPSCheatSettings.plist
-rm -f /private/var/mobile/Library/Preferences/crash-reporter.plist
-rm -f /private/var/mobile/Library/Preferences/jp.ashikase.crashreporter.scanner.plist
-rm -f /private/var/mobile/Library/Preferences/net.85819.ios.OTRLocation.plist
-rm -f /private/var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
-rm -f /private/var/mobile/Library/Preferences/net.limneos.nfcwriter.license
-rm -f /private/var/mobile/Library/Preferences/net.r-ch.iconoclasm.plist
-rm -f /private/var/mobile/Library/Preferences/net.tateu.debkeeper.plist
-rm -f /private/var/mobile/Library/Preferences/net.tateu.moveable9.plist
-rm -f /private/var/mobile/Library/Preferences/net.tateu.moveable9.profileswitcher.plist
-rm -f /private/var/mobile/Library/Preferences/nfcd.plist
-rm -f /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
-rm -f /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
-rm -f /private/var/root/Library/Preferences/com.applovin.sdk.*.plist
-rm -f /private/var/root/Library/Preferences/com.exile90.icleanerpro.plist
-rm -f /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
-rm -f /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
-
-########################################################################
-#                                                                      #
-# End custom tweak preference file uninstall area.                     #
-#                                                                      #
-########################################################################
-
-########################################################################
-#                                                                      #
 # Begin custom tweak uninstall area.                                   #
 #                                                                      #
 ########################################################################
@@ -227,6 +170,35 @@ rm -f  /usr/lib/p7zip/Codecs/Rar.so
 rm -rf /usr/lib/p7zip/Codecs
 rm -rf /usr/lib/p7zip
 
+# Cleanup files from the "Activator" package.
+rm -rf /Library/Activator/ActivatorSpringBoard.bundle
+rm -rf /Library/Activator/ar.lproj
+rm -rf /Library/Activator/de.lproj
+rm -rf /Library/Activator/en.lproj
+rm -rf /Library/Activator/en_GB.lproj
+rm -rf /Library/Activator/es.lproj
+rm -rf /Library/Activator/Events
+rm -rf /Library/Activator/fr.lproj
+rm -rf /Library/Activator/he.lproj
+rm -rf /Library/Activator/it.lproj
+rm -rf /Library/Activator/ja.lproj
+rm -rf /Library/Activator/ko.lproj
+rm -rf /Library/Activator/nl.lproj
+rm -rf /Library/Activator/pl.lproj
+rm -rf /Library/Activator/pt_PT.lproj
+rm -rf /Library/Activator/ru.lproj
+rm -rf /Library/Activator/SwitchTemplates
+rm -rf /Library/Activator/tr.lproj
+rm -rf /Library/Activator/zh_CN.lproj
+rm -rf /Library/Activator/zh_TW.lproj
+rm -f  /Library/Activator/Info.plist
+rm -f  /var/mobile/Library/Caches/libactivator.plist
+rm -f  /var/mobile/Library/Preferences/libactivator.plist
+rm -f  /usr/bin/autoent
+rm -f  /usr/bin/autoinstall
+rm -rf /usr/include/libactivator
+rm -f  /usr/lib/libactivator.dylib
+
 # Cleanup files from the "Adv-Cmds" package.
 rm -f /usr/bin/cap_mkdb
 rm -f /usr/bin/finger
@@ -236,10 +208,22 @@ rm -f /usr/bin/ps
 
 # Cleanup files from the Anemone package.
 rm -rf /Applications/Anemone.app
+rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemone.plist
+rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemonedbg.plist
+rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneiconsdbg.plist
+rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneiconsoverride.plist
+rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneordering.plist
+rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.optithemereloaded
 rm -rf /private/var/stash/anemonecache
 rm -f  /usr/bin/AnemoneOptimizer
 rm -f  /usr/bin/cardump
 rm -f  /usr/bin/recache
+
+# Cleanup files from the "Apps Manager" package.
+rm -rf /Applications/ADManager.app
+rm -f  /usr/bin/ADMHelper
+rm -rf /var/mobile/Library/ADManager
+rm -f  /var/mobile/Library/Preferences/com.tigisoftware.ADManager.plist
 
 # Cleanup files from the "AppInst" package.
 rm -f /usr/bin/appinst
@@ -346,6 +330,7 @@ rm -rf /usr/lib/bash
 # Cleanup files from the Boxy package.
 rm -rf /private/var/mobile/Documents/com.irepo.boxy3
 rm -f  /private/var/mobile/Documents/Boxy3.log
+rm -f  /private/var/mobile/Library/Preferences/com.irepo.boxy.plist
 rm -rf /usr/lib/TweakInject/Boxy_Main.bundle
 
 # Cleanup files from the bzip2 package.
@@ -356,9 +341,15 @@ rm -f /bin/bzip2recover
 
 # Cleanup files from the CircuitBreaker package.
 rm -rf /Applications/circuitbreaker.app/
+rm -f  /private/var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
 
 # Cleanup files from the CCModules package.
 rm -rf /Library/ControlCenter/Bundles
+rm -f  /private/var/mobile/Library/Preferences/com.oly.xb-ccmodules.plist
 
 # Cleanup files from the CCSupport package.
 rm -rf /Library/Application Support/CCSupport
@@ -366,6 +357,7 @@ rm -f  /private/var/mobile/Library/ControlCenter/ModuleConfiguration_CCSupport.p
 
 # Cleanup files from the CocoaTop app.
 rm -rf /Applications/CocoaTop.app
+rm -f  /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
 
 # Cleanup files from the "Core Utilities" package.
 rm -r  /etc/profile.d/coreutils.h
@@ -488,6 +480,8 @@ rm -f /usr/bin/sort
 # Cleanup files from the CrashReporter package.
 rm -rf /Applications/CrashReporter.app
 rm -f  /private/var/mobile/Library/Logs/CrashReporter/*.*
+rm -f  /private/var/mobile/Library/Preferences/crash-reporter.plist
+rm -f  /private/var/mobile/Library/Preferences/jp.ashikase.crashreporter.scanner.plist
 
 # Cleanup files from the "cURL" package.
 rm -f  /usr/bin/curl
@@ -547,8 +541,12 @@ rm -rf /var/lib/dpkg
 # Cleanup files from the "Debian Utilities" package.
 rm -f /bin/run-parts
 
+# Cleanup files from the "Debkeeper" package.
+rm -f /private/var/mobile/Library/Preferences/net.tateu.debkeeper.plist
+
 # Cleanup files from the DetailedPowerUsage package.
 rm -rf /Library/Application Support/DPUTweakResources
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
 
 # Cleanup files from the "Developer-Cmds" package.
 rm -f /usr/bin/ctags
@@ -568,9 +566,16 @@ rm -f  /bin/jtoold
 rm -rf /Library/Switches/Ext3nderSwitch.bundle
 rm -rf /private/var/Ext3nder-Installer
 rm -rf /private/var/mobile/Documents/Ext3nder
+rm -f  /private/var/mobile/Library/Preferences/com.cydia.Ext3nder.plist
+rm -f  /private/var/mobile/Library/Preferences/com.julioverne.ext3nder.autosign.plist
 
 # Cleanup files from the "EzCC" package.
 rm -rf /Library/ControlCenter
+
+# Cleanup files from the "Fake GPS Pro" package.
+rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
+rm -f /private/var/mobile/Library/Preferences/net.85819.ios.OTRLocation.plist
+rm -f /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
 
 # Cleanup files from the "File" package.
 rm -f /usr/bin/file
@@ -586,11 +591,14 @@ rm -f /usr/bin/ipcrm
 rm -f /usr/bin/ipcs
 rm -f /usr/bin/pax
 
-# Cleanup files for the "Fileza" package.
+# Cleanup files for the "Fileza, FilzaEscaped, FilzaElectrocuted" packages.
 rm -rf /Applications/Filza.app
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
 rm -rf /private/var/mobile/Library/Application Support/Containers/com.scroublepokemon.filzaelectrocuted
+rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Filza
+rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
+rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
 
 # Cleanup files from the "Find Utilities" package.
 rm -f /usr/bin/find
@@ -605,6 +613,7 @@ rm -f /usr/libexec/frcode
 rm -f  /etc/apt/apt.conf.d/flameTimeout
 rm -rf /Library/Application Support/Flame
 rm -rf /private/var/mobile/Library/Application Support/Flame
+rm -f  /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
 
 # Cleanup files from the "Flex" package.
 rm -rf /Applications/Flex.app
@@ -612,12 +621,49 @@ rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
 rm -rf /private/var/mobile/Documents/Flex
 rm -rf /private/var/mobile/Library/Application Support/Flex3
 rm -rf /private/var/mobile/Library/Flex3
-# The following file is where Flex stores the "tweaks" that are downloaded.
+rm -f  /private/var/mobile/Library/Preferences/com.johncoates.Flex.plist
 rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
+
+# Cleanup files from the "Flipswitch" package.
+rm -f  /Library/Flipswitch/libFlipswitchSpringBoard.dylib
+rm -f  /Library/Flipswitch/libFlipswitchSwitches.dylib
+rm -rf /Library/Switches/3G.bundle
+rm -rf /Library/Switches/AirplaneMode.bundle
+rm -rf /Library/Switches/AutoBrightness.bundle
+rm -rf /Library/Switches/Autolock.bundle
+rm -rf /Library/Switches/Bluetooth.bundle
+rm -rf /Library/Switches/Data.bundle
+rm -rf /Library/Switches/DoNotDisturb.bundle
+rm -rf /Library/Switches/Flashlight.bundle
+rm -rf /Library/Switches/FuturemindAdBlock.bundle
+rm -rf /Library/Switches/Hotspot.bundle
+rm -rf /Library/Switches/Location.bundle
+rm -rf /Library/Switches/LowPower.bundle
+rm -rf /Library/Switches/LTE.bundle
+rm -rf /Library/Switches/NightShift.bundle
+rm -rf /Library/Switches/RecordScreen.bundle
+rm -rf /Library/Switches/Respring.bundle
+rm -rf /Library/Switches/Ringer.bundle
+rm -rf /Library/Switches/Rotation.bundle
+rm -rf /Library/Switches/RotationLock.bundle
+rm -rf /Library/Switches/Settings.bundle
+rm -rf /Library/Switches/Vibration.bundle
+rm -rf /Library/Switches/VPN.bundle
+rm -rf /Library/Switches/Wifi.bundle
+rm -rf /Library/Switches/WifiProxy.bundle
+rm -rf /usr/include/flipswitch
+rm -f  /usr/lib/libflpswitch.dylib
+
+# Cleanup files from the "Floating Dock" package.
+rm -f /private/var/mobile/Library/Preferences/com.imkpatil.floatingdock.plist
+
+# Cleanup files from the "FloatyDock" package.
+rm -f /private/var/mobile/Library/Preferences/com.synnyg.floatydockprefs.plist
 
 # Cleanup files from the "FrontPage" package.
 rm -f  /private/var/mobile/Documents/FrontPage.plist
 rm -rf /private/var/mobile/Library/FrontPageCache
+rm -f  /private/var/mobile/Library/Preferences/com.junesiphone.frontpage.plist
 
 # Cleanup files from the "Gawk" package.
 rm -f  /etc/profile.d/gawk.csh
@@ -697,6 +743,8 @@ rm -rf /usr/libexec/gnupg
 
 # Cleanup files from the "GPSCheat" package.
 rm -rf /Library/Switches/GPSCheatSwitch.bundle
+rm -f  /private/var/mobile/Library/Preferences/com.zx.GPSCheatData.plist
+rm -f  /private/var/mobile/Library/Preferences/com.zx.GPSCheatSettings.plist
 
 # Cleanup files from the "Grep" package.
 rm -f /bin/egrep
@@ -721,16 +769,22 @@ rm -f /bin/znew
 
 # Cleanup files from the iCleaner package.
 rm -rf /Applications/iCleaner.app
-rm -rf /Library/Activator
+rm -rf /Library/Activator/Listeners
 rm -rf /Library/Switches/ICClean.bundle
 rm -rf /Library/Switches/ICCleanNP.bundle
 rm -rf /private/var/mobile/Library/iCleaner
 rm -f  /usr/bin/icleaner
+rm -f  /var/root/Library/Preferences/com.applovin.sdk.y7Dm.plist
+rm -f /private/var/root/Library/Preferences/com.exile90.icleanerpro.plist
 rm -rf /var/tmp/com.exile90.icleanerpro
 
+# Cleanup files from the "Icon Renamer" package.
+rm -f /private/var/mobile/Library/Preferences/ch.rpetri.iconrenamer.plist
+
 # Cleanup files from the "Iconoclasm" package.
-rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 rm -rf /Library/Iconoclasm
+rm -f  /private/var/mobile/Library/Preferences/net.r-ch.iconoclasm.plist
+rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 
 # Cleanup files from the "Iconsupport" package.
 rm -rf /Library/Application Support/IconSupport
@@ -797,13 +851,16 @@ rm -f /usr/bin/lesskey
 rm -f /usr/bin/more
 
 # Cleanup files from the "libColorPicker" package.
+rm -f /private/var/mobile/Library/Preferences/com.pixelfiredev.libcolorpicker.plist
 rm -f /usr/lib/libcolorpicker.dylib
 
 # Cleanup files from the "libCrashReport" package.
 rm -rf /usr/include/libcrashreport
 rm -f  /usr/lib/libcrashreport.dylib
 
-# Cleanup files from the "Liberty" package.
+# Cleanup files from the "Liberty" and "Liberty Lite" package.
+rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
+rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.libertylite.plist
 rm -f /usr/lib/Liberty.dylib
 
 # Cleanup files from the "libPackageInfo" package.
@@ -817,10 +874,17 @@ rm -f  /usr/lib/libsymbolicate.dylib
 # Cleanup files from the "Link Identity Editor" package.
 rm -f /usr/bin/ldid
 
+# Cleanup files from the "LittleX" package.
+rm -f /private/var/mobile/Library/Preferences/com.ioscreatix.littlex.plist
+
+# Cleanup files from the "LocalIAPStore" package.
+rm -f /private/var/mobile/Library/Preferences/anondev.LocalIAPStore.plist
+
 # Cleanup files from the "Lockplus" package.
 rm -rf /Library/LockPlus
-rm -rf /private/var/mobile/Library/LockPlus
 rm -rf /private/var/mobile/Documents/lockplusfonts
+rm -rf /private/var/mobile/Library/LockPlus
+rm -f  /private/var/mobile/Library/Preferences/com.junesiphone.lockplus.plist
 
 # Cleanup files from the "lsof" package.
 rm -f /usr/sbin/lsof
@@ -831,6 +895,8 @@ rm -f /usr/include/gnumake.h
 
 # Cleanup files from the "Moveable9" package.
 rm -rf /private/var/mobile/Library/Preferences/Moveable
+rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9.plist
+rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9.profileswitcher.plist
 
 # Cleanup files from the Nano package.
 rm -f  /etc/nanorc
@@ -900,6 +966,8 @@ rm -f  /usr/share/aclocal/npth.m4
 # Cleanup files from the "NFCWriter" package.
 rm -rf /Applications/NFCWriter.app
 rm -f  /usr/lib/NFCWritPass.dylib
+rm -f  /var/mobile/Library/Preferences/net.limneos.nfcwriter.license
+rm -f  /var/mobile/Library/Preferences/nfcd.plist
 
 # Cleanup files from the "Nghttp2" package.
 rm -rf /usr/include/nghttp2
@@ -958,6 +1026,8 @@ rm -rf /etc/profile.d
 # Cleanup files from the "ReformX" package.
 rm -rf /Applications/ReformX.app
 rm -rf /Library/Application Support/ReformX
+rm -f  /private/var/mobile/Library/Preferences/com.zestlabs.reformx.current.plist
+rm -f  /private/var/mobile/Library/Preferences/com.zestlabs.reformx.plist
 
 # Cleanup files from the "Rocketbootstrap" package.
 rm -f /usr/include/rocketbootstrap.h
@@ -989,10 +1059,16 @@ rm -f /usr/bin/script
 rm -f /usr/bin/time
 rm -f /usr/bin/which
 
+# Cleanup files from the "Smart Low Power Mode" package.
+rm -f /private/var/mobile/Library/Preferences/com.smokin1337.smartlpm.plist
+
 # Cleanup files from the "Socket Cat" package.
 rm -f /usr/bin/filan
 rm -f /usr/bin/procan
 rm -f /usr/bin/socat
+
+# Cleanup files from the "SpringPlus" package.
+rm -f /private/var/mobile/Library/Preferences/com.rishanan.springpref.plist
 
 # Cleanup files from the "SSH Toggle and Port" package.
 rm -rf /Library/ControlCenter/Bundles/SSHonCC.bundle
@@ -1017,6 +1093,9 @@ rm -rf /usr/libexec/sudo
 rm -r  /usr/sbin/visudo
 rm -rf /var/db/sudo
 rm -rf /var/run/sudo
+
+# Cleanup files from the "SwipeForMore" package.
+rm -f /private/var/mobile/Library/Preferences/com.PS.SwipeForMore.plist
 
 # Cleanup files from the "System-Cmds" package.
 rm -f /bin/sync
@@ -1109,13 +1188,14 @@ rm -f /etc/wgetrc
 rm -f /usr/bin/wget
 
 # Cleanup files from the wifiFirmwareUpdater 
+rm -rf /private/var/mobile/updatedWifiFirmware
 rm -f  /usr/bin/autoflashwifi
 rm -f  /usr/bin/flashwifi
 rm -f  /usr/bin/revertwifi
-rm -rf /var/mobile/updatedWifiFirmware
 
 # Cleanup files from the XenHTML package.
 rm -rf /Library/Application Support/libGitHubIssues
+rm -f  /private/var/mobile/Library/Preferences/com.matchstic.xenhtml.plist
 rm -rf /usr/include/uaunbox
 rm -f  /usr/lib/libGitHubIssues.dylib
 rm -f  /usr/lib/libuaunbox.dylib
@@ -1158,6 +1238,9 @@ rm -f  /usr/lib/pkgconfig/liblzma.pc
 rm -f  /usr/local/lib/liblzma.5.dylib
 rm -f  /usr/local/lib/liblzma.dylib
 
+# Cleanup files from the "Youtube Tools" package.
+rm -f /private/var/mobile/Library/Preferences/com.justinpetkovic.youtubetools.plist
+
 # Cleanup files from the "Zip" package.
 rm -f /usr/bin/zip
 rm -f /usr/bin/zipcloak
@@ -1183,9 +1266,9 @@ echo "::1             localhost" >> /etc/hosts
 
 # Removing the last tools, clear the UI cache.
 uicache
+rm -f /usr/bin/uicache
 rm -f /bin/rm
 rm -f /bin/sh
-rm -f /usr/bin/uicache
 
 # All Done!
 echo "WARNING!!!!! All Electra jailbreak files and directories should be deleted."
