@@ -31,8 +31,6 @@
 # /private/var/containers                                         #
 # /private/var/mobile/Containers/Data                             #
 # /private/var/mobile/Containers/Shared                           #
-# /private/var/root/Library/Caches                                #
-# /private/var/root/Library/Preferences                           #
 #                                                                 #
 ###################################################################
 
@@ -48,10 +46,47 @@ echo "WARNING!!!!  This script will attempt to remove the Electra jailbreak"
 echo "from this device.  Please think long and hard before continuing since it"
 echo "could cause you to loose your jailbreak!!!"
 echo ""
+echo "WARNING!!!!! Be sure you fill in the section just below to delete the"
+echo "directories related to the bundles.  These will need to be deleted"
+echo "for completeness."
+echo ""
 read -p "Press enter to continue, or, press Control + C to exit"
 
 # Ensure Cydia is not running.
 killall Cydia
+
+########################################################################
+#                                                                      #
+# Delete the directories that contain data for the bundles of the apps #
+# that are installed.  These are most likely going to be the apps      #
+# installed via Impactor or tweaks that install apps.                  #
+#                                                                      #
+########################################################################
+
+# /var/containers/Bundle/Application (Appears to be only app store apps & those installed via Impactor.)
+rm -rf /var/containers/Bundle/Application/F766716D-477B-412E-B044-2E86980D8A64 # This is electra on my device
+rm -rf /var/containers/Bundle/Application/B69DBC41-AB6A-42BC-AE0E-293128D3B0C2 # This is Filzaescaped on my device
+
+# /var/mobile/Containers/Data/Application (Appears to be only app store apps & those installed via Impactor.)
+rm -rf /var/mobile/Containers/Data/Application/929C82CD-1F4D-46E4-A384-00C917274341 # This is Anemonetheming on my device
+rm -rf /var/mobile/Containers/Data/Application/5A10E5C8-D754-48B0-A01C-AD3AD41A9591 # This is Cydia Extender on my device
+rm -rf /var/mobile/Containers/Data/Application/5EBF403E-0CFE-48DA-A580-13CC8BC1F80A # This is ICleaner on my device
+rm -rf /var/mobile/Containers/Data/Application/8B0AA03E-BF95-4F6A-B1A9-CC1FA24A9EDF # This is Saurik.Cydia on my device
+rm -rf /var/mobile/Containers/Data/Application/CDA801B2-FF27-4756-9A79-0E07C521380F # This is Filza on my device
+rm -rf /var/mobile/Containers/Data/Application/71D548F1-E6EE-4D46-A0DD-A07D47DA247F # This is Filza electrocuted on my device
+rm -rf /var/mobile/Containers/Data/Application/1472FBB3-AEA8-44C5-B074-26F0F279C0DF # This is Filza Escaped on my device
+rm -rf /var/mobile/Containers/Data/Application/C78DDACB-0A46-4111-A4D5-7C5C1379FE17 # This is Apps manager on my device
+rm -rf /var/mobile/Containers/Data/Application/4FAC484E-1B14-4F20-B7F7-9442A7FEC8E1 # This is crash reporter on my device
+rm -rf /var/mobile/Containers/Data/Application/8DDE304D-1B24-4511-952B-B340D3D2969C # This is iDevice Walls App on my device
+rm -rf /var/mobile/Containers/Data/Application/456D23FE-0F72-46A4-96C7-79C43F391034 # This is iWidgetApp on my device
+rm -rf /var/mobile/Containers/Data/Application/37CEAFB2-90B3-409B-A2C0-F4CBC195F27C # This is libActivator on my device
+rm -rf /var/mobile/Containers/Data/Application/C064C600-B0EB-4618-8BE2-02F6D1676FE3 # This is opwapp on my device
+rm -rf /var/mobile/Containers/Data/Application/A2006909-A1AE-44F9-A6F6-77683CCCA67A # This is Electra on my device
+rm -rf /var/mobile/Containers/Data/Application/BC495204-985B-4B2F-967D-8A7680C6F115 # This is Electra Safe MOde on my device
+rm -rf /var/mobile/Containers/Data/Application/B61C48AB-7AFF-441E-8ACD-0AF39CF5FE03 # This is CocoaTop on my device
+
+# /var/mobile/Containers/Shared/AppGroup (Appears to be only app store apps & those installed via Impactor.)
+rm -rf /var/mobile/Containers/Shared/AppGroup/4DCC536E-0471-4D19-BA15-5C4B52C87E3C # This is Cydia Extender on my device
 
 ########################################################################
 #                                                                      #
@@ -64,6 +99,7 @@ rm -rf /.fseventsd/*
 rm -rf /bootstrap
 rm -rf /cores/*
 rm -rf /Developer/*
+rm -rf /DT
 rm -rf /electra
 rm -rf /lib/*
 rm -rf /mnt/*
@@ -77,17 +113,13 @@ rm -rf /etc/profile.d
 rm -rf /Library/dpkg
 rm -rf /Library/ControlCenter
 rm -rf /Library/Flipswitch
-rm -rf /Library/Frameworks
-mkdir /Library/Frameworks
+rm -rf /Library/Frameworks/*
 rm -rf /Library/LaunchDaemons
 rm -rf /Library/MobileSubstrate
 rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
 rm -rf /Library/Switches
 rm -rf /Library/Themes
-
-# Delete directories off of the /sbin folder. (NONE)
-# Delete directories off of the /System folder. (NONE)
 
 # Delete directories off of the /usr folder.
 rm -rf /usr/games
@@ -124,6 +156,9 @@ rm -f /var/mobile/Library/Preferences/splashboardd.plist
 rm -f /var/mobile/Library/SpringBoard/.HomeBackground.cpbitmap.*
 rm -f /var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
 rm -f /var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
+rm -f /var/mobile/MobileSoftwareUpdate/restore.log
+rm -f /var/MobileSoftwareUpdate/restore.log
+rm -f /var/root/.bash_history
 rm -f /var/root/Library/Preferences/com.apple.*.plist.*
 rm -f /var/root/Library/Preferences/UserEventAgent.plist
 rm -f /var/run/jailbreakd.pid
@@ -147,11 +182,14 @@ rm -rf /var/lib/misc
 rm -rf /var/local/*
 rm -rf /var/lock/*
 rm -rf /var/log/*
+rm -rf /var/logs/*
 rm -rf /var/mobile/Downloads/Cydia
 rm -rf /var/mobile/Library/Cydia
-rm -rf /var/mobile/Library/Logs/Cydia
+rm -rf /var/mobile/Library/Logs/*
 rm -rf /var/spool/*
 rm -rf /var/stash
+rm -rf /var/tmp/*
+rm -rf /var/wireless/Library/Logs/*
 
 ########################################################################
 #                                                                      #
@@ -208,12 +246,13 @@ rm -f /usr/bin/ps
 
 # Cleanup files from the Anemone package.
 rm -rf /Applications/Anemone.app
-rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemone.plist
-rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemonedbg.plist
-rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneiconsdbg.plist
-rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneiconsoverride.plist
-rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneordering.plist
-rm -f /private/var/mobile/Library/Preferences/com.anemoneteam.optithemereloaded
+rm -rf /private/var/mobile/Library/Caches/com.anemonetheming.anemone
+rm -f  /private/var/mobile/Library/Preferences/com.anemoneteam.anemone.plist
+rm -f  /private/var/mobile/Library/Preferences/com.anemoneteam.anemonedbg.plist
+rm -f  /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneiconsdbg.plist
+rm -f  /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneiconsoverride.plist
+rm -f  /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneordering.plist
+rm -f  /private/var/mobile/Library/Preferences/com.anemoneteam.optithemereloaded
 rm -rf /private/var/stash/anemonecache
 rm -f  /usr/bin/AnemoneOptimizer
 rm -f  /usr/bin/cardump
@@ -573,9 +612,11 @@ rm -f  /private/var/mobile/Library/Preferences/com.julioverne.ext3nder.autosign.
 rm -rf /Library/ControlCenter
 
 # Cleanup files from the "Fake GPS Pro" package.
-rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
-rm -f /private/var/mobile/Library/Preferences/net.85819.ios.OTRLocation.plist
-rm -f /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
+rm -f  /private/var/mobile/Documents/favorites.plist
+rm -rf /private/var/mobile/Library/Caches/cn.tinyapps.XGPSPro
+rm -f  /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
+rm -f  /private/var/mobile/Library/Preferences/net.85819.ios.OTRLocation.plist
+rm -f  /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
 
 # Cleanup files from the "File" package.
 rm -f /usr/bin/file
@@ -618,8 +659,10 @@ rm -f  /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
 # Cleanup files from the "Flex" package.
 rm -rf /Applications/Flex.app
 rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
+rm -f  /private/var/mobile/Documents/extraction-com.johncoates.Flex.flex
 rm -rf /private/var/mobile/Documents/Flex
 rm -rf /private/var/mobile/Library/Application Support/Flex3
+rm -rf /private/var/mobile/Library/Caches/com.johncoates.Flex
 rm -rf /private/var/mobile/Library/Flex3
 rm -f  /private/var/mobile/Library/Preferences/com.johncoates.Flex.plist
 rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
@@ -743,6 +786,7 @@ rm -rf /usr/libexec/gnupg
 
 # Cleanup files from the "GPSCheat" package.
 rm -rf /Library/Switches/GPSCheatSwitch.bundle
+rm -f  /private/var/mobile/Documents/favorites.plist
 rm -f  /private/var/mobile/Library/Preferences/com.zx.GPSCheatData.plist
 rm -f  /private/var/mobile/Library/Preferences/com.zx.GPSCheatSettings.plist
 
@@ -772,10 +816,11 @@ rm -rf /Applications/iCleaner.app
 rm -rf /Library/Activator/Listeners
 rm -rf /Library/Switches/ICClean.bundle
 rm -rf /Library/Switches/ICCleanNP.bundle
-rm -rf /private/var/mobile/Library/iCleaner
 rm -f  /usr/bin/icleaner
+rm -rf /var/mobile/Library/iCleaner
+rm -rf /var/mobile/Library/Caches/com.exile90.icleanerpro
 rm -f  /var/root/Library/Preferences/com.applovin.sdk.y7Dm.plist
-rm -f /private/var/root/Library/Preferences/com.exile90.icleanerpro.plist
+rm -f  /var/root/Library/Preferences/com.exile90.icleanerpro.plist
 rm -rf /var/tmp/com.exile90.icleanerpro
 
 # Cleanup files from the "Icon Renamer" package.
