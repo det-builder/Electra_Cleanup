@@ -1128,14 +1128,14 @@ rm -rf /Library/Frameworks/CydiaSubstrate.framework
 rm -f  /usr/lib/libsubstrate.dylib
 
 # Cleanup files from the "Sudo" package.
-rm -r  /etc/sudoers
+rm -f  /etc/sudoers
 rm -rf /etc/sudoers.d
-rm -r  /usr/bin/sudo
-rm -r  /usr/bin/sudoedit
-rm -r  /usr/bin/sudoreplay
-rm -r  /usr/include/sudo_plugin.h
+rm -f  /usr/bin/sudo
+rm -f  /usr/bin/sudoedit
+rm -f  /usr/bin/sudoreplay
+rm -f  /usr/include/sudo_plugin.h
 rm -rf /usr/libexec/sudo
-rm -r  /usr/sbin/visudo
+rm -f  /usr/sbin/visudo
 rm -rf /var/db/sudo
 rm -rf /var/run/sudo
 
