@@ -573,7 +573,6 @@ rm -f  /usr/bin/update-alternatives
 rm -f  /usr/lib/libdpkg.a
 rm -f  /usr/lib/libdpkg.la
 rm -rf /usr/lib/pkgconfig
-rm -r  /usr/lib/pkgconfig/libdpkg.pc
 rm -rf /usr/share/dpkg
 rm -rf /var/lib/dpkg
 
@@ -1312,8 +1311,8 @@ echo "::1             localhost" >> /etc/hosts
 # Removing the last tools, clear the UI cache.
 uicache
 rm -f /usr/bin/uicache
-rm -f /bin/rm
 rm -f /bin/sh
+rm -f /bin/rm
 
 # All Done!
 echo "WARNING!!!!! All Electra jailbreak files and directories should be deleted."
