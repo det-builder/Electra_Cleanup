@@ -103,6 +103,7 @@ rm -rf /DT
 rm -rf /electra
 rm -rf /lib/*
 rm -rf /mnt/*
+rm -rf /tmp/* 
 
 # Delete directories off of the /etc folder.
 rm -rf /etc/apt
@@ -129,6 +130,7 @@ rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
 
 # Delete directories off of the /var folder.
+rm -rf /var/DT
 rm -rf /var/mobile/Library/.Trash
 rm -rf /var/mobile/Library/.Trash.metadata
 rm -rf /var/mobile/Library/Caches/*
@@ -141,6 +143,8 @@ rm -rf /var/root/Library/Caches/*
 rm -f /.bit_of_fun
 rm -f /.bootstrapped_electra
 rm -f /.cydia_no_stash
+rm -f /.file
+rm -f /.Trashes
 rm -f /bin/launchctl
 rm -f /usr/lib/libjailbreak.dylib
 rm -f /var/installd/Library/MobileInstallation/UninstalledApplications.plist
@@ -163,7 +167,6 @@ rm -f /var/root/Library/Preferences/com.apple.*.plist.*
 rm -f /var/root/Library/Preferences/UserEventAgent.plist
 rm -f /var/run/jailbreakd.pid
 rm -f /var/tmp/jailbreakd.pid
-rm -f /var/tmp/cydia.log
 
 # Delete misc folders that don't belong to any tweak.
 rm -rf /Library/Application Support/SpeedOptimize
