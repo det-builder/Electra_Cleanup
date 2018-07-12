@@ -940,9 +940,13 @@ rm -f /usr/sbin/lsof
 rm -f /usr/bin/make
 rm -f /usr/include/gnumake.h
 
+# Cleanup files from the "Mojito" theme.
+rm -f  /private/var/mobile/Library/Preferences/eu.bednarz.eyeris.plist
+
 # Cleanup files from the "Moveable9" package.
 rm -rf /private/var/mobile/Library/Preferences/Moveable
 rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9.plist
+rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9_*.plist
 rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9.profileswitcher.plist
 
 # Cleanup files from the Nano package.
