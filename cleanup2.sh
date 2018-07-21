@@ -154,6 +154,7 @@ rm -f /var/mobile/Library/Preferences/com.apple.*.plist.*
 rm -f /var/mobile/Library/Preferences/com.saurik.Cydia.plist
 rm -f /var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
 rm -f /var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
+rm -f /var/mobile/Library/Preferences/cn.tinyapps.location360pro.plist
 rm -f /var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
 rm -f /var/mobile/Library/Preferences/pairedsyncd.plist
 rm -f /var/mobile/Library/Preferences/splashboardd.plist
@@ -260,6 +261,10 @@ rm -rf /private/var/stash/anemonecache
 rm -f  /usr/bin/AnemoneOptimizer
 rm -f  /usr/bin/cardump
 rm -f  /usr/bin/recache
+
+# Cleanup files from the "App Admin" package.
+rm -rf /Library/unlimapps_tweak_resources
+rm -rf /private/var/unlimapps_tweak_resources
 
 # Cleanup files from the "Apps Manager" package.
 rm -rf /Applications/ADManager.app
@@ -813,6 +818,9 @@ rm -f /bin/zless
 rm -f /bin/zmore
 rm -f /bin/znew
 
+# Cleanup files from the "Hide Statusbar Items" package from Junes Iphone.
+rm -f /private/var/mobile/Library/Preferences/com.junesiphone.hidestatusbaritems.plist
+
 # Cleanup files from the iCleaner package.
 rm -rf /Applications/iCleaner.app
 rm -rf /Library/Activator/Listeners
@@ -946,8 +954,9 @@ rm -f  /private/var/mobile/Library/Preferences/eu.bednarz.eyeris.plist
 # Cleanup files from the "Moveable9" package.
 rm -rf /private/var/mobile/Library/Preferences/Moveable
 rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9.plist
-rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9_*.plist
 rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9.profileswitcher.plist
+rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9_Apps.plist
+rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9_Homescreen.plist
 
 # Cleanup files from the Nano package.
 rm -f  /etc/nanorc
@@ -1214,6 +1223,9 @@ rm -f /usr/bin/funzip
 rm -f /usr/bin/unzip
 rm -f /usr/bin/unzipsfx
 
+# Cleanup files from the "Utubed" package.
+rm -f /private/var/mobile/Library/Preferences/utubedp.ws.plist
+
 # Cleanup files from the "UUID Generator" package.
 rm -f /usr/bin/uuid
 rm -f /usr/bin/uuid-config
@@ -1243,6 +1255,9 @@ rm -rf /private/var/mobile/updatedWifiFirmware
 rm -f  /usr/bin/autoflashwifi
 rm -f  /usr/bin/flashwifi
 rm -f  /usr/bin/revertwifi
+
+# Cleanup files from the "XB-Hide" package.
+rm -f /private/var/mobile/Library/Preferences/com.oly.xbhide.plist
 
 # Cleanup files from the XenHTML package.
 rm -rf /Library/Application Support/libGitHubIssues
