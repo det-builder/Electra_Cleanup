@@ -539,8 +539,10 @@ rm -f  /usr/lib/libcurl.dylib
 rm -f  /usr/lib/libcurl.la
 rm -f  /usr/lib/pkgconfig/ligcurl.pc
 
-# Cleanup files from the "Cydia Installer" package.
-rm -rf /Applications/Cydia.app/
+# Cleanup files from the "Cydia (GUI Only)" package.
+rm -rf /Applications/Cydia.app
+rm -rf /etc/apt/sources.list.d
+rm -rf /etc/apt/trusted.gpg.d
 rm -rf /usr/libexec/cydia
 rm -rf /var/lib/cydia
 
