@@ -950,6 +950,13 @@ rm -f /usr/sbin/lsof
 rm -f /usr/bin/make
 rm -f /usr/include/gnumake.h
 
+# Cleanup files from the "Mikoto" package.
+rm -rf /Library/KarenLocalizer
+rm -rf /Library/KarenRepoIcons
+rm -f  /private/var/mobile/Library/Preferences/net.angelxwind.mikoto.plist
+rm -f  /usr/lib/libkarenlocalizer.dylib
+rm -f  /usr/lib/libkarenprefs.dylib
+
 # Cleanup files from the "Mojito" theme.
 rm -f  /private/var/mobile/Library/Preferences/eu.bednarz.eyeris.plist
 
@@ -1037,6 +1044,9 @@ rm -f  /usr/lib/libnghttp2.14.dylib
 rm -f  /usr/lib/libnghttp2.dylib
 rm -f  /usr/lib/libnghttp2.la
 rm -f  /usr/lib/pkgconfig/libnghttp2.pc
+
+# Cleanup files from the "NoSubstitute (Electra)" package.
+rm -f /private/var/mobile/Library/Preferences/co.vexation.nosubstitute.plist
 
 # Cleanup files from the "OpenSSH" package.
 rm -rf /etc/ssh
