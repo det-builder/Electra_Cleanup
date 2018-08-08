@@ -1091,6 +1091,9 @@ rm -f /usr/bin/pincrush
 rm -f /usr/include/libprefs/prefs.h
 rm -f /usr/lib/libprefs.dylib
 
+# Cleanup files from the "Preference Organizer 2" tweak.
+rm -f /private/var/mobile/Library/Preferences/net.angelxwind.preferenceorganizer2.plist
+
 # Cleanup files from the "Profile Directory" package.
 rm -f  /etc/profile
 rm -rf /etc/profile.d
