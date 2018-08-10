@@ -361,6 +361,11 @@ rm -f /usr/lib/libdb_sql-6.2.dylib
 rm -f /usr/lib/libdb_sql-6.dylib
 rm -f /usr/lib/libdb_sql.dylib
 
+# Cleanup files from the "BetterCCXI" package.
+rm -rf /Library/ControlCenter/Bundles/BCIXWeatherModule.bundle
+rm -f  /private/var/mobile/Library/Preferences/com.atwiiks.betterccxi
+rm -f  /private/var/mobile/Library/Preferences/com.atwiiks.betterccxi.plist
+
 # Cleanup files from the "Bigboss Icon Set" package.
 rm -rf /usr/share/bigboss
 
@@ -386,14 +391,6 @@ rm -f /bin/bzcat
 rm -f /bin/bzip2
 rm -f /bin/bzip2recover
 
-# Cleanup files from the CircuitBreaker package.
-rm -rf /Applications/circuitbreaker.app/
-rm -f  /private/var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
-rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
-rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
-rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
-rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
-
 # Cleanup files from the CCModules package.
 rm -rf /Library/ControlCenter/Bundles
 rm -f  /private/var/mobile/Library/Preferences/com.oly.xb-ccmodules.plist
@@ -401,6 +398,14 @@ rm -f  /private/var/mobile/Library/Preferences/com.oly.xb-ccmodules.plist
 # Cleanup files from the CCSupport package.
 rm -rf /Library/Application Support/CCSupport
 rm -f  /private/var/mobile/Library/ControlCenter/ModuleConfiguration_CCSupport.plist
+
+# Cleanup files from the CircuitBreaker package.
+rm -rf /Applications/circuitbreaker.app/
+rm -f  /private/var/mobile/Library/Preferences/aaa.thecomputerwhisperer.fuku.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbtweaks.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.cbprefs.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CBPrefsList.plist
+rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitBreakerPrefs.plist
 
 # Cleanup files from the CocoaTop app.
 rm -rf /Applications/CocoaTop.app
@@ -607,6 +612,10 @@ rm -f /usr/bin/cmp
 rm -f /usr/bin/diff
 rm -f /usr/bin/diff3
 rm -f /usr/bin/sdiff
+
+# Cleanup files from the "Duo" package.
+rm -f /private/var/mobile/Library/Preferences/com.muirey03.duo.plist
+rm -f /private/var/mobile/Library/Preferences/com.muirey03.duoprefs.plist
 
 # Cleanup files from the Extender package.
 rm -rf /Applications/Extender.app
