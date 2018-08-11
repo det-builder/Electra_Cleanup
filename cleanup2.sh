@@ -158,6 +158,7 @@ rm -f /var/mobile/Library/Preferences/cn.tinyapps.location360pro.plist
 rm -f /var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
 rm -f /var/mobile/Library/Preferences/pairedsyncd.plist
 rm -f /var/mobile/Library/Preferences/splashboardd.plist
+rm -f /var/mobile/Library/Preferences/xhprx.xh
 rm -f /var/mobile/Library/SpringBoard/.HomeBackground.cpbitmap.*
 rm -f /var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
 rm -f /var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
@@ -211,6 +212,9 @@ rm -f  /usr/lib/p7zip/7za
 rm -f  /usr/lib/p7zip/Codecs/Rar.so
 rm -rf /usr/lib/p7zip/Codecs
 rm -rf /usr/lib/p7zip
+
+# Cleanup files from the "Abaculus" package.
+rm -f /private/var/mobile/Library/Preferences/com.shade.abaculus.plist
 
 # Cleanup files from the "Activator" package.
 rm -rf /Library/Activator/ActivatorSpringBoard.bundle
@@ -366,6 +370,12 @@ rm -rf /Library/ControlCenter/Bundles/BCIXWeatherModule.bundle
 rm -f  /private/var/mobile/Library/Preferences/com.atwiiks.betterccxi
 rm -f  /private/var/mobile/Library/Preferences/com.atwiiks.betterccxi.plist
 
+# Cleanup files from the "BetterSettings" package.
+rm -rf /private/var/mobile/Library/Preferences/BetterSettings
+rm -f  /private/var/mobile/Library/Preferences/com.midnightchips.bettersettings.bgimage.plist
+rm -f  /private/var/mobile/Library/Preferences/com.midnightchips.bettersettings.plist
+rm -f  /private/var/mobile/Library/Preferences/com.midnightchips.bettersettings*.*
+
 # Cleanup files from the "Bigboss Icon Set" package.
 rm -rf /usr/share/bigboss
 
@@ -398,6 +408,17 @@ rm -f  /private/var/mobile/Library/Preferences/com.oly.xb-ccmodules.plist
 # Cleanup files from the CCSupport package.
 rm -rf /Library/Application Support/CCSupport
 rm -f  /private/var/mobile/Library/ControlCenter/ModuleConfiguration_CCSupport.plist
+
+# Cleanup files from the "Cephei" package.
+rm -rf /Library/Frameworks/Cephei.framework
+rm -rf /Library/Frameworks/CepheiPrefs.framework
+rm -f  /usr/bin/defaults
+rm -rf /usr/lib/Cephei.framework
+rm -rf /usr/lib/Cepheiprefs.framework
+rm -f  /usr/lib/libcephei.dylib
+rm -f  /usr/lib/libcepheiprefs.dylib
+rm -f  /usr/lib/libhbangcommon.dylib
+rm -f  /usr/lib/libhbangprefs.dylib
 
 # Cleanup files from the CircuitBreaker package.
 rm -rf /Applications/circuitbreaker.app/
@@ -531,6 +552,7 @@ rm -f /usr/bin/sort
 
 # Cleanup files from the CrashReporter package.
 rm -rf /Applications/CrashReporter.app
+rm -rf /private/var/mobile/Library/CrashReporter
 rm -f  /private/var/mobile/Library/Logs/CrashReporter/*.*
 rm -f  /private/var/mobile/Library/Preferences/crash-reporter.plist
 rm -f  /private/var/mobile/Library/Preferences/jp.ashikase.crashreporter.scanner.plist
@@ -597,7 +619,10 @@ rm -f /bin/run-parts
 # Cleanup files from the "Debkeeper" package.
 rm -f /private/var/mobile/Library/Preferences/net.tateu.debkeeper.plist
 
-# Cleanup files from the DetailedPowerUsage package.
+# Cleanup files from the "DetailCellularUsage" package.
+rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DCUSettings.plist
+
+# Cleanup files from the "DetailedPowerUsage" package.
 rm -rf /Library/Application Support/DPUTweakResources
 rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
 
@@ -632,6 +657,7 @@ rm -rf /Library/ControlCenter
 # Cleanup files from the "Fake GPS Pro" package.
 rm -f  /private/var/mobile/Documents/favorites.plist
 rm -rf /private/var/mobile/Library/Caches/cn.tinyapps.XGPSPro
+rm -f  /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSLite.plist
 rm -f  /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
 rm -f  /private/var/mobile/Library/Preferences/net.85819.ios.OTRLocation.plist
 rm -f  /private/var/mobile/Library/Preferences/otrlocation.app.85819.net.plist
@@ -924,6 +950,18 @@ rm -f /usr/lib/libcolorpicker.dylib
 rm -rf /usr/include/libcrashreport
 rm -f  /usr/lib/libcrashreport.dylib
 
+# Cleanup files from the "libCSColorPicker" package
+rm -f /usr/lib/libCSColorPicker.dylib
+
+# Cleanup files from the "libCSPreferences" package.
+rm -f /usr/bin/almighty
+rm -f /usr/lib/libCSPUtilities.dylib
+rm -f /usr/lib/libCSPreferences.dylib
+rm -f /usr/lib/libCSPreferencesProvider.dylib
+
+# Cleanup files from the "libImagePicker" package.
+rm -f /usr/lib/libimagepicker.dylib
+
 # Cleanup files from the "Liberty" and "Liberty Lite" package.
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.libertylite.plist
@@ -1103,9 +1141,16 @@ rm -f /usr/lib/libprefs.dylib
 # Cleanup files from the "Preference Organizer 2" tweak.
 rm -f /private/var/mobile/Library/Preferences/net.angelxwind.preferenceorganizer2.plist
 
+# Cleanup files from the "PrefixUI" package.
+rm -rf /Library/Frameworks/PrefixUI.framework
+rm -f  /com.laughingquoll.prefixui_0.5_iphoneos-arm.deb
+
 # Cleanup files from the "Profile Directory" package.
 rm -f  /etc/profile
 rm -rf /etc/profile.d
+
+# Cleanup files from the "PullToRespring" package.
+rm -f /private/var/mobile/Library/Preferences/com.sassoty.pulltorespring.plist
 
 # Cleanup files from the "ReformX" package.
 rm -rf /Applications/ReformX.app
@@ -1249,6 +1294,7 @@ rm -f /usr/bin/unzipsfx
 
 # Cleanup files from the "Utubed" package.
 rm -f /private/var/mobile/Library/Preferences/utubedp.ws.plist
+rm -f /private/var/mobile/Library/Preferences/utubedprefs.ws.plist
 
 # Cleanup files from the "UUID Generator" package.
 rm -f /usr/bin/uuid
@@ -1285,15 +1331,16 @@ rm -f /private/var/mobile/Library/Preferences/com.oly.xbhide.plist
 
 # Cleanup files from the XenHTML package.
 rm -rf /Library/Application Support/libGitHubIssues
+rm -rf /private/var/mobile/Library/iWidgets
+rm -rf /private/var/mobile/Library/LockHTML
 rm -f  /private/var/mobile/Library/Preferences/com.matchstic.xenhtml.plist
+rm -rf /private/var/mobile/Library/SBHTML
 rm -rf /usr/include/uaunbox
 rm -f  /usr/lib/libGitHubIssues.dylib
 rm -f  /usr/lib/libuaunbox.dylib
 rm -f  /usr/libexec/uaunbox
 rm -f  /usr/libexec/uaunboxdlaunch
 rm -f  /usr/include/libGitHubIssues.h
-rm -rf /var/mobile/Library/LockHTML
-rm -rf /var/mobile/Library/SBHTML
 
 # Cleanup files from the "XZ Utils" package.
 rm -f  /usr/bin/lzcat
