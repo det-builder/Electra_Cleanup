@@ -111,6 +111,7 @@ rm -rf /etc/default
 rm -rf /etc/profile.d
 
 # Delete directories off of the /Library folder.
+rm -rf /Library/Activator
 rm -rf /Library/dpkg
 rm -rf /Library/ControlCenter
 rm -rf /Library/Flipswitch
@@ -147,28 +148,28 @@ rm -f /.file
 rm -f /.Trashes
 rm -f /bin/launchctl
 rm -f /usr/lib/libjailbreak.dylib
-rm -f /var/installd/Library/MobileInstallation/UninstalledApplications.plist
-rm -f /var/mobile/test.txt
-rm -f /var/mobile/Library/Preferences/.GlobalPreferences.plist.*
-rm -f /var/mobile/Library/Preferences/com.apple.*.plist.*
-rm -f /var/mobile/Library/Preferences/com.saurik.Cydia.plist
-rm -f /var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
-rm -f /var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
-rm -f /var/mobile/Library/Preferences/cn.tinyapps.location360pro.plist
-rm -f /var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
-rm -f /var/mobile/Library/Preferences/pairedsyncd.plist
-rm -f /var/mobile/Library/Preferences/splashboardd.plist
-rm -f /var/mobile/Library/Preferences/xhprx.xh
-rm -f /var/mobile/Library/SpringBoard/.HomeBackground.cpbitmap.*
-rm -f /var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
-rm -f /var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
-rm -f /var/mobile/MobileSoftwareUpdate/restore.log
-rm -f /var/MobileSoftwareUpdate/restore.log
-rm -f /var/root/.bash_history
-rm -f /var/root/Library/Preferences/com.apple.*.plist.*
-rm -f /var/root/Library/Preferences/UserEventAgent.plist
-rm -f /var/run/jailbreakd.pid
-rm -f /var/tmp/jailbreakd.pid
+rm -f /private/var/installd/Library/MobileInstallation/UninstalledApplications.plist
+rm -f /private/var/mobile/test.txt
+rm -f /private/var/mobile/Library/Preferences/.GlobalPreferences.plist.*
+rm -f /private/var/mobile/Library/Preferences/com.apple.*.plist.*
+rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
+rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
+rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
+rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.location360pro.plist
+rm -f /private/var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
+rm -f /private/var/mobile/Library/Preferences/pairedsyncd.plist
+rm -f /private/var/mobile/Library/Preferences/splashboardd.plist
+rm -f /private/var/mobile/Library/Preferences/xhprx.xh
+rm -f /private/var/mobile/Library/SpringBoard/.HomeBackground.cpbitmap.*
+rm -f /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
+rm -f /private/var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
+rm -f /private/var/mobile/MobileSoftwareUpdate/restore.log
+rm -f /private/var/MobileSoftwareUpdate/restore.log
+rm -f /private/var/root/.bash_history
+rm -f /private/var/root/Library/Preferences/com.apple.*.plist.*
+rm -f /private/var/root/Library/Preferences/UserEventAgent.plist
+rm -f /private/var/run/jailbreakd.pid
+rm -f /private/var/tmp/jailbreakd.pid
 
 # Delete misc folders that don't belong to any tweak.
 rm -rf /Library/Application Support/SpeedOptimize
@@ -971,6 +972,9 @@ rm -f /usr/lib/Liberty.dylib
 rm -rf /usr/include/libpackageinfo
 rm -f  /usr/lib/libpackageinfo.dylib
 
+# Cleanup files from the "libSwift4" package.
+rm -rf /usr/lib/libswift
+
 # Cleanup files from the "libSymbolicate" package.
 rm -rf /usr/include/libsymbolicate
 rm -f  /usr/lib/libsymbolicate.dylib
@@ -1267,6 +1271,9 @@ rm -rf /Library/Frameworks/TechSupport.framework
 rm -f /usr/bin/top
 rm -f /usr/include/libtop.h
 rm -f /usr/lib/libtop.a
+
+# Cleanup files from the "TSS Saver" app
+rm -rf /Applications/TSSSaver.app
 
 # Cleanup files from the "Tweak Injector" package.
 rm -rf /Applications/SafeMode.app
