@@ -933,6 +933,14 @@ rm -f /usr/libexec/uucpd
 # rm -f /sbin/umount
 # rm -f /usr/sbin/nvram
 
+# Cleanup files from the "kern-utils" package.
+rm -f /usr/bin/kdump
+rm -f /usr/bin/kinfo
+rm -f /usr/bin/kmap
+rm -f /usr/bin/kmem
+rm -f /usr/bin/kpatch
+rm -f /usr/bin/nvpatch
+
 # Cleanup files from the "KSBA" package.
 rm -f  /usr/bin/ksba-config
 rm -f  /usr/include/ksba.halt
