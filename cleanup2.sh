@@ -578,6 +578,9 @@ rm -rf /var/lib/cydia
 rm -f /usr/bin/sw_vers
 rm -f /usr/sbin/startupfiletool
 
+# Cleanup files from the "DayNightSwitch" package.
+rm -f /private/var/mobile/Library/Preferences/de.finngaida.daynightswitch.plist
+
 # Cleanup files from the "Debian Packager" package.
 rm -rf /etc/alternatives
 rm -rf /etc/dpkg
@@ -749,7 +752,9 @@ rm -f /private/var/mobile/Library/Preferences/com.imkpatil.floatingdock.plist
 rm -f /private/var/mobile/Library/Preferences/com.synnyg.floatydockprefs.plist
 
 # Cleanup files from the "FrontPage" package.
+rm -rf /Library/FrontPage
 rm -f  /private/var/mobile/Documents/FrontPage.plist
+rm -rf /private/var/mobile/Library/FrontPage
 rm -rf /private/var/mobile/Library/FrontPageCache
 rm -f  /private/var/mobile/Library/Preferences/com.junesiphone.frontpage.plist
 
@@ -1291,6 +1296,9 @@ rm -f /usr/bin/sbreload
 rm -f /usr/bin/uiduid
 rm -f /usr/bin/uiopen
 
+# Cleanup files from the "UniAW2018_Base" theme package.
+rm -rf /private/var/mobile/Library/SBHTML/UniAW2018_Base_2.0
+
 # Cleanup files from the "Unrar" package.
 rm -f /usr/bin/unrar
 
@@ -1327,6 +1335,18 @@ rm -rf /usr/share/vim
 rm -f /etc/wgetrc
 rm -f /usr/bin/wget
 
+# Cleanup files from the "Widget Weather GPS" app.
+rm -rf /Applications/WidgetWeatherGPS.app
+rm -rf /Library/Activator/Listeners/com.sddev.WWRefresh
+rm -rf /Library/Activator/Listeners/com.sddev.WWSettings
+rm -rf /Library/Application Support/WW3
+rm -rf /private/var/mobile/Library/LockHTML/03_WW_OFH_BASE
+rm -rf /private/var/mobile/Library/LockHTML/03_WW_OFH_LS
+rm -rf /private/var/mobile/Library/Stats
+rm -rf /private/var/mobile/Library/WidgetWeather
+rm -f  /private/var/mobile/Library/BatteryStats.txt
+rm -f  /private/var/mobile/Library/RAMStats.txt
+
 # Cleanup files from the wifiFirmwareUpdater 
 rm -rf /private/var/mobile/updatedWifiFirmware
 rm -f  /usr/bin/autoflashwifi
@@ -1334,7 +1354,7 @@ rm -f  /usr/bin/flashwifi
 rm -f  /usr/bin/revertwifi
 
 # Cleanup files from the "XB-Hide" package.
-rm -f /private/var/mobile/Library/Preferences/com.oly.xbhide.plist
+rm -rf /private/var/mobile/Library/Preferences/com.oly.xbhide.plist
 
 # Cleanup files from the XenHTML package.
 rm -rf /Library/Application Support/libGitHubIssues
