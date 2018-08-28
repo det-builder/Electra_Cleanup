@@ -152,7 +152,6 @@ rm -f /private/var/installd/Library/MobileInstallation/UninstalledApplications.p
 rm -f /private/var/mobile/test.txt
 rm -f /private/var/mobile/Library/Preferences/.GlobalPreferences.plist.*
 rm -f /private/var/mobile/Library/Preferences/com.apple.*.plist.*
-rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
 rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.location360pro.plist
@@ -285,7 +284,8 @@ rm -rf /System/Library/PreferenceBundles/AppList.bundle
 rm -rf /usr/include/AppList
 rm -f  /usr/lib/libapplist.dylib
 
-# Cleanup files from the "Appsync" package.
+# Cleanup files from the "Appsync Unified" package.
+rm -f /Library/LaunchDaemons/net.angelxwind.asu_inject.plist
 rm -f /usr/bin/asu_inject
 
 # Cleanup files from the "APT 1.4 (apt-key)" package.
@@ -574,6 +574,10 @@ rm -rf /etc/apt/trusted.gpg.d
 rm -rf /usr/libexec/cydia
 rm -rf /var/lib/cydia
 
+# Cleanup files from the "Cydia Compatibility Package" package.
+rm -f /Library/LaunchDaemons/com.saurik.Cydia.Startup.plist
+rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
+
 # Cleanup files from the "Darwin Tools" package.
 rm -f /usr/bin/sw_vers
 rm -f /usr/sbin/startupfiletool
@@ -645,6 +649,15 @@ rm -f /usr/bin/sdiff
 # Cleanup files from the "Duo" package.
 rm -f /private/var/mobile/Library/Preferences/com.muirey03.duo.plist
 rm -f /private/var/mobile/Library/Preferences/com.muirey03.duoprefs.plist
+
+# Cleanup files from the "EW.WdgtPack.6" package.
+rm -rf /private/var/mobile/Library/iWidgets/EW.WdgtPack.6_iW1
+rm -rf /private/var/mobile/Library/iWidgets/EW.WdgtPack.6_iW2
+rm -rf /private/var/mobile/Library/LockHTML/EW.WdgtPack.6_LS1
+rm -rf /private/var/mobile/Library/LockHTML/EW.WdgtPack.6_LS2
+rm -rf /private/var/mobile/Library/LockHTML/EW.WdgtPack.6_LS3
+rm -rf /private/var/mobile/Library/SBHTML/EW.WdgtPack.6_SB1
+rm -rf /private/var/mobile/Library/SBHTML/EW.WdgtPack.6_SB2
 
 # Cleanup files from the Extender package.
 rm -rf /Applications/Extender.app
@@ -933,6 +946,14 @@ rm -f /usr/libexec/uucpd
 # rm -f /sbin/umount
 # rm -f /usr/sbin/nvram
 
+# Cleanup files from the "JA4" theme package.
+rm -f /private/var/mobile/Library/iWidgets/XenJA4
+
+# Cleanup files from the "KarenLocalizer" and "KarenPrefs" packages.
+# NOTE, these two are in the Mikoto package and are deleted there.
+# rm -f /usr/lib/libkarenlocalizer.dylib
+# rm -f /usr/lib/libkarenprefs.dylib
+
 # Cleanup files from the "kern-utils" package.
 rm -f /usr/bin/kdump
 rm -f /usr/bin/kinfo
@@ -1006,6 +1027,12 @@ rm -rf /Library/LockPlus
 rm -rf /private/var/mobile/Documents/lockplusfonts
 rm -rf /private/var/mobile/Library/LockPlus
 rm -f  /private/var/mobile/Library/Preferences/com.junesiphone.lockplus.plist
+
+# Cleanup files from the "LS EW11" theme package.
+rm -rf "/private/var/mobile/Library/LockHTML/LS EW11"
+
+# Cleanup files from the "LS EW33" theme package.
+rm -rf "/private/var/mobile/Library/LockHTML/LS EW33"
 
 # Cleanup files from the "lsof" package.
 rm -f /usr/sbin/lsof
@@ -1108,6 +1135,9 @@ rm -f  /usr/lib/libnghttp2.14.dylib
 rm -f  /usr/lib/libnghttp2.dylib
 rm -f  /usr/lib/libnghttp2.la
 rm -f  /usr/lib/pkgconfig/libnghttp2.pc
+
+# Cleanup files from the "noncereboot11CLI" package.
+rm -f /usr/bin/noncereboot11
 
 # Cleanup files from the "NoSubstitute (Electra)" package.
 rm -f /private/var/mobile/Library/Preferences/co.vexation.nosubstitute.plist
@@ -1270,6 +1300,10 @@ rm -f /usr/sbin/vipw
 rm -f /usr/sbin/vsdbutil
 rm -f /usr/sbin/zdump
 rm -f /usr/sbin/zic
+
+# Cleanup files from the "SystemInfo" package.
+rm -f /usr/bin/iofbres
+rm -f /usr/bin/nvnonce
 
 # Cleanup files from the "Tape Archive" package.
 rm -f /bin/gtar
