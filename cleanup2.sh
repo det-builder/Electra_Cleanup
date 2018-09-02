@@ -132,6 +132,7 @@ rm -rf /usr/local/lib/*
 
 # Delete directories off of the /var folder.
 rm -rf /var/DT
+rm -rf /var/installd/Library/Logs/*
 rm -rf /var/mobile/Library/.Trash
 rm -rf /var/mobile/Library/.Trash.metadata
 rm -rf /var/mobile/Library/Caches/*
