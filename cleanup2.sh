@@ -32,6 +32,9 @@
 # /private/var/mobile/Containers/Data                             #
 # /private/var/mobile/Containers/Shared                           #
 #                                                                 #
+# NOTE:                                                           #
+# Apple Watch backups are stored here:                            #
+# /private/var/mobile/Library/NanoBackup                          #
 ###################################################################
 
 # Ensure the user is logged in as root.
@@ -166,6 +169,7 @@ rm -f /private/var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushsto
 rm -f /private/var/mobile/MobileSoftwareUpdate/restore.log
 rm -f /private/var/MobileSoftwareUpdate/restore.log
 rm -f /private/var/root/.bash_history
+rm -f /private/var/root/.bashrc
 rm -f /private/var/root/Library/Preferences/com.apple.*.plist.*
 rm -f /private/var/root/Library/Preferences/UserEventAgent.plist
 rm -f /private/var/run/jailbreakd.pid
@@ -189,6 +193,7 @@ rm -rf /var/local/*
 rm -rf /var/lock/*
 rm -rf /var/log/*
 rm -rf /var/logs/*
+rm -rf /var/mobile/Downloads/com.apple.AirDrop
 rm -rf /var/mobile/Downloads/Cydia
 rm -rf /var/mobile/Library/Cydia
 rm -rf /var/mobile/Library/Logs/*
@@ -268,49 +273,49 @@ rm -f  /usr/bin/cardump
 rm -f  /usr/bin/recache
 
 # Cleanup files from any themes applied with Anemone or XenHTML.
-rm -rf "/Library/Themes/Classic Icons 2x.theme"
-rm -rf "/Library/Themes/Classic Icons Large.theme"
-rm -rf "/Library/Themes/Classic Labels.theme"
-rm -rf "/Library/Themes/Classic Respring Logo.theme"
-rm -rf "/Library/Themes/Classic Settings Icons.theme"
-rm -rf "/Library/Themes/Classic Status Bar.theme"
-rm -rf "/Library/Themes/Classic UISounds.theme"
-rm -rf "/Library/Themes/Classic Weather Icon - Celsius.theme"
-rm -rf "/Library/Themes/Classic Weather Icon - Fahrenheit.theme"
-rm -rf "/Library/Themes/Winterboard icon for Anemone.theme"
-rm -rf "/Library/Themes/iPhone X 4 Icon Dock.theme"
-rm -rf "/Library/Themes/iPhone X 5 Icon Dock.theme"
-rm -rf "/Library/Themes/iPhone X Battery.theme"
-rm -rf "/Library/Themes/iPhone X Bluetooth.theme"
-rm -rf "/Library/Themes/iPhone X Icons.theme"
-rm -rf "/Library/Themes/iPhone X Location.theme"
-rm -rf "/Library/Themes/iPhone X RotationLock.theme"
-rm -rf "/Library/Themes/iPhone X SignalBars.theme"
-rm -rf "/Library/Themes/iPhone X VPN.theme"
-rm -rf "/Library/Themes/iPhone X Wifi.theme"
+rm -rf /Library/Themes/Classic\ Icons\ 2x.theme
+rm -rf /Library/Themes/Classic\ Icons\ Large.theme
+rm -rf /Library/Themes/Classic\ Labels.theme
+rm -rf /Library/Themes/Classic\ Respring\ Logo.theme
+rm -rf /Library/Themes/Classic\ Settings\ Icons.theme
+rm -rf /Library/Themes/Classic\ Status\ Bar.theme
+rm -rf /Library/Themes/Classic\ UISounds.theme
+rm -rf /Library/Themes/Classic\ Weather\ Icon\ -\ Celsius.theme
+rm -rf /Library/Themes/Classic\ Weather\ Icon\ -\ Fahrenheit.theme
+rm -rf /Library/Themes/Winterboard icon for Anemone.theme
+rm -rf /Library/Themes/iPhone\ X\ 4\ Icon\ Dock.theme
+rm -rf /Library/Themes/iPhone\ X\ 5\ Icon\ Dock.theme
+rm -rf /Library/Themes/iPhone\ X\ Battery.theme
+rm -rf /Library/Themes/iPhone\ X\ Bluetooth.theme
+rm -rf /Library/Themes/iPhone\ X\ Icons.theme
+rm -rf /Library/Themes/iPhone\ X\ Location.theme
+rm -rf /Library/Themes/iPhone\ X\ RotationLock.theme
+rm -rf /Library/Themes/iPhone\ X\ SignalBars.theme
+rm -rf /Library/Themes/iPhone\ X\ VPN.theme
+rm -rf /Library/Themes/iPhone\ X\ Wifi.theme
 rm -rf /Library/Themes/minimalios11.theme
-rm -rf "/Library/Themes/Veexillum - Apps.theme"
-rm -rf "/Library/Themes/Veexillum - Badges.theme"
-rm -rf "/Library/Themes/Veexillum - Boot Logo.theme"
-rm -rf "/Library/Themes/Veexillum - CC.theme"
-rm -rf "/Library/Themes/Veexillum - Dock (line).theme"
-rm -rf "/Library/Themes/Veexillum - Dock.theme"
-rm -rf "/Library/Themes/Veexillum - DockEffects.theme"
-rm -rf "/Library/Themes/Veexillum - Folder.theme"
-rm -rf "/Library/Themes/Veexillum - IconEffects (unmasked).theme"
-rm -rf "/Library/Themes/Veexillum - IconEffects.theme"
-rm -rf "/Library/Themes/Veexillum - Mask.theme"
-rm -rf "/Library/Themes/Veexillum - ShareSheet.theme"
-rm -rf "/Library/Themes/Veexillum - System.theme"
-rm -rf "/Library/Themes/Veexillum - UI.theme"
+rm -rf /Library/Themes/Veexillum\ -\ Apps.theme
+rm -rf /Library/Themes/Veexillum\ -\ Badges.theme
+rm -rf /Library/Themes/Veexillum\ -\ Boot\ Logo.theme
+rm -rf /Library/Themes/Veexillum\ -\ CC.theme
+rm -rf /Library/Themes/Veexillum\ -\ Dock\ (line).theme
+rm -rf /Library/Themes/Veexillum\ -\ Dock.theme
+rm -rf /Library/Themes/Veexillum\ -\ DockEffects.theme
+rm -rf /Library/Themes/Veexillum\ -\ Folder.theme
+rm -rf /Library/Themes/Veexillum\ -\ IconEffects\ (unmasked).theme
+rm -rf /Library/Themes/Veexillum\ -\ IconEffects.theme
+rm -rf /Library/Themes/Veexillum\ -\ Mask.theme
+rm -rf /Library/Themes/Veexillum\ -\ ShareSheet.theme
+rm -rf /Library/Themes/Veexillum\ -\ System.theme
+rm -rf /Library/Themes/Veexillum\ -\ UI.theme
 rm -rf /private/var/mobile/Library/iWidgets/EW.WdgtPack.6_iW1
 rm -rf /private/var/mobile/Library/iWidgets/EW.WdgtPack.6_iW2
 rm -rf /private/var/mobile/Library/iWidgets/XenJA4
 rm -rf /private/var/mobile/Library/LockHTML/EW.WdgtPack.6_LS1
 rm -rf /private/var/mobile/Library/LockHTML/EW.WdgtPack.6_LS2
 rm -rf /private/var/mobile/Library/LockHTML/EW.WdgtPack.6_LS3
-rm -rf "/private/var/mobile/Library/LockHTML/LS EW11"
-rm -rf "/private/var/mobile/Library/LockHTML/LS EW33"
+rm -rf /private/var/mobile/Library/LockHTML/LS\ EW11"
+rm -rf /private/var/mobile/Library/LockHTML/LS\ EW33"
 rm -rf /private/var/mobile/Library/SBHTML/EW.WdgtPack.6_SB1
 rm -rf /private/var/mobile/Library/SBHTML/EW.WdgtPack.6_SB2
 rm -rf /private/var/mobile/Library/SBHTML/UniAW2018_Base_2.0
@@ -1341,6 +1346,7 @@ rm -f /usr/sbin/zic
 # Cleanup files from the "SystemInfo" package.
 rm -f /usr/bin/iofbres
 rm -f /usr/bin/nvnonce
+rm -f /var/mobile/Documents/ninjalog
 
 # Cleanup files from the "Tape Archive" package.
 rm -f /bin/gtar
@@ -1416,6 +1422,9 @@ rm -rf /Applications/WidgetWeatherGPS.app
 rm -rf /Library/Activator/Listeners/com.sddev.WWRefresh
 rm -rf /Library/Activator/Listeners/com.sddev.WWSettings
 rm -rf /Library/Application Support/WW3
+rm -f  /private/var/mobile/Documents/BatteryStats.txt
+rm -f  /private/var/mobile/Documents/widgetweather.xml
+
 rm -rf /private/var/mobile/Library/LockHTML/03_WW_OFH_BASE
 rm -rf /private/var/mobile/Library/LockHTML/03_WW_OFH_LS
 rm -rf /private/var/mobile/Library/Stats
