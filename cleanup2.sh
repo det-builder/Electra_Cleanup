@@ -310,14 +310,21 @@ rm -rf /Library/Themes/Veexillum\ -\ System.theme
 rm -rf /Library/Themes/Veexillum\ -\ UI.theme
 rm -rf /private/var/mobile/Library/iWidgets/EW.WdgtPack.6_iW1
 rm -rf /private/var/mobile/Library/iWidgets/EW.WdgtPack.6_iW2
+rm -rf /private/var/mobile/Library/iWidgets/Scripted
 rm -rf /private/var/mobile/Library/iWidgets/XenJA4
 rm -rf /private/var/mobile/Library/LockHTML/EW.WdgtPack.6_LS1
 rm -rf /private/var/mobile/Library/LockHTML/EW.WdgtPack.6_LS2
 rm -rf /private/var/mobile/Library/LockHTML/EW.WdgtPack.6_LS3
-rm -rf /private/var/mobile/Library/LockHTML/LS\ EW11"
-rm -rf /private/var/mobile/Library/LockHTML/LS\ EW33"
+rm -rf /private/var/mobile/Library/LockHTML/LS\ EW11
+rm -rf /private/var/mobile/Library/LockHTML/LS\ EW33
 rm -rf /private/var/mobile/Library/SBHTML/EW.WdgtPack.6_SB1
 rm -rf /private/var/mobile/Library/SBHTML/EW.WdgtPack.6_SB2
+rm -rf /private/var/mobile/Library/SBHTML/LL\ Stripe
+rm -rf /private/var/mobile/Library/SBHTML/SB\ EW8
+rm -rf /private/var/mobile/Library/SBHTML/SB\ EW9
+rm -rf /private/var/mobile/Library/SBHTML/SB\ EW13
+rm -rf /private/var/mobile/Library/SBHTML/SB\ EW22
+rm -rf /private/var/mobile/Library/SBHTML/SB\ EW30
 rm -rf /private/var/mobile/Library/SBHTML/UniAW2018_Base_2.0
 
 # Cleanup files from the "App Admin" package.
@@ -1424,7 +1431,6 @@ rm -rf /Library/Activator/Listeners/com.sddev.WWSettings
 rm -rf /Library/Application Support/WW3
 rm -f  /private/var/mobile/Documents/BatteryStats.txt
 rm -f  /private/var/mobile/Documents/widgetweather.xml
-
 rm -rf /private/var/mobile/Library/LockHTML/03_WW_OFH_BASE
 rm -rf /private/var/mobile/Library/LockHTML/03_WW_OFH_LS
 rm -rf /private/var/mobile/Library/Stats
