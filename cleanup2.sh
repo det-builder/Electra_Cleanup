@@ -125,6 +125,7 @@ rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
 rm -rf /Library/Switches
 rm -rf /Library/Themes
+rm -rf /Library/unlimapps_tweak_resources
 
 # Delete directories off of the /usr folder.
 rm -rf /usr/games
@@ -141,8 +142,10 @@ rm -rf /var/mobile/Library/.Trash.metadata
 rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
 rm -rf /var/mobile/Library/WebKit/*
-rm -rf /var/root/Application Support/*
+rm -rf /var/root/Application\ Support/*
 rm -rf /var/root/Library/Caches/*
+rm -rf /var/ua_tweak_resources
+rm -rf /var/unlimapps_tweak_resources
 
 # Delete misc files that don't belong to any tweak.
 rm -f /.bit_of_fun
@@ -165,6 +168,7 @@ rm -f /private/var/mobile/Library/Preferences/splashboardd.plist
 rm -f /private/var/mobile/Library/Preferences/xhprx.xh
 rm -f /private/var/mobile/Library/SpringBoard/.HomeBackground.cpbitmap.*
 rm -f /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
+rm -f /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra1131-mp.plist
 rm -f /private/var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
 rm -f /private/var/mobile/MobileSoftwareUpdate/restore.log
 rm -f /private/var/MobileSoftwareUpdate/restore.log
@@ -176,7 +180,7 @@ rm -f /private/var/run/jailbreakd.pid
 rm -f /private/var/tmp/jailbreakd.pid
 
 # Delete misc folders that don't belong to any tweak.
-rm -rf /Library/Application Support/SpeedOptimize
+rm -rf /Library/Application\ Support/SpeedOptimize
 rm -rf /Library/CustomFonts
 rm -rf /usr/share/bash-completion
 rm -rf /usr/share/bigboss
@@ -273,6 +277,9 @@ rm -f  /usr/bin/cardump
 rm -f  /usr/bin/recache
 
 # Cleanup files from any themes applied with Anemone or XenHTML.
+rm -rf /Library/Themes/Ace\ Folder.theme
+rm -rf /Library/Themes/Ace\ High\ Sierra.theme
+
 rm -rf /Library/Themes/Classic\ Icons\ 2x.theme
 rm -rf /Library/Themes/Classic\ Icons\ Large.theme
 rm -rf /Library/Themes/Classic\ Labels.theme
@@ -293,7 +300,15 @@ rm -rf /Library/Themes/iPhone\ X\ RotationLock.theme
 rm -rf /Library/Themes/iPhone\ X\ SignalBars.theme
 rm -rf /Library/Themes/iPhone\ X\ VPN.theme
 rm -rf /Library/Themes/iPhone\ X\ Wifi.theme
+rm -rf /Library/Themes/LotusMask.theme
 rm -rf /Library/Themes/minimalios11.theme
+rm -rf /Library/Themes/Piksel\ Folder.theme
+rm -rf /Library/Themes/Piksel\ Icons.theme
+rm -rf /Library/Themes/PikselMask.theme
+rm -rf /Library/Themes/SShadow\ Bagde.theme
+rm -rf /Library/Themes/SShadow\ Dock.theme
+rm -rf /Library/Themes/SShadow\ Folder.theme
+rm -rf /Library/Themes/SShadow.theme
 rm -rf /Library/Themes/Veexillum\ -\ Apps.theme
 rm -rf /Library/Themes/Veexillum\ -\ Badges.theme
 rm -rf /Library/Themes/Veexillum\ -\ Boot\ Logo.theme
@@ -328,8 +343,9 @@ rm -rf /private/var/mobile/Library/SBHTML/SB\ EW30
 rm -rf /private/var/mobile/Library/SBHTML/UniAW2018_Base_2.0
 
 # Cleanup files from the "App Admin" package.
-rm -rf /Library/unlimapps_tweak_resources
-rm -rf /private/var/unlimapps_tweak_resources
+rm -rf /Library/unlimapps_tweak_resources/uaupdatetools
+rm -rf /private/var/ua_tweak_resources/uaupdatetools
+rm -rf /private/var/unlimapps_tweak_resources/uaupdatetools
 
 # Cleanup files from the "Apps Manager" package.
 rm -rf /Applications/ADManager.app
@@ -468,7 +484,7 @@ rm -rf /Library/ControlCenter/Bundles
 rm -f  /private/var/mobile/Library/Preferences/com.oly.xb-ccmodules.plist
 
 # Cleanup files from the CCSupport package.
-rm -rf /Library/Application Support/CCSupport
+rm -rf /Library/Application\ Support/CCSupport
 rm -f  /private/var/mobile/Library/ControlCenter/ModuleConfiguration_CCSupport.plist
 
 # Cleanup files from the "Cephei" package.
@@ -698,7 +714,7 @@ rm -f /private/var/mobile/Library/Preferences/net.tateu.debkeeper.plist
 rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DCUSettings.plist
 
 # Cleanup files from the "DetailedPowerUsage" package.
-rm -rf /Library/Application Support/DPUTweakResources
+rm -rf /Library/Application\ Support/DPUTweakResources
 rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
 
 # Cleanup files from the "Developer-Cmds" package.
@@ -725,6 +741,7 @@ rm -rf /private/var/Ext3nder-Installer
 rm -rf /private/var/mobile/Documents/Ext3nder
 rm -f  /private/var/mobile/Library/Preferences/com.cydia.Ext3nder.plist
 rm -f  /private/var/mobile/Library/Preferences/com.julioverne.ext3nder.autosign.plist
+rm -f  /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/com.cydia.Ext3nder.plist
 
 # Cleanup files from the "EzCC" package.
 rm -rf /Library/ControlCenter
@@ -754,7 +771,7 @@ rm -f /usr/bin/pax
 # Cleanup files for the "Fileza, FilzaEscaped, FilzaElectrocuted" packages.
 rm -rf /Applications/Filza.app
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
-rm -rf /private/var/mobile/Library/Application Support/Containers/com.scroublepokemon.filzaelectrocuted
+rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Filza
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
@@ -771,8 +788,8 @@ rm -f /usr/libexec/frcode
 
 # Cleanup files from the "Flame" package.
 rm -f  /etc/apt/apt.conf.d/flameTimeout
-rm -rf /Library/Application Support/Flame
-rm -rf /private/var/mobile/Library/Application Support/Flame
+rm -rf /Library/Application\ Support/Flame
+rm -rf /private/var/mobile/Library/Application\ Support/Flame
 rm -f  /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
 
 # Cleanup files from the "Flex" package.
@@ -780,7 +797,8 @@ rm -rf /Applications/Flex.app
 rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
 rm -f  /private/var/mobile/Documents/extraction-com.johncoates.Flex.flex
 rm -rf /private/var/mobile/Documents/Flex
-rm -rf /private/var/mobile/Library/Application Support/Flex3
+rm -rf /private/var/mobile/Library/Application\ Support/Flex3
+rm -f  /private/var/mobile/Library/Application\ Support/Flex3/patches.plist
 rm -rf /private/var/mobile/Library/Caches/com.johncoates.Flex
 rm -rf /private/var/mobile/Library/Flex3
 rm -f  /private/var/mobile/Library/Preferences/com.johncoates.Flex.plist
@@ -956,8 +974,8 @@ rm -f  /private/var/mobile/Library/Preferences/net.r-ch.iconoclasm.plist
 rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 
 # Cleanup files from the "Iconsupport" package.
-rm -rf /Library/Application Support/IconSupport
-rm -rf /private/var/mobile/Library/Application Support/IconSupport
+rm -rf /Library/Application\ Support/IconSupport
+rm -rf /private/var/mobile/Library/Application\ Support/IconSupport
 
 # Cleanup files from the "Inet-Utils" package.
 rm -f /usr/bin/dnsdomainname
@@ -1250,7 +1268,7 @@ rm -f /private/var/mobile/Library/Preferences/com.sassoty.pulltorespring.plist
 
 # Cleanup files from the "ReformX" package.
 rm -rf /Applications/ReformX.app
-rm -rf /Library/Application Support/ReformX
+rm -rf /Library/Application\ Support/ReformX
 rm -f  /private/var/mobile/Library/Preferences/com.zestlabs.reformx.current.plist
 rm -f  /private/var/mobile/Library/Preferences/com.zestlabs.reformx.plist
 
@@ -1378,6 +1396,26 @@ rm -rf /Library/TweakInject
 rm -f  /usr/lib/TweakInject.dylib
 rm -rf /usr/lib/TweakInject
 
+# Cleanup files from the "UASharedTools" package.
+rm -rf /Library/unlimapps_tweak_resources/uasharedtools
+rm -f  /usr/lib/libuasharedanaltyics.dylib
+rm -f  /usr/lib/libuasharedanaltyicsflurry.dylib
+rm -f  /usr/lib/libuasharedtools.dylib
+rm -f  /usr/lib/libuasharedtoolsapplovin.dylib
+rm -f  /usr/lib/libuasharedtoolsappnext.dylib
+rm -f  /usr/lib/libuasharedtoolsfacebook.dylib
+rm -f  /usr/lib/libuasharedtoolsgoogle.dylib
+rm -f  /usr/lib/libuasharedtoolsinmobi.dylib
+rm -rf /usr/lib/unlimapps_tweak_libs
+rm -f  /var/lib/misc/libuasharedanaltyics.dylib
+rm -f  /var/lib/misc/libuasharedanaltyicsflurry.dylib
+rm -f  /var/lib/misc/libuasharedtools.dylib
+rm -f  /var/lib/misc/libuasharedtoolsapplovin.dylib
+rm -f  /var/lib/misc/libuasharedtoolsappnext.dylib
+rm -f  /var/lib/misc/libuasharedtoolsfacebook.dylib
+rm -f  /var/lib/misc/libuasharedtoolsgoogle.dylib
+rm -f  /var/lib/misc/libuasharedtoolsinmobi.dylib
+
 # Cleanup files from the "UIKit Tools" package.
 rm -f /usr/bin/cfversion
 rm -f /usr/bin/gssc
@@ -1428,7 +1466,7 @@ rm -f /usr/bin/wget
 rm -rf /Applications/WidgetWeatherGPS.app
 rm -rf /Library/Activator/Listeners/com.sddev.WWRefresh
 rm -rf /Library/Activator/Listeners/com.sddev.WWSettings
-rm -rf /Library/Application Support/WW3
+rm -rf /Library/Application\ Support/WW3
 rm -f  /private/var/mobile/Documents/BatteryStats.txt
 rm -f  /private/var/mobile/Documents/widgetweather.xml
 rm -rf /private/var/mobile/Library/LockHTML/03_WW_OFH_BASE
@@ -1448,7 +1486,7 @@ rm -f  /usr/bin/revertwifi
 rm -rf /private/var/mobile/Library/Preferences/com.oly.xbhide.plist
 
 # Cleanup files from the XenHTML package.
-rm -rf /Library/Application Support/libGitHubIssues
+rm -rf /Library/Application\ Support/libGitHubIssues
 rm -rf /private/var/mobile/Library/iWidgets
 rm -rf /private/var/mobile/Library/LockHTML
 rm -f  /private/var/mobile/Library/Preferences/com.matchstic.xenhtml.plist
