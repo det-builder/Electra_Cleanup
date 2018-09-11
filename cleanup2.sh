@@ -157,6 +157,7 @@ rm -f /bin/launchctl
 rm -f /usr/lib/libjailbreak.dylib
 rm -f /private/var/installd/Library/MobileInstallation/UninstalledApplications.plist
 rm -f /private/var/mobile/test.txt
+rm -f /private/var/mobile/Library/google*.*
 rm -f /private/var/mobile/Library/Preferences/.GlobalPreferences.plist.*
 rm -f /private/var/mobile/Library/Preferences/com.apple.*.plist.*
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
@@ -279,7 +280,6 @@ rm -f  /usr/bin/recache
 # Cleanup files from any themes applied with Anemone or XenHTML.
 rm -rf /Library/Themes/Ace\ Folder.theme
 rm -rf /Library/Themes/Ace\ High\ Sierra.theme
-
 rm -rf /Library/Themes/Classic\ Icons\ 2x.theme
 rm -rf /Library/Themes/Classic\ Icons\ Large.theme
 rm -rf /Library/Themes/Classic\ Labels.theme
@@ -472,6 +472,12 @@ rm -rf /private/var/mobile/Documents/com.irepo.boxy3
 rm -f  /private/var/mobile/Documents/Boxy3.log
 rm -f  /private/var/mobile/Library/Preferences/com.irepo.boxy.plist
 rm -rf /usr/lib/TweakInject/Boxy_Main.bundle
+
+# Cleanup files from the "Bytafont 3" package.
+rm -rf /Applications/BytaFont3.app
+rm -f  /com.bytafont.bytafont3*.deb
+rm -f  /private/var/mobile/Library/Preferences/com.bytafont.BytaFont3.plist
+rm -rf /private/var/mobile/Library/Preferences/BytaFontBackup
 
 # Cleanup files from the bzip2 package.
 rm -f /bin/bunzip2
