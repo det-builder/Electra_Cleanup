@@ -782,6 +782,7 @@ rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Filza
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
+rm -rf /usr/libexec/filza
 
 # Cleanup files from the "Find Utilities" package.
 rm -f /usr/bin/find
