@@ -228,6 +228,7 @@ rm -rf /usr/lib/p7zip
 rm -f /private/var/mobile/Library/Preferences/com.shade.abaculus.plist
 
 # Cleanup files from the "Activator" package.
+rm -rf /Applications/Activator.app
 rm -rf /Library/Activator/ActivatorSpringBoard.bundle
 rm -rf /Library/Activator/ar.lproj
 rm -rf /Library/Activator/de.lproj
@@ -240,6 +241,7 @@ rm -rf /Library/Activator/he.lproj
 rm -rf /Library/Activator/it.lproj
 rm -rf /Library/Activator/ja.lproj
 rm -rf /Library/Activator/ko.lproj
+rm -rf /Library/Activator/Listeners
 rm -rf /Library/Activator/nl.lproj
 rm -rf /Library/Activator/pl.lproj
 rm -rf /Library/Activator/pt_PT.lproj
@@ -251,9 +253,9 @@ rm -rf /Library/Activator/zh_TW.lproj
 rm -f  /Library/Activator/Info.plist
 rm -f  /var/mobile/Library/Caches/libactivator.plist
 rm -f  /var/mobile/Library/Preferences/libactivator.plist
-rm -f  /usr/bin/autoent
-rm -f  /usr/bin/autoinstall
+rm -f  /usr/bin/activator
 rm -rf /usr/include/libactivator
+rm -rf /usr/lib/Activator
 rm -f  /usr/lib/libactivator.dylib
 
 # Cleanup files from the "Adv-Cmds" package.
@@ -831,6 +833,7 @@ rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Pat
 # Cleanup files from the "Flipswitch" package.
 rm -f  /Library/Flipswitch/libFlipswitchSpringBoard.dylib
 rm -f  /Library/Flipswitch/libFlipswitchSwitches.dylib
+rm -rf /Library/Flipswitch
 rm -rf /Library/Switches/3G.bundle
 rm -rf /Library/Switches/AirplaneMode.bundle
 rm -rf /Library/Switches/AutoBrightness.bundle
@@ -855,6 +858,7 @@ rm -rf /Library/Switches/Vibration.bundle
 rm -rf /Library/Switches/VPN.bundle
 rm -rf /Library/Switches/Wifi.bundle
 rm -rf /Library/Switches/WifiProxy.bundle
+rm -f  /usr/bin/switch
 rm -rf /usr/include/flipswitch
 rm -f  /usr/lib/libflpswitch.dylib
 
