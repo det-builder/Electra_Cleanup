@@ -351,6 +351,7 @@ rm -rf /private/var/unlimapps_tweak_resources/uaupdatetools
 rm -rf /Applications/ADManager.app
 rm -f  /usr/bin/ADMHelper
 rm -rf /var/mobile/Library/ADManager
+rm -rf /var/mobile/Library/Caches/com.tigisoftware.ADManager
 rm -f  /var/mobile/Library/Preferences/com.tigisoftware.ADManager.plist
 
 # Cleanup files from the "AppInst" package.
@@ -455,7 +456,9 @@ rm -f  /private/var/mobile/Library/Preferences/com.midnightchips.bettersettings.
 rm -f  /private/var/mobile/Library/Preferences/com.midnightchips.bettersettings*.*
 
 # Cleanup files from the "Bigboss Icon Set" package.
-rm -rf /usr/share/bigboss
+rm -rf /usr/share/bigboss/bigboss.png
+rm -rf /usr/share/bigboss/planetiphones.png
+rm -rf /usr/share/bigboss/touchrev.png
 
 # Cleanup files from the "Bootstrap-Cmds" package.
 rm -f /usr/bin/mig
@@ -476,6 +479,7 @@ rm -rf /usr/lib/TweakInject/Boxy_Main.bundle
 # Cleanup files from the "Bytafont 3" package.
 rm -rf /Applications/BytaFont3.app
 rm -f  /com.bytafont.bytafont3*.deb
+rm -rf /private/var/mobile/Library/Caches/com.bytafont.BytaFont3
 rm -f  /private/var/mobile/Library/Preferences/com.bytafont.BytaFont3.plist
 rm -rf /private/var/mobile/Library/Preferences/BytaFontBackup
 
@@ -517,6 +521,7 @@ rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitB
 
 # Cleanup files from the CocoaTop app.
 rm -rf /Applications/CocoaTop.app
+rm -rf /private/var/mobile/Library/Caches/ru.domo.CocoaTop
 rm -f  /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
 
 # Cleanup files from the "Confidential & Proprietary" package.
@@ -739,12 +744,22 @@ rm -f /usr/bin/sdiff
 rm -f /private/var/mobile/Library/Preferences/com.muirey03.duo.plist
 rm -f /private/var/mobile/Library/Preferences/com.muirey03.duoprefs.plist
 
+# Cleanup files from the "Evelyn's Repo Icons"
+rm -f /Applications/Cydia.app/Sections/Anemone_Fonts.png
+rm -f /Applications/Cydia.app/Sections/CustomCovers.png
+rm -f /Applications/Cydia.app/Sections/Fonts_for_Anemone.png
+rm -f /Applications/Cydia.app/Sections/Homescreen_Widgets.png
+rm -f /Applications/Cydia.app/Sections/Lockscreen_Widgets.png
+rm -f /Applications/Cydia.app/Sections/Others.png
+rm -f /Applications/Cydia.app/Sections/Tweak_Mode_Fonts.png
+
 # Cleanup files from the Extender package.
 rm -rf /Applications/Extender.app
 rm -f  /bin/jtoold
 rm -rf /Library/Switches/Ext3nderSwitch.bundle
 rm -rf /private/var/Ext3nder-Installer
 rm -rf /private/var/mobile/Documents/Ext3nder
+rm -rf /private/var/mobile/Library/Caches/com.cydia.Ext3nder
 rm -f  /private/var/mobile/Library/Preferences/com.cydia.Ext3nder.plist
 rm -f  /private/var/mobile/Library/Preferences/com.julioverne.ext3nder.autosign.plist
 rm -f  /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/com.cydia.Ext3nder.plist
@@ -754,6 +769,7 @@ rm -rf /Library/ControlCenter
 
 # Cleanup files from the "Fake GPS Pro" package.
 rm -f  /private/var/mobile/Documents/favorites.plist
+rm -rf /private/var/mobile/Library/Caches/cn.tinyapps.XGPSLite
 rm -rf /private/var/mobile/Library/Caches/cn.tinyapps.XGPSPro
 rm -f  /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSLite.plist
 rm -f  /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSPro.plist
@@ -779,6 +795,7 @@ rm -rf /Applications/Filza.app
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
 rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
+rm -rf /private/var/mobile/Library/Caches/com.tigisoftware.Filza
 rm -rf /private/var/mobile/Library/Filza
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
@@ -1041,6 +1058,30 @@ rm -f /usr/bin/kmap
 rm -f /usr/bin/kmem
 rm -f /usr/bin/kpatch
 rm -f /usr/bin/nvpatch
+
+# Cleanup files from the "Kiiimo Repo Icons"
+rm -f /Applications/Cydia.app/Sections/10_iOS.png
+rm -f /Applications/Cydia.app/Sections/APPS_HACK.png
+rm -f /Applications/Cydia.app/Sections/Applications_To.png
+rm -f /Applications/Cydia.app/Sections/Apps_cracked.png
+rm -f /Applications/Cydia.app/Sections/Font_for_Anemone.png
+rm -f /Applications/Cydia.app/Sections/Fonts_iOS_8.png
+rm -f /Applications/Cydia.app/Sections/Hacks_Game.png
+rm -f /Applications/Cydia.app/Sections/IOS_10.x_64bit_10.png
+rm -f /Applications/Cydia.app/Sections/IOS_Apps.png
+rm -f /Applications/Cydia.app/Sections/Pp25.png
+rm -f /Applications/Cydia.app/Sections/Supports_iOS_11.png
+rm -f /Applications/Cydia.app/Sections/System_iOS_11.png
+rm -f /Applications/Cydia.app/Sections/Theme_Lockgyph.png
+rm -f /Applications/Cydia.app/Sections/Theme_lockscreen.png
+rm -f /Applications/Cydia.app/Sections/Themes_10.2.1_-_10.png
+rm -f /Applications/Cydia.app/Sections/Themes_bar.png
+rm -f /Applications/Cydia.app/Sections/Tv10.png
+rm -f /Applications/Cydia.app/Sections/i-Tweaks_Add_Language_Arabic.png
+rm -f /Applications/Cydia.app/Sections/iOS_10.2.1_-__iOS_10.png
+rm -f /Applications/Cydia.app/Sections/iOS_10.x_32bit_10.png
+rm -f /Applications/Cydia.app/Sections/iOS_11.3x.png
+rm -f /private/var/mobile/Library/Caches/com.saurik.Cydia/LocalStorage/*kiiimo*.*
 
 # Cleanup files from the "KSBA" package.
 rm -f  /usr/bin/ksba-config
@@ -1396,6 +1437,7 @@ rm -f /usr/lib/libtop.a
 
 # Cleanup files from the "TSS Saver" app
 rm -rf /Applications/TSSSaver.app
+rm -f  /private/var/mobile/Library/Caches/co.dynastic.tsssaver
 
 # Cleanup files from the "Tweak Injector" package.
 rm -rf /Applications/SafeMode.app
