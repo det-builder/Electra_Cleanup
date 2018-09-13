@@ -135,6 +135,8 @@ rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
 
 # Delete directories off of the /var folder.
+rm -rf /var/db/analyticsd/*
+rm -rf /var/db/diagnostics/*
 rm -rf /var/DT
 rm -rf /var/installd/Library/Logs/*
 rm -rf /var/mobile/Library/.Trash
