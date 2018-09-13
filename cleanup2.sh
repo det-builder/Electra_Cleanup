@@ -139,6 +139,7 @@ rm -rf /var/DT
 rm -rf /var/installd/Library/Logs/*
 rm -rf /var/mobile/Library/.Trash
 rm -rf /var/mobile/Library/.Trash.metadata
+rm -rf /var/mobile/Library/ApplicationSync
 rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
 rm -rf /var/mobile/Library/WebKit/*
@@ -796,6 +797,7 @@ rm -f /usr/bin/pax
 rm -rf /Applications/Filza.app
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
 rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.scroublepokemon.filzaelectrocuted
+rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.tigisoftware.Filza
 rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Caches/com.tigisoftware.Filza
 rm -rf /private/var/mobile/Library/Filza
