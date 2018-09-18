@@ -219,12 +219,6 @@ rm -rf /var/wireless/Library/Logs/*
 # Cleanup files from the "7-zip (POSIX)" package.
 rm -f  /usr/bin/7z
 rm -f  /usr/bin/7za
-rm -f  /usr/lib/p7zip/7z
-rm -f  /usr/lib/p7zip/7z.so
-rm -f  /usr/lib/p7zip/7zCon.sfx
-rm -f  /usr/lib/p7zip/7za
-rm -f  /usr/lib/p7zip/Codecs/Rar.so
-rm -rf /usr/lib/p7zip/Codecs
 rm -rf /usr/lib/p7zip
 
 # Cleanup files from the "Abaculus" package.
@@ -442,7 +436,7 @@ rm -rf /Library/Themes/Classic\ Status\ Bar.theme
 rm -rf /Library/Themes/Classic\ UISounds.theme
 rm -rf /Library/Themes/Classic\ Weather\ Icon\ -\ Celsius.theme
 rm -rf /Library/Themes/Classic\ Weather\ Icon\ -\ Fahrenheit.theme
-rm -rf /Library/Themes/Winterboard icon for Anemone.theme
+rm -rf /Library/Themes/Winterboard icon\ for\ Anemone.theme
 rm -rf /Library/Themes/iPhone\ X\ 4\ Icon\ Dock.theme
 rm -rf /Library/Themes/iPhone\ X\ 5\ Icon\ Dock.theme
 rm -rf /Library/Themes/iPhone\ X\ Battery.theme
@@ -802,7 +796,7 @@ rm -f /usr/bin/sort
 # Cleanup files from the CrashReporter package.
 rm -rf /Applications/CrashReporter.app
 rm -rf /private/var/mobile/Library/CrashReporter
-rm -f  /private/var/mobile/Library/Logs/CrashReporter/*.*
+rm -rf /private/var/mobile/Library/Logs/CrashReporter/*.*
 rm -f  /private/var/mobile/Library/Preferences/crash-reporter.plist
 rm -f  /private/var/mobile/Library/Preferences/jp.ashikase.crashreporter.scanner.plist
 
@@ -923,6 +917,8 @@ rm -rf /Library/ControlCenter
 
 # Cleanup files from the "Fake GPS Pro" package.
 rm -f  /private/var/mobile/Documents/favorites.plist
+rm -f  /private/var/mobile/Library/Caches/.cn.tinyapps.XGPSLite_umeng.plist
+rm -f  /private/var/mobile/Library/Caches/.cn.tinyapps.XGPSPro_umeng.plist
 rm -rf /private/var/mobile/Library/Caches/cn.tinyapps.XGPSLite
 rm -rf /private/var/mobile/Library/Caches/cn.tinyapps.XGPSPro
 rm -f  /private/var/mobile/Library/Preferences/cn.tinyapps.XGPSLite.plist
@@ -1435,7 +1431,7 @@ rm -rf /etc/ssl
 rm -f  /usr/bin/c_rehash
 rm -f  /usr/bin/openssl
 rm -rf /usr/include/openssl
-rm -rf /usr/lib/engines/*
+rm -rf /usr/lib/engines
 rm -f  /usr/lib/libcrypto.1.0.0.dylib
 rm -f  /usr/lib/libcrypto.a
 rm -f  /usr/lib/libcrypto.dylib
@@ -1595,7 +1591,8 @@ rm -f /usr/lib/libtop.a
 
 # Cleanup files from the "TSS Saver" app
 rm -rf /Applications/TSSSaver.app
-rm -f  /private/var/mobile/Library/Caches/co.dynastic.tsssaver
+rm -rf /private/var/mobile/Library/Caches/co.dynastic.tsssaver
+rm -rf /private/var/mobile/Library/Caches/Snapshots/co.dynastic.tsssaver
 
 # Cleanup files from the "Tweak Injector" package.
 rm -rf /Applications/SafeMode.app
