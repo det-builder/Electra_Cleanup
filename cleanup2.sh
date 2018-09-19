@@ -166,7 +166,6 @@ rm -f /private/var/mobile/Library/Preferences/com.apple.*.plist.*
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
 rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.location360pro.plist
-rm -f /private/var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
 rm -f /private/var/mobile/Library/Preferences/pairedsyncd.plist
 rm -f /private/var/mobile/Library/Preferences/splashboardd.plist
 rm -f /private/var/mobile/Library/Preferences/xhprx.xh
@@ -1153,7 +1152,6 @@ rm -rf /System/Library/PreferenceBundles/IconoclasmPrefs.bundle
 
 # Cleanup files from the "Iconsupport" package.
 rm -rf /Library/Application\ Support/IconSupport
-rm -rf /private/var/mobile/Library/Application\ Support/IconSupport
 
 # Cleanup files from the "Inet-Utils" package.
 rm -f /usr/bin/dnsdomainname
@@ -1309,6 +1307,9 @@ rm -f /usr/sbin/lsof
 # Cleanup files from the "make" package.
 rm -f /usr/bin/make
 rm -f /usr/include/gnumake.h
+
+# Cleanup files from the "Midevice" tweak package.
+rm -f /private/var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
 
 # Cleanup files from the "Mikoto" package.
 rm -rf /Library/KarenLocalizer
