@@ -173,7 +173,9 @@ rm -f /private/var/mobile/Library/SpringBoard/.HomeBackground.cpbitmap.*
 rm -f /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
 rm -f /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra1131-mp.plist
 rm -f /private/var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
+rm -f /private/var/mobile/MobileSoftwareUpdate/last_update_result.plist
 rm -f /private/var/mobile/MobileSoftwareUpdate/restore.log
+rm -rf /private/var/mobile/MobileSoftwareUpdate/mnt1
 rm -f /private/var/MobileSoftwareUpdate/restore.log
 rm -f /private/var/root/.bash_history
 rm -f /private/var/root/.bashrc
@@ -412,6 +414,12 @@ rm -f /usr/bin/ps
 # Cleanup files from the Anemone package.
 rm -rf /Applications/Anemone.app
 rm -rf /private/var/mobile/Library/Caches/com.anemonetheming.anemone
+rm -rf /private/var/mobile/Library/Caches/Snapshots/com.anemonetheming.anemone
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themegroups.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themeidentifiers.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themelist.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themenameoverrides.plist
+rm -f  /private/var/mobile/Library/Caches/com.anemoneteam.themenames.plist
 rm -f  /private/var/mobile/Library/Preferences/com.anemoneteam.anemone.plist
 rm -f  /private/var/mobile/Library/Preferences/com.anemoneteam.anemonedbg.plist
 rm -f  /private/var/mobile/Library/Preferences/com.anemoneteam.anemoneiconsdbg.plist
@@ -424,51 +432,8 @@ rm -f  /usr/bin/cardump
 rm -f  /usr/bin/recache
 
 # Cleanup files from any themes applied with Anemone or XenHTML.
-rm -rf /Library/Themes/Ace\ Folder.theme
-rm -rf /Library/Themes/Ace\ High\ Sierra.theme
-rm -rf /Library/Themes/Classic\ Icons\ 2x.theme
-rm -rf /Library/Themes/Classic\ Icons\ Large.theme
-rm -rf /Library/Themes/Classic\ Labels.theme
-rm -rf /Library/Themes/Classic\ Respring\ Logo.theme
-rm -rf /Library/Themes/Classic\ Settings\ Icons.theme
-rm -rf /Library/Themes/Classic\ Status\ Bar.theme
-rm -rf /Library/Themes/Classic\ UISounds.theme
-rm -rf /Library/Themes/Classic\ Weather\ Icon\ -\ Celsius.theme
-rm -rf /Library/Themes/Classic\ Weather\ Icon\ -\ Fahrenheit.theme
-rm -rf /Library/Themes/Winterboard icon\ for\ Anemone.theme
-rm -rf /Library/Themes/iPhone\ X\ 4\ Icon\ Dock.theme
-rm -rf /Library/Themes/iPhone\ X\ 5\ Icon\ Dock.theme
-rm -rf /Library/Themes/iPhone\ X\ Battery.theme
-rm -rf /Library/Themes/iPhone\ X\ Bluetooth.theme
-rm -rf /Library/Themes/iPhone\ X\ Icons.theme
-rm -rf /Library/Themes/iPhone\ X\ Location.theme
-rm -rf /Library/Themes/iPhone\ X\ RotationLock.theme
-rm -rf /Library/Themes/iPhone\ X\ SignalBars.theme
-rm -rf /Library/Themes/iPhone\ X\ VPN.theme
-rm -rf /Library/Themes/iPhone\ X\ Wifi.theme
-rm -rf /Library/Themes/LotusMask.theme
-rm -rf /Library/Themes/minimalios11.theme
-rm -rf /Library/Themes/Piksel\ Folder.theme
-rm -rf /Library/Themes/Piksel\ Icons.theme
-rm -rf /Library/Themes/PikselMask.theme
-rm -rf /Library/Themes/SShadow\ Bagde.theme
-rm -rf /Library/Themes/SShadow\ Dock.theme
-rm -rf /Library/Themes/SShadow\ Folder.theme
-rm -rf /Library/Themes/SShadow.theme
-rm -rf /Library/Themes/Veexillum\ -\ Apps.theme
-rm -rf /Library/Themes/Veexillum\ -\ Badges.theme
-rm -rf /Library/Themes/Veexillum\ -\ Boot\ Logo.theme
-rm -rf /Library/Themes/Veexillum\ -\ CC.theme
-rm -rf /Library/Themes/Veexillum\ -\ Dock\ (line).theme
-rm -rf /Library/Themes/Veexillum\ -\ Dock.theme
-rm -rf /Library/Themes/Veexillum\ -\ DockEffects.theme
-rm -rf /Library/Themes/Veexillum\ -\ Folder.theme
-rm -rf /Library/Themes/Veexillum\ -\ IconEffects\ (unmasked).theme
-rm -rf /Library/Themes/Veexillum\ -\ IconEffects.theme
-rm -rf /Library/Themes/Veexillum\ -\ Mask.theme
-rm -rf /Library/Themes/Veexillum\ -\ ShareSheet.theme
-rm -rf /Library/Themes/Veexillum\ -\ System.theme
-rm -rf /Library/Themes/Veexillum\ -\ UI.theme
+rm -f  /AceHighSierra.deb
+rm -rf /Library/Themes
 rm -rf /private/var/mobile/Library/iWidgets/EW.WdgtPack.6_iW1
 rm -rf /private/var/mobile/Library/iWidgets/EW.WdgtPack.6_iW2
 rm -rf /private/var/mobile/Library/iWidgets/Scripted
@@ -669,6 +634,7 @@ rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.CircuitB
 # Cleanup files from the CocoaTop app.
 rm -rf /Applications/CocoaTop.app
 rm -rf /private/var/mobile/Library/Caches/ru.domo.CocoaTop
+rm -rf /private/var/mobile/Library/Caches/Snapshots/ru.domo.CocoaTop
 rm -f  /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
 
 # Cleanup files from the "Confidential & Proprietary" package.
@@ -946,6 +912,7 @@ rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.scroublep
 rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.tigisoftware.Filza
 rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Caches/com.tigisoftware.Filza
+rm -rf /private/var/mobile/Library/Caches/Snapshots/com.tigisoftware.Filza
 rm -rf /private/var/mobile/Library/Filza
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
@@ -1138,6 +1105,7 @@ rm -rf /Library/Switches/ICCleanNP.bundle
 rm -f  /usr/bin/icleaner
 rm -rf /var/mobile/Library/iCleaner
 rm -rf /var/mobile/Library/Caches/com.exile90.icleanerpro
+rm -rf /var/mobile/Library/Caches/Snapshots/com.exile90.icleanerpro
 rm -f  /var/root/Library/Preferences/com.applovin.sdk.y7Dm.plist
 rm -f  /var/root/Library/Preferences/com.exile90.icleanerpro.plist
 rm -rf /var/tmp/com.exile90.icleanerpro

@@ -25,19 +25,27 @@ rm -rf /var/tmp/*
 rm -rf /var/db/analyticsd/*
 rm -rf /var/db/diagnostics/*
 rm -rf /var/installd/Library/Logs/*
+rm -rf /var/log/*
 rm -rf /var/logs/*
+rm -rf /var/mobile/Downloads/Cydia/*
 rm -rf /var/mobile/Library/.Trash
 rm -rf /var/mobile/Library/.Trash.metadata
 rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
+rm -rf /var/mobile/Library/Filza/.Trash/*
 rm -rf /var/mobile/Library/Logs/*
 rm -rf /var/mobile/Library/Logs/CrashReporter/*.*
+rm -f  /var/mobile/Library/Preferences/com.apple.*.plist.*
 rm -rf /var/root/Library/Caches/*
 rm -rf /var/wireless/Library/Logs/*
 
 # Delete these useless files.
 rm -f /var/mobile/.bash_history
 rm -f /var/root/.bash_history
+rm -f /private/var/mobile/MobileSoftwareUpdate/last_update_result.plist
+rm -f /private/var/mobile/MobileSoftwareUpdate/restore.log
+rm -rf /private/var/mobile/MobileSoftwareUpdate/mnt1
+rm -f /private/var/MobileSoftwareUpdate/restore.log
 
 
 
