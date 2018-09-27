@@ -67,10 +67,9 @@ killall Cydia
 ########################################################################
 
 # /var/containers/Bundle/Application (Appears to be only app store apps & those installed via Impactor.)
-rm -rf /var/containers/Bundle/Application/F766716D-477B-412E-B044-2E86980D8A64 # This is electra on my device
-rm -rf /var/containers/Bundle/Application/B69DBC41-AB6A-42BC-AE0E-293128D3B0C2 # This is Filzaescaped on my device
+rm -rf /var/containers/Bundle/Application/21DBD917-1313-4934-846C-AF1F34F81841 # This is electra on my device
 
-# /var/mobile/Containers/Data/Application (Appears to be only app store apps & those installed via Impactor.)
+# /var/mobile/Containers/Data/Application (Appears to be app store apps, impactor apps and apps from Cydia.)
 rm -rf /var/mobile/Containers/Data/Application/929C82CD-1F4D-46E4-A384-00C917274341 # This is Anemonetheming on my device
 rm -rf /var/mobile/Containers/Data/Application/5A10E5C8-D754-48B0-A01C-AD3AD41A9591 # This is Cydia Extender on my device
 rm -rf /var/mobile/Containers/Data/Application/5EBF403E-0CFE-48DA-A580-13CC8BC1F80A # This is ICleaner on my device
@@ -112,6 +111,7 @@ rm -rf /tmp/*
 rm -rf /etc/apt
 rm -rf /etc/default
 rm -rf /etc/profile.d
+rm -rf /etc/rc.d
 
 # Delete directories off of the /Library folder.
 rm -rf /Library/Activator
@@ -119,7 +119,7 @@ rm -rf /Library/dpkg
 rm -rf /Library/ControlCenter
 rm -rf /Library/Flipswitch
 rm -rf /Library/Frameworks/*
-rm -rf /Library/LaunchDaemons
+rm -rf /Library/LaunchDaemons/*
 rm -rf /Library/MobileSubstrate
 rm -rf /Library/PreferenceBundles
 rm -rf /Library/PreferenceLoader
@@ -130,7 +130,7 @@ rm -rf /Library/unlimapps_tweak_resources
 # Delete directories off of the /usr folder.
 rm -rf /usr/games
 rm -rf /usr/include/*
-rm -rf /usr/lib/apt
+rm -f  /usr/lib/apt
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
 
@@ -159,12 +159,11 @@ rm -f /.Trashes
 rm -f /bin/launchctl
 rm -f /usr/lib/libjailbreak.dylib
 rm -f /private/var/installd/Library/MobileInstallation/UninstalledApplications.plist
+rm -f /private/var/installd/Library/Preferences/*.plist.*
 rm -f /private/var/mobile/test.txt
 rm -f /private/var/mobile/Library/google*.*
 rm -f /private/var/mobile/Library/Preferences/.GlobalPreferences.plist.*
 rm -f /private/var/mobile/Library/Preferences/com.apple.*.plist.*
-rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixprefs.plist
-rm -f /private/var/mobile/Library/Preferences/com.smokin1337.optixcolorprefs.plist
 rm -f /private/var/mobile/Library/Preferences/cn.tinyapps.location360pro.plist
 rm -f /private/var/mobile/Library/Preferences/pairedsyncd.plist
 rm -f /private/var/mobile/Library/Preferences/splashboardd.plist
@@ -177,6 +176,7 @@ rm -f /private/var/mobile/MobileSoftwareUpdate/last_update_result.plist
 rm -f /private/var/mobile/MobileSoftwareUpdate/restore.log
 rm -rf /private/var/mobile/MobileSoftwareUpdate/mnt1
 rm -f /private/var/MobileSoftwareUpdate/restore.log
+rm -f /private/var/networkd/Library/Preferences/*.plist.*
 rm -f /private/var/root/.bash_history
 rm -f /private/var/root/.bashrc
 rm -f /private/var/root/Library/Preferences/com.apple.*.plist.*
@@ -186,7 +186,6 @@ rm -f /private/var/tmp/jailbreakd.pid
 
 # Delete misc folders that don't belong to any tweak.
 rm -rf /Library/Application\ Support/SpeedOptimize
-rm -rf /Library/CustomFonts
 rm -rf /usr/share/bash-completion
 rm -rf /usr/share/bigboss
 rm -rf /usr/share/dict
@@ -590,6 +589,7 @@ rm -rf /usr/lib/TweakInject/Boxy_Main.bundle
 # Cleanup files from the "Bytafont 3" package.
 rm -rf /Applications/BytaFont3.app
 rm -f  /com.bytafont.bytafont3*.deb
+rm -rf /Library/CustomFonts
 rm -rf /private/var/mobile/Library/Caches/com.bytafont.BytaFont3
 rm -f  /private/var/mobile/Library/Preferences/BytaFontTweakMode.plist
 rm -f  /private/var/mobile/Library/Preferences/com.bytafont.BytaFont3.plist
@@ -724,9 +724,7 @@ rm -f  /usr/sbin/chown
 rm -f  /usr/sbin/chroot
 
 # Cleanup files from the "Core Utilities (/bin)" package.
-# IMPORTANT! Some are commented out.  Dont' delete these!  These are part of
-# the model .ipsw file.
-# rm -f /bin/cat
+rm -f /bin/cat
 rm -f /bin/chgrp
 rm -f /bin/chmod
 rm -f /bin/chown
@@ -746,7 +744,7 @@ rm -f /bin/mv
 rm -f /bin/pwd
 rm -f /bin/readlink
 # rm -f /bin/rm # This is deleted below.
-rm -f /bin/rmdir
+# rm -f /bin/rmdir # This is deleted below.
 rm -f /bin/sleep
 rm -f /bin/stty
 rm -f /bin/su
@@ -916,6 +914,7 @@ rm -rf /private/var/mobile/Library/Caches/Snapshots/com.tigisoftware.Filza
 rm -rf /private/var/mobile/Library/Filza
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
+rm -f  /usr/bin/Filza
 rm -rf /usr/libexec/filza
 
 # Cleanup files from the "Find Utilities" package.
@@ -1247,6 +1246,11 @@ rm -f /usr/lib/Liberty.dylib
 rm -rf /usr/include/libpackageinfo
 rm -f  /usr/lib/libpackageinfo.dylib
 
+# Cleanup files from the "libRocket" package.  
+rm -f /usr/lib/libRocket.dylib
+rm -f /var/rocket_stashed/libRocket.dylib
+rmdir /var/rocket_stashed
+
 # Cleanup files from the "libSwift4" package.
 rm -rf /usr/lib/libswift
 
@@ -1350,7 +1354,7 @@ rm -f  /usr/lib/libpanel.a
 rm -f  /usr/lib/libpanel_g.a
 rm -f  /usr/lib/terminfo
 rm -rf /usr/share/tabset
-rm -rf /usr/share/terminfo
+rm -rf /usr/share/terminfo/*
 
 # Cleanup files from the "New GNU Portable Threads" package.
 rm -f  /usr/bin/npth-config
@@ -1449,6 +1453,9 @@ rm -f /usr/include/rocketbootstrap_dynamic.h
 rm -f /usr/lib/librocketbootstrap.dylib
 rm -r /usr/libexec/_rocketd_reenable
 rm -r /usr/libexec/rocketd
+
+# Cleanup files from the "Rocket for Instagram" package.
+rm -rf /Library/Application\ Support/Rocket
 
 # Cleanup files from the "Rsync" package.
 rm -f /usr/bin/rsync
@@ -1735,6 +1742,7 @@ uicache
 rm -f /usr/bin/uicache
 rm -f /bin/sh
 rm -f /bin/rm
+rm -f /bin/rmdir
 
 # All Done!
 echo "WARNING!!!!! All Electra jailbreak files and directories should be deleted."

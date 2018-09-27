@@ -25,6 +25,7 @@ rm -rf /var/tmp/*
 rm -rf /var/db/analyticsd/*
 rm -rf /var/db/diagnostics/*
 rm -rf /var/installd/Library/Logs/*
+rm -f  /var/installd/Library/Preferences/*.plist.*
 rm -rf /var/log/*
 rm -rf /var/logs/*
 rm -rf /var/mobile/Downloads/Cydia/*
@@ -36,6 +37,7 @@ rm -rf /var/mobile/Library/Filza/.Trash/*
 rm -rf /var/mobile/Library/Logs/*
 rm -rf /var/mobile/Library/Logs/CrashReporter/*.*
 rm -f  /var/mobile/Library/Preferences/com.apple.*.plist.*
+rm -f  /var/networkd/Library/Preferences/*.plist.*
 rm -rf /var/root/Library/Caches/*
 rm -rf /var/wireless/Library/Logs/*
 
@@ -47,5 +49,7 @@ rm -f /private/var/mobile/MobileSoftwareUpdate/restore.log
 rm -rf /private/var/mobile/MobileSoftwareUpdate/mnt1
 rm -f /private/var/MobileSoftwareUpdate/restore.log
 
-
+# This commands shows all of the non-Apple preference files to cleanup.
+cd /private/var/mobile/Library/Preferences
+ls -al -I "com.apple.*.plist" -I "com.apple*"
 
