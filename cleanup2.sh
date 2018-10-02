@@ -117,6 +117,7 @@ rm -rf /Library/unlimapps_tweak_resources
 # Delete directories off of the /usr folder.
 rm -rf /usr/games
 rm -rf /usr/include/*
+rm -rf /usr/lib/bash
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
 
@@ -552,7 +553,32 @@ rm -f /usr/libexec/migcom
 rm -f  /bin/bash
 # rm -f  /bin/sh This was moved to the bottom.
 rm -f  /usr/bin/bashbug
-rm -rf /usr/lib/bash
+rm -f  /usr/lib/bash/basename
+rm -f  /usr/lib/bash/dirname
+rm -f  /usr/lib/bash/finfo
+rm -f  /usr/lib/bash/head
+rm -f  /usr/lib/bash/id
+rm -f  /usr/lib/bash/ln
+rm -f  /usr/lib/bash/logname
+rm -f  /usr/lib/bash/mkdir
+rm -f  /usr/lib/bash/mypid
+rm -f  /usr/lib/bash/pathchk
+rm -f  /usr/lib/bash/print
+rm -f  /usr/lib/bash/printenv
+rm -f  /usr/lib/bash/push
+rm -f  /usr/lib/bash/realpath
+rm -f  /usr/lib/bash/rmdir 
+rm -f  /usr/lib/bash/setpgid
+rm -f  /usr/lib/bash/sleep
+rm -f  /usr/lib/bash/strftime
+rm -f  /usr/lib/bash/sync
+rm -f  /usr/lib/bash/tee
+rm -f  /usr/lib/bash/truefalse
+rm -f  /usr/lib/bash/tty
+rm -f  /usr/lib/bash/uname
+rm -f  /usr/lib/bash/unlink
+rm -f  /usr/lib/bash/whoami
+rmdir  /usr/lib/bash
 
 # Cleanup files from the Boxy package.
 rm -rf /private/var/mobile/Documents/com.irepo.boxy3
@@ -1371,6 +1397,7 @@ rm -f /usr/bin/noncereboot11
 rm -f /private/var/mobile/Library/Preferences/co.vexation.nosubstitute.plist
 
 # Cleanup files from the "OpenSSH" package.
+rm -f  /Library/LaunchDaemons/com.openssh.sshd.plist
 rm -rf /etc/ssh
 rm -f  /usr/bin/scp
 rm -f  /usr/bin/sftp
@@ -1397,10 +1424,10 @@ rm -f  /usr/lib/libcrypto.dylib
 rm -f  /usr/lib/libssl.1.0.0.dylib
 rm -f  /usr/lib/libssl.a
 rm -f  /usr/lib/libssl.dylib
-rm -rf /usr/lib/pkgconfig
 rm -r  /usr/lib/pkgconfig/libcrypto.pc
 rm -r  /usr/lib/pkgconfig/libssl.pc
 rm -r  /usr/lib/pkgconfig/openssl.pc
+rmdir  /usr/lib/pkgconfig
 rm -rf /usr/lib/ssl
 
 # Cleanup files from the "Patch" package.
@@ -1589,6 +1616,7 @@ rm -f /usr/bin/iomfsetgamma
 rm -f /usr/bin/ldrestart
 rm -f /usr/bin/sbdidlaunch
 rm -f /usr/bin/sbreload
+# rm -f /usr/bin/uicache ; Deleted below.
 rm -f /usr/bin/uiduid
 rm -f /usr/bin/uiopen
 
@@ -1653,10 +1681,7 @@ rm -rf /private/var/mobile/Library/Preferences/com.oly.xbhide.plist
 
 # Cleanup files from the XenHTML package.
 rm -rf /Library/Application\ Support/libGitHubIssues
-rm -rf /private/var/mobile/Library/iWidgets
-rm -rf /private/var/mobile/Library/LockHTML
 rm -f  /private/var/mobile/Library/Preferences/com.matchstic.xenhtml.plist
-rm -rf /private/var/mobile/Library/SBHTML
 rm -rf /usr/include/uaunbox
 rm -f  /usr/lib/libGitHubIssues.dylib
 rm -f  /usr/lib/libuaunbox.dylib
