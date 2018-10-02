@@ -825,6 +825,18 @@ rm -f /usr/bin/diff
 rm -f /usr/bin/diff3
 rm -f /usr/bin/sdiff
 
+# Cleanup files from the "DiskDev Cmds" package.
+rm -f /sbin/fstyp_msdos
+rm -f /sbin/fstyp_ntfs
+rm -f /sbin/fstyp_udf
+rm -f /sbin/umount
+rm -f /usr/sbin/dev_mkdb
+rm -f /usr/sbin/edquota
+rm -f /usr/sbin/fdisk
+rm -f /usr/sbin/quota
+rm -f /usr/sbin/quotaon
+rm -f /usr/sbin/vsdbutil
+
 # Cleanup files from the "Duo" package.
 rm -f /private/var/mobile/Library/Preferences/com.muirey03.duo.plist
 rm -f /private/var/mobile/Library/Preferences/com.muirey03.duoprefs.plist
@@ -848,9 +860,6 @@ rm -rf /private/var/mobile/Library/Caches/com.cydia.Ext3nder
 rm -f  /private/var/mobile/Library/Preferences/com.cydia.Ext3nder.plist
 rm -f  /private/var/mobile/Library/Preferences/com.julioverne.ext3nder.autosign.plist
 rm -f  /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/com.cydia.Ext3nder.plist
-
-# Cleanup files from the "EzCC" package.
-rm -rf /Library/ControlCenter
 
 # Cleanup files from the "Fake GPS Pro" package.
 rm -f  /private/var/mobile/Documents/favorites.plist
