@@ -34,6 +34,7 @@ rm -rf /var/mobile/Library/.Trash.metadata
 rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
 rm -rf /var/mobile/Library/Filza/.Trash/*
+rm -rf /var/mobile/Library/Filza/.Trash.metadata/*
 rm -rf /var/mobile/Library/Logs/*
 rm -rf /var/mobile/Library/Logs/CrashReporter/*.*
 rm -f  /var/mobile/Library/Preferences/com.apple.*.plist.*
@@ -42,12 +43,12 @@ rm -rf /var/root/Library/Caches/*
 rm -rf /var/wireless/Library/Logs/*
 
 # Delete these useless files.
-rm -f /var/mobile/.bash_history
-rm -f /var/root/.bash_history
-rm -f /private/var/mobile/MobileSoftwareUpdate/last_update_result.plist
-rm -f /private/var/mobile/MobileSoftwareUpdate/restore.log
-rm -rf /private/var/mobile/MobileSoftwareUpdate/mnt1
-rm -f /private/var/MobileSoftwareUpdate/restore.log
+rm -f  /var/mobile/.bash_history
+rm -f  /var/root/.bash_history
+rm -f  /var/mobile/MobileSoftwareUpdate/last_update_result.plist
+rm -f  /var/mobile/MobileSoftwareUpdate/restore.log
+rm -rf /var/mobile/MobileSoftwareUpdate/mnt1
+rm -f  /var/MobileSoftwareUpdate/restore.log
 
 # This commands shows all of the non-Apple preference files to cleanup.
 cd /private/var/mobile/Library/Preferences

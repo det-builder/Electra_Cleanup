@@ -143,6 +143,8 @@ rm -rf /var/mobile/Library/.Trash.metadata
 rm -rf /var/mobile/Library/ApplicationSync
 rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
+rm -rf /var/mobile/Library/Filza/.Trash/*
+rm -rf /var/mobile/Library/Filza/.Trash.metadata/*
 rm -rf /var/mobile/Library/WebKit/*
 rm -rf /var/root/Application\ Support/*
 rm -rf /var/root/Library/Caches/*
