@@ -130,7 +130,6 @@ rm -rf /Library/unlimapps_tweak_resources
 # Delete directories off of the /usr folder.
 rm -rf /usr/games
 rm -rf /usr/include/*
-rm -f  /usr/lib/apt
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
 
@@ -1354,7 +1353,7 @@ rm -f  /usr/lib/libpanel.a
 rm -f  /usr/lib/libpanel_g.a
 rm -f  /usr/lib/terminfo
 rm -rf /usr/share/tabset
-rm -rf /usr/share/terminfo/*
+rm -rf /usr/share/terminfo
 
 # Cleanup files from the "New GNU Portable Threads" package.
 rm -f  /usr/bin/npth-config
