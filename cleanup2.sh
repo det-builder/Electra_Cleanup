@@ -126,6 +126,7 @@ rm -rf /var/db/analyticsd/*
 rm -rf /var/db/diagnostics/*
 rm -rf /var/DT
 rm -rf /var/installd/Library/Logs/*
+rm -rf /var/lib
 rm -rf /var/mobile/Library/.Trash
 rm -rf /var/mobile/Library/.Trash.metadata
 rm -rf /var/mobile/Library/ApplicationSync
