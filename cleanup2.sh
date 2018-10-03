@@ -36,6 +36,10 @@
 # NOTE:                                                           #
 # Apple Watch backups are stored here:                            #
 # /private/var/mobile/Library/NanoBackup                          #
+#                                                                 #
+# Battery logs are stored here:                                   #
+# /var/containers/Shared/SystemGroup/???? <-- search for powerlog #
+#                                                                 #
 ###################################################################
 
 # Ensure the user is logged in as root.
@@ -76,6 +80,20 @@ rm -rf /var/mobile/Containers/Data/Application/??????
 
 # /var/mobile/Containers/Shared/AppGroup (Appears to be only app store apps & those installed via Impactor.)
 rm -rf /var/mobile/Containers/Shared/AppGroup/???????
+
+########################################################################
+#                                                                      #
+# Identify files and directories that were created by App Store apps   #
+# that can potentially be cleaned up and deleted.                      #
+#                                                                      #
+########################################################################
+
+# Clean up files related to the robocall stuff.
+# rm -f /var/mobile/Library/CallDirectory/CallDirectory.db
+# rmdir /var/mobile/Library/CallDirectory
+
+# Clean up files related to voice mail recordings.
+# rm -rf /var/mobile/Library/Voicemail/*
 
 ########################################################################
 #                                                                      #
@@ -156,10 +174,7 @@ rm -f  /private/var/mobile/Library/Preferences/.GlobalPreferences.plist.*
 rm -f  /private/var/mobile/Library/Preferences/com.apple.*.plist.*
 rm -f  /private/var/mobile/Library/Preferences/cn.tinyapps.location360pro.plist
 rm -f  /private/var/mobile/Library/Preferences/group.com.apple.weather.plist
-rm -f  /private/var/mobile/Library/Preferences/pairedsyncd.plist
-rm -f  /private/var/mobile/Library/Preferences/splashboardd.plist
 rm -f  /private/var/mobile/Library/Preferences/xhprx.xh
-rm -f  /private/var/mobile/Library/SpringBoard/.HomeBackground.cpbitmap.*
 rm -f  /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
 rm -f  /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra1131-mp.plist
 rm -f  /private/var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
@@ -1753,8 +1768,8 @@ echo "::1             localhost" >> /etc/hosts
 uicache
 rm -f /usr/bin/uicache
 rm -f /bin/sh
-rm -f /bin/rm
 rm -f /bin/rmdir
+rm -f /bin/rm
 
 # All Done!
 echo "WARNING!!!!! All Electra jailbreak files and directories should be deleted."
