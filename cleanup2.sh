@@ -109,6 +109,7 @@ rm -rf /Developer/*
 rm -rf /DT
 rm -rf /electra
 rm -rf /lib/*
+rm -rf /libexec
 rm -rf /mnt/*
 rm -rf /tmp/* 
 
@@ -617,6 +618,14 @@ rm -f /bin/bzcat
 rm -f /bin/bzip2
 rm -f /bin/bzip2recover
 
+# Cleanup files from the "CACerts" package.
+rm -f /etc/profile.d/cacerts.bootstrap.sh
+rm -f /etc/ssl/certs/cacert.pem
+rm -f /usr/local/bin/curl
+rm -f /usr/local/bin/wget
+rmdir /etc/ssl/certs
+rmdir /usr/local/bin
+
 # Cleanup files from the CCModules package.
 rm -rf /Library/ControlCenter/Bundles
 rm -f  /private/var/mobile/Library/Preferences/com.oly.xb-ccmodules.plist
@@ -798,6 +807,47 @@ rm -rf /var/lib/cydia
 # Cleanup files from the "Cydia Compatibility Package" package.
 rm -f /Library/LaunchDaemons/com.saurik.Cydia.Startup.plist
 rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
+
+# Cleanup files from the "Darwin CC Tools" package.
+rm -f /libexec/as/arm/as
+rm -f /libexec/as/i386/as
+rm -f /libexec/as/ppc/as
+rm -f /libexec/as/ppc64/as
+rm -f /libexec/as/x86_64/as
+rmdir /libexec/as/arm
+rmdir /libexec/as/i386
+rmdir /libexec/as/ppc
+rmdir /libexec/as/ppc64
+rmdir /libexec/as/x86_64
+rmdir /libexec/as
+rmdir /libexec
+rm -f /usr/bin/ar
+rm -f /usr/bin/as
+rm -f /usr/bin/bitcode_strip
+rm -f /usr/bin/check_dylib
+rm -f /usr/bin/checksyms
+rm -f /usr/bin/cmpdylib
+rm -f /usr/bin/codesign_allocate
+rm -f /usr/bin/ctf_insert
+rm -f /usr/bin/dsymutil
+rm -f /usr/bin/indr
+rm -f /usr/bin/inout
+rm -f /usr/bin/install_name_tool
+rm -f /usr/bin/libtool
+rm -f /usr/bin/lipo
+rm -f /usr/bin/nm
+rm -f /usr/bin/nmedit
+rm -f /usr/bin/otool
+rm -f /usr/bin/pagestuff
+rm -f /usr/bin/ranlib
+rm -f /usr/bin/redo_prebinding
+rm -f /usr/bin/seg_addr_table
+rm -f /usr/bin/seg_hack
+rm -f /usr/bin/segedit
+rm -f /usr/bin/size
+rm -f /usr/bin/strings
+rm -f /usr/bin/strip
+rm -f /usr/bin.ipo
 
 # Cleanup files from the "Darwin Tools" package.
 rm -f /usr/bin/sw_vers
@@ -1032,10 +1082,18 @@ rm -f  /usr/bin/git-cvsserver
 rm -f  /usr/bin/git-receive-pack
 rm -f  /usr/bin/git-shell
 rm -f  /usr/bin/git-upload-archive
+rm -f  /usr/bin/git-upload-pack
 rm -f  /usr/bin/gitk
+rm -rf /usr/lib/perl5/site_perl
 rm -rf /usr/libexec/git-core
+rm -rf /usr/Library/Perl/Updates
+rmdir  /usr/Library/Perl
+rmdir  /usr/Library
 rm -rf /usr/share/git-core
+rm -rf /usr/share/git-gui
 rm -rf /usr/share/gitk
+rm -rf /usr/share/gitweb
+rm -f  /usr/share/man/man3/Git*.3pm
 
 # Cleanup files from the "GNU Cryptography" package.
 rm -f  /usr/bin/dumpsexp
@@ -1239,6 +1297,14 @@ rm -f  /usr/lib/libksba.la
 rm -rf /usr/share/aclocal
 rm -f  /usr/share/aclocal/ksba.m4
 
+# Cleanup files from the "LD64" package.
+rm -f /usr/bin/ObjectDump
+rm -f /usr/bin/dyldinfo
+rm -f /usr/bin/ld
+rm -f /usr/bin/machocheck
+rm -f /usr/bin/unwinddump
+rm -f /usr/lib/libtapi.dylib
+
 # Cleanup files from the "less" package.
 rm -f /usr/bin/less
 rm -f /usr/bin/lessecho
@@ -1291,6 +1357,83 @@ rm -f /usr/bin/ldid
 
 # Cleanup files from the "LittleX" package.
 rm -f /private/var/mobile/Library/Preferences/com.ioscreatix.littlex.plist
+
+# Cleanup files from the "LLVM+Clang (64 bit)" package.
+rm -f /usr/bin/bugpoint
+rm -f /usr/bin/c-index-test
+rm -f /usr/bin/clang
+rm -f /usr/bin/clang++
+rm -f /usr/bin/clang-5.0
+rm -f /usr/bin/clang-check
+rm -f /usr/bin/clang-cl
+rm -f /usr/bin/clang-cpp
+rm -f /usr/bin/clang-format
+rm -f /usr/bin/clang-import-test
+rm -f /usr/bin/clang-offload-bundler
+rm -f /usr/bin/clang-rename
+rm -f /usr/bin/git-clang-format
+rm -f /usr/bin/ld.lld
+rm -f /usr/bin/llc
+rm -f /usr/bin/lld
+rm -f /usr/bin/lld-link
+rm -f /usr/bin/lli
+rm -f /usr/bin/llvm-ar
+rm -f /usr/bin/llvm-as
+rm -f /usr/bin/llvm-bcanalyzer
+rm -f /usr/bin/llvm-c-test
+rm -f /usr/bin/llvm-cat
+rm -f /usr/bin/llvm-config
+rm -f /usr/bin/llvm-cov
+rm -f /usr/bin/llvm-cvtres
+rm -f /usr/bin/llvm-cxxdump
+rm -f /usr/bin/llvm-cxxfilt
+rm -f /usr/bin/llvm-diff
+rm -f /usr/bin/llvm-dis
+rm -f /usr/bin/llvm-dlltool
+rm -f /usr/bin/llvm-dsymutil
+rm -f /usr/bin/llvm-dwarfump
+rm -f /usr/bin/llvm-dwp
+rm -f /usr/bin/llvm-extract
+rm -f /usr/bin/llvm-lib
+rm -f /usr/bin/llvm-link
+rm -f /usr/bin/llvm-lto
+rm -f /usr/bin/llvm-lto2
+rm -f /usr/bin/llvm-mc
+rm -f /usr/bin/llvm-mcmarkup
+rm -f /usr/bin/llvm-modextract
+rm -f /usr/bin/llvm-mt
+rm -f /usr/bin/llvm-nm
+rm -f /usr/bin/llvm-objdump
+rm -f /usr/bin/llvm-opt-report
+rm -f /usr/bin/llvm-pdutil
+rm -f /usr/bin/llvm-profdata
+rm -f /usr/bin/llvm-ranlib
+rm -f /usr/bin/llvm-readelf
+rm -f /usr/bin/llvm-readobj
+rm -f /usr/bin/llvm-rtdylid
+rm -f /usr/bin/llvm-size
+rm -f /usr/bin/llvm-split
+rm -f /usr/bin/llvm-stress
+rm -f /usr/bin/llvm-strings
+rm -f /usr/bin/llvm-symbolizer
+rm -f /usr/bin/llvm-tblgen
+rm -f /usr/bin/llvm-xray
+rm -f /usr/bin/obj2yaml
+rm -f /usr/bin/opt
+rm -f /usr/bin/sancov
+rm -f /usr/bin/sanstats
+rm -f /usr/bin/scan-build
+rm -f /usr/bin/scan-view
+rm -f /usr/bin/set-xcode-analyzer
+rm -f /usr/bin/verify-uselistorder
+rm -f /usr/bin/yaml2obj
+rm -f /usr/include/BugpointPasses.dylib
+rm -f /usr/include/LLVMHello.dylib
+rm -f /usr/include/clang
+rm -f /usr/include/cmake
+rm -f /usr/include/libLTO.dylib
+rm -f /usr/include/libclang.dylib
+rm -rf /usr/share/llvm
 
 # Cleanup files from the "LocalIAPStore" package.
 rm -f /private/var/mobile/Library/Preferences/anondev.LocalIAPStore.plist
@@ -1449,6 +1592,43 @@ rm -rf /usr/lib/ssl
 # Cleanup files from the "Patch" package.
 rm -f /usr/bin/patch
 
+# Cleanup files from the "Perl" package.
+rm -f  /usr/bin/corelist
+rm -f  /usr/bin/cpan
+rm -f  /usr/bin/enc2xs
+rm -f  /usr/bin/encguess
+rm -f  /usr/bin/h2ph
+rm -f  /usr/bin/h2xs
+rm -f  /usr/bin/instmodsh
+rm -f  /usr/bin/json_pp
+rm -f  /usr/bin/libnetcfg
+rm -f  /usr/bin/perl
+rm -f  /usr/bin/perlbug
+rm -f  /usr/bin/perldoc
+rm -f  /usr/bin/perlivp
+rm -f  /usr/bin/perlthanks
+rm -f  /usr/bin/piconv
+rm -f  /usr/bin/pl2pm
+rm -f  /usr/bin/pod2html
+rm -f  /usr/bin/pod2man
+rm -f  /usr/bin/pod2text
+rm -f  /usr/bin/pod2usage
+rm -f  /usr/bin/podchecker
+rm -f  /usr/bin/podselec
+rm -f  /usr/bin/prove
+rm -f  /usr/bin/ptar
+rm -f  /usr/bin/ptardiff
+rm -f  /usr/bin/ptargrep
+rm -f  /usr/bin/shasum
+rm -f  /usr/bin/splain
+rm -f  /usr/bin/xsubpp
+rm -f  /usr/bin/zipdetails
+rm -rf /usr/lib/perl5
+rm -rf /usr/share/man/man1
+rm -rf /usr/share/man/man3
+rm -rf /usr/share/man/man5
+rmdir /usr/share/man
+
 # Cleanup files from the "Pincrush" package.
 rm -f /usr/bin/pincrush
 
@@ -1488,6 +1668,8 @@ rm -rf /Library/Application\ Support/Rocket
 
 # Cleanup files from the "Rsync" package.
 rm -f /usr/bin/rsync
+rm -rf /usr/share/man/man1
+rm -rf /usr/share/man/man5
 
 # Cleanup files from the "Screen" package.
 rm -f  /usr/bin/screen
