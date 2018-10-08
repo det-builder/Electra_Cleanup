@@ -1017,6 +1017,7 @@ rm -rf /private/var/mobile/Documents/Flex
 rm -rf /private/var/mobile/Library/Application\ Support/Flex3
 rm -f  /private/var/mobile/Library/Application\ Support/Flex3/patches.plist
 rm -rf /private/var/mobile/Library/Caches/com.johncoates.Flex
+rm -rf /private/var/mobile/Library/Caches/Snapshots/com.johncoates.Flex
 rm -rf /private/var/mobile/Library/Flex3
 rm -f  /private/var/mobile/Library/Preferences/com.johncoates.Flex.plist
 rm -f  /private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/Flex3Patches.plist
@@ -1433,6 +1434,7 @@ rm -f /usr/include/clang
 rm -f /usr/include/cmake
 rm -f /usr/include/libLTO.dylib
 rm -f /usr/include/libclang.dylib
+rm -f /usr/lib/BugpointPasses.dylib
 rm -rf /usr/share/llvm
 
 # Cleanup files from the "LocalIAPStore" package.
