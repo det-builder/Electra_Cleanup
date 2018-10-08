@@ -1512,6 +1512,9 @@ rm -f /usr/bin/which
 # Cleanup files from the "Smart Low Power Mode" package.
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.smartlpm.plist
 
+# Cleanup files from the "Snowboard" package.
+rm -f /private/var/mobile/Library/Preferences/com.spark.snowboardprefs.plist
+
 # Cleanup files from the "Socket Cat" package.
 rm -f /usr/bin/filan
 rm -f /usr/bin/procan
