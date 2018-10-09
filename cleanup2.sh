@@ -464,6 +464,10 @@ rm -rf /System/Library/PreferenceBundles/AppList.bundle
 rm -rf /usr/include/AppList
 rm -f  /usr/lib/libapplist.dylib
 
+# Cleanup files from the "App Store No History" package.
+rm -f /var/mobile/Library/Preferences/com.julioverne.appstorenohistory.apps.plist
+rm -f /var/mobile/Library/Preferences/com.julioverne.appstorenohistory.plist
+
 # Cleanup files from the "Appsync Unified" package.
 rm -f /Library/LaunchDaemons/net.angelxwind.asu_inject.plist
 rm -f /usr/bin/asu_inject
