@@ -34,6 +34,9 @@
 # /private/var/mobile/Library/SpringBoard/PushStore               #
 #                                                                 #
 # NOTE:                                                           #
+# Cydia package contents and their hashes are stored here:        #
+# /Library/dpkg/info                                              #
+#                                                                 #
 # Apple Watch backups are stored here:                            #
 # /private/var/mobile/Library/NanoBackup                          #
 #                                                                 #
@@ -439,6 +442,12 @@ rm -f  /usr/bin/recache
 
 # Cleanup files from any themes applied with Anemone or XenHTML.
 rm -f  /AceHighSierra.deb
+rm -f  /Library/dpkg/info/com.0neguy.piksel.list
+rm -f  /Library/dpkg/info/com.0neguy.piksel.md5sums
+rm -f  /Library/dpkg/info/com.ianas.acehighsierra.list
+rm -f  /Library/dpkg/info/com.ianas.acehighsierra.md5sums
+rm -f  /Library/dpkg/info/com.sami.sshadow.list
+rm -f  /Library/dpkg/info/com.sami.sshadow.md5sums
 rm -rf /Library/Themes
 rm -rf /private/var/mobile/Library/iWidgets
 rm -rf /private/var/mobile/Library/LockHTML
@@ -460,6 +469,8 @@ rm -f  /var/mobile/Library/Preferences/com.tigisoftware.ADManager.plist
 rm -f /usr/bin/appinst
 
 # Cleanup files from the "Applist" package.
+rm -f  /Library/dpkg/info/applist.list
+rm -f  /Library/dpkg/info/applist.md5sums
 rm -rf /System/Library/PreferenceBundles/AppList.bundle
 rm -rf /usr/include/AppList
 rm -f  /usr/lib/libapplist.dylib
@@ -473,7 +484,9 @@ rm -f /Library/LaunchDaemons/net.angelxwind.asu_inject.plist
 rm -f /usr/bin/asu_inject
 
 # Cleanup files from the "APT 1.4 (apt-key)" package.
-rm -f /usr/bin/apt-key
+rm -f  /Library/dpkg/info/apt7-key.list
+rm -f  /Library/dpkg/info/apt7-key.md5sums
+rm -f  /usr/bin/apt-key
 
 # Cleanup files from the "APT 1.4 Strict" package.
 rm -f /usr/bin/apt
@@ -487,7 +500,11 @@ rm -f /usr/bin/apt-mark
 rm -f /usr/bin/apt-sortpkgs
 
 # Cleanup files from the "APT 1.4 Strict (lib)" package.
-rm -f  /etc/apt/apt.conf.d
+rm -f  /Library/dpkg/info/apt7-lib.list
+rm -f  /Library/dpkg/info/apt7-lib.md5sums
+rm -f  /Library/dpkg/info/apt7-lib.preinst
+rm -f  /etc/apt/apt.conf.d/cydia-compat.conf
+rmdir  /etc/apt/apt.conf.d
 rm -f  /etc/apt/preferences.d
 rm -f  /etc/apt/sources.list.d
 rm -f  /etc/apt/trusted/gpg.d
@@ -571,6 +588,8 @@ rm -f /usr/bin/mig
 rm -f /usr/libexec/migcom
 
 # Cleanup files from the "Bourne-Again SHell" package.
+rm -f  /Library/dpkg/info/bash.list
+rm -f  /Library/dpkg/info/bash.md5sums
 rm -f  /bin/bash
 # rm -f  /bin/sh This was moved to the bottom.
 rm -f  /usr/bin/bashbug
@@ -617,6 +636,7 @@ rm -f  /private/var/mobile/Library/Preferences/com.bytafont.BytaFont3.plist
 rm -rf /private/var/mobile/Library/Preferences/BytaFontBackup
 
 # Cleanup files from the bzip2 package.
+rm -f /Library/dpkg/info/bzip2.list
 rm -f /bin/bunzip2
 rm -f /bin/bzcat
 rm -f /bin/bzip2
@@ -670,7 +690,10 @@ rm -f  /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
 rm -f /private/var/mobile/Library/Preferences/com.neinzedd9.confidentialproprietarysettings.plist
 
 # Cleanup files from the "Core Utilities" package.
+rm -f  /Library/dpkg/info/coreutils.list
+rm -f  /Library/dpkg/info/coreutils.md5sums
 rm -r  /etc/profile.d/coreutils.h
+rmdir  /etc/profile.d
 rm -f  /usr/bin/[
 rm -f  /usr/bin/b2sum
 rm -f  /usr/bin/base32
@@ -753,6 +776,8 @@ rm -f  /usr/sbin/chown
 rm -f  /usr/sbin/chroot
 
 # Cleanup files from the "Core Utilities (/bin)" package.
+rm -f /Library/dpkg/info/coreutils-bin.list
+rm -f /Library/dpkg/info/coreutils-bin.md5sums
 rm -f /bin/cat
 rm -f /bin/chgrp
 rm -f /bin/chmod
@@ -787,6 +812,10 @@ rm -f /usr/bin/sort
 
 # Cleanup files from the CrashReporter package.
 rm -rf /Applications/CrashReporter.app
+rm -f  /Library/dpkg/info/crash-reporter.crash_reporter.list
+rm -f  /Library/dpkg/info/crash-reporter.extrainst_
+rm -f  /Library/dpkg/info/crash-reporter.list
+rm -f  /Library/dpkg/info/crash-reporter.md5sums
 rm -rf /private/var/mobile/Library/CrashReporter
 rm -rf /private/var/mobile/Library/Logs/CrashReporter/*.*
 rm -f  /private/var/mobile/Library/Preferences/crash-reporter.plist
@@ -906,6 +935,9 @@ rm -f /private/var/mobile/Library/Preferences/net.tateu.debkeeper.plist
 rm -f /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DCUSettings.plist
 
 # Cleanup files from the "DetailedPowerUsage" package.
+rm -f  /Library/dpkg/info/com.thecomputerwhisperer.detailedpowerusage.list
+rm -f  /Library/dpkg/info/com.thecomputerwhisperer.detailedpowerusage.md5sums
+rm -f  /Library/dpkg/info/com.thecomputerwhisperer.detailedpowerusage.postinst
 rm -rf /Library/Application\ Support/DPUTweakResources
 rm -f  /private/var/mobile/Library/Preferences/com.thecomputerwhisperer.DetailedPowerUsage.plist
 
@@ -958,6 +990,8 @@ rm -f  /private/var/mobile/Library/Preferences/com.julioverne.ext3nder.autosign.
 rm -f  /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/com.cydia.Ext3nder.plist
 
 # Cleanup files from the "Fake GPS Pro" package.
+rm -f  /Library/dpkg/info/cn.tinyapps.xgpslite.list
+rm -f  /Library/dpkg/info/cn.tinyapps.xgpslite.postrm
 rm -f  /private/var/mobile/Documents/favorites.plist
 rm -rf /private/var/mobile/Library/.umeng
 rm -f  /private/var/mobile/Library/Caches/.cn.tinyapps.XGPSLite_umeng.plist
@@ -986,6 +1020,11 @@ rm -f /usr/bin/pax
 
 # Cleanup files for the "Fileza, FilzaEscaped, FilzaElectrocuted" packages.
 rm -rf /Applications/Filza.app
+rm -f  /Library/dpkg/info/com.tigisoftware.filza.list
+rm -f  /Library/dpkg/info/com.tigisoftware.filza.md5sums
+rm -f  /Library/dpkg/info/com.tigisoftware.filza.postinst
+rm -f  /Library/dpkg/info/com.tigisoftware.filza.postrm
+rm -f  /Library/dpkg/info/com.tigisoftware.filza.prerm
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
 rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.tigisoftware.Filza
@@ -1015,6 +1054,10 @@ rm -f  /private/var/mobile/Library/Preferences/com.aditkamath.flame.plist
 
 # Cleanup files from the "Flex" package.
 rm -rf /Applications/Flex.app
+rm -f  /Library/dpkg/info/flex3beta.list
+rm -f  /Library/dpkg/info/flex3beta.md5sums
+rm -f  /Library/dpkg/info/flex3beta.postinst
+rm -f  /Library/dpkg/info/flex3beta.prerm
 rm -f  /private/var/mobile/Documents/extraction-com.apple.springboard.flex
 rm -f  /private/var/mobile/Documents/extraction-com.johncoates.Flex.flex
 rm -rf /private/var/mobile/Documents/Flex
@@ -1337,6 +1380,8 @@ rm -f /usr/lib/libCSPreferencesProvider.dylib
 rm -f /usr/lib/libimagepicker.dylib
 
 # Cleanup files from the "Liberty" and "Liberty Lite" package.
+rm -f  /Library/dpkg/info/com.ryleyangus.libertylite.list
+rm -f  /Library/dpkg/info/com.ryleyangus.libertylite.md5sums
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.libertylite.plist
 rm -f /usr/lib/Liberty.dylib
@@ -1442,6 +1487,8 @@ rm -f /usr/lib/BugpointPasses.dylib
 rm -rf /usr/share/llvm
 
 # Cleanup files from the "LocalIAPStore" package.
+rm -f /Library/dpkg/info/com.hackyouriphone.localiapstore.list
+rm -f /Library/dpkg/info/com.hackyouriphone.localiapstore.md5sums
 rm -f /private/var/mobile/Library/Preferences/anondev.LocalIAPStore.plist
 
 # Cleanup files from the "Lockplus" package.
@@ -1461,6 +1508,9 @@ rm -f /usr/include/gnumake.h
 rm -f /private/var/mobile/Library/Preferences/net.dodtweaks.mdprefs.plist
 
 # Cleanup files from the "Mikoto" package.
+rm -f  /Library/dpkg/info/net.angelxwind.mikoto.list
+rm -f  /Library/dpkg/info/net.angelxwind.mikoto.md5sums
+rm -f  /Library/dpkg/info/net.angelxwind.mikoto.postrm
 rm -rf /Library/KarenLocalizer
 rm -rf /Library/KarenRepoIcons
 rm -f  /private/var/mobile/Library/Preferences/net.angelxwind.mikoto.plist
@@ -1558,6 +1608,10 @@ rm -f  /usr/lib/pkgconfig/libnghttp2.pc
 # Cleanup files from the "noncereboot11CLI" package.
 rm -f /usr/bin/noncereboot11
 
+# Cleanup files from the "No-Promos" twitter package.
+rm -f  /Library/dpkg/info/com.leftyfl1p.nopromostwitter.list
+rm -f  /Library/dpkg/info/com.leftyfl1p.nopromostwitter.md5sums
+
 # Cleanup files from the "NoSubstitute (Electra)" package.
 rm -f /private/var/mobile/Library/Preferences/co.vexation.nosubstitute.plist
 
@@ -1654,6 +1708,8 @@ rm -f  /etc/profile
 rm -rf /etc/profile.d
 
 # Cleanup files from the "PullToRespring" package.
+rm -f /Library/dpkg/info/com.sassoty.pulltorespring.list
+rm -f /Library/dpkg/info/com.sassoty.pulltorespring.md5sums
 rm -f /private/var/mobile/Library/Preferences/com.sassoty.pulltorespring.plist
 
 # Cleanup files from the "ReformX" package.
@@ -1663,6 +1719,10 @@ rm -f  /private/var/mobile/Library/Preferences/com.zestlabs.reformx.current.plis
 rm -f  /private/var/mobile/Library/Preferences/com.zestlabs.reformx.plist
 
 # Cleanup files from the "Rocketbootstrap" package.
+rm -f /Library/dpkg/info/com.rpetrich.rocketbootstrap.list
+rm -f /Library/dpkg/info/com.rpetrich.rocketbootstrap.md5sums
+rm -f /Library/dpkg/info/com.rpetrich.rocketbootstrap.postinst
+rm -f /Library/dpkg/info/com.rpetrich.rocketbootstrap.prerm
 rm -f /usr/include/rocketbootstrap.h
 rm -f /usr/include/rocketbootstrap_dynamic.h
 rm -f /usr/lib/librocketbootstrap.dylib
@@ -1701,6 +1761,8 @@ rm -f /usr/bin/which
 rm -f /private/var/mobile/Library/Preferences/com.smokin1337.smartlpm.plist
 
 # Cleanup files from the "Snowboard" package.
+rm -f /Library/dpkg/info/com.spark.snowboard.list
+rm -f /Library/dpkg/info/com.spark.snowboard.md5sums
 rm -f /private/var/mobile/Library/Preferences/com.spark.snowboardprefs.plist
 
 # Cleanup files from the "Socket Cat" package.
