@@ -227,6 +227,8 @@ rm -rf /var/wireless/Library/Logs/*
 ########################################################################
 
 # Cleanup files from the "7-zip (POSIX)" package.
+rm -f  /Library/dpkg/info/p7zip.list
+rm -f  /Library/dpkg/info/p7zip.md5sums
 rm -f  /usr/bin/7z
 rm -f  /usr/bin/7za
 rm -rf /usr/lib/p7zip
@@ -579,6 +581,7 @@ rm -f  /private/var/mobile/Library/Preferences/com.midnightchips.bettersettings.
 rm -f  /private/var/mobile/Library/Preferences/com.midnightchips.bettersettings*.*
 
 # Cleanup files from the "Bigboss Icon Set" package.
+rm -f  /Library/dpkg/info/org.thebigboss.repo.icons.list
 rm -rf /usr/share/bigboss/bigboss.png
 rm -rf /usr/share/bigboss/planetiphones.png
 rm -rf /usr/share/bigboss/touchrev.png
@@ -645,6 +648,8 @@ rm -f /bin/bzip2recover
 # Cleanup files from the "CACerts" package.
 rm -f /etc/profile.d/cacerts.bootstrap.sh
 rm -f /etc/ssl/certs/cacert.pem
+rm -f /Library/dpkg/info/org.thebigboss.cacerts.list
+rm -f /Library/dpkg/info/org.thebigboss.cacerts.md5sums
 rm -f /usr/local/bin/curl
 rm -f /usr/local/bin/wget
 rmdir /etc/ssl/certs
@@ -1208,8 +1213,10 @@ rm -f  /private/var/mobile/Library/Preferences/com.zx.GPSCheatSettings.plist
 rm -f /bin/egrep
 rm -f /bin/fgrep
 rm -f /bin/grep
+rm -f /Library/dpkg/info/grep.list
 
 # Cleanup files from the "gzip" package.
+rm -f /Library/dpkg/info/gzip.list
 rm -f /bin/gunzip
 rm -f /bin/gzexe
 rm -f /bin/gzip
@@ -1364,6 +1371,8 @@ rm -f /private/var/mobile/Library/Preferences/com.pixelfiredev.libcolorpicker.pl
 rm -f /usr/lib/libcolorpicker.dylib
 
 # Cleanup files from the "libCrashReport" package.
+rm -f  /Library/dpkg/info/com.ashikase.libcrashreport.list
+rm -f  /Library/dpkg/info/com.ashikase.libcrashreport.md5sums
 rm -rf /usr/include/libcrashreport
 rm -f  /usr/lib/libcrashreport.dylib
 
@@ -1387,6 +1396,8 @@ rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.libertylite.plist
 rm -f /usr/lib/Liberty.dylib
 
 # Cleanup files from the "libPackageInfo" package.
+rm -f  /Library/dpkg/info/com.ashikase.libpackageinfo.list
+rm -f  /Library/dpkg/info/com.ashikase.libpackageinfo.md5sums
 rm -rf /usr/include/libpackageinfo
 rm -f  /usr/lib/libpackageinfo.dylib
 
@@ -1399,6 +1410,8 @@ rmdir /var/rocket_stashed
 rm -rf /usr/lib/libswift
 
 # Cleanup files from the "libSymbolicate" package.
+rm -f  /Library/dpkg/info/com.ashikase.libsymbolicate.list
+rm -f  /Library/dpkg/info/com.ashikase.libsymbolicate.md5sums
 rm -rf /usr/include/libsymbolicate
 rm -f  /usr/lib/libsymbolicate.dylib
 
@@ -1501,6 +1514,8 @@ rm -f  /private/var/mobile/Library/Preferences/com.junesiphone.lockplus.plist
 rm -f /usr/sbin/lsof
 
 # Cleanup files from the "make" package.
+rm -f /Library/dpkg/info/make.list
+rm -f /Library/dpkg/info/make.md5sums
 rm -f /usr/bin/make
 rm -f /usr/include/gnumake.h
 
@@ -1530,6 +1545,8 @@ rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9_Homescreen.pl
 # Cleanup files from the Nano package.
 rm -f  /etc/nanorc
 rm -f  /etc/profile.d/nano.sh
+rm -f  /Library/dpkg/info/nano.list
+rm -f  /Library/dpkg/info/nano.md5sums
 rm -f  /usr/bin/nano
 rm -f  /usr/bin/rnano
 rm -rf /usr/share/nano
@@ -1543,6 +1560,8 @@ rm -f /usr/sbin/ndp
 rm -f /usr/sbin/traceroute6
 
 # Cleanup files from the "New Curses" package.
+rm -f  /Library/dpkg/info/ncurses.list
+rm -f  /Library/dpkg/info/ncurses.md5sums
 rm -f  /usr/bin/captoinfo
 rm -f  /usr/bin/clear
 rm -f  /usr/bin/infocmp
@@ -1599,6 +1618,8 @@ rm -f  /var/mobile/Library/Preferences/net.limneos.nfcwriter.license
 rm -f  /var/mobile/Library/Preferences/nfcd.plist
 
 # Cleanup files from the "Nghttp2" package.
+rm -f  /Library/dpkg/info/nghttp2.list
+rm -f  /Library/dpkg/info/nghttp2.md5sums
 rm -rf /usr/include/nghttp2
 rm -f  /usr/lib/libnghttp2.14.dylib
 rm -f  /usr/lib/libnghttp2.dylib
@@ -1606,6 +1627,8 @@ rm -f  /usr/lib/libnghttp2.la
 rm -f  /usr/lib/pkgconfig/libnghttp2.pc
 
 # Cleanup files from the "noncereboot11CLI" package.
+rm -f /Library/dpkg/info/rocks.stek29.noncereboot11.list
+rm -f /Library/dpkg/info/rocks.stek29.noncereboot11.md5sums
 rm -f /usr/bin/noncereboot11
 
 # Cleanup files from the "No-Promos" twitter package.
@@ -1653,6 +1676,8 @@ rm -rf /usr/lib/ssl
 rm -f /usr/bin/patch
 
 # Cleanup files from the "Perl" package.
+rm -f  /Library/dpkg/info/perl.list
+rm -f  /Library/dpkg/info/perl.md5sums
 rm -f  /usr/bin/corelist
 rm -f  /usr/bin/cpan
 rm -f  /usr/bin/enc2xs
@@ -1704,6 +1729,8 @@ rm -rf /Library/Frameworks/PrefixUI.framework
 rm -f  /com.laughingquoll.prefixui_0.5_iphoneos-arm.deb
 
 # Cleanup files from the "Profile Directory" package.
+rm -f  /Library/dpkg/info/profile.d.list
+rm -f  /Library/dpkg/info/profile.d.md5sums
 rm -f  /etc/profile
 rm -rf /etc/profile.d
 
@@ -1733,7 +1760,9 @@ rm -r /usr/libexec/rocketd
 rm -rf /Library/Application\ Support/Rocket
 
 # Cleanup files from the "Rsync" package.
-rm -f /usr/bin/rsync
+rm -f  /Library/dpkg/info/rsync.list
+rm -f  /Library/dpkg/info/rsync.md5sums
+rm -f  /usr/bin/rsync
 rm -rf /usr/share/man/man1
 rm -rf /usr/share/man/man5
 
@@ -1801,6 +1830,7 @@ rm -rf /var/run/sudo
 rm -f /private/var/mobile/Library/Preferences/com.PS.SwipeForMore.plist
 
 # Cleanup files from the "System-Cmds" package.
+rm -f /Library/dpkg/info/system-cmds.list
 rm -f /bin/sync
 rm -f /sbin/dmesg
 rm -f /sbin/dynamic_pager
@@ -1840,7 +1870,13 @@ rm -f /usr/bin/tar
 rm -f /usr/libexec/rmt
 
 # Cleanup files from the "Tech Support Framework" package.
+rm -f  /Library/dpkg/info/jp.ashikase.techsupport.list
+rm -f  /Library/dpkg/info/jp.ashikase.techsupport.md5sums
 rm -rf /Library/Frameworks/TechSupport.framework
+
+# Cleanup files from the "Theos Dependancies" package.
+rm -f /Library/dpkg/info/org.theos.dependencies.list
+rm -f /Library/dpkg/info/org.theos.dependencies.md5sums
 
 # Cleanup files from the "Top" package.
 rm -f /usr/bin/top
