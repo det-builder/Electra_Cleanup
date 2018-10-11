@@ -701,7 +701,7 @@ rm -f /private/var/mobile/Library/Preferences/com.neinzedd9.confidentialpropriet
 # Cleanup files from the "Core Utilities" package.
 rm -f  /Library/dpkg/info/coreutils.list
 rm -f  /Library/dpkg/info/coreutils.md5sums
-rm -r  /etc/profile.d/coreutils.h
+rm -f  /etc/profile.d/coreutils.h
 rmdir  /etc/profile.d
 rm -f  /usr/bin/[
 rm -f  /usr/bin/b2sum
@@ -1034,6 +1034,7 @@ rm -f  /Library/dpkg/info/com.tigisoftware.filza.md5sums
 rm -f  /Library/dpkg/info/com.tigisoftware.filza.postinst
 rm -f  /Library/dpkg/info/com.tigisoftware.filza.postrm
 rm -f  /Library/dpkg/info/com.tigisoftware.filza.prerm
+rm -f  /Library/LaunchDaemons/com.tigisoftware.filza.helper.plist
 rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
 rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.tigisoftware.Filza
@@ -1044,7 +1045,10 @@ rm -rf /private/var/mobile/Library/Filza
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
 rm -f  /usr/bin/Filza
-rm -rf /usr/libexec/filza
+rm -f  /usr/libexec/filza/Filza
+rm -f  /usr/libexec/filza/FilzaHelper
+rm -f  /usr/libexec/filza/FilzaWebDAVServer
+rmdir  /usr/libexec/filza
 
 # Cleanup files from the "Find Utilities" package.
 rm -f /usr/bin/find
@@ -1402,7 +1406,15 @@ rm -f /usr/lib/Liberty.dylib
 # Cleanup files from the "libPackageInfo" package.
 rm -f  /Library/dpkg/info/com.ashikase.libpackageinfo.list
 rm -f  /Library/dpkg/info/com.ashikase.libpackageinfo.md5sums
-rm -rf /usr/include/libpackageinfo
+rm -f  /usr/include/libpackageinfo/PIAppleDeveloperPackage.h
+rm -f  /usr/include/libpackageinfo/PIApplePackage.h
+rm -f  /usr/include/libpackageinfo/PIAppleStorePackage.h
+rm -f  /usr/include/libpackageinfo/PIAppleSystemPackage.h
+rm -f  /usr/include/libpackageinfo/PIDebianPackage.h
+rm -f  /usr/include/libpackageinfo/PIPackage.h
+rm -f  /usr/include/libpackageinfo/PIPackageCache.h
+rm -f  /usr/include/libpackageinfo/libpackageinfo.h
+rmdir  /usr/include/libpackageinfo
 rm -f  /usr/lib/libpackageinfo.dylib
 
 # Cleanup files from the "libRocket" package.  
@@ -1429,6 +1441,7 @@ rm -f /private/var/mobile/Library/Preferences/com.ioscreatix.littlex.plist
 rm -f /usr/bin/bugpoint
 rm -f /usr/bin/c-index-test
 rm -f /usr/bin/clang
+rm -f /usr/include/clang-c
 rm -f /usr/bin/clang++
 rm -f /usr/bin/clang-5.0
 rm -f /usr/bin/clang-check
@@ -1497,10 +1510,18 @@ rm -f /usr/bin/yaml2obj
 rm -f /usr/include/BugpointPasses.dylib
 rm -f /usr/include/LLVMHello.dylib
 rm -f /usr/include/clang
+rm -f /usr/include/clang-c
+rm -f /usr/include/lld
+rm -f /usr/include/llvm
+rm -f /usr/include/llvm-c
 rm -f /usr/include/cmake
 rm -f /usr/include/libLTO.dylib
 rm -f /usr/include/libclang.dylib
 rm -f /usr/lib/BugpointPasses.dylib
+rm -f /usr/lib/clang
+rm -f /usr/lib/cmake
+rm -f /usr/lib/libLTO.dylib
+rm -f /usr/lib/libclang.dylib
 rm -rf /usr/share/llvm
 
 # Cleanup files from the "LocalIAPStore" package.
@@ -1624,7 +1645,9 @@ rm -f  /var/mobile/Library/Preferences/nfcd.plist
 # Cleanup files from the "Nghttp2" package.
 rm -f  /Library/dpkg/info/nghttp2.list
 rm -f  /Library/dpkg/info/nghttp2.md5sums
-rm -rf /usr/include/nghttp2
+rm -f  /usr/include/nghttp2/nghttp2.h
+rm -f  /usr/include/nghttp2/nghttp2ver.h
+rmdir  /usr/include/nghttp2
 rm -f  /usr/lib/libnghttp2.14.dylib
 rm -f  /usr/lib/libnghttp2.dylib
 rm -f  /usr/lib/libnghttp2.la
@@ -1716,7 +1739,7 @@ rm -rf /usr/lib/perl5
 rm -rf /usr/share/man/man1
 rm -rf /usr/share/man/man3
 rm -rf /usr/share/man/man5
-rmdir /usr/share/man
+rmdir  /usr/share/man
 
 # Cleanup files from the "Pincrush" package.
 rm -f /usr/bin/pincrush
@@ -1736,7 +1759,8 @@ rm -f  /com.laughingquoll.prefixui_0.5_iphoneos-arm.deb
 rm -f  /Library/dpkg/info/profile.d.list
 rm -f  /Library/dpkg/info/profile.d.md5sums
 rm -f  /etc/profile
-rm -rf /etc/profile.d
+rm -f  /etc/profile.d/terminal.sh
+rmdir  /etc/profile.d
 
 # Cleanup files from the "PullToRespring" package.
 rm -f /Library/dpkg/info/com.sassoty.pulltorespring.list
