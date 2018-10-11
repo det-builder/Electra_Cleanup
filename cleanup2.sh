@@ -43,6 +43,10 @@
 # Battery logs are stored here:                                   #
 # /var/containers/Shared/SystemGroup/???? <-- search for powerlog #
 #                                                                 #
+# Commands to disable launch daemons in jailbroken state:         #
+# mkdir -p /etc/rc.d                                              #
+# echo "launchctl unload /System/Library/LaunchDaemons/??.plist" > /etc/rc.d/unload??
+# chmod 755 /etc/rc.d/unload??
 ###################################################################
 
 # Ensure the user is logged in as root.
