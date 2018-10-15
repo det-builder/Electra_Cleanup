@@ -80,13 +80,14 @@ killall Cydia
 ########################################################################
 
 # /var/containers/Bundle/Application (Appears to be only app store apps & those installed via Impactor.)
-rm -rf /var/containers/Bundle/Application/???
+rm -rf /var/containers/Bundle/Application/21DBD917-1313-4934-846C-AF1F34F81841 # electra
 
 # /var/mobile/Containers/Data/Application (Appears to be app store apps, impactor apps and Cydia apps.)
-rm -rf /var/mobile/Containers/Data/Application/??????
+rm -rf /var/mobile/Containers/Data/Application/923E2A03-7791-42BF-8F28-CD54C3814B50 # cydia
+rm -rf /var/mobile/Containers/Data/Application/DF5E0A50-4F24-40F7-B89D-56E94BDC081E # electra
 
 # /var/mobile/Containers/Shared/AppGroup (Appears to be only app store apps & those installed via Impactor.)
-rm -rf /var/mobile/Containers/Shared/AppGroup/???????
+rm -rf /var/mobile/Containers/Shared/AppGroup/5BBCAC5E-A8CD-44A1-8ED8-C7367A8447AC # cydia extender
 
 ########################################################################
 #                                                                      #
@@ -115,6 +116,7 @@ rm -rf /cores/*
 rm -rf /Developer/*
 rm -rf /DT
 rm -rf /electra
+rm -rf /jb
 rm -rf /lib/*
 rm -rf /libexec
 rm -rf /mnt/*
@@ -125,6 +127,8 @@ rm -rf /etc/apt
 rm -rf /etc/default
 rm -rf /etc/profile.d
 rm -rf /etc/rc.d
+rm -rf /etc/ssh
+rm -rf /etc/ssl
 
 # Delete directories off of the /Library folder.
 rm -rf /Library/Activator
@@ -146,6 +150,7 @@ rm -rf /usr/include/*
 rm -rf /usr/lib/bash
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/local/lib/*
+rm -rf /usr/share/aclocal
 
 # Delete directories off of the /var folder.
 rm -rf /var/db/analyticsd/*
@@ -171,6 +176,8 @@ rm -f  /.bit_of_fun
 rm -f  /.bootstrapped_electra
 rm -f  /.cydia_no_stash
 rm -f  /.file
+rm -f  /.installed_unc0ver
+rm -f  /RWTEST
 rm -f  /.Trashes
 rm -f  /bin/launchctl
 rm -f  /usr/lib/libjailbreak.dylib
@@ -193,9 +200,12 @@ rm -f  /private/var/MobileSoftwareUpdate/restore.log
 rm -f  /private/var/networkd/Library/Preferences/*.plist.*
 rm -f  /private/var/root/.bash_history
 rm -f  /private/var/root/.bashrc
+rm -f  /private/var/root/.profile
+rm -f  /private/var/root/master.zip
 rm -f  /private/var/root/Library/Preferences/com.apple.*.plist.*
 rm -f  /private/var/root/Library/Preferences/UserEventAgent.plist
 rm -f  /private/var/run/jailbreakd.pid
+rm -f  /private/var/run/sshd.pid
 rm -f  /private/var/tmp/jailbreakd.pid
 
 # Delete misc folders that don't belong to any tweak.
@@ -509,11 +519,10 @@ rm -f /usr/bin/apt-sortpkgs
 rm -f  /Library/dpkg/info/apt7-lib.list
 rm -f  /Library/dpkg/info/apt7-lib.md5sums
 rm -f  /Library/dpkg/info/apt7-lib.preinst
-rm -f  /etc/apt/apt.conf.d/cydia-compat.conf
-rmdir  /etc/apt/apt.conf.d
-rm -f  /etc/apt/preferences.d
-rm -f  /etc/apt/sources.list.d
-rm -f  /etc/apt/trusted/gpg.d
+rm -rf /etc/apt/apt.conf.d
+rm -rf /etc/apt/preferences.d
+rm -rf /etc/apt/sources.list.d
+rm -rf /etc/apt/trusted.gpg.d
 rm -rf /usr/lib/apt
 rm -f  /usr/lib/libapt-inst.2.0.0.dylib
 rm -f  /usr/lib/libapt-inst.2.0.dylib
@@ -537,8 +546,8 @@ rm -f  /usr/include/assuan.h
 rm -f  /usr/lib/libassuan.0.dylib
 rm -f  /usr/lib/libassuan.dylib
 rm -f  /usr/lib/libassuan.la
-rm -rf /usr/share/aclocal
 rm -f  /usr/share/aclocal/libassuan.m4
+rmdir  /usr/share/aclocal
 
 # Cleanup files from the "Basic-Cmds" package.
 rm -f /usr/bin/mesg
@@ -1042,6 +1051,8 @@ rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Caches/com.tigisoftware.Filza
 rm -rf /private/var/mobile/Library/Caches/Snapshots/com.tigisoftware.Filza
 rm -rf /private/var/mobile/Library/Filza
+rm -f  /private/var/mobile/Library/Preferences/com.dry05.filzaescaped*.plist
+rm -f  /private/var/mobile/Library/Preferences/com.tigisoftware.Filza.plist
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
 rm -f  /usr/bin/Filza
@@ -1137,6 +1148,49 @@ rm -rf /usr/lib/gawk
 rm -rf /usr/libexec/awk
 rm -rf /usr/share/awk
 
+# Cleanup files from the "GetText" package.
+rm -f  /usr/bin/autopoint
+rm -f  /usr/bin/envsubst
+rm -f  /usr/bin/gettext
+rm -f  /usr/bin/gettext.sh
+rm -f  /usr/bin/gettextize
+rm -f  /usr/bin/msgattrib
+rm -f  /usr/bin/msgcat
+rm -f  /usr/bin/msgcmp
+rm -f  /usr/bin/msgcomm
+rm -f  /usr/bin/msgconv
+rm -f  /usr/bin/msgen
+rm -f  /usr/bin/msgexec
+rm -f  /usr/bin/msgfilter
+rm -f  /usr/bin/msgfmt
+rm -f  /usr/bin/msggrep
+rm -f  /usr/bin/msginit
+rm -f  /usr/bin/msgmerge
+rm -f  /usr/bin/msgunfmt
+rm -f  /usr/bin/msguniq
+rm -f  /usr/bin/ngettext
+rm -f  /usr/bin/recode-sr-latin
+rm -f  /usr/bin/xgettext
+rm -f  /usr/include/autosprintf.h
+rm -f  /usr/include/gettext-po.h
+rm -f  /usr/include/libintl.h
+rm -f  /usr/lib/gettext/cldr-plurals
+rm -f  /usr/lib/gettext/hostname
+rm -f  /usr/lib/gettext/project-id
+rm -f  /usr/lib/gettext/urlget
+rm -f  /usr/lib/gettext/user-email
+rmdir  /usr/lib/gettext
+rm -f  /usr/lib/libasprintf.0.dylib
+rm -f  /usr/lib/libasprintf.dylib
+rm -f  /usr/lib/libgettextlib-0.19.8.dylib
+rm -f  /usr/lib/libgettextlib.dylib
+rm -f  /usr/lib/libgettextpo.1.dylib
+rm -f  /usr/lib/libgettextpo.dylib
+rm -f  /usr/lib/libgettextsrc-0.19.8.dylib
+rm -f  /usr/lib/libgettextsrc.dylib
+rm -f  /usr/lib/libintl.9.dylib
+rm -f  /usr/lib/libintl.dylib
+
 # Cleanup files from the "GIT" package.
 rm -f  /usr/bin/git
 rm -f  /usr/bin/git-cvsserver
@@ -1155,6 +1209,7 @@ rm -rf /usr/share/git-gui
 rm -rf /usr/share/gitk
 rm -rf /usr/share/gitweb
 rm -f  /usr/share/man/man3/Git*.3pm
+rm -f  /var/root/.gitconfig
 
 # Cleanup files from the "GNU Cryptography" package.
 rm -f  /usr/bin/dumpsexp
@@ -1165,22 +1220,37 @@ rm -f  /usr/include/gcrypt.h
 rm -f  /usr/lib/libgcrypt.20.dylib
 rm -f  /usr/lib/libgcrypt.dylib
 rm -f  /usr/lib/libgcrypt.la
-rm -rf /usr/share/aclocal
 rm -f  /usr/share/aclocal/libgcrypt.m4
+rmdir  /usr/share/aclocal
+
+# Cleanup files from the "GNU Multiple Precision Arithmetic" package.
+rm -f  /usr/include/gmp.h
+rm -f  /usr/lib/libgmp.10.dylib
+rm -f  /usr/lib/libgmp.dylib
+rm -f  /usr/lib/libgmp.la
 
 # Cleanup files from the "GNUPG Errors" package.
 rm -f  /usr/bin/gpg-error
 rm -f  /usr/bin/gpg-error-config
+rm -f  /usr/bin/gpgrt-config
+rm -f  /usr/bin/yat2m
 rm -f  /usr/include/gpg-error.h
 rm -f  /usr/include/gpgrt.h
 rm -f  /usr/lib/libgpg-error.0.dylib
 rm -f  /usr/lib/libgpg-error.dylib
 rm -f  /usr/lib/libgpg-error.la
-rm -rf /usr/share/aclocal
 rm -f  /usr/share/aclocal/gpg-error.m4
-rm -rf /usr/share/common-lisp
-rm -rf /usr/share/libgpg-error
+rm -f  /usr/share/aclocal/gpgrt.m4
+rmdir  /usr/share/aclocal
+rm -f  /usr/share/common-lisp/source/gpg-error/gpg-error-codes.lisp
+rm -f  /usr/share/common-lisp/source/gpg-error/gpg-error-package.lisp
+rm -f  /usr/share/common-lisp/source/gpg-error/gpg-error.asd
+rm -f  /usr/share/common-lisp/source/gpg-error/gpg-error.lisp
+rmdir  /usr/share/common-lisp/source/gpg-error
+rmdir  /usr/share/common-lisp/source
+rmdir  /usr/share/common-lisp
 rm -f  /usr/share/libgpg-error/errorref.txt
+rmdir  /usr/share/libgpg-error
 
 # Cleanup files from the "GnuPG 2" package.
 rm -f  /usr/bin/dirmngr
@@ -1203,6 +1273,7 @@ rm -f  /usr/libexec/gpg-wks-client
 rm -f  /usr/libexec/scdaemon
 rm -f  /usr/sbin/addgnupghome
 rm -f  /usr/sbin/applygnupgdefaults
+rm -rf /usr/share/gnupg
 
 # Cleanup files from the "GNU Privacy Guard" package.
 rm -f  /usr/bin/gpg
@@ -1210,6 +1281,41 @@ rm -f  /usr/bin/gpg-zip
 rm -f  /usr/bin/gpgsplit
 rm -f  /usr/bin/gpgv
 rm -rf /usr/libexec/gnupg
+
+# Cleanup files from the "GnuTLS" package.
+rm -f  /usr/bin/certtool
+rm -f  /usr/bin/gnutls-cli
+rm -f  /usr/bin/gnutls-cli-debug
+rm -f  /usr/bin/gnutls-serv
+rm -f  /usr/bin/ocsptool
+rm -f  /usr/bin/p11tool
+rm -f  /usr/bin/psktool
+rm -f  /usr/bin/srptool
+rm -f  /usr/include/gnutls/abstract.h
+rm -f  /usr/include/gnutls/compat.h
+rm -f  /usr/include/gnutls/crypto.h
+rm -f  /usr/include/gnutls/dtls.h
+rm -f  /usr/include/gnutls/gnutls.h
+rm -f  /usr/include/gnutls/gnutlsxx.h
+rm -f  /usr/include/gnutls/ocsp.h
+rm -f  /usr/include/gnutls/openpgp.h
+rm -f  /usr/include/gnutls/pkcs11.h
+rm -f  /usr/include/gnutls/pkcs12.h
+rm -f  /usr/include/gnutls/pkcs7.h
+rm -f  /usr/include/gnutls/self-test.h
+rm -f  /usr/include/gnutls/socket.h
+rm -f  /usr/include/gnutls/system-keys.h
+rm -f  /usr/include/gnutls/tpm.h
+rm -f  /usr/include/gnutls/urls.h
+rm -f  /usr/include/gnutls/x509-ext.h
+rm -f  /usr/include/gnutls/x509.h
+rmdir  /usr/include/gnutls
+rm -f  /usr/lib/libgnutls.30.dylib
+rm -f  /usr/lib/libgnutls.dylib
+rm -f  /usr/lib/libgnutlsxx.28.dylib
+rm -f  /usr/lib/libgnutlsxx.dylib
+rm -f  /usr/lib/pkgconfig/gnutls.pc
+rmdir  /usr/lib/pkgconfig
 
 # Cleanup files from the "GPSCheat" package.
 rm -rf /Library/Switches/GPSCheatSwitch.bundle
@@ -1353,12 +1459,12 @@ rm -f /private/var/mobile/Library/Caches/com.saurik.Cydia/LocalStorage/*kiiimo*.
 
 # Cleanup files from the "KSBA" package.
 rm -f  /usr/bin/ksba-config
-rm -f  /usr/include/ksba.halt
+rm -f  /usr/include/ksba.h
 rm -f  /usr/lib/libksba.8.dylib
 rm -f  /usr/lib/libksba.dylib
 rm -f  /usr/lib/libksba.la
-rm -rf /usr/share/aclocal
 rm -f  /usr/share/aclocal/ksba.m4
+rmdir  /usr/share/aclocal
 
 # Cleanup files from the "LD64" package.
 rm -f /usr/bin/ObjectDump
@@ -1403,6 +1509,15 @@ rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.libertylite.plist
 rm -f /usr/lib/Liberty.dylib
 
+# Cleanup files from the "libidn2" package.
+rm -f /usr/bin/idn2
+rm -f /usr/include/idn2.h
+rm -f /usr/lib/libidn2.0.dylib
+rm -f /usr/lib/libidn2.dylib
+rm -f /usr/lib/libidn2.la
+rm -f /usr/lib/pkgconfig/libidn2.pc
+rmdir /usr/lib/pkgconfig
+
 # Cleanup files from the "libPackageInfo" package.
 rm -f  /Library/dpkg/info/com.ashikase.libpackageinfo.list
 rm -f  /Library/dpkg/info/com.ashikase.libpackageinfo.md5sums
@@ -1417,6 +1532,10 @@ rm -f  /usr/include/libpackageinfo/libpackageinfo.h
 rmdir  /usr/include/libpackageinfo
 rm -f  /usr/lib/libpackageinfo.dylib
 
+# Cleanup files from the "libResolve" package.
+rm -f /usr/lib/libresolv.9.dylib
+rm -f /usr/lib/libresolv.dylib
+
 # Cleanup files from the "libRocket" package.  
 rm -f /usr/lib/libRocket.dylib
 rm -f /var/rocket_stashed/libRocket.dylib
@@ -1430,6 +1549,44 @@ rm -f  /Library/dpkg/info/com.ashikase.libsymbolicate.list
 rm -f  /Library/dpkg/info/com.ashikase.libsymbolicate.md5sums
 rm -rf /usr/include/libsymbolicate
 rm -f  /usr/lib/libsymbolicate.dylib
+
+# Cleanup files from the "libTasn1" package.
+rm -f /usr/bin/asn1Coding
+rm -f /usr/bin/asn1Decoding
+rm -f /usr/bin/asn1Parser
+rm -f /usr/include/libtasn1.h
+rm -f /usr/lib/libtasn1.6.dylib
+rm -f /usr/lib/libtasn1.dylib
+rm -f /usr/lib/libtasn1.la
+rm -f /usr/lib/pkgconfig/libtasn1.pc
+rmdir /usr/lib/pkgconfig
+
+# Cleanup files from the "libUnistring" package.
+rm -f /usr/include/unicase.h
+rm -f /usr/include/uniconv.h
+rm -f /usr/include/unictype.h
+rm -f /usr/include/unigbrk.h
+rm -f /usr/include/unilbrk.h
+rm -f /usr/include/uniname.h
+rm -f /usr/include/uninorm.h
+rm -f /usr/include/unistdio.h
+rm -f /usr/include/unistr.h
+rm -f /usr/include/unistring/cdefs.h
+rm -f /usr/include/unistring/iconveh.h
+rm -f /usr/include/unistring/inline.h
+rm -f /usr/include/unistring/localcharset.h
+rm -f /usr/include/unistring/stdbool.h
+rm -f /usr/include/unistring/stdint.h
+rm -f /usr/include/unistring/version.h
+rm -f /usr/include/unistring/woe32dll.h
+rmdir /usr/include/unistring
+rm -f /usr/include/unitypes.h
+rm -f /usr/include/uniwbrk.h
+rm -f /usr/include/uniwidth.h
+rm -f /usr/lib/libunistring.2.dylib
+rm -f /usr/lib/libunistring.dylib
+rm -f /usr/lib/libunistring.la
+
 
 # Cleanup files from the "Link Identity Editor" package.
 rm -f /usr/bin/ldid
@@ -1538,6 +1695,37 @@ rm -f  /private/var/mobile/Library/Preferences/com.junesiphone.lockplus.plist
 # Cleanup files from the "lsof" package.
 rm -f /usr/sbin/lsof
 
+# Cleanup files from the "lz4" package.
+rm -f /usr/bin/lz4
+rm -f /usr/bin/lz4c
+rm -f /usr/bin/lz4cat
+rm -f /usr/bin/unlz4
+rm -f /usr/include/lz4.h
+rm -f /usr/include/lz4frame.h
+rm -f /usr/include/lz4hc.h
+rm -f /usr/lib/liblz4.1.7.5.dylib
+rm -f /usr/lib/liblz4.1.dylib
+rm -f /usr/lib/liblz4.dylib
+rm -f /usr/lib/pkgconfig/liblz4.pc
+rmdir /usr/lib/pkgconfig
+
+# Cleanup files from the "lzma" package.
+rm -f /usr/bin/lzcat
+rm -f /usr/bin/lzcmp
+rm -f /usr/bin/lzdiff
+rm -f /usr/bin/lzegrep
+rm -f /usr/bin/lzfgrep
+rm -f /usr/bin/lzgrep
+rm -f /usr/bin/lzless
+rm -f /usr/bin/lzma
+rm -f /usr/bin/lzmadec
+rm -f /usr/bin/lzmainfo
+rm -f /usr/bin/lzmore
+rm -f /usr/bin/unlzma
+rm -f /usr/include/lzmadec.h
+rm -f /usr/lib/liblzmadec.0.dylib
+rm -f /usr/lib/liblzmadec.dylib
+
 # Cleanup files from the "make" package.
 rm -f /Library/dpkg/info/make.list
 rm -f /Library/dpkg/info/make.md5sums
@@ -1576,6 +1764,23 @@ rm -f  /usr/bin/nano
 rm -f  /usr/bin/rnano
 rm -rf /usr/share/nano
 
+# Cleanup files from the "Nettle" package.
+rm -f  /usr/bin/nettle-hash
+rm -f  /usr/bin/nettle-lfib-stream
+rm -f  /usr/bin/nettle-pbkdf2
+rm -f  /usr/bin/pkcs1-conv
+rm -f  /usr/bin/sexp-conv
+rm -rf /usr/include/nettle
+rm -f  /usr/lib/libhogweed.4.4.dylib
+rm -f  /usr/lib/libhogweed.4.dylib
+rm -f  /usr/lib/libhogweed.dylib
+rm -f  /usr/lib/libnettle.6.4.dylib
+rm -f  /usr/lib/libnettle.6.dylib
+rm -f  /usr/lib/libnettle.dylib
+rm -f  /usr/lib/pkgconfig/hogweed.pc
+rm -f  /usr/lib/pkgconfig/nettle.pc
+rmdir  /usr/lib/pkgconfig
+
 # Cleanup files from the "Network-Cmds" package.
 rm -f /sbin/netstat
 rm -f /sbin/route
@@ -1601,6 +1806,7 @@ rm -f  /usr/bin/tic
 rm -f  /usr/bin/toe
 rm -f  /usr/bin/tput
 rm -f  /usr/bin/tset
+
 rm -f  /usr/include/curses.h
 rm -f  /usr/include/eti.h
 rm -f  /usr/include/form.h
@@ -1614,16 +1820,76 @@ rm -f  /usr/include/term_entry.h
 rm -f  /usr/include/termcap.h
 rm -f  /usr/include/tic.h
 rm -f  /usr/include/unctrl.h
+rm -f  /usr/include/ncursesw/curses.h
+rm -f  /usr/include/ncursesw/eti.h
+rm -f  /usr/include/ncursesw/form.h
+rm -f  /usr/include/ncursesw/menu.h
+rm -f  /usr/include/ncursesw/nc_tparm.h
+rm -f  /usr/include/ncursesw/ncurses.h
+rm -f  /usr/include/ncursesw/ncurses_dll.h
+rm -f  /usr/include/ncursesw/panel.h
+rm -f  /usr/include/ncursesw/term.h
+rm -f  /usr/include/ncursesw/term_entry.h
+rm -f  /usr/include/ncursesw/termcap.h
+rm -f  /usr/include/ncursesw/tic.h
+rm -f  /usr/include/ncursesw/unctrl.h
+rmdir  /usr/include/ncursesw
+rm -f  /usr/lib/_ncurses/libcurses.dylib
+rm -f  /usr/lib/_ncurses/libncurses.dylib
+rmdir  /usr/lib/_ncurses
 rm -f  /usr/lib/libcurses.a
+rm -f  /usr/lib/libform.5.dylib
+rm -f  /usr/lib/libform5.dylib
 rm -f  /usr/lib/libform.a
 rm -f  /usr/lib/libform_g.a
+rm -f  /usr/lib/libformw.5.dylib
+rm -f  /usr/lib/libformw5.dylib
 rm -f  /usr/lib/libmenu.a
 rm -f  /usr/lib/libmenu_g.a
+rm -f  /usr/lib/libmenu.5.dylib
+rm -f  /usr/lib/libmenu5.dylib
+rm -f  /usr/lib/libmenuw.5.dylib
+rm -f  /usr/lib/libmenuw5.dylib
+rm -f  /usr/lib/libncurses.5.dylib
+rm -f  /usr/lib/libncurses5.dylib
+rm -f  /usr/lib/libncursesw.5.dylib
+rm -f  /usr/lib/libncursesw5.dylib
 rm -f  /usr/lib/libncurses.a
 rm -f  /usr/lib/libncurses_g.a
 rm -f  /usr/lib/libpanel.a
 rm -f  /usr/lib/libpanel_g.a
+rm -f  /usr/lib/libpanel.5.dylib
+rm -f  /usr/lib/libpanel5.dylib
+rm -f  /usr/lib/libpanelw.5.dylib
+rm -f  /usr/lib/libpanelw5.dylib
+rm -f  /usr/lib/libform.6.dylib
+rm -f  /usr/lib/libform.dylib
+rm -f  /usr/lib/libformw.6.dylib
+rm -f  /usr/lib/libformw.dylib
+rm -f  /usr/lib/libmenu.6.dylib
+rm -f  /usr/lib/libmenu.dylib
+rm -f  /usr/lib/libmenuw.6.dylib
+rm -f  /usr/lib/libmenuw.dylib
+rm -f  /usr/lib/libncurses.6.dylib
+rm -f  /usr/lib/libncurses6.dylib
+rm -f  /usr/lib/libncursesw.6.dylib
+rm -f  /usr/lib/libncursesw.dylib
+rm -f  /usr/lib/libncursesw6.dylib
+rm -f  /usr/lib/libpanel.6.dylib
+rm -f  /usr/lib/libpanel.dylib
+rm -f  /usr/lib/libpanelw.6.dylib
+rm -f  /usr/lib/libpanelw.dylib
+rm -f  /usr/lib/pkgconfig/form.pc
+rm -f  /usr/lib/pkgconfig/formw.pc
+rm -f  /usr/lib/pkgconfig/menu.pc
+rm -f  /usr/lib/pkgconfig/menuw.pc
+rm -f  /usr/lib/pkgconfig/ncurses.pc
+rm -f  /usr/lib/pkgconfig/ncursesw.pc
+rm -f  /usr/lib/pkgconfig/panel.pc
+rm -f  /usr/lib/pkgconfig/panelw.pc
+rmdir  /usr/lib/pkgconfig
 rm -f  /usr/lib/terminfo
+rm -rf /usr/lib/terminfo
 rm -rf /usr/share/tabset
 rm -rf /usr/share/terminfo
 
@@ -1633,8 +1899,8 @@ rm -f  /usr/include/npth.h
 rm -f  /usr/lib/libnpth.0.dylib
 rm -f  /usr/lib/libnpth.dylib
 rm -f  /usr/lib/libnpth.la
-rm -rf /usr/share/aclocal
 rm -f  /usr/share/aclocal/npth.m4
+rmdir  /usr/share/aclocal
 
 # Cleanup files from the "NFCWriter" package.
 rm -rf /Applications/NFCWriter.app
@@ -1667,8 +1933,11 @@ rm -f /private/var/mobile/Library/Preferences/co.vexation.nosubstitute.plist
 
 # Cleanup files from the "OpenSSH" package.
 rm -f  /Library/LaunchDaemons/com.openssh.sshd.plist
-rm -rf /etc/ssh
-rm -f  /usr/bin/scp
+rm -f  /etc/ssh/moduli
+rm -f  /etc/ssh/ssh_config
+rm -f  /etc/ssh/sshd_config
+rmdir  /etc/ssh
+rm -f  /usr/bin/scp/
 rm -f  /usr/bin/sftp
 rm -f  /usr/bin/ssh
 rm -f  /usr/bin/ssh-add
@@ -1678,26 +1947,85 @@ rm -f  /usr/bin/ssh-keyscan
 rm -f  /usr/libexec/sftp-server
 rm -f  /usr/libexec/ssh-keysign
 rm -f  /usr/libexec/ssh-pkcs11-helper
+rm -f  /usr/libexec/sshd-keygen-wrapper
 rm -f  /usr/sbin/sshd
 rm -rf /var/empty
 
 # Cleanup files from the "OpenSSL" package.
-rm -rf /etc/ssl
+rm -f  /etc/ssl/openssl.cnf
+rmdir  /etc/ssl/certs
+rmdir  /etc/ssl/private
 rm -f  /usr/bin/c_rehash
 rm -f  /usr/bin/openssl
 rm -rf /usr/include/openssl
-rm -rf /usr/lib/engines
 rm -f  /usr/lib/libcrypto.1.0.0.dylib
-rm -f  /usr/lib/libcrypto.a
-rm -f  /usr/lib/libcrypto.dylib
 rm -f  /usr/lib/libssl.1.0.0.dylib
-rm -f  /usr/lib/libssl.a
+rm -f  /usr/lib/libcrypto.dylib
 rm -f  /usr/lib/libssl.dylib
-rm -r  /usr/lib/pkgconfig/libcrypto.pc
-rm -r  /usr/lib/pkgconfig/libssl.pc
-rm -r  /usr/lib/pkgconfig/openssl.pc
+rm -f  /usr/lib/engines/lib4758cca.dylib
+rm -f  /usr/lib/engines/libaep.dylib
+rm -f  /usr/lib/engines/libatalla.dylib
+rm -f  /usr/lib/engines/libcapi.dylib
+rm -f  /usr/lib/engines/libchil.dylib
+rm -f  /usr/lib/engines/libcswift.dylib
+rm -f  /usr/lib/engines/libgmp.dylib
+rm -f  /usr/lib/engines/libgost.dylib
+rm -f  /usr/lib/engines/libnuron.dylib
+rm -f  /usr/lib/engines/libpadlock.dylib
+rm -f  /usr/lib/engines/libsureware.dylib
+rm -f  /usr/lib/engines/libubsec.dylib
+rmdir  /usr/lib/engines
+rm -f  /usr/lib/pkgconfig/libcrypto.pc
+rm -f  /usr/lib/pkgconfig/libssl.pc
+rm -f  /usr/lib/pkgconfig/openssl.pc
 rmdir  /usr/lib/pkgconfig
+rm -f  /usr/lib/ssl/misc/CA.pl
+rm -f  /usr/lib/ssl/misc/CA.sh
+rm -f  /usr/lib/ssl/misc/c_hash
+rm -f  /usr/lib/ssl/misc/c_info
+rm -f  /usr/lib/ssl/misc/c_issuer
+rm -f  /usr/lib/ssl/misc/c_name
+rm -f  /usr/lib/ssl/misc/tsget
+rmdir  /usr/lib/ssl/misc
+rm -f  /usr/lib/ssl/cert.pem
+rm -f  /usr/lib/ssl/openssl.cnf
+rm -f  /usr/lib/ssl/private
+rmdir  /usr/lib/ssl
 rm -rf /usr/lib/ssl
+
+# Cleanup files from the "P11Kit" package.
+rm -f  /usr/bin/p11-kit
+rm -f  /usr/bin/trust
+rm -f  /usr/etc/pkcs11/pkcs11.conf.example
+rmdir  /usr/etc/pkcs11
+rmdir  /usr/etc
+rm -f  /usr/include/p11-kit-1/p11-kit
+rm -f  /usr/include/p11-kit-1/p11-kit/deprecated.h
+rm -f  /usr/include/p11-kit-1/p11-kit/iter.h
+rm -f  /usr/include/p11-kit-1/p11-kit/p11-kit.h
+rm -f  /usr/include/p11-kit-1/p11-kit/pin.h
+rm -f  /usr/include/p11-kit-1/p11-kit/pkcs11.h
+rm -f  /usr/include/p11-kit-1/p11-kit/pkcs11x.h
+rm -f  /usr/include/p11-kit-1/p11-kit/remote.h
+rm -f  /usr/include/p11-kit-1/p11-kit/uri.h
+rmdir  /usr/include/p11-kit-1
+rm -f  /usr/lib/libp11-kit.0.dylib
+rm -f  /usr/lib/libp11-kit.dylib
+rm -f  /usr/lib/libp11-kit.la
+rm -f  /usr/lib/p11-kit-proxy.dylib
+rm -f  /usr/lib/pkcs11/p11-kit-client.la
+rm -f  /usr/lib/pkcs11/p11-kit-client.so
+rm -f  /usr/lib/pkcs11/p11-kit-trust.la
+rm -f  /usr/lib/pkcs11/p11-kit-trust.so
+rmdir  /usr/lib/pkcs11
+rm -f  /usr/lib/pkgconfig/p11-kit-1.pc
+rm -f  /usr/libexec/p11-kit/p11-kit-remote
+rm -f  /usr/libexec/p11-kit/p11-kit-server
+rm -f  /usr/libexec/p11-kit/trust-extract-compat
+rmdir  /usr/libexec/p11-kit
+rm -f  /usr/share/p11-kit/modules/p11-kit-trust.module
+rmdir  /usr/share/p11-kit/modules
+rmdir  /usr/share/p11-kit
 
 # Cleanup files from the "Patch" package.
 rm -f /usr/bin/patch
@@ -1767,6 +2095,27 @@ rm -f /Library/dpkg/info/com.sassoty.pulltorespring.list
 rm -f /Library/dpkg/info/com.sassoty.pulltorespring.md5sums
 rm -f /private/var/mobile/Library/Preferences/com.sassoty.pulltorespring.plist
 
+# Cleanup files from the "Readline" package.
+rm -f  /usr/include/readline/chardefs.h
+rm -f  /usr/include/readline/history.h
+rm -f  /usr/include/readline/keymaps.h
+rm -f  /usr/include/readline/readline.h
+rm -f  /usr/include/readline/rlconf.h
+rm -f  /usr/include/readline/rlstdc.h
+rm -f  /usr/include/readline/rltypedefs.h
+rm -f  /usr/include/readline/tilde.h
+rmdir  /usr/include/readline
+rm -f  /usr/lib/libhistory.5.2.dylib
+rm -f  /usr/lib/libhistory.5.dylib
+rm -f  /usr/lib/libhistory.7.0.dylib
+rm -f  /usr/lib/libhistory.7.dylib
+rm -f  /usr/lib/libhistory.dylib
+rm -f  /usr/lib/libreadline.5.2.dylib
+rm -f  /usr/lib/libreadline.5.dylib
+rm -f  /usr/lib/libreadline.7.0.dylib
+rm -f  /usr/lib/libreadline.7.dylib
+rm -f  /usr/lib/libreadline.dylib
+
 # Cleanup files from the "ReformX" package.
 rm -rf /Applications/ReformX.app
 rm -rf /Library/Application\ Support/ReformX
@@ -1835,6 +2184,10 @@ rm -rf /Library/ControlCenter/Bundles/SSHonCC.bundle
 rm -f  /usr/bin/SSHswitch
 
 # Cleanup files from the "Substitute" package.
+rm -f /Library/Frameworks/CydiaSubstrate.framework
+rm -f /usr/lib/libsubstitute.dylib
+rm -f /usr/lib/libsubstrate.dylib
+rm -f /usr/lib/tweakloader.dylib
 rm -f /usr/lib/libsubstitute.0.dylib
 rm -f /usr/lib/libsubstitute.dylib
 
