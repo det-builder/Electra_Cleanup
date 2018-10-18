@@ -1681,6 +1681,13 @@ rm -f /usr/lib/libLTO.dylib
 rm -f /usr/lib/libclang.dylib
 rm -rf /usr/share/llvm
 
+# Cleanup files from the "Locale Profiles in UTF-8" package.
+rm -f  /etc/profile.d/localeutf8.sh
+rmdir  /etc/profile.d
+rm -rf /usr/share/locale/en_US.UTF-8
+rm -rf /usr/share/locale/zh_CN.UTF-8
+rmdir  /usr/share/locale
+
 # Cleanup files from the "LocalIAPStore" package.
 rm -f /Library/dpkg/info/com.hackyouriphone.localiapstore.list
 rm -f /Library/dpkg/info/com.hackyouriphone.localiapstore.md5sums
@@ -1806,7 +1813,6 @@ rm -f  /usr/bin/tic
 rm -f  /usr/bin/toe
 rm -f  /usr/bin/tput
 rm -f  /usr/bin/tset
-
 rm -f  /usr/include/curses.h
 rm -f  /usr/include/eti.h
 rm -f  /usr/include/form.h
@@ -1901,6 +1907,9 @@ rm -f  /usr/lib/libnpth.dylib
 rm -f  /usr/lib/libnpth.la
 rm -f  /usr/share/aclocal/npth.m4
 rmdir  /usr/share/aclocal
+
+# Cleanup files from the "NewTerm2" package.
+rm -rf /Applications/NewTerm.app
 
 # Cleanup files from the "NFCWriter" package.
 rm -rf /Applications/NFCWriter.app
