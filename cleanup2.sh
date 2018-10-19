@@ -183,6 +183,7 @@ rm -f  /bin/launchctl
 rm -f  /usr/lib/libjailbreak.dylib
 rm -f  /private/var/installd/Library/MobileInstallation/UninstalledApplications.plist
 rm -f  /private/var/installd/Library/Preferences/*.plist.*
+rm -f  /private/var/mobile/.bash_history
 rm -f  /private/var/mobile/test.txt
 rm -f  /private/var/mobile/Library/google*.*
 rm -f  /private/var/mobile/Library/Preferences/.GlobalPreferences.plist.*
@@ -709,6 +710,7 @@ rm -rf /Applications/CocoaTop.app
 rm -rf /private/var/mobile/Library/Caches/ru.domo.CocoaTop
 rm -rf /private/var/mobile/Library/Caches/Snapshots/ru.domo.CocoaTop
 rm -f  /private/var/mobile/Library/Preferences/ru.domo.CocoaTop.plist
+rm -f  /private/var/root/Library/Preferences/ru.domo.CocoaTop.plist
 
 # Cleanup files from the "Confidential & Proprietary" package.
 rm -f /private/var/mobile/Library/Preferences/com.neinzedd9.confidentialproprietarysettings.plist
