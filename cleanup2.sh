@@ -180,7 +180,6 @@ rm -f  /.installed_unc0ver
 rm -f  /RWTEST
 rm -f  /.Trashes
 rm -f  /bin/launchctl
-rm -f  /usr/lib/libjailbreak.dylib
 rm -f  /private/var/installd/Library/MobileInstallation/UninstalledApplications.plist
 rm -f  /private/var/installd/Library/Preferences/*.plist.*
 rm -f  /private/var/mobile/.bash_history
@@ -208,6 +207,10 @@ rm -f  /private/var/root/Library/Preferences/UserEventAgent.plist
 rm -f  /private/var/run/jailbreakd.pid
 rm -f  /private/var/run/sshd.pid
 rm -f  /private/var/tmp/jailbreakd.pid
+rm -f  /usr/bin/debugserver
+rm -f  /usr/bin/spawn
+rm -f  /usr/lib/libjailbreak.dylib
+rm -f  /usr/sbin/repquota
 
 # Delete misc folders that don't belong to any tweak.
 rm -rf /Library/Application\ Support/SpeedOptimize
@@ -526,6 +529,7 @@ rm -rf /etc/apt/preferences.d
 rm -rf /etc/apt/sources.list.d
 rm -rf /etc/apt/trusted.gpg.d
 rm -rf /usr/lib/apt
+rm -f  /usr/lib/apt
 rm -f  /usr/lib/libapt-inst.2.0.0.dylib
 rm -f  /usr/lib/libapt-inst.2.0.dylib
 rm -f  /usr/lib/libapt-inst.dylib
@@ -738,6 +742,7 @@ rm -f  /usr/bin/expand
 rm -f  /usr/bin/expr
 rm -f  /usr/bin/factor
 rm -f  /usr/bin/fmt
+rm -f  /usr/bin/fold
 rm -f  /usr/bin/folders
 rm -f  /usr/bin/groups
 rm -f  /usr/bin/head
@@ -763,6 +768,7 @@ rm -f  /usr/bin/pr
 rm -f  /usr/bin/printenv
 rm -f  /usr/bin/printf
 rm -f  /usr/bin/ptf
+rm -f  /usr/bin/ptx
 rm -f  /usr/bin/realpath
 rm -f  /usr/bin/runcon
 rm -f  /usr/bin/seq
@@ -1428,7 +1434,7 @@ rm -f /usr/libexec/uucpd
 # rm -f /sbin/fsck
 # rm -f /sbin/fsck_apfs  
 # rm -f /sbin/fsck_hfs
-# rm -f /sbin/fstyp
+rm -f /sbin/fstyp
 # rm -f /sbin/fstyp_hfs
 # rm -f /sbin/mount
 # rm -f /sbin/mount_apfs
@@ -1886,6 +1892,7 @@ rm -f /usr/lib/libncurses.5.dylib
 rm -f /usr/lib/libncurses.6.dylib
 rm -f /usr/lib/libncurses.a
 rm -f /usr/lib/libncurses_g.a
+rm -f /usr/lib/libncurses.dylib
 rm -f /usr/lib/libncurses5.dylib
 rm -f /usr/lib/libncurses6.dylib
 rm -f /usr/lib/libncursesw.5.dylib
