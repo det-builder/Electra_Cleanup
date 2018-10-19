@@ -504,16 +504,17 @@ rm -f  /Library/dpkg/info/apt7-key.list
 rm -f  /Library/dpkg/info/apt7-key.md5sums
 rm -f  /usr/bin/apt-key
 
-# Cleanup files from the "APT 1.4 Strict" package.
-rm -f /usr/bin/apt
-rm -f /usr/bin/apt-cache
-rm -f /usr/bin/apt-cdrom
-rm -f /usr/bin/apt-config
-rm -f /usr/bin/apt-extracttemplates
-rm -f /usr/bin/apt-ftparchive
-rm -f /usr/bin/apt-get
-rm -f /usr/bin/apt-mark
-rm -f /usr/bin/apt-sortpkgs
+# Cleanup files from the "APT 0.7 Strict & 1.4 Strict" package.
+rm -f  /usr/bin/apt
+rm -f  /usr/bin/apt-cache
+rm -f  /usr/bin/apt-cdrom
+rm -f  /usr/bin/apt-config
+rm -f  /usr/bin/apt-extracttemplates
+rm -f  /usr/bin/apt-ftparchive
+rm -f  /usr/bin/apt-get
+rm -f  /usr/bin/apt-mark
+rm -f  /usr/bin/apt-sortpkgs
+rm -rf /usr/include/apt-pkg
 
 # Cleanup files from the "APT 1.4 Strict (lib)" package.
 rm -f  /Library/dpkg/info/apt7-lib.list
@@ -559,6 +560,7 @@ rm -f /usr/bin/write
 rm -f /usr/bin/dbsql
 rm -f /usr/bin/db_archive
 rm -f /usr/bin/db_checkpoint
+rm -f /usr/bin/db_codegen
 rm -f /usr/bin/db_deadlock
 rm -f /usr/bin/db_dump
 rm -f /usr/bin/db_hotbackup
@@ -575,6 +577,9 @@ rm -f /usr/bin/db_verify
 rm -f /usr/include/db.h
 rm -f /usr/include/db_cxx.h
 rm -f /usr/include/dbsql.h
+rm -f /usr/lib/libdb-4.6.dylib
+rm -f /usr/lib/libdb-4.6.la
+rm -f /usr/lib/libdb-4.dylib
 rm -f /usr/lib/libdb-6.2.dylib
 rm -f /usr/lib/libdb-6.dylib
 rm -f /usr/lib/libdb.dylib
@@ -660,6 +665,7 @@ rm -f /bin/bzip2recover
 
 # Cleanup files from the "CACerts" package.
 rm -f /etc/profile.d/cacerts.bootstrap.sh
+rmdir /etc/profile.d
 rm -f /etc/ssl/certs/cacert.pem
 rm -f /Library/dpkg/info/org.thebigboss.cacerts.list
 rm -f /Library/dpkg/info/org.thebigboss.cacerts.md5sums
@@ -767,6 +773,7 @@ rm -f  /usr/bin/shred
 rm -f  /usr/bin/shuf
 rm -f  /usr/bin/sort
 rm -f  /usr/bin/split
+rm -f  /usr/bin/stat
 rm -f  /usr/bin/statoverride
 rm -f  /usr/bin/stdbuf
 rm -f  /usr/bin/sum
@@ -790,6 +797,8 @@ rm -f  /usr/bin/who
 rm -f  /usr/bin/whoami
 rm -f  /usr/bin/yes
 rm -f  /usr/lib/coreutils
+rm -f  /usr/libexec/coreutils/libstdbuf.so
+rmdir  /usr/libexec/coreutils
 rm -f  /usr/sbin/chown
 rm -f  /usr/sbin/chroot
 
@@ -936,12 +945,14 @@ rm -f  /usr/bin/dpkg-split
 rm -f  /usr/bin/dpkg-statoverride
 rm -f  /usr/bin/dpkg-trigger
 rm -f  /usr/bin/dpkg-vendor
+rm -f  /usr/bin/dselect
 rm -f  /usr/bin/update-alternatives
+rm -rf /usr/include/dpkg
 rm -f  /usr/lib/libdpkg.a
 rm -f  /usr/lib/libdpkg.la
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/share/dpkg
-rm -rf /var/lib/dpkg
+rm -f  /var/lib/dpkg
 
 # Cleanup files from the "Debian Utilities" package.
 rm -f /bin/run-parts
@@ -972,10 +983,16 @@ rm -f /usr/bin/diff3
 rm -f /usr/bin/sdiff
 
 # Cleanup files from the "DiskDev Cmds" package.
+rm -f /sbin/fstyp
 rm -f /sbin/fstyp_msdos
 rm -f /sbin/fstyp_ntfs
 rm -f /sbin/fstyp_udf
+rm -f /sbin/mount_devfs
+rm -f /sbin/mount_fdesc
+rm -f /sbin/quotacheck
 rm -f /sbin/umount
+rm -f /usr/bin/quota
+rm -f /usr/libexec/vndevice
 rm -f /usr/sbin/dev_mkdb
 rm -f /usr/sbin/edquota
 rm -f /usr/sbin/fdisk
@@ -1059,7 +1076,7 @@ rm -f  /usr/bin/Filza
 rm -f  /usr/libexec/filza/Filza
 rm -f  /usr/libexec/filza/FilzaHelper
 rm -f  /usr/libexec/filza/FilzaWebDAVServer
-rmdir  /usr/libexec/filza
+rm -rf /usr/libexec/filza
 
 # Cleanup files from the "Find Utilities" package.
 rm -f /usr/bin/find
@@ -1069,6 +1086,7 @@ rm -f /usr/bin/xargs
 rm -f /usr/libexec/bigram
 rm -f /usr/libexec/code
 rm -f /usr/libexec/frcode
+rm -rf /var/cache/findutils
 
 # Cleanup files from the "Flame" package.
 rm -f  /etc/apt/apt.conf.d/flameTimeout
@@ -1170,7 +1188,7 @@ rm -f  /usr/bin/msgunfmt
 rm -f  /usr/bin/msguniq
 rm -f  /usr/bin/ngettext
 rm -f  /usr/bin/recode-sr-latin
-rm -f  /usr/bin/xgettext
+rm -f  /usr/bin/xgettext 
 rm -f  /usr/include/autosprintf.h
 rm -f  /usr/include/gettext-po.h
 rm -f  /usr/include/libintl.h
@@ -1215,6 +1233,7 @@ rm -f  /var/root/.gitconfig
 rm -f  /usr/bin/dumpsexp
 rm -f  /usr/bin/hmac256
 rm -f  /usr/bin/libgcryptconfig
+rm -f  /usr/bin/libgcrypt-config
 rm -f  /usr/bin/mpicalc
 rm -f  /usr/include/gcrypt.h
 rm -f  /usr/lib/libgcrypt.20.dylib
@@ -1252,17 +1271,21 @@ rmdir  /usr/share/common-lisp
 rm -f  /usr/share/libgpg-error/errorref.txt
 rmdir  /usr/share/libgpg-error
 
-# Cleanup files from the "GnuPG 2" package.
+# Cleanup files from the "GNUPG & GnuPG 2" packages.
 rm -f  /usr/bin/dirmngr
 rm -f  /usr/bin/dirmngr-client
+rm -f  /usr/bin/gpg
 rm -f  /usr/bin/gpg-agent
 rm -f  /usr/bin/gpg-connect-agent
+rm -f  /usr/bin/gpg-zip
 rm -f  /usr/bin/gpg2
 rm -f  /usr/bin/gpgconf
 rm -f  /usr/bin/gpgparsemail
 rm -f  /usr/bin/gpgscm
 rm -f  /usr/bin/gpgsm
+rm -f  /usr/bin/gpgsplit
 rm -f  /usr/bin/gpgtar
+rm -f  /usr/bin/gpgv
 rm -f  /usr/bin/gpgv2
 rm -f  /usr/bin/kbxutil
 rm -f  /usr/bin/watchgnupg
@@ -1271,16 +1294,10 @@ rm -f  /usr/libexec/gpg-preset-passphrase
 rm -f  /usr/libexec/gpg-protect-tool
 rm -f  /usr/libexec/gpg-wks-client
 rm -f  /usr/libexec/scdaemon
+rm -rf /usr/libexec/gnupg
 rm -f  /usr/sbin/addgnupghome
 rm -f  /usr/sbin/applygnupgdefaults
 rm -rf /usr/share/gnupg
-
-# Cleanup files from the "GNU Privacy Guard" package.
-rm -f  /usr/bin/gpg
-rm -f  /usr/bin/gpg-zip
-rm -f  /usr/bin/gpgsplit
-rm -f  /usr/bin/gpgv
-rm -rf /usr/libexec/gnupg
 
 # Cleanup files from the "GnuTLS" package.
 rm -f  /usr/bin/certtool
@@ -1587,7 +1604,6 @@ rm -f /usr/lib/libunistring.2.dylib
 rm -f /usr/lib/libunistring.dylib
 rm -f /usr/lib/libunistring.la
 
-
 # Cleanup files from the "Link Identity Editor" package.
 rm -f /usr/bin/ldid
 
@@ -1796,7 +1812,7 @@ rm -f /usr/sbin/arp
 rm -f /usr/sbin/ndp
 rm -f /usr/sbin/traceroute6
 
-# Cleanup files from the "New Curses" package.
+# Cleanup files from the "New Curses 5 and New Curses 6" packages.
 rm -f  /Library/dpkg/info/ncurses.list
 rm -f  /Library/dpkg/info/ncurses.md5sums
 rm -f  /usr/bin/captoinfo
@@ -1843,56 +1859,56 @@ rmdir  /usr/include/ncursesw
 rm -f  /usr/lib/_ncurses/libcurses.dylib
 rm -f  /usr/lib/_ncurses/libncurses.dylib
 rmdir  /usr/lib/_ncurses
-rm -f  /usr/lib/libcurses.a
-rm -f  /usr/lib/libform.5.dylib
-rm -f  /usr/lib/libform5.dylib
-rm -f  /usr/lib/libform.a
-rm -f  /usr/lib/libform_g.a
-rm -f  /usr/lib/libformw.5.dylib
-rm -f  /usr/lib/libformw5.dylib
-rm -f  /usr/lib/libmenu.a
-rm -f  /usr/lib/libmenu_g.a
-rm -f  /usr/lib/libmenu.5.dylib
-rm -f  /usr/lib/libmenu5.dylib
-rm -f  /usr/lib/libmenuw.5.dylib
-rm -f  /usr/lib/libmenuw5.dylib
-rm -f  /usr/lib/libncurses.5.dylib
-rm -f  /usr/lib/libncurses5.dylib
-rm -f  /usr/lib/libncursesw.5.dylib
-rm -f  /usr/lib/libncursesw5.dylib
-rm -f  /usr/lib/libncurses.a
-rm -f  /usr/lib/libncurses_g.a
-rm -f  /usr/lib/libpanel.a
-rm -f  /usr/lib/libpanel_g.a
-rm -f  /usr/lib/libpanel.5.dylib
-rm -f  /usr/lib/libpanel5.dylib
-rm -f  /usr/lib/libpanelw.5.dylib
-rm -f  /usr/lib/libpanelw5.dylib
-rm -f  /usr/lib/libform.6.dylib
-rm -f  /usr/lib/libform.dylib
-rm -f  /usr/lib/libformw.6.dylib
-rm -f  /usr/lib/libformw.dylib
-rm -f  /usr/lib/libmenu.6.dylib
-rm -f  /usr/lib/libmenu.dylib
-rm -f  /usr/lib/libmenuw.6.dylib
-rm -f  /usr/lib/libmenuw.dylib
-rm -f  /usr/lib/libncurses.6.dylib
-rm -f  /usr/lib/libncurses6.dylib
-rm -f  /usr/lib/libncursesw.6.dylib
-rm -f  /usr/lib/libncursesw.dylib
-rm -f  /usr/lib/libncursesw6.dylib
-rm -f  /usr/lib/libpanel.6.dylib
-rm -f  /usr/lib/libpanel.dylib
-rm -f  /usr/lib/libpanelw.6.dylib
-rm -f  /usr/lib/libpanelw.dylib
-rm -f  /usr/lib/pkgconfig/form.pc
-rm -f  /usr/lib/pkgconfig/formw.pc
-rm -f  /usr/lib/pkgconfig/menu.pc
-rm -f  /usr/lib/pkgconfig/menuw.pc
-rm -f  /usr/lib/pkgconfig/ncurses.pc
-rm -f  /usr/lib/pkgconfig/ncursesw.pc
-rm -f  /usr/lib/pkgconfig/panel.pc
-rm -f  /usr/lib/pkgconfig/panelw.pc
+rm -f /usr/lib/libcurses.a
+rm -f /usr/lib/libform.5.dylib
+rm -f /usr/lib/libform.6.dylib
+rm -f /usr/lib/libform.a
+rm -f /usr/lib/libform.dylib
+rm -f /usr/lib/libform_g.a
+rm -f /usr/lib/libform5.dylib
+rm -f /usr/lib/libformw.5.dylib
+rm -f /usr/lib/libformw.6.dylib
+rm -f /usr/lib/libformw.dylib
+rm -f /usr/lib/libformw5.dylib
+rm -f /usr/lib/libmenu.5.dylib
+rm -f /usr/lib/libmenu.6.dylib
+rm -f /usr/lib/libmenu.a
+rm -f /usr/lib/libmenu.dylib
+rm -f /usr/lib/libmenu_g.a
+rm -f /usr/lib/libmenu5.dylib
+rm -f /usr/lib/libmenuw.5.dylib
+rm -f /usr/lib/libmenuw.6.dylib
+rm -f /usr/lib/libmenuw.dylib
+rm -f /usr/lib/libmenuw5.dylib
+rm -f /usr/lib/libncurses.5.dylib
+rm -f /usr/lib/libncurses.6.dylib
+rm -f /usr/lib/libncurses.a
+rm -f /usr/lib/libncurses_g.a
+rm -f /usr/lib/libncurses5.dylib
+rm -f /usr/lib/libncurses6.dylib
+rm -f /usr/lib/libncursesw.5.dylib
+rm -f /usr/lib/libncursesw.6.dylib
+rm -f /usr/lib/libncursesw.dylib
+rm -f /usr/lib/libncursesw5.dylib
+rm -f /usr/lib/libncursesw6.dylib
+rm -f /usr/lib/libpanel.5.dylib
+rm -f /usr/lib/libpanel.6.dylib
+rm -f /usr/lib/libpanel.a
+rm -f /usr/lib/libpanel.dylib
+rm -f /usr/lib/libpanel_g.a
+rm -f /usr/lib/libpanel5.dylib
+rm -f /usr/lib/libpanelw.5.dylib
+rm -f /usr/lib/libpanelw.6.dylib
+rm -f /usr/lib/libpanelw.dylib
+rm -f /usr/lib/libpanelw5.dylib
+rm -f /usr/lib/pkgconfig/form.pc
+rm -f /usr/lib/pkgconfig/formw.pc
+rm -f /usr/lib/pkgconfig/menu.pc
+rm -f /usr/lib/pkgconfig/menuw.pc
+rm -f /usr/lib/pkgconfig/ncurses.pc
+rm -f /usr/lib/pkgconfig/ncursesw.pc
+rm -f /usr/lib/pkgconfig/panel.pc
+rm -f /usr/lib/pkgconfig/panelw.pc
 rmdir  /usr/lib/pkgconfig
 rm -f  /usr/lib/terminfo
 rm -rf /usr/lib/terminfo
@@ -2083,6 +2099,7 @@ rm -f /usr/bin/pincrush
 
 # Cleanup files from the "PreferenceLoader" package.
 rm -f /usr/include/libprefs/prefs.h
+rmdir /usr/include/libprefs
 rm -f /usr/lib/libprefs.dylib
 
 # Cleanup files from the "Preference Organizer 2" tweak.
@@ -2193,12 +2210,12 @@ rm -rf /Library/ControlCenter/Bundles/SSHonCC.bundle
 rm -f  /usr/bin/SSHswitch
 
 # Cleanup files from the "Substitute" package.
-rm -f /Library/Frameworks/CydiaSubstrate.framework
-rm -f /usr/lib/libsubstitute.dylib
-rm -f /usr/lib/libsubstrate.dylib
-rm -f /usr/lib/tweakloader.dylib
-rm -f /usr/lib/libsubstitute.0.dylib
-rm -f /usr/lib/libsubstitute.dylib
+rm -rf /Library/Frameworks/CydiaSubstrate.framework
+rm -f  /usr/lib/libsubstitute.dylib
+rm -f  /usr/lib/libsubstrate.dylib
+rm -f  /usr/lib/tweakloader.dylib
+rm -f  /usr/lib/libsubstitute.0.dylib
+rm -f  /usr/lib/libsubstitute.dylib
 
 # Cleanup files from the "Substrate Compatibility Layer" package.
 rm -rf /Library/Frameworks/CydiaSubstrate.framework
@@ -2228,6 +2245,8 @@ rm -f /sbin/halt
 rm -f /sbin/nologin
 rm -f /sbin/reboot
 rm -f /usr/bin/arch
+rm -f /usr/bin/chfn
+rm -f /usr/bin/chsh
 rm -f /usr/bin/getconf
 rm -f /usr/bin/getty
 rm -f /usr/bin/hostinfo
@@ -2239,6 +2258,7 @@ rm -f /usr/sbin/accton
 rm -f /usr/sbin/halt
 rm -f /usr/sbin/iostat
 rm -f /usr/sbin/mkfile
+rm -f /usr/sbin/nologin
 rm -f /usr/sbin/pwd_mkdb
 rm -f /usr/sbin/reboot
 rm -f /usr/sbin/sysctl
@@ -2306,6 +2326,7 @@ rm -f  /var/lib/misc/libuasharedtoolsinmobi.dylib
 
 # Cleanup files from the "UIKit Tools" package.
 rm -f /usr/bin/cfversion
+rm -f /usr/bin/ecidecid
 rm -f /usr/bin/gssc
 rm -f /usr/bin/iomfsetgamma
 rm -f /usr/bin/ldrestart
@@ -2416,6 +2437,9 @@ rm -rf /usr/lib/pkgconfig
 rm -f  /usr/lib/pkgconfig/liblzma.pc
 rm -f  /usr/local/lib/liblzma.5.dylib
 rm -f  /usr/local/lib/liblzma.dylib
+rm -f  /usr/local/lib/pkgconfig/liblzma.pc
+rm -f  /usr/local/lib/pkgconfig/liblzma.pce
+rmdir  /usr/local/lib/pkgconfig
 
 # Cleanup files from the "Youtube Tools" package.
 rm -f /private/var/mobile/Library/Preferences/com.justinpetkovic.youtubetools.plist
