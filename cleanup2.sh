@@ -8,9 +8,15 @@
 # DIRECTIONS for use                                              #
 #                                                                 #
 # 1) In Cydia, un-install all tweaks that you can.                #
-# 2) Respring                                                     #
-# 3) Run this script.                                             #
-# 4) Pray                                                         #
+# 2) NOTE, that when running this script on the device you may    #
+# get an error about invalid \r characters.  If this happens      #
+# run this command:                                               #
+# sed -i 's/\r$//' cleanup2.sh                                    #
+# The above will convert DOS CRLF chars to UNIX version.          #
+#                                                                 # 
+# 3) Respring                                                     #
+# 4) Run this script.                                             #
+# 5) Pray                                                         #
 #                                                                 #
 # Usage tips:                                                     #
 # rm -rf /DT/test/*                                               #
