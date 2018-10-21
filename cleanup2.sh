@@ -80,14 +80,21 @@ killall Cydia
 ########################################################################
 
 # /var/containers/Bundle/Application (Appears to be only app store apps & those installed via Impactor.)
-rm -rf /var/containers/Bundle/Application/21DBD917-1313-4934-846C-AF1F34F81841 # electra
+rm -rf /var/containers/Bundle/Application/1F1507D3-3AC2-4551-B86C-E0107840572F # unc0ver
+rm -rf /var/containers/Bundle/Application/3EBD2B2B-11EA-43D7-8470-85FB8840A672 # filzaescazped
 
 # /var/mobile/Containers/Data/Application (Appears to be app store apps, impactor apps and Cydia apps.)
-rm -rf /var/mobile/Containers/Data/Application/923E2A03-7791-42BF-8F28-CD54C3814B50 # cydia
-rm -rf /var/mobile/Containers/Data/Application/DF5E0A50-4F24-40F7-B89D-56E94BDC081E # electra
+rm -rf /var/mobile/Containers/Data/Application/CCD77984-4065-4764-BD4B-AA58DFEEF0E9 # cocoatop
+rm -rf /var/mobile/Containers/Data/Application/3854B68F-451C-48EA-9CC0-C1204C5BF32A # cydia
+rm -rf /var/mobile/Containers/Data/Application/A0967302-40BA-493E-8933-6A26F6B18E80 # filza
+rm -rf /var/mobile/Containers/Data/Application/FAD0D867-F20F-454E-B182-4BADF03A6A49 # filzaesccaped
+rm -rf /var/mobile/Containers/Data/Application/CFDC337C-5241-467E-813E-31A9E875C210 # icleaner
+rm -rf /var/mobile/Containers/Data/Application/2D2D01AB-097B-4581-B37D-5B4A58CE7FCD # safemode
+rm -rf /var/mobile/Containers/Data/Application/0BB4706B-62B4-4337-B907-65C077A306D3 # unc0ver
+rm -rf /var/mobile/Containers/Data/Application/49959A42-1AD0-49A2-BBD4-B315081CDFD6 # hbang terminal
 
 # /var/mobile/Containers/Shared/AppGroup (Appears to be only app store apps & those installed via Impactor.)
-rm -rf /var/mobile/Containers/Shared/AppGroup/5BBCAC5E-A8CD-44A1-8ED8-C7367A8447AC # cydia extender
+# rm -rf /var/mobile/Containers/Shared/AppGroup/xxxxx # nothing in directory.
 
 ########################################################################
 #                                                                      #
@@ -149,6 +156,7 @@ rm -rf /usr/games
 rm -rf /usr/include/*
 rm -rf /usr/lib/bash
 rm -rf /usr/lib/pkgconfig
+rm -rf /usr/lib/tweaks
 rm -rf /usr/local/lib/*
 rm -rf /usr/share/aclocal
 
@@ -210,6 +218,7 @@ rm -f  /private/var/tmp/jailbreakd.pid
 rm -f  /usr/bin/debugserver
 rm -f  /usr/bin/spawn
 rm -f  /usr/lib/libjailbreak.dylib
+rm -f  /usr/lib/pspawn_hook.dylib
 rm -f  /usr/sbin/repquota
 
 # Delete misc folders that don't belong to any tweak.
@@ -233,6 +242,7 @@ rm -rf /var/mobile/Downloads/com.apple.AirDrop
 rm -rf /var/mobile/Downloads/Cydia
 rm -rf /var/mobile/Library/Cydia
 rm -rf /var/mobile/Library/Logs/*
+rm -rf /var/root/Application\ Support
 rm -rf /var/spool/*
 rm -rf /var/stash
 rm -rf /var/tmp/*
@@ -1434,7 +1444,7 @@ rm -f /usr/libexec/uucpd
 # rm -f /sbin/fsck
 # rm -f /sbin/fsck_apfs  
 # rm -f /sbin/fsck_hfs
-rm -f /sbin/fstyp
+# rm -f /sbin/fstyp
 # rm -f /sbin/fstyp_hfs
 # rm -f /sbin/mount
 # rm -f /sbin/mount_apfs
@@ -1971,7 +1981,7 @@ rm -f  /etc/ssh/moduli
 rm -f  /etc/ssh/ssh_config
 rm -f  /etc/ssh/sshd_config
 rmdir  /etc/ssh
-rm -f  /usr/bin/scp/
+rm -f  /usr/bin/scp
 rm -f  /usr/bin/sftp
 rm -f  /usr/bin/ssh
 rm -f  /usr/bin/ssh-add
@@ -2476,12 +2486,20 @@ echo "127.0.0.1	localhost" >> /etc/hosts
 echo "255.255.255.255	broadcasthost" >> /etc/hosts
 echo "::1             localhost" >> /etc/hosts
 
+# Confirm user wishes to continue.
+echo "WARNING!!!!  The last of these deletes should be handled manually.  Please check to"
+echo "see which ones are deleted below and delete them manually."
+echo ""
+read -p "Press Control + C to exit"
+
 # Removing the last tools, clear the UI cache.
 uicache
-rm -f /usr/bin/uicache
-rm -f /bin/sh
-rm -f /bin/rmdir
-rm -f /bin/rm
+rm -f  /usr/bin/uicache
+rm -f  /bin/sh
+rm -f  /bin/rmdir
+rm -f  /cleanup2.sh
+rm -f  /private/var/root/.bash_history
+rm -f  /bin/rm
 
 # All Done!
 echo "WARNING!!!!! All Electra jailbreak files and directories should be deleted."
