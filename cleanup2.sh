@@ -1,58 +1,51 @@
 ###################################################################
 #                                                                 #
-# Cleanup.sh                                                      #
+# Cleanup2.sh                                                     #
 #                                                                 #
-# This script will remove all traces of the Electra jailbreak     #
-# from an iOS device.                                             #
+# This script will remove all traces of the Electra and Unc0ver   #
+# jailbreak from an iOS device.                                   #
 #                                                                 #
-# DIRECTIONS for use                                              #
+# USAGE INSTRUCTIONS                                              #
 #                                                                 #
-# 1) In Cydia, un-install all tweaks that you can.                #
-# 2) NOTE, that when running this script on the device you may    #
-# get an error about invalid \r characters.  If this happens      #
-# run this command:                                               #
-# sed -i 's/\r$//' cleanup2.sh                                    #
-# The above will convert DOS CRLF chars to UNIX version.          #
-#                                                                 # 
-# 3) Respring                                                     #
-# 4) Run this script.                                             #
-# 5) Pray                                                         #
+# 0) These usage instructions and the actual running of this      #
+#    script MUST be run as root.                                  #
 #                                                                 #
-# Usage tips:                                                     #
-# rm -rf /DT/test/*                                               #
-# This command will delete all files and directories inside of    #
-# the /DT/test directory, but, will not delete the test directory #
-# itself that resides in /DT                                      #
+# 1) As root, create a directory on your I-Device called          #
+#    "uninstall" off of the root of your device.  You run the     #
+#    command: mkdir /uninstall                                    #
 #                                                                 #
-# rm -rf /DT/test                                                 #
-# rm -rf /DT/test/                                                #
-# Either of these command will delete all files and directories   #
-# inside of the /DT/test directory.  AND, it will also delete the #
-# test directory inside of the /DT directory.  Be careful         #
+# 2) Using WinSCP, copy this script into that directory.  Ensure  #
+#   the permissions are set to 755 on this script.                #
 #                                                                 #
-# Manual deletions:                                               #
-# You will need to look through some directories on your own to   #
-# find some more files and directories to delete.  These are:     #
+# 3) Run the following command to ensure the correct              #
+#    Dos->unix characters are converted:                          #
+#    sed -i 's/\r$//' cleanup2.sh                                 #
 #                                                                 #
-# /private/var/containers                                         #
-# /private/var/mobile/Containers/Data                             #
-# /private/var/mobile/Containers/Shared                           #
-# /private/var/mobile/Library/SpringBoard/PushStore               #
+# 4) Copy the following programs from /bin: rm, rmdir & touch     #
+#    and paste them into the directory: /uninstall                #
+#    Make sure the permissions are set to 755 on these.           #
 #                                                                 #
-# NOTE:                                                           #
-# Cydia package contents and their hashes are stored here:        #
-# /Library/dpkg/info                                              #
+# 5) Manual Deletions:                                            #
+#    You will need to look through some directories on your own   #
+#    to find some more files and directories to delete.  These    #
+#    are listed below and need to be manually added to the        #
+#    sections just below.                                         #
+#        /private/var/containers                                  #
+#        /private/var/mobile/Containers/Data                      #
+#        /private/var/mobile/Containers/Shared                    #
+#        /private/var/mobile/Library/SpringBoard/PushStore        #
 #                                                                 #
-# Apple Watch backups are stored here:                            #
-# /private/var/mobile/Library/NanoBackup                          #
+# 10) A few notes:                                                #
+#     Apple Watch Backups are stored here and can be deleted.     #
+#          /private/var/mobile/Library/NanoBackup                 #
 #                                                                 #
-# Battery logs are stored here:                                   #
-# /var/containers/Shared/SystemGroup/???? <-- search for powerlog #
+#     Battery logs are stored here:                               #
+#          /var/containers/Shared/SystemGroup/?!?!?!              #
+#                search for Powerlog                              #
 #                                                                 #
-# Commands to disable launch daemons in jailbroken state:         #
-# mkdir -p /etc/rc.d                                              #
-# echo "launchctl unload /System/Library/LaunchDaemons/??.plist" > /etc/rc.d/unload??
-# chmod 755 /etc/rc.d/unload??
+#     Commands to disable launch daemons in jailbroken state:     #
+#         launchctl unload /System/Library/LaunchDaemons/??.plist #
+#                                                                 #
 ###################################################################
 
 # Ensure the user is logged in as root.
@@ -100,7 +93,7 @@ rm -rf /var/mobile/Containers/Data/Application/0BB4706B-62B4-4337-B907-65C077A30
 rm -rf /var/mobile/Containers/Data/Application/49959A42-1AD0-49A2-BBD4-B315081CDFD6 # hbang terminal
 
 # /var/mobile/Containers/Shared/AppGroup (Appears to be only app store apps & those installed via Impactor.)
-# rm -rf /var/mobile/Containers/Shared/AppGroup/xxxxx # nothing in directory.
+rm -rf /var/mobile/Containers/Shared/AppGroup/xxxxx # nothing in directory.
 
 ########################################################################
 #                                                                      #
@@ -853,7 +846,7 @@ rm -f /bin/readlink
 rm -f /bin/sleep
 rm -f /bin/stty
 rm -f /bin/su
-rm -f /bin/touch
+# rm -f /bin/touch # This is deleted below.
 rm -f /bin/true
 rm -f /bin/uname
 rm -f /bin/vdir
@@ -1103,7 +1096,7 @@ rm -f  /usr/libexec/filza/FilzaWebDAVServer
 rm -rf /usr/libexec/filza
 
 # Cleanup files from the "Find Utilities" package.
-rm -f /usr/bin/find
+# rm -f /usr/bin/find # Moved to bottom
 rm -f /usr/bin/locate
 rm -f /usr/bin/updatedb
 rm -f /usr/bin/xargs
@@ -1733,6 +1726,9 @@ rm -f /Library/dpkg/info/com.hackyouriphone.localiapstore.list
 rm -f /Library/dpkg/info/com.hackyouriphone.localiapstore.md5sums
 rm -f /private/var/mobile/Library/Preferences/anondev.LocalIAPStore.plist
 
+# Cleanup files from the "LocalSSH" package.
+rm -f /usr/libexec/localssh-keygen-wrapper
+
 # Cleanup files from the "Lockplus" package.
 rm -rf /Library/LockPlus
 rm -rf /private/var/mobile/Documents/lockplusfonts
@@ -1986,6 +1982,10 @@ rm -f  /Library/LaunchDaemons/com.openssh.sshd.plist
 rm -f  /etc/ssh/moduli
 rm -f  /etc/ssh/ssh_config
 rm -f  /etc/ssh/sshd_config
+rm -f  /etc/ssh/ssh_host_dsa_key
+rm -f  /etc/ssh/ssh_host_dsa_key.pub
+rm -f  /etc/ssh/ssh_host_rsa_key
+rm -f  /etc/ssh/ssh_host_rsa_key.pub
 rmdir  /etc/ssh
 rm -f  /usr/bin/scp
 rm -f  /usr/bin/sftp
@@ -2492,23 +2492,50 @@ echo "127.0.0.1	localhost" >> /etc/hosts
 echo "255.255.255.255	broadcasthost" >> /etc/hosts
 echo "::1             localhost" >> /etc/hosts
 
-# Confirm user wishes to continue.
-echo "WARNING!!!!  The last of these deletes should be handled manually.  Please check to"
-echo "see which ones are deleted below and delete them manually."
-echo ""
-read -p "Press Control + C to exit"
-
 # Removing the last tools, clear the UI cache.
 uicache
 rm -f  /usr/bin/uicache
 rm -f  /bin/sh
 rm -f  /bin/rmdir
-rm -f  /cleanup2.sh
-rm -f  /private/var/root/.bash_history
+rm -f  /bin/touch
+rm -f  /usr/bin/find
 rm -f  /bin/rm
 
-# All Done!
-echo "WARNING!!!!! All Electra jailbreak files and directories should be deleted."
-echo "Rebooting... (Please pray)"
-kill 1
+# Execute a series of "touch" commands to reset the last modified date of several of the directories.
+/uninstall/touch -t 201804140115.47 /Applications
+/uninstall/touch -t 201804140115.40 /bin
+/uninstall/touch -t 201804140115.12 /boot
+/uninstall/touch -t 201804140115.19 /lib
+/uninstall/touch -t 201804140104.47 /Library/Application\ Support
+/uninstall/touch -t 201804140105.01 /Library/Frameworks
+/uninstall/touch -t 201804140104.53 /Library/LaunchDaemons
+/uninstall/touch -t 201804140105.01 /Library
+/uninstall/touch -t 201804140115.41 /sbin
+/uninstall/touch -t 201804140112.51 /System/Library/PreferenceBundles
+/uninstall/touch -t 201804140116.56 /System/Library
+/uninstall/touch -t 201804140115.43 /usr/bin
+/uninstall/touch -t 201804140115.41 /usr/include
+/uninstall/touch -t 201804140115.41 /usr/lib
+/uninstall/touch -t 201804140115.41 /usr/libexec
+/uninstall/touch -t 201804140115.40 /usr/local/lib
+/uninstall/touch -t 201804140115.44 /usr/sbin
+/uninstall/touch -t 201804140115.44 /usr/share
+/uninstall/touch -t 201804140115.44 /usr
+/uninstall/touch -t 201804140115.19 /etc/fstab
+/uninstall/touch -t 201804140115.19 /etc/hosts
+/uninstall/touch -t 201804140115.19 /etc/master.passwd
+/uninstall/touch -t 201804140115.19 /etc
+
+# Exit the script and notify user they have work to do using Filza.
+echo ""
+echo "WARNING!!!!  The script has ended.  YOU have a few extra steps YOU need to do.  Log onto your iDevice"
+echo "using Winscp and delete the few selected files and directories shown below within this script.  When this"
+echo "is done, reboot your device or type 'kill 1' without the quotes at the Putty prompt to reboot.  Your device"
+echo "should now be completely stock with all traces of the jailbreak removed."
+echo ""
+exit
+
+# YOU! the user must manually removed the following files and/or directories.
+rm -rf /uninstall
+rm -f  /private/var/root/.bash_history
 
