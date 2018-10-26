@@ -854,6 +854,11 @@ rm -f /usr/bin/df
 rm -f /usr/bin/dirname
 rm -f /usr/bin/sort
 
+# Cleanup files from the "CrackerXI" package.
+rm -rf /Applications/crackerxi.app
+rm -rf /var/mobile/Documents/CrackerXI
+rm -f  /var/mobile/Library/Preferences/CrackerXIPrefs.plist
+
 # Cleanup files from the CrashReporter package.
 rm -rf /Applications/CrashReporter.app
 rm -f  /Library/dpkg/info/crash-reporter.crash_reporter.list
