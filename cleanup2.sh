@@ -21,8 +21,12 @@
 #    Dos->unix characters are converted:                          #
 #    sed -i 's/\r$//' cleanup2.sh                                 #
 #                                                                 #
-# 4) Copy the following programs from /bin: rm, rmdir & touch     #
-#    and paste them into the directory: /uninstall                #
+# 4) Copy the following programs from /bin and paste them into    #
+#    the directory: /uninstall                                    #
+#    * /bin/rm                                                    #
+#    * /bin/rmdir                                                 # 
+#    * /bin/touch                                                 #
+#    * /bin/mv                                                    #
 #    Make sure the permissions are set to 755 on these.           #
 #                                                                 #
 # 5) Manual Deletions:                                            #
@@ -838,7 +842,7 @@ rm -f /bin/ls
 rm -f /bin/mkdir
 rm -f /bin/mknod
 rm -f /bin/mktemp
-rm -f /bin/mv
+#rm -f /bin/mv # This is deleted below.
 rm -f /bin/pwd
 rm -f /bin/readlink
 # rm -f /bin/rm # This is deleted below.
@@ -2127,6 +2131,9 @@ rmdir  /usr/share/man
 # Cleanup files from the "Pincrush" package.
 rm -f /usr/bin/pincrush
 
+# Cleanup files from the "PLUtil" package.
+rm -f /usr/bin/plutil
+
 # Cleanup files from the "PreferenceLoader" package.
 rm -f /usr/include/libprefs/prefs.h
 rmdir /usr/include/libprefs
@@ -2534,11 +2541,22 @@ rm -f  /bin/rm
 # Exit the script and notify user they have work to do using Filza.
 echo ""
 echo "WARNING!!!!  The script has ended.  YOU have a few extra steps YOU need to do.  Log onto your iDevice"
-echo "using Winscp and delete the few selected files and directories shown below within this script.  When this"
+echo "using Winscp and ensure you restore the original Assets.car file.  In addition, there are a few files"
+echo "and directories to delete.  These are shown below in this script.  When this"
 echo "is done, reboot your device or type 'kill 1' without the quotes at the Putty prompt to reboot.  Your device"
 echo "should now be completely stock with all traces of the jailbreak removed."
 echo ""
 exit
+
+# Restore the original Assets.car file in: /System/Library/Frameworks/UIKit.framework/Artwork.bundle
+# NOTE, it would be best to do this part manually!!
+if [ -e /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak ]
+then
+	/uninstall/rm /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
+	/uninstall/mv /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
+	/uninstall/rm /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak
+	/uninstall/touch -t 201804140110.48 /System/Library/Frameworks/UIKit.framework/Artwork.bundle
+fi
 
 # YOU! the user must manually removed the following files and/or directories.
 rm -rf /uninstall
