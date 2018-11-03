@@ -34,10 +34,11 @@
 #    to find some more files and directories to delete.  These    #
 #    are listed below and need to be manually added to the        #
 #    sections just below.                                         #
-#        /private/var/containers                                  #
-#        /private/var/mobile/Containers/Data                      #
-#        /private/var/mobile/Containers/Shared                    #
-#        /private/var/mobile/Library/SpringBoard/PushStore        #
+#        /var/containers                                          #
+#        /var/mobile/Containers/Data                              #
+#        /var/mobile/Containers/Shared                            #
+#        /var/mobile/Library/SpringBoard/ApplicationShortcuts     #
+#        /var/mobile/Library/SpringBoard/PushStore                # 
 #                                                                 #
 # 10) A few notes:                                                #
 #     Apple Watch Backups are stored here and can be deleted.     #
@@ -177,6 +178,7 @@ rm -rf /var/mobile/Library/Cookies/*
 rm -rf /var/mobile/Library/Filza/.Trash/*
 rm -rf /var/mobile/Library/Filza/.Trash.metadata/*
 rm -rf /var/mobile/Library/WebKit/*
+rm -rf /var/mobile/MobileSoftwareUpdate/mnt1
 rm -rf /var/root/Application\ Support/*
 rm -rf /var/root/Library/Caches/*
 rm -rf /var/ua_tweak_resources
@@ -199,14 +201,15 @@ rm -f  /private/var/mobile/Library/google*.*
 rm -f  /private/var/mobile/Library/Preferences/.GlobalPreferences.plist.*
 rm -f  /private/var/mobile/Library/Preferences/com.apple.*.plist.*
 rm -f  /private/var/mobile/Library/Preferences/cn.tinyapps.location360pro.plist
+rm -f  /private/var/mobile/Library/Preferences/com.dt.tweaks.plist
 rm -f  /private/var/mobile/Library/Preferences/group.com.apple.weather.plist
 rm -f  /private/var/mobile/Library/Preferences/xhprx.xh
 rm -f  /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra.plist
 rm -f  /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/org.coolstar.electra1131-mp.plist
+rm -f  /private/var/mobile/Library/SpringBoard/ApplicationShortcuts/science.xnu.undecimus.plist
 rm -f  /private/var/mobile/Library/SpringBoard/PushStore/com.saurik.Cydia.pushstore
 rm -f  /private/var/mobile/MobileSoftwareUpdate/last_update_result.plist
 rm -f  /private/var/mobile/MobileSoftwareUpdate/restore.log
-rm -rf /private/var/mobile/MobileSoftwareUpdate/mnt1
 rm -f  /private/var/MobileSoftwareUpdate/restore.log
 rm -f  /private/var/networkd/Library/Preferences/*.plist.*
 rm -f  /private/var/root/.bash_history
@@ -1087,7 +1090,6 @@ rm -f  /Library/dpkg/info/com.tigisoftware.filza.postinst
 rm -f  /Library/dpkg/info/com.tigisoftware.filza.postrm
 rm -f  /Library/dpkg/info/com.tigisoftware.filza.prerm
 rm -f  /Library/LaunchDaemons/com.tigisoftware.filza.helper.plist
-rm -rf /private/var/mobile/Containers/Data/Application/2A9785BE-18A9-4519-BC94-8B33C3F02ACF # Filza preferences and data.
 rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.scroublepokemon.filzaelectrocuted
 rm -rf /private/var/mobile/Library/Application\ Support/Containers/com.tigisoftware.Filza
 rm -rf /private/var/mobile/Library/Caches/com.scroublepokemon.filzaelectrocuted
@@ -1099,13 +1101,10 @@ rm -f  /private/var/mobile/Library/Preferences/com.tigisoftware.Filza.plist
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist
 rm -f  /private/var/root/Library/Preferences/com.scroublepokemon.filzaescaped.plist.*
 rm -f  /usr/bin/Filza
-rm -f  /usr/libexec/filza/Filza
-rm -f  /usr/libexec/filza/FilzaHelper
-rm -f  /usr/libexec/filza/FilzaWebDAVServer
 rm -rf /usr/libexec/filza
 
 # Cleanup files from the "Find Utilities" package.
-# rm -f /usr/bin/find # Moved to bottom
+rm -f /usr/bin/find
 rm -f /usr/bin/locate
 rm -f /usr/bin/updatedb
 rm -f /usr/bin/xargs
@@ -2506,12 +2505,11 @@ echo "::1             localhost" >> /etc/hosts
 
 # Removing the last tools, clear the UI cache.
 uicache
-rm -f  /usr/bin/uicache
-rm -f  /bin/sh
-rm -f  /bin/rmdir
-rm -f  /bin/touch
-rm -f  /usr/bin/find
-rm -f  /bin/rm
+rm -f /usr/bin/uicache
+rm -f /bin/sh
+rm -f /bin/rmdir
+rm -f /bin/touch
+rm -f /bin/rm
 
 # Execute a series of "touch" commands to reset the last modified date of several of the directories.
 /uninstall/touch -t 201804140115.47 /Applications
