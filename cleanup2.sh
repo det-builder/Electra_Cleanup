@@ -27,6 +27,7 @@
 #    * /bin/rmdir                                                 # 
 #    * /bin/touch                                                 #
 #    * /bin/mv                                                    #
+#    * /usr/bin/uicache                                           #
 #    Make sure the permissions are set to 755 on these.           #
 #                                                                 #
 # 5) Manual Deletions:                                            #
@@ -163,6 +164,7 @@ rm -rf /usr/lib/pkgconfig
 rm -rf /usr/lib/tweaks
 rm -rf /usr/local/lib/*
 rm -rf /usr/share/aclocal
+rm -rf /usr/share/man
 
 # Delete directories off of the /var folder.
 rm -rf /var/db/analyticsd/*
@@ -660,7 +662,7 @@ rm -f  /usr/lib/bash/tty
 rm -f  /usr/lib/bash/uname
 rm -f  /usr/lib/bash/unlink
 rm -f  /usr/lib/bash/whoami
-rmdir  /usr/lib/bash
+rm -rf /usr/lib/bash
 
 # Cleanup files from the Boxy package.
 rm -rf /private/var/mobile/Documents/com.irepo.boxy3
@@ -898,17 +900,6 @@ rm -f /Library/LaunchDaemons/com.saurik.Cydia.Startup.plist
 rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
 
 # Cleanup files from the "Darwin CC Tools" package.
-rm -f /libexec/as/arm/as
-rm -f /libexec/as/i386/as
-rm -f /libexec/as/ppc/as
-rm -f /libexec/as/ppc64/as
-rm -f /libexec/as/x86_64/as
-rmdir /libexec/as/arm
-rmdir /libexec/as/i386
-rmdir /libexec/as/ppc
-rmdir /libexec/as/ppc64
-rmdir /libexec/as/x86_64
-rmdir /libexec/as
 rmdir /libexec
 rm -f /usr/bin/ar
 rm -f /usr/bin/as
@@ -1104,13 +1095,13 @@ rm -f  /usr/bin/Filza
 rm -rf /usr/libexec/filza
 
 # Cleanup files from the "Find Utilities" package.
-rm -f /usr/bin/find
-rm -f /usr/bin/locate
-rm -f /usr/bin/updatedb
-rm -f /usr/bin/xargs
-rm -f /usr/libexec/bigram
-rm -f /usr/libexec/code
-rm -f /usr/libexec/frcode
+rm -f  /usr/bin/find
+rm -f  /usr/bin/locate
+rm -f  /usr/bin/updatedb
+rm -f  /usr/bin/xargs
+rm -f  /usr/libexec/bigram
+rm -f  /usr/libexec/code
+rm -f  /usr/libexec/frcode
 rm -rf /var/cache/findutils
 
 # Cleanup files from the "Flame" package.
@@ -1184,6 +1175,7 @@ rm -f  /private/var/mobile/Library/Preferences/com.junesiphone.frontpage.plist
 # Cleanup files from the "Gawk" package.
 rm -f  /etc/profile.d/gawk.csh
 rm -f  /etc/profile.d/gawk.sh
+rmdir  /etc/profile.d
 rm -f  /usr/bin/awk
 rm -f  /usr/bin/gawk
 rm -f  /usr/include/gawkapi.h
@@ -1217,12 +1209,7 @@ rm -f  /usr/bin/xgettext
 rm -f  /usr/include/autosprintf.h
 rm -f  /usr/include/gettext-po.h
 rm -f  /usr/include/libintl.h
-rm -f  /usr/lib/gettext/cldr-plurals
-rm -f  /usr/lib/gettext/hostname
-rm -f  /usr/lib/gettext/project-id
-rm -f  /usr/lib/gettext/urlget
-rm -f  /usr/lib/gettext/user-email
-rmdir  /usr/lib/gettext
+rm -rf /usr/lib/gettext
 rm -f  /usr/lib/libasprintf.0.dylib
 rm -f  /usr/lib/libasprintf.dylib
 rm -f  /usr/lib/libgettextlib-0.19.8.dylib
@@ -1372,7 +1359,6 @@ rm -f /bin/grep
 rm -f /Library/dpkg/info/grep.list
 
 # Cleanup files from the "gzip" package.
-rm -f /Library/dpkg/info/gzip.list
 rm -f /bin/gunzip
 rm -f /bin/gzexe
 rm -f /bin/gzip
@@ -1387,6 +1373,7 @@ rm -f /bin/zgrep
 rm -f /bin/zless
 rm -f /bin/zmore
 rm -f /bin/znew
+rm -f /Library/dpkg/info/gzip.list
 
 # Cleanup files from the "Hide Statusbar Items" package from Junes Iphone.
 rm -f /private/var/mobile/Library/Preferences/com.junesiphone.hidestatusbaritems.plist
@@ -1444,28 +1431,6 @@ rm -f /usr/libexec/talkd
 rm -f /usr/libexec/telnetd
 rm -f /usr/libexec/tftpd
 rm -f /usr/libexec/uucpd
-
-# Cleanup files from the "iPhone Firmware (/sbin)" package.
-# IMPORTANT - Don't actually run these!  These are in a stock .ipsw.
-# ALL of these files must actually remain on the file system.
-# rm -f /sbin/fsck
-# rm -f /sbin/fsck_apfs  
-# rm -f /sbin/fsck_hfs
-# rm -f /sbin/fstyp
-# rm -f /sbin/fstyp_hfs
-# rm -f /sbin/mount
-# rm -f /sbin/mount_apfs
-# rm -f /sbin/mount_hfs
-# rm -f /sbin/newfs_apfs
-# rm -f /sbin/newfs_hfs
-# rm -f /sbin/pfctl
-# rm -f /sbin/umount
-# rm -f /usr/sbin/nvram
-
-# Cleanup files from the "KarenLocalizer" and "KarenPrefs" packages.
-# NOTE, these two are in the Mikoto package and are deleted there.
-# rm -f /usr/lib/libkarenlocalizer.dylib
-# rm -f /usr/lib/libkarenprefs.dylib
 
 # Cleanup files from the "kern-utils" package.
 rm -f /usr/bin/kdump
@@ -1545,8 +1510,8 @@ rm -f /usr/lib/libCSPreferencesProvider.dylib
 rm -f /usr/lib/libimagepicker.dylib
 
 # Cleanup files from the "Liberty" and "Liberty Lite" package.
-rm -f  /Library/dpkg/info/com.ryleyangus.libertylite.list
-rm -f  /Library/dpkg/info/com.ryleyangus.libertylite.md5sums
+rm -f /Library/dpkg/info/com.ryleyangus.libertylite.list
+rm -f /Library/dpkg/info/com.ryleyangus.libertylite.md5sums
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.liberty.plist
 rm -f /private/var/mobile/Library/Preferences/com.ryleyangus.libertylite.plist
 rm -f /usr/lib/Liberty.dylib
@@ -1563,15 +1528,7 @@ rmdir /usr/lib/pkgconfig
 # Cleanup files from the "libPackageInfo" package.
 rm -f  /Library/dpkg/info/com.ashikase.libpackageinfo.list
 rm -f  /Library/dpkg/info/com.ashikase.libpackageinfo.md5sums
-rm -f  /usr/include/libpackageinfo/PIAppleDeveloperPackage.h
-rm -f  /usr/include/libpackageinfo/PIApplePackage.h
-rm -f  /usr/include/libpackageinfo/PIAppleStorePackage.h
-rm -f  /usr/include/libpackageinfo/PIAppleSystemPackage.h
-rm -f  /usr/include/libpackageinfo/PIDebianPackage.h
-rm -f  /usr/include/libpackageinfo/PIPackage.h
-rm -f  /usr/include/libpackageinfo/PIPackageCache.h
-rm -f  /usr/include/libpackageinfo/libpackageinfo.h
-rmdir  /usr/include/libpackageinfo
+rm -rf /usr/include/libpackageinfo
 rm -f  /usr/lib/libpackageinfo.dylib
 
 # Cleanup files from the "libResolve" package.
@@ -1579,9 +1536,8 @@ rm -f /usr/lib/libresolv.9.dylib
 rm -f /usr/lib/libresolv.dylib
 
 # Cleanup files from the "libRocket" package.  
-rm -f /usr/lib/libRocket.dylib
-rm -f /var/rocket_stashed/libRocket.dylib
-rmdir /var/rocket_stashed
+rm -f  /usr/lib/libRocket.dylib
+rm -rf /var/rocket_stashed
 
 # Cleanup files from the "libSwift4" package.
 rm -rf /usr/lib/libswift
@@ -1604,30 +1560,22 @@ rm -f /usr/lib/pkgconfig/libtasn1.pc
 rmdir /usr/lib/pkgconfig
 
 # Cleanup files from the "libUnistring" package.
-rm -f /usr/include/unicase.h
-rm -f /usr/include/uniconv.h
-rm -f /usr/include/unictype.h
-rm -f /usr/include/unigbrk.h
-rm -f /usr/include/unilbrk.h
-rm -f /usr/include/uniname.h
-rm -f /usr/include/uninorm.h
-rm -f /usr/include/unistdio.h
-rm -f /usr/include/unistr.h
-rm -f /usr/include/unistring/cdefs.h
-rm -f /usr/include/unistring/iconveh.h
-rm -f /usr/include/unistring/inline.h
-rm -f /usr/include/unistring/localcharset.h
-rm -f /usr/include/unistring/stdbool.h
-rm -f /usr/include/unistring/stdint.h
-rm -f /usr/include/unistring/version.h
-rm -f /usr/include/unistring/woe32dll.h
-rmdir /usr/include/unistring
-rm -f /usr/include/unitypes.h
-rm -f /usr/include/uniwbrk.h
-rm -f /usr/include/uniwidth.h
-rm -f /usr/lib/libunistring.2.dylib
-rm -f /usr/lib/libunistring.dylib
-rm -f /usr/lib/libunistring.la
+rm -f  /usr/include/unicase.h
+rm -f  /usr/include/uniconv.h
+rm -f  /usr/include/unictype.h
+rm -f  /usr/include/unigbrk.h
+rm -f  /usr/include/unilbrk.h
+rm -f  /usr/include/uniname.h
+rm -f  /usr/include/uninorm.h
+rm -f  /usr/include/unistdio.h
+rm -f  /usr/include/unistr.h
+rm -rf /usr/include/unistring
+rm -f  /usr/include/unitypes.h
+rm -f  /usr/include/uniwbrk.h
+rm -f  /usr/include/uniwidth.h
+rm -f  /usr/lib/libunistring.2.dylib
+rm -f  /usr/lib/libunistring.dylib
+rm -f  /usr/lib/libunistring.la
 
 # Cleanup files from the "Link Identity Editor" package.
 rm -f /usr/bin/ldid
@@ -1809,6 +1757,7 @@ rm -f  /private/var/mobile/Library/Preferences/net.tateu.moveable9_Homescreen.pl
 # Cleanup files from the Nano package.
 rm -f  /etc/nanorc
 rm -f  /etc/profile.d/nano.sh
+rmdir  /etc/profile.d
 rm -f  /Library/dpkg/info/nano.list
 rm -f  /Library/dpkg/info/nano.md5sums
 rm -f  /usr/bin/nano
@@ -1870,74 +1819,59 @@ rm -f  /usr/include/term_entry.h
 rm -f  /usr/include/termcap.h
 rm -f  /usr/include/tic.h
 rm -f  /usr/include/unctrl.h
-rm -f  /usr/include/ncursesw/curses.h
-rm -f  /usr/include/ncursesw/eti.h
-rm -f  /usr/include/ncursesw/form.h
-rm -f  /usr/include/ncursesw/menu.h
-rm -f  /usr/include/ncursesw/nc_tparm.h
-rm -f  /usr/include/ncursesw/ncurses.h
-rm -f  /usr/include/ncursesw/ncurses_dll.h
-rm -f  /usr/include/ncursesw/panel.h
-rm -f  /usr/include/ncursesw/term.h
-rm -f  /usr/include/ncursesw/term_entry.h
-rm -f  /usr/include/ncursesw/termcap.h
-rm -f  /usr/include/ncursesw/tic.h
-rm -f  /usr/include/ncursesw/unctrl.h
-rmdir  /usr/include/ncursesw
-rm -f  /usr/lib/_ncurses/libcurses.dylib
-rm -f  /usr/lib/_ncurses/libncurses.dylib
-rmdir  /usr/lib/_ncurses
-rm -f /usr/lib/libcurses.a
-rm -f /usr/lib/libform.5.dylib
-rm -f /usr/lib/libform.6.dylib
-rm -f /usr/lib/libform.a
-rm -f /usr/lib/libform.dylib
-rm -f /usr/lib/libform_g.a
-rm -f /usr/lib/libform5.dylib
-rm -f /usr/lib/libformw.5.dylib
-rm -f /usr/lib/libformw.6.dylib
-rm -f /usr/lib/libformw.dylib
-rm -f /usr/lib/libformw5.dylib
-rm -f /usr/lib/libmenu.5.dylib
-rm -f /usr/lib/libmenu.6.dylib
-rm -f /usr/lib/libmenu.a
-rm -f /usr/lib/libmenu.dylib
-rm -f /usr/lib/libmenu_g.a
-rm -f /usr/lib/libmenu5.dylib
-rm -f /usr/lib/libmenuw.5.dylib
-rm -f /usr/lib/libmenuw.6.dylib
-rm -f /usr/lib/libmenuw.dylib
-rm -f /usr/lib/libmenuw5.dylib
-rm -f /usr/lib/libncurses.5.dylib
-rm -f /usr/lib/libncurses.6.dylib
-rm -f /usr/lib/libncurses.a
-rm -f /usr/lib/libncurses_g.a
-rm -f /usr/lib/libncurses.dylib
-rm -f /usr/lib/libncurses5.dylib
-rm -f /usr/lib/libncurses6.dylib
-rm -f /usr/lib/libncursesw.5.dylib
-rm -f /usr/lib/libncursesw.6.dylib
-rm -f /usr/lib/libncursesw.dylib
-rm -f /usr/lib/libncursesw5.dylib
-rm -f /usr/lib/libncursesw6.dylib
-rm -f /usr/lib/libpanel.5.dylib
-rm -f /usr/lib/libpanel.6.dylib
-rm -f /usr/lib/libpanel.a
-rm -f /usr/lib/libpanel.dylib
-rm -f /usr/lib/libpanel_g.a
-rm -f /usr/lib/libpanel5.dylib
-rm -f /usr/lib/libpanelw.5.dylib
-rm -f /usr/lib/libpanelw.6.dylib
-rm -f /usr/lib/libpanelw.dylib
-rm -f /usr/lib/libpanelw5.dylib
-rm -f /usr/lib/pkgconfig/form.pc
-rm -f /usr/lib/pkgconfig/formw.pc
-rm -f /usr/lib/pkgconfig/menu.pc
-rm -f /usr/lib/pkgconfig/menuw.pc
-rm -f /usr/lib/pkgconfig/ncurses.pc
-rm -f /usr/lib/pkgconfig/ncursesw.pc
-rm -f /usr/lib/pkgconfig/panel.pc
-rm -f /usr/lib/pkgconfig/panelw.pc
+rm -rf /usr/include/ncursesw
+rm -rf /usr/lib/_ncurses
+rm -f  /usr/lib/libcurses.a
+rm -f  /usr/lib/libform.5.dylib
+rm -f  /usr/lib/libform.6.dylib
+rm -f  /usr/lib/libform.a
+rm -f  /usr/lib/libform.dylib
+rm -f  /usr/lib/libform_g.a
+rm -f  /usr/lib/libform5.dylib
+rm -f  /usr/lib/libformw.5.dylib
+rm -f  /usr/lib/libformw.6.dylib
+rm -f  /usr/lib/libformw.dylib
+rm -f  /usr/lib/libformw5.dylib
+rm -f  /usr/lib/libmenu.5.dylib
+rm -f  /usr/lib/libmenu.6.dylib
+rm -f  /usr/lib/libmenu.a
+rm -f  /usr/lib/libmenu.dylib
+rm -f  /usr/lib/libmenu_g.a
+rm -f  /usr/lib/libmenu5.dylib
+rm -f  /usr/lib/libmenuw.5.dylib
+rm -f  /usr/lib/libmenuw.6.dylib
+rm -f  /usr/lib/libmenuw.dylib
+rm -f  /usr/lib/libmenuw5.dylib
+rm -f  /usr/lib/libncurses.5.dylib
+rm -f  /usr/lib/libncurses.6.dylib
+rm -f  /usr/lib/libncurses.a
+rm -f  /usr/lib/libncurses_g.a
+rm -f  /usr/lib/libncurses.dylib
+rm -f  /usr/lib/libncurses5.dylib
+rm -f  /usr/lib/libncurses6.dylib
+rm -f  /usr/lib/libncursesw.5.dylib
+rm -f  /usr/lib/libncursesw.6.dylib
+rm -f  /usr/lib/libncursesw.dylib
+rm -f  /usr/lib/libncursesw5.dylib
+rm -f  /usr/lib/libncursesw6.dylib
+rm -f  /usr/lib/libpanel.5.dylib
+rm -f  /usr/lib/libpanel.6.dylib
+rm -f  /usr/lib/libpanel.a
+rm -f  /usr/lib/libpanel.dylib
+rm -f  /usr/lib/libpanel_g.a
+rm -f  /usr/lib/libpanel5.dylib
+rm -f  /usr/lib/libpanelw.5.dylib
+rm -f  /usr/lib/libpanelw.6.dylib
+rm -f  /usr/lib/libpanelw.dylib
+rm -f  /usr/lib/libpanelw5.dylib
+rm -f  /usr/lib/pkgconfig/form.pc
+rm -f  /usr/lib/pkgconfig/formw.pc
+rm -f  /usr/lib/pkgconfig/menu.pc
+rm -f  /usr/lib/pkgconfig/menuw.pc
+rm -f  /usr/lib/pkgconfig/ncurses.pc
+rm -f  /usr/lib/pkgconfig/ncursesw.pc
+rm -f  /usr/lib/pkgconfig/panel.pc
+rm -f  /usr/lib/pkgconfig/panelw.pc
 rmdir  /usr/lib/pkgconfig
 rm -f  /usr/lib/terminfo
 rm -rf /usr/lib/terminfo
@@ -1965,13 +1899,12 @@ rm -f  /var/mobile/Library/Preferences/nfcd.plist
 # Cleanup files from the "Nghttp2" package.
 rm -f  /Library/dpkg/info/nghttp2.list
 rm -f  /Library/dpkg/info/nghttp2.md5sums
-rm -f  /usr/include/nghttp2/nghttp2.h
-rm -f  /usr/include/nghttp2/nghttp2ver.h
-rmdir  /usr/include/nghttp2
+rm -rf /usr/include/nghttp2
 rm -f  /usr/lib/libnghttp2.14.dylib
 rm -f  /usr/lib/libnghttp2.dylib
 rm -f  /usr/lib/libnghttp2.la
 rm -f  /usr/lib/pkgconfig/libnghttp2.pc
+rmdir  /usr/lib/pkgconfig
 
 # Cleanup files from the "noncereboot11CLI" package.
 rm -f /Library/dpkg/info/rocks.stek29.noncereboot11.list
@@ -1987,14 +1920,7 @@ rm -f /private/var/mobile/Library/Preferences/co.vexation.nosubstitute.plist
 
 # Cleanup files from the "OpenSSH" package.
 rm -f  /Library/LaunchDaemons/com.openssh.sshd.plist
-rm -f  /etc/ssh/moduli
-rm -f  /etc/ssh/ssh_config
-rm -f  /etc/ssh/sshd_config
-rm -f  /etc/ssh/ssh_host_dsa_key
-rm -f  /etc/ssh/ssh_host_dsa_key.pub
-rm -f  /etc/ssh/ssh_host_rsa_key
-rm -f  /etc/ssh/ssh_host_rsa_key.pub
-rmdir  /etc/ssh
+rm -rf /etc/ssh
 rm -f  /usr/bin/scp
 rm -f  /usr/bin/sftp
 rm -f  /usr/bin/ssh
@@ -2007,7 +1933,7 @@ rm -f  /usr/libexec/ssh-keysign
 rm -f  /usr/libexec/ssh-pkcs11-helper
 rm -f  /usr/libexec/sshd-keygen-wrapper
 rm -f  /usr/sbin/sshd
-rm -rf /var/empty
+rm -rf /var/empty/*
 
 # Cleanup files from the "OpenSSL" package.
 rm -f  /etc/ssl/openssl.cnf
@@ -2020,70 +1946,27 @@ rm -f  /usr/lib/libcrypto.1.0.0.dylib
 rm -f  /usr/lib/libssl.1.0.0.dylib
 rm -f  /usr/lib/libcrypto.dylib
 rm -f  /usr/lib/libssl.dylib
-rm -f  /usr/lib/engines/lib4758cca.dylib
-rm -f  /usr/lib/engines/libaep.dylib
-rm -f  /usr/lib/engines/libatalla.dylib
-rm -f  /usr/lib/engines/libcapi.dylib
-rm -f  /usr/lib/engines/libchil.dylib
-rm -f  /usr/lib/engines/libcswift.dylib
-rm -f  /usr/lib/engines/libgmp.dylib
-rm -f  /usr/lib/engines/libgost.dylib
-rm -f  /usr/lib/engines/libnuron.dylib
-rm -f  /usr/lib/engines/libpadlock.dylib
-rm -f  /usr/lib/engines/libsureware.dylib
-rm -f  /usr/lib/engines/libubsec.dylib
-rmdir  /usr/lib/engines
+rm -rf /usr/lib/engines
 rm -f  /usr/lib/pkgconfig/libcrypto.pc
 rm -f  /usr/lib/pkgconfig/libssl.pc
 rm -f  /usr/lib/pkgconfig/openssl.pc
 rmdir  /usr/lib/pkgconfig
-rm -f  /usr/lib/ssl/misc/CA.pl
-rm -f  /usr/lib/ssl/misc/CA.sh
-rm -f  /usr/lib/ssl/misc/c_hash
-rm -f  /usr/lib/ssl/misc/c_info
-rm -f  /usr/lib/ssl/misc/c_issuer
-rm -f  /usr/lib/ssl/misc/c_name
-rm -f  /usr/lib/ssl/misc/tsget
-rmdir  /usr/lib/ssl/misc
-rm -f  /usr/lib/ssl/cert.pem
-rm -f  /usr/lib/ssl/openssl.cnf
-rm -f  /usr/lib/ssl/private
-rmdir  /usr/lib/ssl
 rm -rf /usr/lib/ssl
 
 # Cleanup files from the "P11Kit" package.
 rm -f  /usr/bin/p11-kit
 rm -f  /usr/bin/trust
-rm -f  /usr/etc/pkcs11/pkcs11.conf.example
-rmdir  /usr/etc/pkcs11
-rmdir  /usr/etc
-rm -f  /usr/include/p11-kit-1/p11-kit
-rm -f  /usr/include/p11-kit-1/p11-kit/deprecated.h
-rm -f  /usr/include/p11-kit-1/p11-kit/iter.h
-rm -f  /usr/include/p11-kit-1/p11-kit/p11-kit.h
-rm -f  /usr/include/p11-kit-1/p11-kit/pin.h
-rm -f  /usr/include/p11-kit-1/p11-kit/pkcs11.h
-rm -f  /usr/include/p11-kit-1/p11-kit/pkcs11x.h
-rm -f  /usr/include/p11-kit-1/p11-kit/remote.h
-rm -f  /usr/include/p11-kit-1/p11-kit/uri.h
-rmdir  /usr/include/p11-kit-1
+rm -rf /usr/etc
+rm -rf /usr/include/p11-kit-1
 rm -f  /usr/lib/libp11-kit.0.dylib
 rm -f  /usr/lib/libp11-kit.dylib
 rm -f  /usr/lib/libp11-kit.la
 rm -f  /usr/lib/p11-kit-proxy.dylib
-rm -f  /usr/lib/pkcs11/p11-kit-client.la
-rm -f  /usr/lib/pkcs11/p11-kit-client.so
-rm -f  /usr/lib/pkcs11/p11-kit-trust.la
-rm -f  /usr/lib/pkcs11/p11-kit-trust.so
-rmdir  /usr/lib/pkcs11
+rm -rf /usr/lib/pkcs11
 rm -f  /usr/lib/pkgconfig/p11-kit-1.pc
-rm -f  /usr/libexec/p11-kit/p11-kit-remote
-rm -f  /usr/libexec/p11-kit/p11-kit-server
-rm -f  /usr/libexec/p11-kit/trust-extract-compat
-rmdir  /usr/libexec/p11-kit
-rm -f  /usr/share/p11-kit/modules/p11-kit-trust.module
-rmdir  /usr/share/p11-kit/modules
-rmdir  /usr/share/p11-kit
+rmdir  /usr/lib/pkgconfig
+rm -rf /usr/libexec/p11-kit
+rm -rf /usr/share/p11-kit
 
 # Cleanup files from the "Patch" package.
 rm -f /usr/bin/patch
@@ -2158,15 +2041,7 @@ rm -f /Library/dpkg/info/com.sassoty.pulltorespring.md5sums
 rm -f /private/var/mobile/Library/Preferences/com.sassoty.pulltorespring.plist
 
 # Cleanup files from the "Readline" package.
-rm -f  /usr/include/readline/chardefs.h
-rm -f  /usr/include/readline/history.h
-rm -f  /usr/include/readline/keymaps.h
-rm -f  /usr/include/readline/readline.h
-rm -f  /usr/include/readline/rlconf.h
-rm -f  /usr/include/readline/rlstdc.h
-rm -f  /usr/include/readline/rltypedefs.h
-rm -f  /usr/include/readline/tilde.h
-rmdir  /usr/include/readline
+rm -rf /usr/include/readline
 rm -f  /usr/lib/libhistory.5.2.dylib
 rm -f  /usr/lib/libhistory.5.dylib
 rm -f  /usr/lib/libhistory.7.0.dylib
@@ -2475,7 +2350,7 @@ rm -f  /usr/local/lib/liblzma.5.dylib
 rm -f  /usr/local/lib/liblzma.dylib
 rm -f  /usr/local/lib/pkgconfig/liblzma.pc
 rm -f  /usr/local/lib/pkgconfig/liblzma.pce
-rmdir  /usr/local/lib/pkgconfig
+rm -rf /usr/local/lib/pkgconfig
 
 # Cleanup files from the "Youtube Tools" package.
 rm -f /private/var/mobile/Library/Preferences/com.justinpetkovic.youtubetools.plist
@@ -2493,15 +2368,16 @@ rm -f /usr/bin/zipsplit
 ########################################################################
 
 # Put the HOSTS file back to default values.
-echo "##" > /etc/hosts
-echo "# Host Database" >> /etc/hosts
-echo "#" >> /etc/hosts
-echo "# localhost is used to configure the loopback interface" >> /etc/hosts
+rm -f /etc/hosts
+echo "##"                                                        > /etc/hosts
+echo "# Host Database"                                          >> /etc/hosts
+echo "#"                                                        >> /etc/hosts
+echo "# localhost is used to configure the loopback interface"  >> /etc/hosts
 echo "# when the system is booting.  Do not change this entry." >> /etc/hosts
-echo "##" >> /etc/hosts
-echo "127.0.0.1	localhost" >> /etc/hosts
-echo "255.255.255.255	broadcasthost" >> /etc/hosts
-echo "::1             localhost" >> /etc/hosts
+echo "##"                                                       >> /etc/hosts
+echo "127.0.0.1	localhost"                                      >> /etc/hosts
+echo "255.255.255.255	broadcasthost"                          >> /etc/hosts
+echo "::1             localhost"                                >> /etc/hosts
 
 # Removing the last tools, clear the UI cache.
 uicache
