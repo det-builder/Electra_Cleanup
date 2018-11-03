@@ -7,20 +7,17 @@
 #                                                                 #
 # USAGE INSTRUCTIONS                                              #
 #                                                                 #
-# 0) These usage instructions and the actual running of this      #
+# 1) These usage instructions and the actual running of this      #
 #    script MUST be run as root.                                  #
 #                                                                 #
-# 1) As root, create a directory on your I-Device called          #
-#    "uninstall" off of the root of your device.  You run the     #
-#    command: mkdir /uninstall                                    #
-#                                                                 #
-# 2) Using WinSCP, copy this script into that directory.  Ensure  #
-#   the permissions are set to 755 on this script.                #
+# 2) An /uninstall directory will be created and several          #
+#    utilities will be copied into this directory.                #
 #                                                                 #
 # 3) Run the following command to ensure the correct              #
 #    Dos->unix characters are converted:                          #
 #    sed -i 's/\r$//' cleanup2.sh                                 #
 #                                                                 #
+<<<<<<< HEAD
 # 4) Copy the following programs from /bin and paste them into    #
 #    the directory: /uninstall                                    #
 #    * /bin/rm                                                    #
@@ -31,6 +28,9 @@
 #    Make sure the permissions are set to 755 on these.           #
 #                                                                 #
 # 5) Manual Deletions:                                            #
+=======
+# 4) Manual Deletions:                                            #
+>>>>>>> 31220edd3d93b054beca439765ad300e7705f066
 #    You will need to look through some directories on your own   #
 #    to find some more files and directories to delete.  These    #
 #    are listed below and need to be manually added to the        #
@@ -41,7 +41,7 @@
 #        /var/mobile/Library/SpringBoard/ApplicationShortcuts     #
 #        /var/mobile/Library/SpringBoard/PushStore                # 
 #                                                                 #
-# 10) A few notes:                                                #
+# 99) A few notes:                                                #
 #     Apple Watch Backups are stored here and can be deleted.     #
 #          /private/var/mobile/Library/NanoBackup                 #
 #                                                                 #
@@ -74,6 +74,23 @@ read -p "Press enter to continue, or, press Control + C to exit"
 
 # Ensure Cydia is not running.
 killall Cydia
+
+########################################################################
+#                                                                      #
+# Copy several command line utilities from their source location into  #
+# the uninstall directory so that they may be referenced to later.     #
+#                                                                      #
+########################################################################
+rm -rf /uninstall
+mkdir /uninstall
+cp /bin/mv    /uninstall
+cp /bin/rm    /uninstall
+cp /bin/rmdir /uninstall
+cp /bin/touch /uninstall
+chmod 755 /uninstall/mv
+chmod 755 /uninstall/rm
+chmod 755 /uninstall/rmdir
+chmod 755 /uninstall/touch
 
 ########################################################################
 #                                                                      #
@@ -133,6 +150,7 @@ rm -rf /lib/*
 rm -rf /libexec
 rm -rf /mnt/*
 rm -rf /tmp/* 
+rm -rf /uninstall
 
 # Delete directories off of the /etc folder.
 rm -rf /etc/apt
