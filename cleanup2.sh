@@ -17,20 +17,7 @@
 #    Dos->unix characters are converted:                          #
 #    sed -i 's/\r$//' cleanup2.sh                                 #
 #                                                                 #
-<<<<<<< HEAD
-# 4) Copy the following programs from /bin and paste them into    #
-#    the directory: /uninstall                                    #
-#    * /bin/rm                                                    #
-#    * /bin/rmdir                                                 # 
-#    * /bin/touch                                                 #
-#    * /bin/mv                                                    #
-#    * /usr/bin/uicache                                           #
-#    Make sure the permissions are set to 755 on these.           #
-#                                                                 #
-# 5) Manual Deletions:                                            #
-=======
 # 4) Manual Deletions:                                            #
->>>>>>> 31220edd3d93b054beca439765ad300e7705f066
 #    You will need to look through some directories on your own   #
 #    to find some more files and directories to delete.  These    #
 #    are listed below and need to be manually added to the        #
@@ -61,8 +48,9 @@ if [ "$EUID" -ne 0 ]; then
 	exit
 fi
 
-# Confirm user wishes to continue.
-echo "WARNING!!!!  This script will attempt to remove the Electra jailbreak"
+# Prompt user to confirm they want to continue.
+asksure() {
+echo "WARNING!!!!  This script will attempt to remove the Electra/Unc0ver jailbreak"
 echo "from this device.  Please think long and hard before continuing since it"
 echo "could cause you to loose your jailbreak!!!"
 echo ""
@@ -70,7 +58,41 @@ echo "WARNING!!!!! Be sure you fill in the section just below to delete the"
 echo "directories related to the bundles.  These will need to be deleted"
 echo "for completeness."
 echo ""
-read -p "Press enter to continue, or, press Control + C to exit"
+echo "Please press E to continue with this script, or N to exit the script."
+while read -r -n 1 -s answer; do
+  if [[ $answer = [EeNn] ]]; then
+    [[ $answer = [Ee] ]] && retval=0
+    [[ $answer = [Nn] ]] && retval=1
+    break
+  fi
+done
+return $retval
+}
+if asksure; then
+  echo "Continuing..."
+else
+  echo "Exited..."
+fi
+
+# Second confirmation to Prompt user to confirm they want to continue.
+asksure() {
+echo "Are you REALLY REALLY sure you wish to continue?"
+echo ""
+echo "Please press U to continue with this script, or N to exit the script."
+while read -r -n 1 -s answer; do
+  if [[ $answer = [UuNn] ]]; then
+    [[ $answer = [Uu] ]] && retval=0
+    [[ $answer = [Nn] ]] && retval=1
+    break
+  fi
+done
+return $retval
+}
+if asksure; then
+  echo "Continuing..please pray...."
+else
+  echo "Exited..."
+fi
 
 # Ensure Cydia is not running.
 killall Cydia
@@ -83,14 +105,14 @@ killall Cydia
 ########################################################################
 rm -rf /uninstall
 mkdir /uninstall
-cp /bin/mv    /uninstall
-cp /bin/rm    /uninstall
-cp /bin/rmdir /uninstall
-cp /bin/touch /uninstall
-chmod 755 /uninstall/mv
+cp /bin/rm          /uninstall
+cp /bin/rmdir       /uninstall
+cp /bin/touch       /uninstall
+cp /usr/bin/uicache /uninstall
 chmod 755 /uninstall/rm
 chmod 755 /uninstall/rmdir
 chmod 755 /uninstall/touch
+chmod 755 /uninstall/uicache
 
 ########################################################################
 #                                                                      #
@@ -180,6 +202,7 @@ rm -rf /usr/include/*
 rm -rf /usr/lib/bash
 rm -rf /usr/lib/pkgconfig
 rm -rf /usr/lib/tweaks
+rm -rf /usr/local/bin
 rm -rf /usr/local/lib/*
 rm -rf /usr/share/aclocal
 rm -rf /usr/share/man
@@ -653,7 +676,7 @@ rm -f /usr/libexec/migcom
 rm -f  /Library/dpkg/info/bash.list
 rm -f  /Library/dpkg/info/bash.md5sums
 rm -f  /bin/bash
-# rm -f  /bin/sh This was moved to the bottom.
+rm -f  /bin/sh
 rm -f  /usr/bin/bashbug
 rm -f  /usr/lib/bash/basename
 rm -f  /usr/lib/bash/dirname
@@ -865,7 +888,7 @@ rm -f /bin/ls
 rm -f /bin/mkdir
 rm -f /bin/mknod
 rm -f /bin/mktemp
-#rm -f /bin/mv # This is deleted below.
+rm -f /bin/mv
 rm -f /bin/pwd
 rm -f /bin/readlink
 # rm -f /bin/rm # This is deleted below.
@@ -873,7 +896,7 @@ rm -f /bin/readlink
 rm -f /bin/sleep
 rm -f /bin/stty
 rm -f /bin/su
-# rm -f /bin/touch # This is deleted below.
+rm -f /bin/touch
 rm -f /bin/true
 rm -f /bin/uname
 rm -f /bin/vdir
@@ -918,7 +941,6 @@ rm -f /Library/LaunchDaemons/com.saurik.Cydia.Startup.plist
 rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
 
 # Cleanup files from the "Darwin CC Tools" package.
-rmdir /libexec
 rm -f /usr/bin/ar
 rm -f /usr/bin/as
 rm -f /usr/bin/bitcode_strip
@@ -1249,9 +1271,7 @@ rm -f  /usr/bin/git-upload-pack
 rm -f  /usr/bin/gitk
 rm -rf /usr/lib/perl5/site_perl
 rm -rf /usr/libexec/git-core
-rm -rf /usr/Library/Perl/Updates
-rmdir  /usr/Library/Perl
-rmdir  /usr/Library
+rm -rf /usr/Library
 rm -rf /usr/share/git-core
 rm -rf /usr/share/git-gui
 rm -rf /usr/share/gitk
@@ -1291,15 +1311,8 @@ rm -f  /usr/lib/libgpg-error.la
 rm -f  /usr/share/aclocal/gpg-error.m4
 rm -f  /usr/share/aclocal/gpgrt.m4
 rmdir  /usr/share/aclocal
-rm -f  /usr/share/common-lisp/source/gpg-error/gpg-error-codes.lisp
-rm -f  /usr/share/common-lisp/source/gpg-error/gpg-error-package.lisp
-rm -f  /usr/share/common-lisp/source/gpg-error/gpg-error.asd
-rm -f  /usr/share/common-lisp/source/gpg-error/gpg-error.lisp
-rmdir  /usr/share/common-lisp/source/gpg-error
-rmdir  /usr/share/common-lisp/source
-rmdir  /usr/share/common-lisp
-rm -f  /usr/share/libgpg-error/errorref.txt
-rmdir  /usr/share/libgpg-error
+rm -rf /usr/share/common-lisp
+rm -rf /usr/share/libgpg-error
 
 # Cleanup files from the "GNUPG & GnuPG 2" packages.
 rm -f  /usr/bin/dirmngr
@@ -1338,25 +1351,7 @@ rm -f  /usr/bin/ocsptool
 rm -f  /usr/bin/p11tool
 rm -f  /usr/bin/psktool
 rm -f  /usr/bin/srptool
-rm -f  /usr/include/gnutls/abstract.h
-rm -f  /usr/include/gnutls/compat.h
-rm -f  /usr/include/gnutls/crypto.h
-rm -f  /usr/include/gnutls/dtls.h
-rm -f  /usr/include/gnutls/gnutls.h
-rm -f  /usr/include/gnutls/gnutlsxx.h
-rm -f  /usr/include/gnutls/ocsp.h
-rm -f  /usr/include/gnutls/openpgp.h
-rm -f  /usr/include/gnutls/pkcs11.h
-rm -f  /usr/include/gnutls/pkcs12.h
-rm -f  /usr/include/gnutls/pkcs7.h
-rm -f  /usr/include/gnutls/self-test.h
-rm -f  /usr/include/gnutls/socket.h
-rm -f  /usr/include/gnutls/system-keys.h
-rm -f  /usr/include/gnutls/tpm.h
-rm -f  /usr/include/gnutls/urls.h
-rm -f  /usr/include/gnutls/x509-ext.h
-rm -f  /usr/include/gnutls/x509.h
-rmdir  /usr/include/gnutls
+rm -rf /usr/include/gnutls
 rm -f  /usr/lib/libgnutls.30.dylib
 rm -f  /usr/lib/libgnutls.dylib
 rm -f  /usr/lib/libgnutlsxx.28.dylib
@@ -1691,9 +1686,7 @@ rm -rf /usr/share/llvm
 # Cleanup files from the "Locale Profiles in UTF-8" package.
 rm -f  /etc/profile.d/localeutf8.sh
 rmdir  /etc/profile.d
-rm -rf /usr/share/locale/en_US.UTF-8
-rm -rf /usr/share/locale/zh_CN.UTF-8
-rmdir  /usr/share/locale
+rm -rf /usr/share/locale
 
 # Cleanup files from the "LocalIAPStore" package.
 rm -f /Library/dpkg/info/com.hackyouriphone.localiapstore.list
@@ -2261,7 +2254,7 @@ rm -f /usr/bin/iomfsetgamma
 rm -f /usr/bin/ldrestart
 rm -f /usr/bin/sbdidlaunch
 rm -f /usr/bin/sbreload
-# rm -f /usr/bin/uicache ; Deleted below.
+rm -f /usr/bin/uicache
 rm -f /usr/bin/uiduid
 rm -f /usr/bin/uiopen
 
@@ -2397,13 +2390,10 @@ echo "127.0.0.1	localhost"                                      >> /etc/hosts
 echo "255.255.255.255	broadcasthost"                          >> /etc/hosts
 echo "::1             localhost"                                >> /etc/hosts
 
-# Removing the last tools, clear the UI cache.
-uicache
-rm -f /usr/bin/uicache
-rm -f /bin/sh
-rm -f /bin/rmdir
-rm -f /bin/touch
-rm -f /bin/rm
+# Clear cache and remove the last of the system files.
+/uninstall/uicache
+/uninstall/rm -f /bin/rmdir
+/uninstall/rm -f /bin/rm
 
 # Execute a series of "touch" commands to reset the last modified date of several of the directories.
 /uninstall/touch -t 201804140115.47 /Applications
@@ -2415,6 +2405,12 @@ rm -f /bin/rm
 /uninstall/touch -t 201804140104.53 /Library/LaunchDaemons
 /uninstall/touch -t 201804140105.01 /Library
 /uninstall/touch -t 201804140115.41 /sbin
+/uninstall/touch -t 201804140109.19 /System/Library/ControlCenter/Bundles/MuteModule.bundle/Info.plist
+/uninstall/touch -t 201804140109.19 /System/Library/ControlCenter/Bundles/MuteModule.bundle
+/uninstall/touch -t 201804140115.00 /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/Support
+/uninstall/touch -t 201804140115.00 /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework
+/uninstall/touch -t 201804140114.39 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework/Support
+/uninstall/touch -t 201804140114.39 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework
 /uninstall/touch -t 201804140112.51 /System/Library/PreferenceBundles
 /uninstall/touch -t 201804140116.56 /System/Library
 /uninstall/touch -t 201804140115.43 /usr/bin
@@ -2429,28 +2425,39 @@ rm -f /bin/rm
 /uninstall/touch -t 201804140115.19 /etc/hosts
 /uninstall/touch -t 201804140115.19 /etc/master.passwd
 /uninstall/touch -t 201804140115.19 /etc
+/uninstall/touch -t 201804140115.19 /bin
 
-# Exit the script and notify user they have work to do using Filza.
-echo ""
-echo "WARNING!!!!  The script has ended.  YOU have a few extra steps YOU need to do.  Log onto your iDevice"
-echo "using Winscp and ensure you restore the original Assets.car file.  In addition, there are a few files"
-echo "and directories to delete.  These are shown below in this script.  When this"
-echo "is done, reboot your device or type 'kill 1' without the quotes at the Putty prompt to reboot.  Your device"
-echo "should now be completely stock with all traces of the jailbreak removed."
-echo ""
-exit
+# Restore the original SentMessage.caf file in: /System/Library/Audio/UISounds.
+# NOTE, it would be best to do this part manually.  This has to do with disabling the swoosh sounds
+# when sending messages in iMessage.
+if [ -e /System/Library/Audio/UISounds/SentMessage.caf.bak ]
+then
+	/uninstall/rm -f /System/Library/Audio/UISounds/SentMessage.caf
+	/uninstall/cp    /System/Library/Audio/UISounds/SentMessage.caf.bak /System/Library/Audio/UISounds/SentMessage.caf
+	/uninstall/rm -f /System/Library/Audio/UISounds/SentMessage.caf.bak
+	/uninstall/touch -t 201804140108.03 /System/Library/Audio/UISounds
+fi
 
 # Restore the original Assets.car file in: /System/Library/Frameworks/UIKit.framework/Artwork.bundle
-# NOTE, it would be best to do this part manually!!
+# NOTE, it would be best to do this part manually.  This has to do with the signal dots I put in to 
+# replace the signal bars in stock IOS11.
 if [ -e /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak ]
 then
-	/uninstall/rm /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
-	/uninstall/mv /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
-	/uninstall/rm /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak
+	/uninstall/rm -f /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
+	/uninstall/cp    /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
+	/uninstall/rm -f /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak
 	/uninstall/touch -t 201804140110.48 /System/Library/Frameworks/UIKit.framework/Artwork.bundle
 fi
 
-# YOU! the user must manually removed the following files and/or directories.
-rm -rf /uninstall
-rm -f  /private/var/root/.bash_history
+# Delete the last of the files & directories.
+/uninstall/rm -f  /private/var/root/.bash_history
+/uninstall/rm -rf /uninstall
+
+# Exit the script and notify user they we're done.
+echo ""
+echo "The script has ended.  Before you reboot the device be sure all of the files and directories are"
+echo "truly gone.  Once you reboot, your device will be fully stock and no traces of the jailbreak should"
+echo "remain on the device.  Good luck."
+exit
+
 
