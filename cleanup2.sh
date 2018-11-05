@@ -39,6 +39,12 @@
 #     Commands to disable launch daemons in jailbroken state:     #
 #         launchctl unload /System/Library/LaunchDaemons/??.plist #
 #                                                                 #
+#     Mail.app stores mail data here:                             #
+#         /private/var/mobile/Library/Mail                        #
+#                                                                 #
+#     Text messages are stored here:                              #
+#         /private/var/mobile/Library/SMS                         #
+#                                                                 # 
 ###################################################################
 
 # Ensure the user is logged in as root.
@@ -108,7 +114,9 @@ mkdir /uninstall
 cp /bin/rm          /uninstall
 cp /bin/rmdir       /uninstall
 cp /bin/touch       /uninstall
+cp /usr/bin/find    /uninstall
 cp /usr/bin/uicache /uninstall
+chmod 755 /uninstall/find
 chmod 755 /uninstall/rm
 chmod 755 /uninstall/rmdir
 chmod 755 /uninstall/touch
@@ -150,6 +158,9 @@ rm -rf /var/mobile/Containers/Shared/AppGroup/xxxxx # nothing in directory.
 # Clean up files related to the robocall stuff.
 # rm -f /var/mobile/Library/CallDirectory/CallDirectory.db
 # rmdir /var/mobile/Library/CallDirectory
+
+# Cleanup files Mail.app files.  Shouldn't need to do this though.
+# rm -rf /var/mobile/Library/Mail
 
 # Clean up files related to voice mail recordings.
 # rm -rf /var/mobile/Library/Voicemail/*
@@ -235,6 +246,7 @@ rm -f  /.file
 rm -f  /.installed_unc0ver
 rm -f  /RWTEST
 rm -f  /.Trashes
+rm -f  /test.txt
 rm -f  /bin/launchctl
 rm -f  /private/var/installd/Library/MobileInstallation/UninstalledApplications.plist
 rm -f  /private/var/installd/Library/Preferences/*.plist.*
@@ -2411,6 +2423,9 @@ echo "::1             localhost"                                >> /etc/hosts
 /uninstall/touch -t 201804140115.00 /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework
 /uninstall/touch -t 201804140114.39 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework/Support
 /uninstall/touch -t 201804140114.39 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework
+/uninstall/touch -t 201804140115.19 /System/Library/Watchdog/ThermalMonitor.bundle/D11AP.bundle/Info.plist
+/uninstall/touch -t 201804140112.21 /System/Library/PreferenceBundles/BatteryUsageUI.bundle/BatteryUIModeling.plist
+/uninstall/touch -t 201804140112.21 /System/Library/PreferenceBundles/BatteryUsageUI.bundle/BatteryUISuggestions.plist
 /uninstall/touch -t 201804140112.51 /System/Library/PreferenceBundles
 /uninstall/touch -t 201804140116.56 /System/Library
 /uninstall/touch -t 201804140115.43 /usr/bin
@@ -2449,15 +2464,21 @@ then
 	/uninstall/touch -t 201804140110.48 /System/Library/Frameworks/UIKit.framework/Artwork.bundle
 fi
 
+# Exit the script and notify user they we're done.
+echo ""
+echo "The script has ended.  Please execute the last few commands manually being sure to go through the remaining files and"
+echo "directories that were created after 4/14/2018 2am.  Before you reboot the device be sure all of the files and directories are"
+echo "truly gone.  Once you reboot, your device will be fully stock and no traces of the jailbreak should"
+echo "remain on the device.  Good luck."
+exit
+
+# Search through directories and files that may still have leftovers in them.
+/uninstall/find / -type d -newermt '4/14/2018 02:00:00' | sort
+/uninstall/find / -type f -newermt '4/14/2018 02:00:00' | sort
+
 # Delete the last of the files & directories.
 /uninstall/rm -f  /private/var/root/.bash_history
 /uninstall/rm -rf /uninstall
 
-# Exit the script and notify user they we're done.
-echo ""
-echo "The script has ended.  Before you reboot the device be sure all of the files and directories are"
-echo "truly gone.  Once you reboot, your device will be fully stock and no traces of the jailbreak should"
-echo "remain on the device.  Good luck."
-exit
 
 
