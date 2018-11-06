@@ -2475,6 +2475,7 @@ exit
 # Search through directories and files that may still have leftovers in them.
 /uninstall/find / -type d -newermt '4/14/2018 02:00:00' | sort
 /uninstall/find / -type f -newermt '4/14/2018 02:00:00' | sort
+/uninstall/find / -type l -newermt '4/14/2018 02:00:00' | sort
 
 # Delete the last of the files & directories.
 /uninstall/rm -f  /private/var/root/.bash_history
