@@ -13,11 +13,15 @@
 # 2) An /uninstall directory will be created and several          #
 #    utilities will be copied into this directory.                #
 #                                                                 #
-# 3) Run the following command to ensure the correct              #
-#    Dos->unix characters are converted:                          #
-#    sed -i 's/\r$//' cleanup2.sh                                 #
+# 3) Using an FTP client copy this script into the root           #
+#    directory.   Using Putty run the command:                    #
+#    chmod 755 ./script2.sh                                       #
 #                                                                 #
-# 4) Manual Deletions:                                            #
+# 4) Run the following command to ensure the correct              #
+#    Dos->unix characters are converted:                          #
+#    sed -i 's/\r$//' ./cleanup2.sh                               #
+#                                                                 #
+# 5) Manual Deletions:                                            #
 #    You will need to look through some directories on your own   #
 #    to find some more files and directories to delete.  These    #
 #    are listed below and need to be manually added to the        #
@@ -44,6 +48,13 @@
 #                                                                 #
 #     Text messages are stored here:                              #
 #         /private/var/mobile/Library/SMS                         #
+#                                                                 # 
+#     Battery Power Log details are stored here:                  #
+#       /var/containers/Shared/SystemGroup/BCFADB1E-BB04-4C7E-A857-D1BBA0961C91/Library/BatteryLife
+# rm -rf /var/containers/Shared/SystemGroup/BCFADB1E-BB04-4C7E-A857-D1BBA0961C91/Library/BatteryLife/Archives/*
+# rm -rf /var/containers/Shared/SystemGroup/BCFADB1E-BB04-4C7E-A857-D1BBA0961C91/Library/BatteryLife/Quarantine/*
+# rm -rf /var/containers/Shared/SystemGroup/BCFADB1E-BB04-4C7E-A857-D1BBA0961C91/Library/BatteryLife/*
+
 #                                                                 # 
 ###################################################################
 
@@ -132,21 +143,19 @@ chmod 755 /uninstall/uicache
 ########################################################################
 
 # /var/containers/Bundle/Application (Appears to be only app store apps & those installed via Impactor.)
-rm -rf /var/containers/Bundle/Application/1F1507D3-3AC2-4551-B86C-E0107840572F # unc0ver
-rm -rf /var/containers/Bundle/Application/3EBD2B2B-11EA-43D7-8470-85FB8840A672 # filzaescazped
+# rm -rf /var/containers/Bundle/Application/1F1507D3-3AC2-4551-B86C-E0107840572F # unc0ver
+# rm -rf /var/containers/Bundle/Application/3EBD2B2B-11EA-43D7-8470-85FB8840A672 # filzaescazped
 
 # /var/mobile/Containers/Data/Application (Appears to be app store apps, impactor apps and Cydia apps.)
-rm -rf /var/mobile/Containers/Data/Application/CCD77984-4065-4764-BD4B-AA58DFEEF0E9 # cocoatop
-rm -rf /var/mobile/Containers/Data/Application/3854B68F-451C-48EA-9CC0-C1204C5BF32A # cydia
-rm -rf /var/mobile/Containers/Data/Application/A0967302-40BA-493E-8933-6A26F6B18E80 # filza
-rm -rf /var/mobile/Containers/Data/Application/FAD0D867-F20F-454E-B182-4BADF03A6A49 # filzaesccaped
-rm -rf /var/mobile/Containers/Data/Application/CFDC337C-5241-467E-813E-31A9E875C210 # icleaner
-rm -rf /var/mobile/Containers/Data/Application/2D2D01AB-097B-4581-B37D-5B4A58CE7FCD # safemode
-rm -rf /var/mobile/Containers/Data/Application/0BB4706B-62B4-4337-B907-65C077A306D3 # unc0ver
-rm -rf /var/mobile/Containers/Data/Application/49959A42-1AD0-49A2-BBD4-B315081CDFD6 # hbang terminal
+rm -rf /var/mobile/Containers/Data/Application/954B4CC8-A20A-4D51-BD25-B34B515D76C8 # unknown
+rm -rf /var/mobile/Containers/Data/Application/20AF7191-584D-4AE6-928C-03652CA94713 # bytafont
+rm -rf /var/mobile/Containers/Data/Application/68C094CE-DC7B-46D6-84D8-4737B56388FF # cocoatop
+rm -rf /var/mobile/Containers/Data/Application/EC42838F-BEEF-4189-AA6F-E7F152AC4B22 # crackerxi
+rm -rf /var/mobile/Containers/Data/Application/E9FE725A-A1A8-431F-BF26-992243025138 # cydia
+rm -rf /var/mobile/Containers/Data/Application/AC99204F-FD3C-49CA-B376-BF445FDC81DB # filza
 
 # /var/mobile/Containers/Shared/AppGroup (Appears to be only app store apps & those installed via Impactor.)
-rm -rf /var/mobile/Containers/Shared/AppGroup/xxxxx # nothing in directory.
+# rm -rf /var/mobile/Containers/Shared/AppGroup/xxxxx # nothing in directory.
 
 ########################################################################
 #                                                                      #
@@ -183,7 +192,6 @@ rm -rf /lib/*
 rm -rf /libexec
 rm -rf /mnt/*
 rm -rf /tmp/* 
-rm -rf /uninstall
 
 # Delete directories off of the /etc folder.
 rm -rf /etc/apt
@@ -231,7 +239,9 @@ rm -rf /var/mobile/Library/Caches/*
 rm -rf /var/mobile/Library/Cookies/*
 rm -rf /var/mobile/Library/Filza/.Trash/*
 rm -rf /var/mobile/Library/Filza/.Trash.metadata/*
+rm -rf /var/mobile/Library/NanoBackup/*
 rm -rf /var/mobile/Library/WebKit/*
+rm -rf /var/mobile/Library/Voicemail/* 
 rm -rf /var/mobile/MobileSoftwareUpdate/mnt1
 rm -rf /var/root/Application\ Support/*
 rm -rf /var/root/Library/Caches/*
@@ -1457,6 +1467,12 @@ rm -f /usr/libexec/telnetd
 rm -f /usr/libexec/tftpd
 rm -f /usr/libexec/uucpd
 
+# Cleanup files from the "IOS 9/10/11 - Untrusted Hosts Blocker" package
+rm -f /etc/hosts
+cp    /etc/hosts/hosts.thireus.bak /etc/hosts
+rm -f /etc/hosts/hosts.thireus.bak
+rm -f /etc/hosts/hosts.thireus.md5
+
 # Cleanup files from the "kern-utils" package.
 rm -f /usr/bin/kdump
 rm -f /usr/bin/kinfo
@@ -2130,6 +2146,7 @@ rm -f /private/var/mobile/Library/Preferences/com.smokin1337.smartlpm.plist
 rm -f /Library/dpkg/info/com.spark.snowboard.list
 rm -f /Library/dpkg/info/com.spark.snowboard.md5sums
 rm -f /private/var/mobile/Library/Preferences/com.spark.snowboardprefs.plist
+rm -f /private/var/mobile/Library/Preferences/com.spark.snowboardprefs.plist
 
 # Cleanup files from the "Socket Cat" package.
 rm -f /usr/bin/filan
@@ -2399,7 +2416,7 @@ echo "# localhost is used to configure the loopback interface"  >> /etc/hosts
 echo "# when the system is booting.  Do not change this entry." >> /etc/hosts
 echo "##"                                                       >> /etc/hosts
 echo "127.0.0.1	localhost"                                      >> /etc/hosts
-echo "255.255.255.255	broadcasthost"                          >> /etc/hosts
+echo "255.255.255.255	broadcasthost"                            >> /etc/hosts
 echo "::1             localhost"                                >> /etc/hosts
 
 # Clear cache and remove the last of the system files.
@@ -2417,6 +2434,7 @@ echo "::1             localhost"                                >> /etc/hosts
 /uninstall/touch -t 201804140104.53 /Library/LaunchDaemons
 /uninstall/touch -t 201804140105.01 /Library
 /uninstall/touch -t 201804140115.41 /sbin
+/uninstall/touch -t 201804140115.19 /private/etc
 /uninstall/touch -t 201804140109.19 /System/Library/ControlCenter/Bundles/MuteModule.bundle/Info.plist
 /uninstall/touch -t 201804140109.19 /System/Library/ControlCenter/Bundles/MuteModule.bundle
 /uninstall/touch -t 201804140115.00 /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/Support
@@ -2430,6 +2448,7 @@ echo "::1             localhost"                                >> /etc/hosts
 /uninstall/touch -t 201804140116.56 /System/Library
 /uninstall/touch -t 201804140115.43 /usr/bin
 /uninstall/touch -t 201804140115.41 /usr/include
+/uninstall/touch -t 201804140115.44 /usr/local
 /uninstall/touch -t 201804140115.41 /usr/lib
 /uninstall/touch -t 201804140115.41 /usr/libexec
 /uninstall/touch -t 201804140115.40 /usr/local/lib
@@ -2445,28 +2464,28 @@ echo "::1             localhost"                                >> /etc/hosts
 # Restore the original SentMessage.caf file in: /System/Library/Audio/UISounds.
 # NOTE, it would be best to do this part manually.  This has to do with disabling the swoosh sounds
 # when sending messages in iMessage.
-if [ -e /System/Library/Audio/UISounds/SentMessage.caf.bak ]
-then
-	/uninstall/rm -f /System/Library/Audio/UISounds/SentMessage.caf
-	/uninstall/cp    /System/Library/Audio/UISounds/SentMessage.caf.bak /System/Library/Audio/UISounds/SentMessage.caf
-	/uninstall/rm -f /System/Library/Audio/UISounds/SentMessage.caf.bak
-	/uninstall/touch -t 201804140108.03 /System/Library/Audio/UISounds
-fi
+# if [ -e /System/Library/Audio/UISounds/SentMessage.caf.bak ]
+# then
+#	/uninstall/rm -f /System/Library/Audio/UISounds/SentMessage.caf
+#	/uninstall/cp    /System/Library/Audio/UISounds/SentMessage.caf.bak /System/Library/Audio/UISounds/SentMessage.caf
+#	/uninstall/rm -f /System/Library/Audio/UISounds/SentMessage.caf.bak
+#	/uninstall/touch -t 201804140108.03 /System/Library/Audio/UISounds
+# fi
 
 # Restore the original Assets.car file in: /System/Library/Frameworks/UIKit.framework/Artwork.bundle
 # NOTE, it would be best to do this part manually.  This has to do with the signal dots I put in to 
 # replace the signal bars in stock IOS11.
-if [ -e /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak ]
-then
-	/uninstall/rm -f /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
-	/uninstall/cp    /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
-	/uninstall/rm -f /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak
-	/uninstall/touch -t 201804140110.48 /System/Library/Frameworks/UIKit.framework/Artwork.bundle
-fi
+#if [ -e /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak ]
+#then
+#	/uninstall/rm -f /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
+#	/uninstall/cp    /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
+#	/uninstall/rm -f /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak
+#	/uninstall/touch -t 201804140110.48 /System/Library/Frameworks/UIKit.framework/Artwork.bundle
+#fi
 
 # Exit the script and notify user they we're done.
 echo ""
-echo "The script has ended.  Please execute the last few commands manually being sure to go through the remaining files and"
+echo "The script has ended.  Please execute the last few commands manually via Putty being sure to go through the remaining files and"
 echo "directories that were created after 4/14/2018 2am.  Before you reboot the device be sure all of the files and directories are"
 echo "truly gone.  Once you reboot, your device will be fully stock and no traces of the jailbreak should"
 echo "remain on the device.  Good luck."
@@ -2476,8 +2495,12 @@ exit
 /uninstall/find / -type d -newermt '4/14/2018 02:00:00' | sort
 /uninstall/find / -type f -newermt '4/14/2018 02:00:00' | sort
 /uninstall/find / -type l -newermt '4/14/2018 02:00:00' | sort
+/uninstall/find / -type d -mtime +210 | sort
+/uninstall/find / -type f -mtime +210 | sort
+/uninstall/find / -type l -mtime +210 | sort
 
 # Delete the last of the files & directories.
+/uninstall/rm -f  /cleanup2.sh
 /uninstall/rm -f  /private/var/root/.bash_history
 /uninstall/rm -rf /uninstall
 
