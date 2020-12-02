@@ -126,31 +126,23 @@ cp /bin/rm          /uninstall
 cp /bin/rmdir       /uninstall
 cp /bin/touch       /uninstall
 cp /usr/bin/find    /uninstall
-cp /usr/bin/snappy  /uninstall
 cp /usr/bin/uicache /uninstall
 chmod 755 /uninstall/find
 chmod 755 /uninstall/rm
 chmod 755 /uninstall/rmdir
-chmod 755 /uninstall/snappy
 chmod 755 /uninstall/touch
 chmod 755 /uninstall/uicache
 
 ########################################################################
 #                                                                      #
-# TODO!!                                                               #
-# Using Filza, you must scan through the directories below and         #
-# identify those bundle's that pertain to Cydia apps and impactor      #
-# apps and include them in the delete statements below.                #
+# Delete the preferences files.  This needs to be manually looked at   #
+# to see what maybe missing.                                           #
 #                                                                      #
 ########################################################################
-
-# /var/mobile/Containers/Data/Application (Appears to be app store apps, impactor apps and Cydia apps.)
-rm -rf /var/mobile/Containers/Data/Application/BC9C6E3F-D707-4876-9C61-280BE7EA58B6 # CheckRa!n
-rm -rf /var/mobile/Containers/Data/Application/C2BE1A07-4C1D-4DFE-B658-88C39E6AF0AD # Flex
-rm -rf /var/mobile/Containers/Data/Application/1BD7FCE9-C280-4AF0-A965-64DC4DBCB74B # Cydia
-rm -rf /var/mobile/Containers/Data/Application/404816C6-9123-4CEE-BB9F-ECE51CDB316A # Filza
-rm -rf /var/mobile/Containers/Data/Application/9A27EDC5-D4AC-43CD-9D11-A5E6EBD3F210 # Sileo
-rm -rf /var/mobile/Containers/Data/Application/8FDEAD27-158A-4098-9AF6-30DA57CC7C22 # Sileo 2
+rm -f /private/var/mobile/Library/Preferences/anondev.LocalIAPStore.plist
+rm -f /private/var/mobile/Library/Preferences/com.samgisaninja.SuccessionRestore.plist
+rm -f /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
+rm -f /private/var/mobile/Library/Preferences/com.tigisoftware.Filza.plist
 
 ########################################################################
 #                                                                      #
@@ -159,12 +151,12 @@ rm -rf /var/mobile/Containers/Data/Application/8FDEAD27-158A-4098-9AF6-30DA57CC7
 ########################################################################
 
 # Delete directories off of the / folder.
-rm -rf /.fseventsd/*
-rm -rf /cores/*
-rm -rf /Developer/*
-rm -rf /lib/*
-rm -rf /mnt/*
-rm -rf /tmp/* 
+# rm -rf /.ba
+rm -rf /.fseventsd
+rm -rf /boot
+rm -rf /lib
+rm -rf /mnt
+rm User
 
 # Delete directories off of the /etc folder.
 rm -rf /etc/alternatives
@@ -218,14 +210,12 @@ rm -rf /var/unlimapps_tweak_resources
 
 # Delete misc files that don't belong to any tweak.
 rm -f  /.bootstrapped
+rm -f  /.cydia_no_stash
+rm -f  /.installed_unc0ver
+rm -f  /.mount_rw
 rm -f  /bin/launchctl
-rm -f  /private/var/mobile/.bash_history
-rm -f  /private/var/mobile/Library/Preferences/anondev.LocalIAPStore.plist
-rm -f  /private/var/mobile/Library/Preferences/com.johncoates.Flex.plist
-rm -f  /private/var/mobile/Library/Preferences/com.saurik.Cydia.plist
-rm -f  /private/var/mobile/Library/Preferences/com.tigisoftware.Filza.plist
-rm -f  /private/var/mobile/Library/Preferences/org.coolstar.SileoStore.plist
-rm -f  /private/var/root/.bash_history
+#rm -f  /private/var/mobile/.bash_history
+#rm -f  /private/var/root/.bash_history
 rm -f  /private/var/tmp/jailbreakd.pid
 rm -f  /private/var/checkra1n.dmg
 rm -f  /private/var/dropbear_rsa_host_key
@@ -1041,9 +1031,16 @@ rm -f /usr/bin/time
 rm -f /usr/bin/which
 
 # Cleanup files from the "Snappy" package (Deleted below)
-# rm -f /usr/bin/snappy
-# rm -f /usr/include/snappy.h
-# rm -f /usr/lib/libsnappy.dylib
+rm -f /usr/bin/snappy
+rm -f /usr/include/snappy.h
+rm -f /usr/lib/libsnappy.dylib
+
+# Cleanup files from the Succession package
+rm -rf /Applications/SuccessionRestore.app
+rm -f  /Library/dpkg/info/com.samgisaninja.successionrestore.prerm
+rm -f  /Library/dpkg/info/com.samgisaninja.successionrestore.postinst
+rm -f  /Library/dpkg/info/com.samgisaninja.successionrestore.md5sums
+rm -f  /Library/dpkg/info/com.samgisaninja.successionrestore.list
 
 # Cleanup files from the "System-Cmds" package.
 rm -f /bin/sync
@@ -1149,73 +1146,19 @@ echo "127.0.0.1	localhost"                                      >> /etc/hosts
 echo "255.255.255.255	broadcasthost"                            >> /etc/hosts
 echo "::1             localhost"                                >> /etc/hosts
 
+# /var/mobile/Containers/Data/Application (Appears to be app store apps, impactor apps and Cydia apps.)
+rm -rf /var/mobile/Containers/Data/Application/BC9C6E3F-D707-4876-9C61-280BE7EA58B6 # CheckRa!n
+rm -rf /var/mobile/Containers/Data/Application/1BD7FCE9-C280-4AF0-A965-64DC4DBCB74B # Cydia
+rm -rf /var/mobile/Containers/Data/Application/404816C6-9123-4CEE-BB9F-ECE51CDB316A # Filza
+rm -rf /var/mobile/Containers/Data/Application/9A27EDC5-D4AC-43CD-9D11-A5E6EBD3F210 # Sileo
+rm -rf /var/mobile/Containers/Data/Application/8FDEAD27-158A-4098-9AF6-30DA57CC7C22 # Sileo 2
+rm -rf /var/mobile/Containers/Data/Application/9640F7D2-A018-4C09-8909-120FD49CE6C7 # Uncover
+
 # Clear cache and remove the last of the system files.
 /uninstall/uicache
 /uninstall/rm -f /bin/rmdir
+/uninstall/rm -f /private/var/root/.bash_history
 /uninstall/rm -f /bin/rm
-
-chmod 755 /uninstall/snappy
-
-
-
-# Execute a series of "touch" commands to reset the last modified date of several of the directories.
-/uninstall/touch -t 201804140115.47 /Applications
-/uninstall/touch -t 201804140115.40 /bin
-/uninstall/touch -t 201804140115.12 /boot
-/uninstall/touch -t 201804140115.19 /lib
-/uninstall/touch -t 201804140104.47 /Library/Application\ Support
-/uninstall/touch -t 201804140105.01 /Library/Frameworks
-/uninstall/touch -t 201804140104.53 /Library/LaunchDaemons
-/uninstall/touch -t 201804140105.01 /Library
-/uninstall/touch -t 201804140115.41 /sbin
-/uninstall/touch -t 201804140115.19 /private/etc
-/uninstall/touch -t 201804140109.19 /System/Library/ControlCenter/Bundles/MuteModule.bundle/Info.plist
-/uninstall/touch -t 201804140109.19 /System/Library/ControlCenter/Bundles/MuteModule.bundle
-/uninstall/touch -t 201804140115.00 /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/Support
-/uninstall/touch -t 201804140115.00 /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework
-/uninstall/touch -t 201804140114.39 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework/Support
-/uninstall/touch -t 201804140114.39 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework
-/uninstall/touch -t 201804140115.19 /System/Library/Watchdog/ThermalMonitor.bundle/D11AP.bundle/Info.plist
-/uninstall/touch -t 201804140112.21 /System/Library/PreferenceBundles/BatteryUsageUI.bundle/BatteryUIModeling.plist
-/uninstall/touch -t 201804140112.21 /System/Library/PreferenceBundles/BatteryUsageUI.bundle/BatteryUISuggestions.plist
-/uninstall/touch -t 201804140112.51 /System/Library/PreferenceBundles
-/uninstall/touch -t 201804140116.56 /System/Library
-/uninstall/touch -t 201804140115.43 /usr/bin
-/uninstall/touch -t 201804140115.41 /usr/include
-/uninstall/touch -t 201804140115.44 /usr/local
-/uninstall/touch -t 201804140115.41 /usr/lib
-/uninstall/touch -t 201804140115.41 /usr/libexec
-/uninstall/touch -t 201804140115.40 /usr/local/lib
-/uninstall/touch -t 201804140115.44 /usr/sbin
-/uninstall/touch -t 201804140115.44 /usr/share
-/uninstall/touch -t 201804140115.44 /usr
-/uninstall/touch -t 201804140115.19 /etc/fstab
-/uninstall/touch -t 201804140115.19 /etc/hosts
-/uninstall/touch -t 201804140115.19 /etc/master.passwd
-/uninstall/touch -t 201804140115.19 /etc
-/uninstall/touch -t 201804140115.19 /bin
-
-# Restore the original SentMessage.caf file in: /System/Library/Audio/UISounds.
-# NOTE, it would be best to do this part manually.  This has to do with disabling the swoosh sounds
-# when sending messages in iMessage.
-# if [ -e /System/Library/Audio/UISounds/SentMessage.caf.bak ]
-# then
-#	/uninstall/rm -f /System/Library/Audio/UISounds/SentMessage.caf
-#	/uninstall/cp    /System/Library/Audio/UISounds/SentMessage.caf.bak /System/Library/Audio/UISounds/SentMessage.caf
-#	/uninstall/rm -f /System/Library/Audio/UISounds/SentMessage.caf.bak
-#	/uninstall/touch -t 201804140108.03 /System/Library/Audio/UISounds
-# fi
-
-# Restore the original Assets.car file in: /System/Library/Frameworks/UIKit.framework/Artwork.bundle
-# NOTE, it would be best to do this part manually.  This has to do with the signal dots I put in to 
-# replace the signal bars in stock IOS11.
-#if [ -e /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak ]
-#then
-#	/uninstall/rm -f /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
-#	/uninstall/cp    /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car
-#	/uninstall/rm -f /System/Library/Frameworks/UIKit.framework/Artwork.bundle/Assets.car.bak
-#	/uninstall/touch -t 201804140110.48 /System/Library/Frameworks/UIKit.framework/Artwork.bundle
-#fi
 
 # Exit the script and notify user they we're done.
 echo ""
@@ -1225,18 +1168,8 @@ echo "truly gone.  Once you reboot, your device will be fully stock and no trace
 echo "remain on the device.  Good luck."
 exit
 
-# Search through directories and files that may still have leftovers in them.
-/uninstall/find / -type d -newermt '4/14/2018 02:00:00' | sort
-/uninstall/find / -type f -newermt '4/14/2018 02:00:00' | sort
-/uninstall/find / -type l -newermt '4/14/2018 02:00:00' | sort
-/uninstall/find / -type d -mtime +210 | sort
-/uninstall/find / -type f -mtime +210 | sort
-/uninstall/find / -type l -mtime +210 | sort
-
 # Delete the last of the files & directories.
-/uninstall/rm -f  /cleanup2.sh
-/uninstall/rm -f  /private/var/root/.bash_history
-/uninstall/rm -rf /uninstall
+/uninstall/rm -f  /uninstall
 
 
 
